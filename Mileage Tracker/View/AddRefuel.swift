@@ -6,24 +6,16 @@
 //
 
 import SwiftUI
+import Combine
 
 struct AddRefuel: View {
     @Environment(\.presentationMode) var presentationMode
     
-    @State var kilometers: Double = 0.0
-    @State var liters: Double = 0.0
-    @State var money: Double = 0.0
+    @State var kilometers: String = "0.0"
+    @State var liters = "0.0"
+    @State var money = "0.0"
     
     @ObservedObject var tracker: MileageTracker
-    
-    var formatter: NumberFormatter {
-        get {
-            let formater = NumberFormatter()
-            formater.groupingSeparator = ","
-            formater.maximumFractionDigits = 2
-            return formater
-        }
-    }
     
     var body: some View {
         Form {
@@ -31,25 +23,49 @@ struct AddRefuel: View {
                 HStack {
                     Text("Kilometers")
                     Spacer()
-                    TextField("", value: $kilometers, formatter: formatter)
+                    TextField("", text: $kilometers)
                         .keyboardType(UIKeyboardType.numbersAndPunctuation)
+                        // Esta parte do Just eu tirei deste tutorial: https://stackoverflow.com/questions/58733003/swiftui-how-to-create-textfield-that-only-accepts-numbers
+                        .onReceive(Just(kilometers)) { newValue in
+                                        let filtered = newValue.filter { "0123456789.".contains($0) }
+                                        if filtered != newValue {
+                                            self.kilometers = filtered
+                                        }
+                        }
                 }
                 HStack {
                     Text("Liters")
                     Spacer()
-                    TextField("", value: $liters, formatter: formatter)
+                    TextField("", text: $liters)
                         .keyboardType(UIKeyboardType.numbersAndPunctuation)
+                        .onReceive(Just(liters)) { newValue in
+                                        let filtered = newValue.filter { "0123456789.".contains($0) }
+                                        if filtered != newValue {
+                                            self.liters = filtered
+                                        }
+                        }
                 }
                 HStack {
                     Text("Refuel Cost")
                     Spacer()
-                    TextField("", value: $money, formatter: formatter)
+                    TextField("", text: $money)
                         .keyboardType(UIKeyboardType.numbersAndPunctuation)
+                        .onReceive(Just(money)) { newValue in
+                                        let filtered = newValue.filter { "0123456789.".contains($0) }
+                                        if filtered != newValue {
+                                            self.liters = money
+                                        }
+                        }
                 }
             }
             Section {
                 Button("Save") {
                     // TO DO: Should validate user input
+                    /*
+                     Right now its possible to add two periods to number value, or more, and this will totally break calculation. How to sanitize that?
+                     */
+                    let refuel = Refuel(kilometers: Double(kilometers) ?? 0.0, liters: Double(liters) ?? 0.0, money: Double(money) ?? 0.0)
+                    tracker.storeNewRefuel(refuel: refuel)
                     self.presentationMode.wrappedValue.dismiss()
                 }
             }
