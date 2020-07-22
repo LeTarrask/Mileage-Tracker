@@ -47,27 +47,6 @@ class MileageTracker: ObservableObject {
     }
 }
 
-struct Refuel: Hashable {
-    var kilometers: Double
-    var liters: Double
-    var money: Double
-    
-    var kmString: String {
-        let string = String(kilometers.rounded(toPlaces: 2))
-        return string + " kilometers"
-    }
-    
-    var literString: String {
-        let string = String(liters.rounded(toPlaces: 2))
-        return string + " liters"
-    }
-    
-    var moneyString: String {
-        let string = String(money.rounded(toPlaces: 2))
-        return string + " Euro"
-    }
-}
-
 func FakeData() -> [Refuel]{
     var refuels = [Refuel]()
     for _ in 1...10 {
@@ -75,7 +54,6 @@ func FakeData() -> [Refuel]{
         let liters = Double.random(in: 3.0 ..< 7.0)
         let money = Double.random(in: 4.0 ..< 8.0)
         let fuel = Refuel(kilometers: km, liters: liters, money: money)
-        print(fuel)
         refuels.append(fuel)
     }
     return refuels

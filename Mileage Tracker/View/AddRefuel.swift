@@ -14,9 +14,20 @@ struct AddRefuel: View {
      */
     @Environment(\.presentationMode) var presentationMode
     
-    @State var refuel: Refuel = Refuel(kilometers: 0.00, liters: 0.00, money: 0.00)
+    @State var kilometers: Double = 0.0
+    @State var liters: Double = 0.0
+    @State var money: Double = 0.0
     
     @ObservedObject var tracker: MileageTracker
+    
+    var formatter: NumberFormatter {
+        get {
+            let formater = NumberFormatter()
+            formater.groupingSeparator = ","
+            formater.maximumFractionDigits = 2
+            return formater
+        }
+    }
     
     var body: some View {
         Form {
@@ -24,43 +35,26 @@ struct AddRefuel: View {
                 HStack {
                     Text("Kilometers")
                     Spacer()
-                    TextField("0.00", value: $refuel.kilometers, formatter: { () -> NumberFormatter in
-                        let formater = NumberFormatter()
-                        formater.groupingSeparator = ","
-                        formater.maximumFractionDigits = 2
-                        return formater
-                    }())
-                        .keyboardType(UIKeyboardType.numbersAndPunctuation)
+                    TextField("", value: $kilometers, formatter: formatter)
+                        .keyboardType(UIKeyboardType.numberPad)
                 }
                 HStack {
                     Text("Liters")
                     Spacer()
-                    TextField("0.00", value: $refuel.liters, formatter: { () -> NumberFormatter in
-                        let formater = NumberFormatter()
-                        formater.groupingSeparator = ","
-                        formater.maximumFractionDigits = 2
-                        return formater
-                    }(), onEditingChanged: { changed in
-                        print(self.$refuel.kilometers)
-                    })
+                    TextField("", value: $liters, formatter: formatter)
                         .keyboardType(UIKeyboardType.numbersAndPunctuation)
                 }
                 HStack {
                     Text("Refuel Cost")
                     Spacer()
-                    TextField("0.00", value: $refuel.money, formatter: { () -> NumberFormatter in
-                        let formater = NumberFormatter()
-                        formater.numberStyle = .currency
-                        formater.maximumFractionDigits = 2
-                        return formater
-                    }())
+                    TextField("", value: $money, formatter: formatter)
                         .keyboardType(UIKeyboardType.numbersAndPunctuation)
                 }
             }
             Section {
                 Button("Save") {
-                    print(refuel)
-                    tracker.storeNewRefuel(refuel: refuel)
+                    //                    print(refuel)
+                    //                    tracker.storeNewRefuel(refuel: refuel)
                     self.presentationMode.wrappedValue.dismiss()
                 }
             }

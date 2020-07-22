@@ -16,6 +16,7 @@
 		7985564B24C8478700544777 /* MileageTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564A24C8478700544777 /* MileageTracker.swift */; };
 		7985564D24C84D8300544777 /* AddRefuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564C24C84D8300544777 /* AddRefuel.swift */; };
 		7985565124C872AD00544777 /* Double+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985565024C872AD00544777 /* Double+Rounded.swift */; };
+		7985565324C87A1400544777 /* RefuelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985565224C87A1400544777 /* RefuelModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7985564A24C8478700544777 /* MileageTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTracker.swift; sourceTree = "<group>"; };
 		7985564C24C84D8300544777 /* AddRefuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRefuel.swift; sourceTree = "<group>"; };
 		7985565024C872AD00544777 /* Double+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounded.swift"; sourceTree = "<group>"; };
+		7985565224C87A1400544777 /* RefuelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				7985564A24C8478700544777 /* MileageTracker.swift */,
+				7985565224C87A1400544777 /* RefuelModel.swift */,
 				7985565024C872AD00544777 /* Double+Rounded.swift */,
 			);
 			path = Model;
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7985565324C87A1400544777 /* RefuelModel.swift in Sources */,
 				7985564B24C8478700544777 /* MileageTracker.swift in Sources */,
 				7985562224C8475E00544777 /* ContentView.swift in Sources */,
 				7985564D24C84D8300544777 /* AddRefuel.swift in Sources */,
