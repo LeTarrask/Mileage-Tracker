@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    private var tracker = MileageTracker()
+    @ObservedObject var tracker = MileageTracker()
     
     @State private var addRefuel: Bool = false
-    
+      
     var body: some View {
         NavigationView {
             List{
                 ForEach(tracker.refuels, id: \.self) { refuel in
                     Text(refuel.description)
-                }
+                }.onDelete(perform: removeItem)
             }
             .navigationBarTitle("Mileage Tracker", displayMode: .inline)
             .navigationBarItems(trailing:
@@ -25,8 +25,12 @@ struct ContentView: View {
                                         Image(systemName: "plus.circle")
                                     }))
             }.sheet(isPresented: $addRefuel) {
-                Text("add refuel")
+                AddRefuel(tracker: tracker)
         }
+    }
+    
+    func removeItem(at offsets: IndexSet) {
+        tracker.refuels.remove(atOffsets: offsets)
     }
 }
 
@@ -35,4 +39,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
 

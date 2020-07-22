@@ -5,25 +5,29 @@
 //  Created by Alex Luna on 22/07/2020.
 //
 
-import Foundation
+import SwiftUI
 
-class MileageTracker {
-    var refuels: [Refuel]
+class MileageTracker: ObservableObject {
+    @Published var refuels: [Refuel]
     
     init() {
         refuels = FakeData()
     }
+    
+    func storeNewRefuel(refuel: Refuel) {
+        refuels.append(refuel)
+    }
 }
 
 struct Refuel: Hashable {
-    var kilometer: Double
+    var kilometers: Double
     var liters: Double
     var money: Double
 }
 
 extension Refuel: CustomStringConvertible {
     var description: String {
-        return "\(kilometer) kilometers"
+        return "\(kilometers) kilometers, \(liters) liters, \(money) money, "
     }
 }
 
@@ -33,7 +37,7 @@ func FakeData() -> [Refuel]{
         let km = Double.random(in: 10.0 ..< 20.0)
         let liters = Double.random(in: 10.0 ..< 20.0)
         let money = Double.random(in: 10.0 ..< 20.0)
-        let fuel = Refuel(kilometer: km, liters: liters, money: money)
+        let fuel = Refuel(kilometers: km, liters: liters, money: money)
         refuels.append(fuel)
     }
     return refuels

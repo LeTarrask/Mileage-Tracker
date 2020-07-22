@@ -14,6 +14,7 @@
 		7985563224C8476000544777 /* Mileage_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985563124C8476000544777 /* Mileage_TrackerTests.swift */; };
 		7985563D24C8476000544777 /* Mileage_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985563C24C8476000544777 /* Mileage_TrackerUITests.swift */; };
 		7985564B24C8478700544777 /* MileageTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564A24C8478700544777 /* MileageTracker.swift */; };
+		7985564D24C84D8300544777 /* AddRefuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564C24C84D8300544777 /* AddRefuel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		7985563C24C8476000544777 /* Mileage_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mileage_TrackerUITests.swift; sourceTree = "<group>"; };
 		7985563E24C8476000544777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7985564A24C8478700544777 /* MileageTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTracker.swift; sourceTree = "<group>"; };
+		7985564C24C84D8300544777 /* AddRefuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRefuel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				7985561F24C8475E00544777 /* Mileage_TrackerApp.swift */,
 				7985562124C8475E00544777 /* ContentView.swift */,
+				7985564C24C84D8300544777 /* AddRefuel.swift */,
 				7985564A24C8478700544777 /* MileageTracker.swift */,
 				7985562324C8476000544777 /* Assets.xcassets */,
 				7985562824C8476000544777 /* Info.plist */,
@@ -264,6 +267,7 @@
 			files = (
 				7985564B24C8478700544777 /* MileageTracker.swift in Sources */,
 				7985562224C8475E00544777 /* ContentView.swift in Sources */,
+				7985564D24C84D8300544777 /* AddRefuel.swift in Sources */,
 				7985562024C8475E00544777 /* Mileage_TrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
