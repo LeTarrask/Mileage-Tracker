@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct AddRefuel: View {
-    
-    /*
-     The problem with this view is that swiftUI shouldn't accept Doubles or Ints. It should convert to and fro, and send this data to the model
-     */
     @Environment(\.presentationMode) var presentationMode
     
     @State var kilometers: Double = 0.0
@@ -36,7 +32,7 @@ struct AddRefuel: View {
                     Text("Kilometers")
                     Spacer()
                     TextField("", value: $kilometers, formatter: formatter)
-                        .keyboardType(UIKeyboardType.numberPad)
+                        .keyboardType(UIKeyboardType.numbersAndPunctuation)
                 }
                 HStack {
                     Text("Liters")
@@ -53,8 +49,7 @@ struct AddRefuel: View {
             }
             Section {
                 Button("Save") {
-                    //                    print(refuel)
-                    //                    tracker.storeNewRefuel(refuel: refuel)
+                    // TO DO: Should validate user input
                     self.presentationMode.wrappedValue.dismiss()
                 }
             }
