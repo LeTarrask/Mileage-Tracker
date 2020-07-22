@@ -15,10 +15,16 @@ class MileageTracker {
     }
 }
 
-struct Refuel {
+struct Refuel: Hashable {
     var kilometer: Double
     var liters: Double
     var money: Double
+}
+
+extension Refuel: CustomStringConvertible {
+    var description: String {
+        return "\(kilometer) kilometers"
+    }
 }
 
 func FakeData() -> [Refuel]{
