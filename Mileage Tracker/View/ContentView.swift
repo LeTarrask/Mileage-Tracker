@@ -14,10 +14,20 @@ struct ContentView: View {
       
     var body: some View {
         NavigationView {
-            List{
-                ForEach(tracker.refuels, id: \.self) { refuel in
-                    Text(refuel.description)
-                }.onDelete(perform: removeItem)
+            VStack {
+                VStack(alignment: .leading) {
+                    Text("Average consumption: \(tracker.averageConsumption) km/L")
+                    Text("Average spending: \(tracker.averageSpending) km/€")
+                }
+                List{
+                    ForEach(tracker.refuels, id: \.self) { refuel in
+                        HStack {
+                            Text(refuel.kmString)
+                            Text(refuel.literString)
+                            Text(refuel.moneyString)
+                        }
+                    }.onDelete(perform: removeItem)
+                }
             }
             .navigationBarTitle("Mileage Tracker", displayMode: .inline)
             .navigationBarItems(trailing:
