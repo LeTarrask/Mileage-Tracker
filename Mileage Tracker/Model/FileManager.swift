@@ -44,17 +44,24 @@ class FilesManager {
     }
     
     func read(fileNamed: String) throws -> Data {
-           guard let url = makeURL(forFileNamed: fileNamed) else {
-               throw Error.invalidDirectory
-           }
-           guard fileManager.fileExists(atPath: url.absoluteString) else {
-               throw Error.fileNotExists
-           }
-           do {
-               return try Data(contentsOf: url)
-           } catch {
-               debugPrint(error)
-               throw Error.readingFailed
-           }
-       }
+        guard let url = makeURL(forFileNamed: fileNamed) else {
+            throw Error.invalidDirectory
+        }
+        print(url)
+        guard fileManager.fileExists(atPath: url.absoluteString) else {
+            throw Error.fileNotExists
+        }
+        // TO DO: this shit is really storing data, but it's not reading nor throwing errors
+        do {
+            print(url)
+            let string = try String(contentsOf: url)
+            print(string)
+            let data = try Data(contentsOf: url)
+            print(data)
+            return data
+        } catch {
+            debugPrint(error)
+            throw Error.readingFailed
+        }
+    }
 }

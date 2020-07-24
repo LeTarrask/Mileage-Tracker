@@ -12,21 +12,37 @@ class MileageTracker: ObservableObject {
     
     @Published var refuels: [Refuel]
     
-    let fileManager: FilesManager = FilesManager()
+    let filesManager: FilesManager = FilesManager()
+    let encoder = JSONEncoder()
+    let decoder = JSONDecoder()
+    let storageFileName: String = "Storage.txt"
     
     init() {
-        refuels = FakeData()
+        refuels = [Refuel]()
+        
+        if let storedData = try? filesManager.read(fileNamed: storageFileName) {
+            print("we have stored data")
+            if let decodedData = try? decoder.decode([Refuel].self, from: storedData) {
+                print("we have decoded data")
+                refuels = decodedData
+                print(decodedData)
+            }
+            print("do we reach here")
+        }
     }
     
     var averageConsumption: String {
         get {
-            let totalKM = refuels
-                            .map{$0.kilometers}
-                            .reduce(0) {$0 + $1}
-            let totalLiters = refuels
-                                .map{$0.liters}
-                                .reduce(0) {$0 + $1}
-            let average = (totalKM / totalLiters).rounded(toPlaces: 2)
+            var average = 0.0
+            if refuels.count != 0 {
+                let totalKM = refuels
+                    .map{$0.kilometers}
+                    .reduce(0) {$0 + $1}
+                let totalLiters = refuels
+                    .map{$0.liters}
+                    .reduce(0) {$0 + $1}
+                average = (totalKM / totalLiters).rounded(toPlaces: 2)
+            }
             
             return String(average)
         }
@@ -34,13 +50,16 @@ class MileageTracker: ObservableObject {
     
     var averageSpending: String {
         get {
-            let totalKM = refuels
-                            .map{$0.kilometers}
-                            .reduce(0) {$0 + $1}
-            let totalMoney = refuels
-                                .map{$0.money}
-                                .reduce(0) {$0 + $1}
-            let average = (totalKM / totalMoney).rounded(toPlaces: 2)
+            var average = 0.0
+            if refuels.count != 0 {
+                let totalKM = refuels
+                    .map{$0.kilometers}
+                    .reduce(0) {$0 + $1}
+                let totalMoney = refuels
+                    .map{$0.money}
+                    .reduce(0) {$0 + $1}
+                average = (totalKM / totalMoney).rounded(toPlaces: 2)
+            }
             
             return String(average)
         }
@@ -48,6 +67,11 @@ class MileageTracker: ObservableObject {
     
     func storeNewRefuel(refuel: Refuel) {
         refuels.append(refuel)
+        print(refuel)
+        if let encoded = try? encoder.encode([refuels]) {
+            try? filesManager.save(fileNamed: storageFileName, data: encoded)
+            print("Data saved")
+        }
     }
 }
 
