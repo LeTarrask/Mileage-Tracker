@@ -39,7 +39,13 @@ struct AddRefuel: View {
                     TextField("", text: $liters)
                         .keyboardType(UIKeyboardType.numbersAndPunctuation)
                         .onReceive(Just(liters)) { newValue in
-                                        let filtered = newValue.filter { "0123456789.".contains($0) }
+                                        let filtered = newValue.filter {
+                                            /*
+                                             
+                                             \d*(\.\d+)
+                                             
+                                             */
+                                            "0123456789.".contains($0) }
                                         if filtered != newValue {
                                             self.liters = filtered
                                         }

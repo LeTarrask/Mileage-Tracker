@@ -8,6 +8,8 @@
 import SwiftUI
 
 class MileageTracker: ObservableObject {
+    // TO DO: First thing: Store the REFUELS property into memory. Install on the phone.
+    
     @Published var refuels: [Refuel]
     
     init() {
