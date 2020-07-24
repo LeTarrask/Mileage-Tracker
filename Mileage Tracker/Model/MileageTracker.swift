@@ -10,31 +10,23 @@ import SwiftUI
 class MileageTracker: ObservableObject {
     // TO DO: First thing: Store the REFUELS property into memory. Install on the phone.
     
-    @Published var refuels: [Refuel]
+    @Published var refuels: [Refuel] = [Refuel]()
     
     let filesManager: FilesManager = FilesManager()
-    let encoder = JSONEncoder()
-    let decoder = JSONDecoder()
-    let storageFileName: String = "Storage.txt"
+    
     
     init() {
-        refuels = [Refuel]()
-        
-        if let storedData = try? filesManager.read(fileNamed: storageFileName) {
-            print("we have stored data")
-            if let decodedData = try? decoder.decode([Refuel].self, from: storedData) {
-                print("we have decoded data")
-                refuels = decodedData
-                print(decodedData)
-            }
-            print("do we reach here")
+        if let storedData = try? filesManager.getDecoded() {
+            print("Stored Data")
+            print(storedData)
+            refuels = storedData
         }
     }
     
     var averageConsumption: String {
         get {
             var average = 0.0
-            if refuels.count != 0 {
+            if refuels.count > 1 {
                 let totalKM = refuels
                     .map{$0.kilometers}
                     .reduce(0) {$0 + $1}
@@ -51,7 +43,7 @@ class MileageTracker: ObservableObject {
     var averageSpending: String {
         get {
             var average = 0.0
-            if refuels.count != 0 {
+            if refuels.count > 1 {
                 let totalKM = refuels
                     .map{$0.kilometers}
                     .reduce(0) {$0 + $1}
@@ -67,11 +59,7 @@ class MileageTracker: ObservableObject {
     
     func storeNewRefuel(refuel: Refuel) {
         refuels.append(refuel)
-        print(refuel)
-        if let encoded = try? encoder.encode([refuels]) {
-            try? filesManager.save(fileNamed: storageFileName, data: encoded)
-            print("Data saved")
-        }
+        try? filesManager.save(input: refuels)
     }
 }
 

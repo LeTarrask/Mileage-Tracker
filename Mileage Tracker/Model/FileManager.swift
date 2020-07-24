@@ -16,20 +16,25 @@ class FilesManager {
         case fileNotExists
         case readingFailed
     }
+    
+    let encoder = JSONEncoder()
+    let decoder = JSONDecoder()
+    let storageFileName: String = "Storage.txt"
 
     let fileManager: FileManager
     init(fileManager: FileManager = .default) {
         self.fileManager = fileManager
     }
 
-    func save(fileNamed: String, data: Data) throws {
-        guard let url = makeURL(forFileNamed: fileNamed) else {
+    func save(input: [Refuel]) throws {
+        guard let url = makeURL(forFileNamed: storageFileName) else {
             throw Error.invalidDirectory
         }
         if fileManager.fileExists(atPath: url.absoluteString) {
             throw Error.fileAlreadyExists
         }
         do {
+            let data = try encoder.encode(input)
             try data.write(to: url)
         } catch {
             debugPrint(error)
@@ -43,25 +48,28 @@ class FilesManager {
         return url.appendingPathComponent(fileName)
     }
     
-    func read(fileNamed: String) throws -> Data {
-        guard let url = makeURL(forFileNamed: fileNamed) else {
+    func getDecoded() throws -> [Refuel] {
+        guard let url = makeURL(forFileNamed: storageFileName) else {
             throw Error.invalidDirectory
         }
+        
         print(url)
-        guard fileManager.fileExists(atPath: url.absoluteString) else {
-            throw Error.fileNotExists
-        }
-        // TO DO: this shit is really storing data, but it's not reading nor throwing errors
+
+        // TO DO: Understand why this thing always fails
+//        guard fileManager.fileExists(atPath: url.absoluteString) else {
+//            throw Error.fileNotExists
+//        }
+        
         do {
-            print(url)
-            let string = try String(contentsOf: url)
-            print(string)
             let data = try Data(contentsOf: url)
-            print(data)
-            return data
+            if let decodedData = try? decoder.decode([Refuel].self, from: data) {
+                return decodedData
+            }
         } catch {
             debugPrint(error)
             throw Error.readingFailed
         }
+        
+        return [Refuel]()
     }
 }
