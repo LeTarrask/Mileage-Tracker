@@ -12,6 +12,8 @@ class MileageTracker: ObservableObject {
     
     @Published var refuels: [Refuel]
     
+    let fileManager: FilesManager = FilesManager()
+    
     init() {
         refuels = FakeData()
     }

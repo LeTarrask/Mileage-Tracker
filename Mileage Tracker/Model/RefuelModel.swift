@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Refuel: Hashable {
+struct Refuel: Hashable, Codable {
     var kilometers: Double
     var liters: Double
     var money: Double
