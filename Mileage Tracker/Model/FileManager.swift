@@ -3,6 +3,7 @@
 //  Mileage Tracker
 //
 //  Created by Alex Luna on 24/07/2020.
+//  Some of original code can be found here: https://www.iosapptemplates.com/blog/ios-development/data-persistence-ios-swift
 //
 
 import Foundation
@@ -12,11 +13,15 @@ class FilesManager {
         case fileAlreadyExists
         case invalidDirectory
         case writtingFailed
+        case fileNotExists
+        case readingFailed
     }
+
     let fileManager: FileManager
     init(fileManager: FileManager = .default) {
         self.fileManager = fileManager
     }
+
     func save(fileNamed: String, data: Data) throws {
         guard let url = makeURL(forFileNamed: fileNamed) else {
             throw Error.invalidDirectory
@@ -38,4 +43,18 @@ class FilesManager {
         return url.appendingPathComponent(fileName)
     }
     
+    func read(fileNamed: String) throws -> Data {
+           guard let url = makeURL(forFileNamed: fileNamed) else {
+               throw Error.invalidDirectory
+           }
+           guard fileManager.fileExists(atPath: url.absoluteString) else {
+               throw Error.fileNotExists
+           }
+           do {
+               return try Data(contentsOf: url)
+           } catch {
+               debugPrint(error)
+               throw Error.readingFailed
+           }
+       }
 }
