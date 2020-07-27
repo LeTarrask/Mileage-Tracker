@@ -20,6 +20,7 @@ struct AddRefuel: View {
     var body: some View {
         Form {
             Section(header: Text("Add refuel info")) {
+                // MARK: - KM
                 HStack {
                     Text("Kilometers")
                     Spacer()
@@ -33,6 +34,7 @@ struct AddRefuel: View {
                                         }
                         }
                 }
+                // MARK: - Liters
                 HStack {
                     Text("Liters")
                     Spacer()
@@ -51,6 +53,7 @@ struct AddRefuel: View {
                                         }
                         }
                 }
+                // MARK: - Cost
                 HStack {
                     Text("Refuel Cost")
                     Spacer()
@@ -64,6 +67,7 @@ struct AddRefuel: View {
                         }
                 }
             }
+            // MARK: - KM
             Section {
                 Button("Save") {
                     // TO DO: Should validate user input

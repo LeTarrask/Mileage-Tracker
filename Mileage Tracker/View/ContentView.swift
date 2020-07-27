@@ -15,10 +15,14 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
+                // MARK: - Averages display
                 VStack(alignment: .leading) {
                     Text("Average consumption: \(tracker.averageConsumption) km/L")
                     Text("Average spending: \(tracker.averageSpending) km/€")
-                }
+                }.padding(.top, 15)
+                
+                // MARK: - Refuels list
                 List{
                     ForEach(tracker.refuels, id: \.self) { refuel in
                         HStack {
@@ -46,7 +50,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let tracker = MileageTracker()
+        tracker.refuels = FakeData()
+        return ContentView(tracker: tracker)
     }
 }
 

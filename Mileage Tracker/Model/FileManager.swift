@@ -41,6 +41,7 @@ class FilesManager {
             throw Error.writtingFailed
         }
     }
+    
     private func makeURL(forFileNamed fileName: String) -> URL? {
         guard let url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return nil
@@ -52,13 +53,6 @@ class FilesManager {
         guard let url = makeURL(forFileNamed: storageFileName) else {
             throw Error.invalidDirectory
         }
-        
-        print(url)
-
-        // TO DO: Understand why this thing always fails
-//        guard fileManager.fileExists(atPath: url.absoluteString) else {
-//            throw Error.fileNotExists
-//        }
         
         do {
             let data = try Data(contentsOf: url)
