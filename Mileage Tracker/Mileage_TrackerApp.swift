@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct Mileage_TrackerApp: App {
+    @ObservedObject private var tracker = MileageTracker()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                MileageView(tracker: tracker) {
+                    tracker.save()
+                }
+            }
+            .onAppear {
+                tracker.load()
+            }
+            
         }
     }
 }

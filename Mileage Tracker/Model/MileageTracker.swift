@@ -7,17 +7,58 @@
 
 import SwiftUI
 
-class MileageTracker: ObservableObject {    
+class MileageTracker: ObservableObject {
+    private static var documentsFolder: URL {
+        do {
+            return try FileManager.default.url(for: .documentDirectory,
+                                               in: .userDomainMask,
+                                               appropriateFor: nil,
+                                               create: false)
+        } catch {
+            fatalError("Can't find documents directory.")
+        }
+    }
+    
+    private static var fileURL: URL {
+        return documentsFolder.appendingPathComponent("refuels.data")
+    }
+    
     @Published var refuels: [Refuel] = [Refuel]()
     
-    let filesManager: FilesManager = FilesManager()
+    func load() {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let data = try? Data(contentsOf: Self.fileURL) else {
+                #if DEBUG
+                DispatchQueue.main.async {
+                    self?.refuels = Refuel.data
+                    print("refuelled")
+                }
+                #endif
+                return
+            }
+            guard let refuels = try? JSONDecoder().decode([Refuel].self, from: data) else {
+                fatalError("Can't decode saved refuel data.")
+            }
+            DispatchQueue.main.async {
+                self?.refuels = refuels
+            }
+        }
+        
+        refuels.sort {
+            $0.kilometers < $1.kilometers
+        }
+    }
     
-    
-    init() {
-        if let storedData = try? filesManager.getDecoded() {
-            print("Stored Data")
-            print(storedData)
-            refuels = storedData
+    func save() {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let refuels = self?.refuels else { fatalError("Self out of scope") }
+            guard let data = try? JSONEncoder().encode(refuels) else { fatalError("Error encoding data") }
+            do {
+                let outfile = Self.fileURL
+                try data.write(to: outfile)
+            } catch {
+                fatalError("Can't write to file")
+            }
         }
     }
     
@@ -25,13 +66,11 @@ class MileageTracker: ObservableObject {
         get {
             var average = 0.0
             if refuels.count > 1 {
-                let totalKM = refuels
-                    .map{$0.kilometers}
-                    .reduce(0) {$0 + $1}
+                let totalKM = refuels.last?.kilometers
                 let totalLiters = refuels
                     .map{$0.liters}
                     .reduce(0) {$0 + $1}
-                average = (totalKM / totalLiters).rounded(toPlaces: 2)
+                average = ((totalKM ?? 0.0) / totalLiters).rounded(toPlaces: 2)
             }
             
             return String(average)
@@ -42,33 +81,42 @@ class MileageTracker: ObservableObject {
         get {
             var average = 0.0
             if refuels.count > 1 {
-                let totalKM = refuels
-                    .map{$0.kilometers}
-                    .reduce(0) {$0 + $1}
+                let totalKM = refuels.last?.kilometers
                 let totalMoney = refuels
                     .map{$0.money}
                     .reduce(0) {$0 + $1}
-                average = (totalKM / totalMoney).rounded(toPlaces: 2)
+                average = ((totalKM ?? 0.0) / totalMoney).rounded(toPlaces: 2)
             }
-            
             return String(average)
         }
     }
     
-    func storeNewRefuel(refuel: Refuel) {
-        refuels.append(refuel)
-        try? filesManager.save(input: refuels)
+    var totalSpending: String {
+        get {
+            var total = 0.0
+            if refuels.count > 1 {
+                let totalMoney = refuels
+                    .map{$0.money}
+                    .reduce(0) {$0 + $1}
+                total = totalMoney.rounded(toPlaces: 2)
+            }
+            return String(total)
+        }
     }
-}
-
-func FakeData() -> [Refuel]{
-    var refuels = [Refuel]()
-    for _ in 1...10 {
-        let km = Double.random(in: 110.0 ..< 200.0)
-        let liters = Double.random(in: 3.0 ..< 7.0)
-        let money = Double.random(in: 4.0 ..< 8.0)
-        let fuel = Refuel(kilometers: km, liters: liters, money: money)
-        refuels.append(fuel)
+    
+    var averagePrice: String {
+        get {
+            var average = 0.0
+            if refuels.count > 1 {
+                let totalMoney = refuels
+                    .map{$0.money}
+                    .reduce(0) {$0 + $1}
+                let totalLiters = refuels
+                    .map{$0.liters}
+                    .reduce(0) {$0 + $1}
+                average = (totalMoney / totalLiters).rounded(toPlaces: 2)
+            }
+            return String(average)
+        }
     }
-    return refuels
 }
