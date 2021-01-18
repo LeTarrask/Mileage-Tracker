@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7913788C25B1F24100871ECE /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913788B25B1F24100871ECE /* Double+String.swift */; };
+		7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913789A25B2030600871ECE /* OtherCostsView.swift */; };
+		791378A025B2032700871ECE /* OtherCosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913789F25B2032700871ECE /* OtherCosts.swift */; };
+		791378A525B208C600871ECE /* AddCostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791378A425B208C600871ECE /* AddCostView.swift */; };
+		79259C2025B097D6006BD78E /* GraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79259C1F25B097D6006BD78E /* GraphicsView.swift */; };
+		79259C2E25B09E39006BD78E /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 79259C2D25B09E39006BD78E /* SwiftUICharts */; };
 		7956133D24CB16C000817B0D /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7956133C24CB16C000817B0D /* FileManager.swift */; };
 		7985562024C8475E00544777 /* Mileage_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985561F24C8475E00544777 /* Mileage_TrackerApp.swift */; };
 		7985562224C8475E00544777 /* MileageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985562124C8475E00544777 /* MileageView.swift */; };
@@ -39,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7913788B25B1F24100871ECE /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
+		7913789A25B2030600871ECE /* OtherCostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCostsView.swift; sourceTree = "<group>"; };
+		7913789F25B2032700871ECE /* OtherCosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCosts.swift; sourceTree = "<group>"; };
+		791378A425B208C600871ECE /* AddCostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCostView.swift; sourceTree = "<group>"; };
+		79259C1F25B097D6006BD78E /* GraphicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphicsView.swift; path = "Mileage Tracker/View/GraphicsView.swift"; sourceTree = SOURCE_ROOT; };
 		7956133C24CB16C000817B0D /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		7985561C24C8475E00544777 /* Mileage Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mileage Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7985561F24C8475E00544777 /* Mileage_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mileage_TrackerApp.swift; sourceTree = "<group>"; };
@@ -64,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79259C2E25B09E39006BD78E /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7913789325B1F29500871ECE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7913788B25B1F24100871ECE /* Double+String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7985561324C8475E00544777 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +130,7 @@
 				7985561F24C8475E00544777 /* Mileage_TrackerApp.swift */,
 				7985564F24C8609000544777 /* View */,
 				7985564E24C8608800544777 /* Model */,
+				7913789325B1F29500871ECE /* Extensions */,
 				7985562324C8476000544777 /* Assets.xcassets */,
 				7985562824C8476000544777 /* Info.plist */,
 				7985562524C8476000544777 /* Preview Content */,
@@ -149,6 +170,7 @@
 				7985564A24C8478700544777 /* MileageTracker.swift */,
 				7956133C24CB16C000817B0D /* FileManager.swift */,
 				79DA782325AF1CEF009E0FFC /* RefuelModel.swift */,
+				7913789F25B2032700871ECE /* OtherCosts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +182,9 @@
 				79DA783925AF4952009E0FFC /* RefuelDetail.swift */,
 				79DA783125AF4801009E0FFC /* RefuelCardView.swift */,
 				7985564C24C84D8300544777 /* AddRefuel.swift */,
+				79259C1F25B097D6006BD78E /* GraphicsView.swift */,
+				7913789A25B2030600871ECE /* OtherCostsView.swift */,
+				791378A425B208C600871ECE /* AddCostView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +205,9 @@
 			dependencies = (
 			);
 			name = "Mileage Tracker";
+			packageProductDependencies = (
+				79259C2D25B09E39006BD78E /* SwiftUICharts */,
+			);
 			productName = "Mileage Tracker";
 			productReference = 7985561C24C8475E00544777 /* Mileage Tracker.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +279,9 @@
 				Base,
 			);
 			mainGroup = 7985561324C8475E00544777;
+			packageReferences = (
+				79259C2C25B09E39006BD78E /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 7985561D24C8475E00544777 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,13 +325,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				79DA783225AF4801009E0FFC /* RefuelCardView.swift in Sources */,
+				791378A025B2032700871ECE /* OtherCosts.swift in Sources */,
 				79DA782425AF1CEF009E0FFC /* RefuelModel.swift in Sources */,
 				7985564B24C8478700544777 /* MileageTracker.swift in Sources */,
+				7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */,
 				79DA783A25AF4952009E0FFC /* RefuelDetail.swift in Sources */,
 				7985562224C8475E00544777 /* MileageView.swift in Sources */,
 				7956133D24CB16C000817B0D /* FileManager.swift in Sources */,
 				7985564D24C84D8300544777 /* AddRefuel.swift in Sources */,
 				7985562024C8475E00544777 /* Mileage_TrackerApp.swift in Sources */,
+				79259C2025B097D6006BD78E /* GraphicsView.swift in Sources */,
+				7913788C25B1F24100871ECE /* Double+String.swift in Sources */,
+				791378A525B208C600871ECE /* AddCostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +656,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		79259C2C25B09E39006BD78E /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		79259C2D25B09E39006BD78E /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79259C2C25B09E39006BD78E /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7985561424C8475E00544777 /* Project object */;
 }

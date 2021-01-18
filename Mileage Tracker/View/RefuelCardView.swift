@@ -19,6 +19,12 @@ struct RefuelCardView: View {
             }
             Spacer()
             VStack {
+                Text(String(refuel.kmAdded.clean))
+                Text("kilometers")
+                    .font(.caption)
+            }
+            Spacer()
+            VStack {
                 Text(refuel.literString)
                 Text("liters")
                     .font(.caption)
