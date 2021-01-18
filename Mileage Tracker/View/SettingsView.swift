@@ -13,14 +13,22 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section(header: Text("Reset app")) {
-                Button(action: {
-                        tracker.refuels = [Refuel]()
-                        tracker.otherCosts = [OtherCost]()
-                        tracker.save() }, label: {
-                    Text("Delete all app data")
-                })
-                
+                Button("Delete all app data") {
+                    tracker.refuels = [Refuel]()
+                    tracker.otherCosts = [OtherCost]()
+                    tracker.save()
+                }
             }
+            
+            // Comment this section to publish app
+            Section(header: Text("Test data")) {
+                Button("Load test data") {
+                    tracker.refuels = Refuel.data
+                    tracker.otherCosts = OtherCost.data
+                    tracker.save()
+                }
+            }
+            
         }
     }
 }

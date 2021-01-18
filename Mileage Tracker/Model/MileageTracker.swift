@@ -30,7 +30,6 @@ class MileageTracker: ObservableObject {
     @Published var refuels: [Refuel] = [Refuel]()
     
     @Published var otherCosts: [OtherCost] = [OtherCost]()
-    // TO DO: tem que salvar esta variavel em arquivo
     
     func load() {
         DispatchQueue.global(qos: .background).async { [weak self] in
@@ -52,15 +51,7 @@ class MileageTracker: ObservableObject {
                 #endif
                 return
             }
-            
-            // uncomment to reset data from test phone memory
-            
-//            self?.refuels = Refuel.data
-//            self?.otherCosts = OtherCost.data
-//            return
-            
-            // ends code to reset data from test phone memory
-            
+
             guard let refuels = try? JSONDecoder().decode([Refuel].self, from: data) else {
                 fatalError("Can't decode saved refuel data.")
             }
