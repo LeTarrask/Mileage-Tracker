@@ -10,6 +10,9 @@ import SwiftUI
 struct OtherCostsView: View {
     @ObservedObject var tracker: MileageTracker
     
+    @Environment(\.scenePhase) private var scenePhase
+    let saveAction: () -> Void
+    
     @State private var isPresented: Bool = false
     @State private var newCostData = OtherCost.Data()
     
@@ -23,6 +26,7 @@ struct OtherCostsView: View {
                 Text(dateToString(date: cost.creationDate))
             }
         }
+        .navigationBarTitle("Other vehicle costs", displayMode: .inline)
         .navigationBarItems(trailing:
                                 Button(action: { self.isPresented.toggle() }, label: {
                                     Image(systemName: "plus.circle")
@@ -48,6 +52,9 @@ struct OtherCostsView: View {
                     })
             }
         }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
+        }
     }
 }
 
@@ -61,6 +68,6 @@ extension OtherCostsView {
 
 struct OtherCostsView_Previews: PreviewProvider {
     static var previews: some View {
-        OtherCostsView(tracker: MileageTracker())
+        OtherCostsView(tracker: MileageTracker(), saveAction: {})
     }
 }

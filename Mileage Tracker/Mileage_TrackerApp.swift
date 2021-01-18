@@ -14,8 +14,13 @@ struct Mileage_TrackerApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                MileageView(tracker: tracker) {
-                    tracker.save()
+                TabView {
+                    MileageView(tracker: tracker) {
+                        tracker.save()
+                    }
+                    OtherCostsView(tracker: tracker){
+                        tracker.save()
+                    }
                 }
             }
             .onAppear {

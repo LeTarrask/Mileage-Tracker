@@ -11,11 +11,10 @@ struct MileageView: View {
     @ObservedObject var tracker: MileageTracker
     
     @Environment(\.scenePhase) private var scenePhase
+    let saveAction: () -> Void
     
     @State private var isPresented: Bool = false
     @State private var newRefuelData = Refuel.Data()
-    
-    let saveAction: () -> Void
     
     var body: some View {
         VStack {
@@ -43,11 +42,6 @@ struct MileageView: View {
                     destination: GraphicsView(tracker: tracker),
                     label: {
                         Text("Graphics")
-                    })
-                NavigationLink(
-                    destination: OtherCostsView(tracker: tracker),
-                    label: {
-                        Text("Other Costs")
                     })
             }
             
