@@ -11,6 +11,7 @@
 		7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913789A25B2030600871ECE /* OtherCostsView.swift */; };
 		791378A025B2032700871ECE /* OtherCosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913789F25B2032700871ECE /* OtherCosts.swift */; };
 		791378A525B208C600871ECE /* AddCostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791378A425B208C600871ECE /* AddCostView.swift */; };
+		7913791A25B5FA2000871ECE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913791925B5FA1F00871ECE /* SettingsView.swift */; };
 		79259C2025B097D6006BD78E /* GraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79259C1F25B097D6006BD78E /* GraphicsView.swift */; };
 		79259C2E25B09E39006BD78E /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 79259C2D25B09E39006BD78E /* SwiftUICharts */; };
 		7956133D24CB16C000817B0D /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7956133C24CB16C000817B0D /* FileManager.swift */; };
@@ -49,6 +50,7 @@
 		7913789A25B2030600871ECE /* OtherCostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCostsView.swift; sourceTree = "<group>"; };
 		7913789F25B2032700871ECE /* OtherCosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCosts.swift; sourceTree = "<group>"; };
 		791378A425B208C600871ECE /* AddCostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCostView.swift; sourceTree = "<group>"; };
+		7913791925B5FA1F00871ECE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		79259C1F25B097D6006BD78E /* GraphicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphicsView.swift; path = "Mileage Tracker/View/GraphicsView.swift"; sourceTree = SOURCE_ROOT; };
 		7956133C24CB16C000817B0D /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		7985561C24C8475E00544777 /* Mileage Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mileage Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 				79259C1F25B097D6006BD78E /* GraphicsView.swift */,
 				7913789A25B2030600871ECE /* OtherCostsView.swift */,
 				791378A425B208C600871ECE /* AddCostView.swift */,
+				7913791925B5FA1F00871ECE /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */,
 				79DA783A25AF4952009E0FFC /* RefuelDetail.swift in Sources */,
 				7985562224C8475E00544777 /* MileageView.swift in Sources */,
+				7913791A25B5FA2000871ECE /* SettingsView.swift in Sources */,
 				7956133D24CB16C000817B0D /* FileManager.swift in Sources */,
 				7985564D24C84D8300544777 /* AddRefuel.swift in Sources */,
 				7985562024C8475E00544777 /* Mileage_TrackerApp.swift in Sources */,

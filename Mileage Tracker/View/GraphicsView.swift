@@ -14,36 +14,39 @@ struct GraphicsView: View {
     @State var graphType: GraphType = .spending
     
     var body: some View {
-        VStack {
-            // MARK: - Averages display
-            ZStack {
-                Color.blue
-                    .frame(maxHeight: 140)
-                    .cornerRadius(15)
-                    .shadow(color: .black, radius: 3, x: 2, y: 1)
-                VStack(alignment: .leading) {
-                    Text("Total KM: \(tracker.totalKM.clean) km")
-                    Text("Average consumption: \(tracker.averageConsumption) km/L")
-                    Text("Average spending: \(tracker.averageSpending) km/€")
-                    Text("Total fuel spending: \(tracker.totalSpending) €")
-                    Text("Average Fuel Price: \(tracker.averagePrice) €/l")
+        NavigationView {
+            VStack {
+                // MARK: - Averages display
+                ZStack {
+                    Color.blue
+                        .frame(maxHeight: 140)
+                        .cornerRadius(15)
+                        .shadow(color: .black, radius: 3, x: 2, y: 1)
+                    VStack(alignment: .leading) {
+                        Text("Total KM: \(tracker.totalKM.clean) km")
+                        Text("Average consumption: \(tracker.averageConsumption) km/L")
+                        Text("Average spending: \(tracker.averageSpending) km/€")
+                        Text("Total fuel spending: \(tracker.totalSpending) €")
+                        Text("Average Fuel Price: \(tracker.averagePrice) €/l")
+                    }
+                    .foregroundColor(.white)
+                }.padding(15)
+                
+                // MARK: - Graphics display
+                HStack {
+                    Button(action: {graphType = .spending}, label: {
+                        Text("Spending")
+                    })
+                    Button(action: {graphType = .dates}, label: {
+                        Text("Refuel Dates")
+                    })
+                    Button(action: {graphType = .km}, label: {
+                        Text("KMs")
+                    })
                 }
-                .foregroundColor(.white)
-            }.padding(15)
-            
-            // MARK: - Graphics display
-            HStack {
-                Button(action: {graphType = .spending}, label: {
-                    Text("Spending")
-                })
-                Button(action: {graphType = .dates}, label: {
-                    Text("Refuel Dates")
-                })
-                Button(action: {graphType = .km}, label: {
-                    Text("KMs")
-                })
+                getGraphData(type: graphType)
             }
-            getGraphData(type: graphType)
+            .navigationBarTitle("Spending", displayMode: .inline)
         }
     }
     

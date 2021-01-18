@@ -17,37 +17,39 @@ struct MileageView: View {
     @State private var newRefuelData = Refuel.Data()
     
     var body: some View {
-        VStack {
-            // MARK: - Refuels list
-            List{
-                ForEach(tracker.refuels, id: \.self) { refuel in
-                    NavigationLink(
-                        destination: RefuelDetail(refuel: refuel),
-                        label: {
-                            RefuelCardView(refuel: refuel)
+        NavigationView {
+            VStack {
+                // MARK: - Refuels list
+                List{
+                    ForEach(tracker.refuels.reversed(), id: \.self) { refuel in
+                        NavigationLink(
+                            destination: RefuelDetail(refuel: refuel),
+                            label: {
+                                RefuelCardView(refuel: refuel)
+                            })
+                    }.onDelete(perform: removeItem)
+                }
+            }
+            .navigationBarTitle("Mileage Tracker", displayMode: .inline)
+            .navigationBarItems(trailing:
+                                    Button(action: { self.isPresented.toggle() },
+                                label: { Image(systemName: "plus.circle") }))
+            .sheet(isPresented: $isPresented) {
+                NavigationView {
+                    AddRefuel(refuelData: $newRefuelData)
+                        .navigationBarItems(leading: Button("Dismiss") {
+                            isPresented = false
+                        }, trailing: Button("Save") {
+                            let newRefuel = Refuel(totalKM: newRefuelData.totalKM, liters: newRefuelData.liters, money: newRefuelData.money, kmAdded: newRefuelData.totalKM - tracker.totalKM)
+                            tracker.refuels.append(newRefuel)
+                            newRefuelData = Refuel.Data() // resets refuel data storage
+                            isPresented = false
                         })
-                }.onDelete(perform: removeItem)
+                }
             }
+            .onChange(of: scenePhase) { phase in
+                if phase == .inactive { saveAction() }
         }
-        .navigationBarTitle("Mileage Tracker", displayMode: .inline)
-        .navigationBarItems(trailing:
-                                Button(action: { self.isPresented.toggle() },
-                            label: { Image(systemName: "plus.circle") }))
-        .sheet(isPresented: $isPresented) {
-            NavigationView {
-                AddRefuel(refuelData: $newRefuelData)
-                    .navigationBarItems(leading: Button("Dismiss") {
-                        isPresented = false
-                    }, trailing: Button("Save") {
-                        let newRefuel = Refuel(totalKM: newRefuelData.totalKM, liters: newRefuelData.liters, money: newRefuelData.money, kmAdded: newRefuelData.totalKM - tracker.totalKM)
-                        tracker.refuels.append(newRefuel)
-                        newRefuelData = Refuel.Data() // resets refuel data storage
-                        isPresented = false
-                    })
-            }
-        }
-        .onChange(of: scenePhase) { phase in
-            if phase == .inactive { saveAction() }
         }
     }
     

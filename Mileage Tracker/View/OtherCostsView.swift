@@ -17,43 +17,45 @@ struct OtherCostsView: View {
     @State private var newCostData = OtherCost.Data()
     
     var body: some View {
-        List(tracker.otherCosts) { cost in
-            HStack {
-                Text(cost.name)
-                Spacer()
-                Text(String(cost.value))
-                Spacer()
-                Text(dateToString(date: cost.creationDate))
+        NavigationView {
+            List(tracker.otherCosts.reversed()) { cost in
+                HStack {
+                    Text(cost.name)
+                    Spacer()
+                    Text(String(cost.value))
+                    Spacer()
+                    Text(dateToString(date: cost.creationDate))
+                }.background(cost.type == .tax ? Color.red : Color.blue)
             }
-        }
-        .navigationBarTitle("Other vehicle costs", displayMode: .inline)
-        .navigationBarItems(trailing:
-                                Button(action: { self.isPresented.toggle() }, label: {
-                                    Image(systemName: "plus.circle")
-                                }))
-        .sheet(isPresented: $isPresented) {
-            NavigationView {
-                AddCostView(costData: $newCostData)
-                    .navigationBarItems(leading: Button("Dismiss") {
-                        newCostData = OtherCost.Data()
-                        isPresented = false
-                    }, trailing: Button("Save") {
-                        if true { // replace true pelas condições de salvar os dados
-                            // TO DO: pode arredondar a double do valor para 2 centavos
-                            // TO DO: nao deixar salvar se for um numero
-                            // TO DO: ver se dá pra impedir a parada da virgula
-                            let newCost = OtherCost(type: newCostData.type, value: newCostData.value, name: newCostData.name)
-                            tracker.otherCosts.append(newCost)
+            .navigationBarTitle("Other vehicle costs", displayMode: .inline)
+            .navigationBarItems(trailing:
+                                    Button(action: { self.isPresented.toggle() }, label: {
+                                        Image(systemName: "plus.circle")
+                                    }))
+            .sheet(isPresented: $isPresented) {
+                NavigationView {
+                    AddCostView(costData: $newCostData)
+                        .navigationBarItems(leading: Button("Dismiss") {
                             newCostData = OtherCost.Data()
                             isPresented = false
-                        } else {
-                            // mostrar ajuda para preencher o numero
-                        }
-                    })
+                        }, trailing: Button("Save") {
+                            if true { // replace true pelas condições de salvar os dados
+                                // TO DO: pode arredondar a double do valor para 2 centavos
+                                // TO DO: nao deixar salvar se for um numero
+                                // TO DO: ver se dá pra impedir a parada da virgula
+                                let newCost = OtherCost(type: newCostData.type, value: newCostData.value, name: newCostData.name)
+                                tracker.otherCosts.append(newCost)
+                                newCostData = OtherCost.Data()
+                                isPresented = false
+                            } else {
+                                // mostrar ajuda para preencher o numero
+                            }
+                        })
+                }
             }
+            .onChange(of: scenePhase) { phase in
+                if phase == .inactive { saveAction() }
         }
-        .onChange(of: scenePhase) { phase in
-            if phase == .inactive { saveAction() }
         }
     }
 }
@@ -68,6 +70,8 @@ extension OtherCostsView {
 
 struct OtherCostsView_Previews: PreviewProvider {
     static var previews: some View {
-        OtherCostsView(tracker: MileageTracker(), saveAction: {})
+        let view = OtherCostsView(tracker: MileageTracker(), saveAction: {})
+        view.tracker.otherCosts = OtherCost.data
+        return view
     }
 }
