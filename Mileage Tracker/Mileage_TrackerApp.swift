@@ -21,6 +21,7 @@ struct Mileage_TrackerApp: App {
                     OtherCostsView(tracker: tracker){
                         tracker.save()
                     }
+                    GraphicsView(tracker: tracker)
                 }
             }
             .onAppear {

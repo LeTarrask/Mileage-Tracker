@@ -18,33 +18,6 @@ struct MileageView: View {
     
     var body: some View {
         VStack {
-            
-            // MARK: - Averages display
-            ZStack {
-                Color.blue
-                    .frame(maxHeight: 140)
-                    .cornerRadius(15)
-                    .shadow(color: .black, radius: 3, x: 2, y: 1)
-                VStack(alignment: .leading) {
-                    Text("Total KM: \(tracker.totalKM.clean) km")
-                    Text("Average consumption: \(tracker.averageConsumption) km/L")
-                    Text("Average spending: \(tracker.averageSpending) km/€")
-                    Text("Total fuel spending: \(tracker.totalSpending) €")
-                    Text("Average Fuel Price: \(tracker.averagePrice) €/l")
-                }
-                .foregroundColor(.white)
-            }.padding(15)
-            
-            // MARK: - other info views
-            
-            HStack {
-                NavigationLink(
-                    destination: GraphicsView(tracker: tracker),
-                    label: {
-                        Text("Graphics")
-                    })
-            }
-            
             // MARK: - Refuels list
             List{
                 ForEach(tracker.refuels, id: \.self) { refuel in
