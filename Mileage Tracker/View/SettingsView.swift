@@ -11,7 +11,17 @@ struct SettingsView: View {
     @ObservedObject var tracker: MileageTracker
     
     var body: some View {
-        Text("Hello, World!")
+        Form {
+            Section(header: Text("Reset app")) {
+                Button(action: {
+                        tracker.refuels = [Refuel]()
+                        tracker.otherCosts = [OtherCost]()
+                        tracker.save() }, label: {
+                    Text("Delete all app data")
+                })
+                
+            }
+        }
     }
 }
 
