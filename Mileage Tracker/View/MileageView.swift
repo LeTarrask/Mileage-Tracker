@@ -28,7 +28,7 @@ struct MileageView: View {
                                 RefuelCardView(refuel: refuel)
                             })
                     }.onDelete(perform: removeItem)
-                }
+                }.padding(.horizontal, -20)
             }
             .navigationBarTitle("Mileage Tracker", displayMode: .inline)
             .navigationBarItems(trailing:
