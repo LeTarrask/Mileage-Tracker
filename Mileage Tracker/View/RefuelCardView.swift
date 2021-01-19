@@ -65,8 +65,16 @@ struct RefuelCardView: View {
                         Text("€")
                     }.font(.subheadline)
                 }
+            }.padding(.bottom)
+            HStack {
+                Text("Price per liter:")
+                    .font(.headline)
+                HStack {
+                    Text(refuel.pricePerLiter)
+                    Text("€")
+                }
             }
-        }
+        }.padding(.bottom)
     }
 }
 
