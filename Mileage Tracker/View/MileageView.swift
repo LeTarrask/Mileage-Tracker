@@ -22,12 +22,7 @@ struct MileageView: View {
                 // MARK: - Refuels list
                 List{
                     ForEach(tracker.refuels.reversed(), id: \.self) { refuel in
-                        RefuelCardView(refuel: refuel)
-//                        NavigationLink(
-//                            destination: RefuelDetail(refuel: refuel),
-//                            label: {
-//
-//                            })
+                        RefuelCardView(refuel: refuel, average: tracker.averagePrice)
                     }.onDelete(perform: removeItem)
                 }.padding(.horizontal, -20)
             }

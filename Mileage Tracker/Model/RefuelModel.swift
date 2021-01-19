@@ -24,23 +24,9 @@ public struct Refuel: Hashable, Codable, Identifiable {
         self.creationDate = creationDate
         self.kmAdded = kmAdded
     }
-
-    // TO DO: VARIABLES TO STRING - these could move to View
-    var kmString: String {
-        return String(Int(round(totalKM)))
-    }
     
-    var literString: String {
-        return String(liters.rounded(toPlaces: 2))
-    }
-    
-    var moneyString: String {
-        return String(money.rounded(toPlaces: 2))
-    }
-    
-    var pricePerLiter: String {
-        let price = money/liters
-        return String(price.rounded(toPlaces: 2))
+    var pricePerLiter: Double {
+        (money/liters).rounded(toPlaces: 2)
     }
 }
 

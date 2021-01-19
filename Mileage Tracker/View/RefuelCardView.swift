@@ -10,6 +10,8 @@ import SwiftUI
 struct RefuelCardView: View {
     var refuel: Refuel
     
+    var average: Double
+    
     var formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -31,7 +33,7 @@ struct RefuelCardView: View {
                         .font(.caption)
                         .fontWeight(.bold)
                     HStack {
-                        Text(refuel.kmString)
+                        Text(String(refuel.totalKM))
                         Text("km")
                     }.font(.subheadline)
                 }
@@ -51,7 +53,7 @@ struct RefuelCardView: View {
                         .font(.caption)
                         .fontWeight(.bold)
                     HStack {
-                        Text(refuel.literString)
+                        Text(String(refuel.liters))
                         Text("L")
                     }.font(.subheadline)
                 }
@@ -61,7 +63,7 @@ struct RefuelCardView: View {
                         .font(.caption)
                         .fontWeight(.bold)
                     HStack {
-                        Text(refuel.moneyString)
+                        Text(String(refuel.money))
                         Text("€")
                     }.font(.subheadline)
                 }
@@ -70,7 +72,15 @@ struct RefuelCardView: View {
                 Text("Price per liter:")
                     .font(.headline)
                 HStack {
-                    Text(refuel.pricePerLiter)
+                    Text(String(refuel.pricePerLiter))
+                    Text("€")
+                }
+            }
+            HStack {
+                Text("Difference from average:")
+                    .font(.headline)
+                HStack {
+                    Text(String((refuel.pricePerLiter-average).rounded(toPlaces: 2)))
                     Text("€")
                 }
             }
@@ -81,6 +91,6 @@ struct RefuelCardView: View {
 struct RefuelCardView_Previews: PreviewProvider {    
     static var previews: some View {
         let refuel = Refuel(totalKM: 2329, liters: 23.99, money: 23.09, kmAdded: 123)
-        return RefuelCardView(refuel: refuel)
+        return RefuelCardView(refuel: refuel, average: 1.45)
     }
 }
