@@ -11,26 +11,18 @@ struct RefuelDetail: View {
     var refuel: Refuel
     
     var body: some View {
-        VStack {
-            VStack(alignment: .leading) {
-                Text("Refuelled at:")
-                Text(getDate(date: refuel.creationDate))
-            }
+        VStack(alignment: .leading) {
             RefuelCardView(refuel: refuel)
-            VStack(alignment: .leading) {
+                .padding(.vertical, 20)
+            HStack {
                 Text("Price per liter:")
+                    .font(.headline)
                 HStack {
                     Text(refuel.pricePerLiter)
                     Text("€")
                 }
             }
         }
-    }
-    
-    func getDate(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm E, d MMM y"
-        return dateFormatter.string(from: date)
     }
 }
 

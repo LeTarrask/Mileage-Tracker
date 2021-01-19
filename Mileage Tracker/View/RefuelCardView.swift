@@ -45,6 +45,7 @@ struct RefuelCardView: View {
                         Text("km")
                     }.font(.subheadline)
                 }
+                Spacer()
                 VStack {
                     Text("Fuel")
                         .font(.caption)
