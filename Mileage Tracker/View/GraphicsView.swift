@@ -23,11 +23,11 @@ struct GraphicsView: View {
                         .cornerRadius(15)
                         .shadow(color: .black, radius: 3, x: 2, y: 1)
                     VStack(alignment: .leading) {
-                        Text("Total KM: \(tracker.totalKM.clean) km")
-                        Text("Average consumption: \(tracker.averageConsumption) km/L")
-                        Text("Average spending: \(tracker.averageSpending) km/€")
-                        Text("Total fuel spending: \(tracker.totalSpending) €")
-                        Text("Average Fuel Price: \(tracker.averagePrice) €/l")
+                        Text("Total KM: " + String(tracker.totalKM.clean) + " km")
+                        Text("Average consumption: " + String(tracker.averageConsumption) + " km/L")
+                        Text("Average spending: " + String(tracker.averageSpending) + " km/€")
+                        Text("Total fuel spending: " + String(tracker.totalSpending) + " €")
+                        Text("Average Fuel Price: " + String(tracker.averagePrice) + " €/l")
                     }
                     .foregroundColor(.white)
                 }.padding(15)

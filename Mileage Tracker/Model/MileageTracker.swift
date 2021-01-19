@@ -95,7 +95,7 @@ class MileageTracker: ObservableObject {
         }
     }
     
-    var averageConsumption: String {
+    var averageConsumption: Double {
         get {
             var average = 0.0
             if refuels.count > 1 {
@@ -106,11 +106,11 @@ class MileageTracker: ObservableObject {
                 average = ((totalKM ?? 0.0) / totalLiters).rounded(toPlaces: 2)
             }
             
-            return String(average)
+            return average
         }
     }
     
-    var averageSpending: String {
+    var averageSpending: Double {
         get {
             var average = 0.0
             if refuels.count > 1 {
@@ -120,11 +120,11 @@ class MileageTracker: ObservableObject {
                     .reduce(0) {$0 + $1}
                 average = ((totalKM ?? 0.0) / totalMoney).rounded(toPlaces: 2)
             }
-            return String(average)
+            return average
         }
     }
     
-    var totalSpending: String {
+    var totalSpending: Double {
         get {
             var total = 0.0
             if refuels.count > 1 {
@@ -133,11 +133,11 @@ class MileageTracker: ObservableObject {
                     .reduce(0) {$0 + $1}
                 total = totalMoney.rounded(toPlaces: 2)
             }
-            return String(total)
+            return total
         }
     }
     
-    var averagePrice: String {
+    var averagePrice: Double {
         get {
             var average = 0.0
             if refuels.count > 1 {
@@ -149,7 +149,7 @@ class MileageTracker: ObservableObject {
                     .reduce(0) {$0 + $1}
                 average = (totalMoney / totalLiters).rounded(toPlaces: 2)
             }
-            return String(average)
+            return average
         }
     }
     
