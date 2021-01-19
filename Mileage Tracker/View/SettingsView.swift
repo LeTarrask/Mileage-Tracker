@@ -20,9 +20,9 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("Feedback")) {
-                    Button("Rate us on the App Store") { openURL(URL(string: "https://www.tarrask.com")!) }
-                    Button("Take a survey") { openURL(URL(string: "https://www.tarrask.com")!) }
-                    Button("Talk to the developer") { openURL(URL(string: "https://www.tarrask.com")!) }
+                    Button("Rate us on the App Store") { openURL(URL(string: "https://www.tarrask.com")!) } // URL here FPO
+                    Button("Take a survey") { openURL(URL(string: "https://www.tarrask.com")!) } // URL here FPO
+                    Button("Talk to the developer") { openURL(URL(string: "https://www.tarrask.com")!) } // URL here FPO
                 }
                 
                 Section(header: Text("Reset app")) {
