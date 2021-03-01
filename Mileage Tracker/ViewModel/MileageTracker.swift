@@ -31,6 +31,13 @@ class MileageTracker: ObservableObject {
     
     @Published var otherCosts: [OtherCost] = [OtherCost]()
     
+    func receiveNew(_ data: Refuel.Data) {
+        // https://www.hackingwithswift.com/forums/swiftui/swiftui-how-can-calculations-in-swift-recognise-comma-and-not-only-decimal-point/301
+        // help to sanitize money input
+        let newRefuel = Refuel(totalKM: data.totalKM, liters: data.liters, money: data.money, kmAdded: data.totalKM - self.totalKM)
+        refuels.append(newRefuel)
+    }
+    
     func load() {
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let data = try? Data(contentsOf: Self.refuelsURL) else {

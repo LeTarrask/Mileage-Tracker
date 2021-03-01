@@ -36,8 +36,7 @@ struct MileageView: View {
                         .navigationBarItems(leading: Button("Dismiss") {
                             isPresented = false
                         }, trailing: Button("Save") {
-                            let newRefuel = Refuel(totalKM: newRefuelData.totalKM, liters: newRefuelData.liters, money: newRefuelData.money, kmAdded: newRefuelData.totalKM - tracker.totalKM)
-                            tracker.refuels.append(newRefuel)
+                            tracker.receiveNew(newRefuelData)
                             newRefuelData = Refuel.Data() // resets refuel data storage
                             isPresented = false
                         })
