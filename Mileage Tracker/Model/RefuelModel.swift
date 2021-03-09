@@ -15,7 +15,6 @@ public struct Refuel: Hashable, Codable, Identifiable {
     var creationDate: Date
     var kmAdded: Double
 
-    
     init(id: UUID = UUID(), totalKM: Double, liters: Double, money: Double, creationDate: Date = Date(), kmAdded: Double) {
         self.id = id
         self.totalKM = totalKM
@@ -31,6 +30,7 @@ public struct Refuel: Hashable, Codable, Identifiable {
 }
 
 extension Refuel {
+    /// Provides an empty struct that's used to receive editable user's input before storage
     struct Data {
         var totalKM: Double = 0
         var liters: Double = 0
@@ -71,6 +71,7 @@ extension Refuel {
 }
 
 extension Refuel {
+    /// Provides fake data for testing purposes
     static var data: [Refuel] {
         [
             Refuel(totalKM: 194, liters: 6.5, money: 9.28, kmAdded: 194),
