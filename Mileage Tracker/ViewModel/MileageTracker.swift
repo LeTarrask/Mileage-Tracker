@@ -8,6 +8,24 @@
 import SwiftUI
 
 class MileageTracker: ObservableObject {
+    /// A class to log and store in memory all information regarding refuelling and other vehicle costs.
+    @Published var refuels: [Refuel] = [Refuel]()
+    
+    @Published var otherCosts: [OtherCost] = [OtherCost]()
+    
+    /// This method receives a data parameter from the view and adds it to our database
+    /// - Parameter data: data contains kilometers, liters, and money paid in refuel, and calculates totalKm for the vehicle
+    func receiveNew(_ data: Refuel.Data) {
+        
+        // https://www.hackingwithswift.com/forums/swiftui/swiftui-how-can-calculations-in-swift-recognise-comma-and-not-only-decimal-point/301
+        // help to sanitize money input
+        let newRefuel = Refuel(totalKM: data.totalKM, liters: data.liters, money: data.money, kmAdded: data.totalKM - self.totalKM)
+        refuels.append(newRefuel)
+    }
+    
+    
+    /// These 3 properties (documentsFolder, refuelsURL and costsURL are used to define where our app info is stored.
+    /// These two methods (load() and save() are responsible for converting and storing our information in JSON
     private static var documentsFolder: URL {
         do {
             return try FileManager.default.url(for: .documentDirectory,
@@ -25,17 +43,6 @@ class MileageTracker: ObservableObject {
     
     private static var costsURL: URL {
         return documentsFolder.appendingPathComponent("costs.data")
-    }
-    
-    @Published var refuels: [Refuel] = [Refuel]()
-    
-    @Published var otherCosts: [OtherCost] = [OtherCost]()
-    
-    func receiveNew(_ data: Refuel.Data) {
-        // https://www.hackingwithswift.com/forums/swiftui/swiftui-how-can-calculations-in-swift-recognise-comma-and-not-only-decimal-point/301
-        // help to sanitize money input
-        let newRefuel = Refuel(totalKM: data.totalKM, liters: data.liters, money: data.money, kmAdded: data.totalKM - self.totalKM)
-        refuels.append(newRefuel)
     }
     
     func load() {
@@ -101,7 +108,11 @@ class MileageTracker: ObservableObject {
             }
         }
     }
-    
+}
+
+extension MileageTracker {
+    /// These properties generate the strings for the average consumption, spending, dates, etc,
+    /// to be presented in the views
     var averageConsumption: Double {
         get {
             var average = 0.0
