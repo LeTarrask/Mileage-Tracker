@@ -8,6 +8,7 @@
 import Foundation
 
 struct OtherCost: Hashable, Identifiable, Codable {
+    /// A data storage type to save other kinds of costs a vehicle may have.
     var id: UUID
     var type: CostType
     var value: Double
@@ -57,47 +58,49 @@ struct OtherCost: Hashable, Identifiable, Codable {
         }
     }
 }
-    
-    
-    
-    extension OtherCost {
-        struct Data {
-            var type: CostType = .maintenance
-            var value: Double = 0
-            var name: String = ""
-            
-            var valueString: String = "" {
-                didSet {
-                    value = number(for: valueString)
-                }
-            }
-            
-            func number(for string: String) -> Double {
-                let nf = NumberFormatter()
-                
-                return nf.number(from: string)?.doubleValue ?? 0.0
+
+
+
+extension OtherCost {
+    /// Provides an empty othercost that can be edited by the user before being stored permanently in the model
+    struct Data {
+        var type: CostType = .maintenance
+        var value: Double = 0
+        var name: String = ""
+        
+        var valueString: String = "" {
+            didSet {
+                value = number(for: valueString)
             }
         }
         
-        var data: Data {
-            return Data(type: type, value: value, name: name)
-        }
-        
-        mutating func update(from data: Data) {
-            type = data.type
-            value = data.value
-            name = data.name
+        func number(for string: String) -> Double {
+            let nf = NumberFormatter()
+            
+            return nf.number(from: string)?.doubleValue ?? 0.0
         }
     }
     
-    extension OtherCost {
-        static var data: [OtherCost] {
-            [
-                OtherCost(type: .tax, value: 200, name: "IVA"),
-                OtherCost(type: .maintenance, value: 20.1, name: "Revisao"),
-                OtherCost(type: .tax, value: 43, name: "Selo"),
-                OtherCost(type: .tax, value: 9.9, name: "Multa"),
-                OtherCost(type: .maintenance, value: 12.3, name: "Troca Oleo")
-            ]
-        }
+    var data: Data {
+        return Data(type: type, value: value, name: name)
     }
+    
+    mutating func update(from data: Data) {
+        type = data.type
+        value = data.value
+        name = data.name
+    }
+}
+
+extension OtherCost {
+    /// Provides fake data for testing purposes
+    static var data: [OtherCost] {
+        [
+            OtherCost(type: .tax, value: 200, name: "IVA"),
+            OtherCost(type: .maintenance, value: 20.1, name: "Revisao"),
+            OtherCost(type: .tax, value: 43, name: "Selo"),
+            OtherCost(type: .tax, value: 9.9, name: "Multa"),
+            OtherCost(type: .maintenance, value: 12.3, name: "Troca Oleo")
+        ]
+    }
+}
