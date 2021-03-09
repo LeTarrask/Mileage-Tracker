@@ -24,6 +24,8 @@
 		7985564D24C84D8300544777 /* AddRefuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564C24C84D8300544777 /* AddRefuel.swift */; };
 		79DA782425AF1CEF009E0FFC /* RefuelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA782325AF1CEF009E0FFC /* RefuelModel.swift */; };
 		79DA783225AF4801009E0FFC /* RefuelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA783125AF4801009E0FFC /* RefuelCardView.swift */; };
+		79FCD1C025F7D23A007F08FB /* English.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79FCD1C225F7D23A007F08FB /* English.strings */; };
+		79FCD1CB25F7D2C8007F08FB /* Portuguese.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79FCD1CD25F7D2C8007F08FB /* Portuguese.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		7985564C24C84D8300544777 /* AddRefuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRefuel.swift; sourceTree = "<group>"; };
 		79DA782325AF1CEF009E0FFC /* RefuelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelModel.swift; sourceTree = "<group>"; };
 		79DA783125AF4801009E0FFC /* RefuelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelCardView.swift; sourceTree = "<group>"; };
+		79FCD1C125F7D23A007F08FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/English.strings; sourceTree = "<group>"; };
+		79FCD1CC25F7D2C8007F08FB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Portuguese.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 				7925077625EA639B007315ED /* ViewModel */,
 				7985564E24C8608800544777 /* Model */,
 				7913789325B1F29500871ECE /* Extensions */,
+				79FCD1BF25F7D216007F08FB /* Localization */,
 				7985562324C8476000544777 /* Assets.xcassets */,
 				7985562524C8476000544777 /* Preview Content */,
 			);
@@ -192,6 +197,15 @@
 				7913791925B5FA1F00871ECE /* SettingsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		79FCD1BF25F7D216007F08FB /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				79FCD1C225F7D23A007F08FB /* English.strings */,
+				79FCD1CD25F7D2C8007F08FB /* Portuguese.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +296,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 7985561324C8475E00544777;
 			packageReferences = (
@@ -304,6 +319,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7985562724C8476000544777 /* Preview Assets.xcassets in Resources */,
+				79FCD1CB25F7D2C8007F08FB /* Portuguese.strings in Resources */,
+				79FCD1C025F7D23A007F08FB /* English.strings in Resources */,
 				7985562424C8476000544777 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +391,25 @@
 			targetProxy = 7985563924C8476000544777 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		79FCD1C225F7D23A007F08FB /* English.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79FCD1C125F7D23A007F08FB /* en */,
+			);
+			name = English.strings;
+			sourceTree = "<group>";
+		};
+		79FCD1CD25F7D2C8007F08FB /* Portuguese.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79FCD1CC25F7D2C8007F08FB /* pt-BR */,
+			);
+			name = Portuguese.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7985563F24C8476000544777 /* Debug */ = {

@@ -27,7 +27,7 @@ struct OtherCostsView: View {
                     Text(dateToString(date: cost.creationDate))
                 }.background(cost.type == .tax ? Color.red : Color.blue)
             }
-            .navigationBarTitle("Other vehicle costs", displayMode: .inline)
+            .navigationBarTitle(NSLocalizedString("Other vehicle costs", comment: ""), displayMode: .inline)
             .navigationBarItems(trailing:
                                     Button(action: { self.isPresented.toggle() }, label: {
                                         Image(systemName: "plus.circle")
@@ -35,10 +35,10 @@ struct OtherCostsView: View {
             .sheet(isPresented: $isPresented) {
                 NavigationView {
                     AddCostView(costData: $newCostData)
-                        .navigationBarItems(leading: Button("Dismiss") {
+                        .navigationBarItems(leading: Button(NSLocalizedString("Dismiss", comment: "")) {
                             newCostData = OtherCost.Data()
                             isPresented = false
-                        }, trailing: Button("Save") {
+                        }, trailing: Button(NSLocalizedString("Save", comment: "")) {
                             if true { // replace true pelas condições de salvar os dados
                                 // TO DO: pode arredondar a double do valor para 2 centavos
                                 // TO DO: nao deixar salvar se for um numero

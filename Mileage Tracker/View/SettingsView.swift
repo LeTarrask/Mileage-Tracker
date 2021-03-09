@@ -15,18 +15,18 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Share Mileage Tracker")) {
-                    Button("Copy App Link") { openURL(URL(string: "https://www.tarrask.com")!) }
+                Section(header: Text(NSLocalizedString("Share Mileage Tracker", comment: ""))) {
+                    Button(NSLocalizedString("Copy App Link", comment: "")) { openURL(URL(string: "https://www.tarrask.com")!) }
                 }
                 
-                Section(header: Text("Feedback")) {
-                    Button("Rate us on the App Store") { openURL(URL(string: "https://www.tarrask.com")!) } // URL here FPO
-                    Button("Take a survey") { openURL(URL(string: "https://www.tarrask.com")!) } // URL here FPO
-                    Button("Talk to the developer") { openURL(URL(string: "https://www.tarrask.com")!) } // URL here FPO
+                Section(header: Text(NSLocalizedString("Feedback", comment: ""))) {
+                    Button(NSLocalizedString("Rate us on the App Store", comment: "")) { openURL(URL(string: "https://www.tarrask.com")!) } // URL here FPO
+                    Button(NSLocalizedString("Take a survey", comment: "")) { openURL(URL(string: "https://www.tarrask.com")!) } // URL here FPO
+                    Button(NSLocalizedString("Talk to the developer", comment: "")) { openURL(URL(string: "https://www.tarrask.com")!) } // URL here FPO
                 }
                 
-                Section(header: Text("Reset app")) {
-                    Button("Delete all app data") {
+                Section(header: Text(NSLocalizedString("Reset app", comment: ""))) {
+                    Button(NSLocalizedString("Delete all app data", comment: "")) {
                         tracker.refuels = [Refuel]()
                         tracker.otherCosts = [OtherCost]()
                         tracker.save()
@@ -34,8 +34,8 @@ struct SettingsView: View {
                 }
                 
                 // Comment this section to publish app
-                Section(header: Text("Test data")) {
-                    Button("Load test data") {
+                Section(header: Text(NSLocalizedString("Test data", comment: ""))) {
+                    Button(NSLocalizedString("Load test data", comment: "")) {
                         tracker.refuels = Refuel.data
                         tracker.otherCosts = OtherCost.data
                         tracker.save()
@@ -43,7 +43,7 @@ struct SettingsView: View {
                 }
             }
             .accentColor(.red)
-            .navigationBarTitle("App Settings", displayMode: .inline)
+            .navigationBarTitle(NSLocalizedString("App Settings", comment: ""), displayMode: .inline)
         }
     }
 }

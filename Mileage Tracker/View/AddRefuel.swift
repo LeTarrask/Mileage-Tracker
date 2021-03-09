@@ -15,24 +15,24 @@ struct AddRefuel: View {
       
     var body: some View {
         Form {
-            Section(header: Text("Add refuel info")) {
+            Section(header: Text(NSLocalizedString("Add refuel info", comment: ""))) {
                 // MARK: - KM
                 HStack {
-                    Text("Kilometers")
+                    Text(NSLocalizedString("Kilometers", comment: ""))
                     Spacer()
                     TextField("", text: $refuelData.kmString)
                         .keyboardType(.decimalPad)
                 }
                 // MARK: - Liters
                 HStack {
-                    Text("Liters")
+                    Text(NSLocalizedString("Liters", comment: ""))
                     Spacer()
                     TextField("", text: $refuelData.litersString)
                         .keyboardType(.decimalPad)
                 }
                 // MARK: - Cost
                 HStack {
-                    Text("Refuel Cost")
+                    Text(NSLocalizedString("Refuel Cost", comment: ""))
                     Spacer()
                     TextField("", text: $refuelData.moneyString)
                         .keyboardType(.decimalPad)

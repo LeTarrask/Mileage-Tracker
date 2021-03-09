@@ -26,16 +26,16 @@ struct MileageView: View {
                     }.onDelete(perform: removeItem)
                 }.padding(.horizontal, -20)
             }
-            .navigationBarTitle("Mileage Tracker", displayMode: .inline)
+            .navigationBarTitle(NSLocalizedString("Mileage Tracker", comment: ""), displayMode: .inline)
             .navigationBarItems(trailing:
                                     Button(action: { self.isPresented.toggle() },
                                 label: { Image(systemName: "plus.circle") }))
             .sheet(isPresented: $isPresented) {
                 NavigationView {
                     AddRefuel(refuelData: $newRefuelData)
-                        .navigationBarItems(leading: Button("Dismiss") {
+                        .navigationBarItems(leading: Button(NSLocalizedString("Dismiss", comment: "")) {
                             isPresented = false
-                        }, trailing: Button("Save") {
+                        }, trailing: Button(NSLocalizedString("Save", comment: "")) {
                             tracker.receiveNew(newRefuelData)
                             newRefuelData = Refuel.Data() // resets refuel data storage
                             isPresented = false

@@ -15,19 +15,19 @@ struct AddCostView: View {
     var body: some View {
         Form {
             HStack {
-                Text("Cost Name")
+                Text(NSLocalizedString("Cost Name", comment: ""))
                 Spacer()
                 TextField("", text: $costData.name)
                     .keyboardType(.alphabet)
             }
-            Picker(selection: $selection, label: Text("Cost type")) {
+            Picker(selection: $selection, label: Text(NSLocalizedString("Cost type", comment: ""))) {
                 ForEach(OtherCost.CostType.allCases, id: \.self) { type in
                     Text(type.rawValue)
                     // TO DO: have this selection update to costData.type
                 }
             }
             HStack {
-                Text("Cost Value")
+                Text(NSLocalizedString("Cost Value", comment: ""))
                 Spacer()
                 TextField("", text: $costData.valueString)
                     .keyboardType(.decimalPad)

@@ -22,66 +22,66 @@ struct RefuelCardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("Refuel at: ")
+                Text(NSLocalizedString("Refuel at: ", comment: ""))
                     .font(.headline)
                 Text(formatter.string(from: refuel.creationDate))
                     .font(.caption)
             }.padding(.bottom)
             HStack(alignment: .center) {
                 VStack {
-                    Text("Total")
+                    Text(NSLocalizedString("Total", comment: ""))
                         .font(.caption)
                         .fontWeight(.bold)
                     HStack {
                         Text(String(refuel.totalKM))
-                        Text("km")
+                        Text(NSLocalizedString("km", comment: ""))
                     }.font(.subheadline)
                 }
                 Spacer()
                 VStack {
-                    Text("Since last")
+                    Text(NSLocalizedString("Since last", comment: ""))
                         .font(.caption)
                         .fontWeight(.bold)
                     HStack {
                         Text(String(refuel.kmAdded.clean))
-                        Text("km")
+                        Text(NSLocalizedString("km", comment: ""))
                     }.font(.subheadline)
                 }
                 Spacer()
                 VStack {
-                    Text("Fuel")
+                    Text(NSLocalizedString("Fuel", comment: ""))
                         .font(.caption)
                         .fontWeight(.bold)
                     HStack {
                         Text(String(refuel.liters))
-                        Text("L")
+                        Text(NSLocalizedString("L", comment: ""))
                     }.font(.subheadline)
                 }
                 Spacer()
                 VStack {
-                    Text("Payment")
+                    Text(NSLocalizedString("Payment", comment: ""))
                         .font(.caption)
                         .fontWeight(.bold)
                     HStack {
                         Text(String(refuel.money))
-                        Text("€")
+                        Text(NSLocalizedString("€", comment: ""))
                     }.font(.subheadline)
                 }
             }.padding(.bottom)
             HStack {
-                Text("Price per liter:")
+                Text(NSLocalizedString("Price per liter:", comment: ""))
                     .font(.headline)
                 HStack {
                     Text(String(refuel.pricePerLiter))
-                    Text("€")
+                    Text(NSLocalizedString("€", comment: ""))
                 }
             }
             HStack {
-                Text("Difference from average:")
+                Text(NSLocalizedString("Difference from average:", comment: ""))
                     .font(.headline)
                 HStack {
                     Text(String((refuel.pricePerLiter-average).rounded(toPlaces: 2)))
-                    Text("€")
+                    Text(NSLocalizedString("€", comment: ""))
                 }
             }
         }.padding(.bottom)

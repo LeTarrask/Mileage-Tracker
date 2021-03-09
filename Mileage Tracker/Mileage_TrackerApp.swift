@@ -18,23 +18,23 @@ struct Mileage_TrackerApp: App {
                         tracker.save()
                     }.tabItem {
                         Image(systemName: "drop.fill")
-                        Text("Refuels")
+                        Text(NSLocalizedString("Refuels", comment: ""))
                     }
                     OtherCostsView(tracker: tracker){
                         tracker.save()
                     }.tabItem {
                         Image(systemName: "wrench.and.screwdriver")
-                        Text("Other costs")
+                        Text(NSLocalizedString("Other costs", comment: ""))
                     }
                     GraphicsView(tracker: tracker)
                         .tabItem {
                             Image(systemName: "list.star")
-                            Text("Stats")
+                            Text(NSLocalizedString("Stats", comment: ""))
                         }
                     SettingsView(tracker: tracker)
                         .tabItem {
                             Image(systemName: "gearshape")
-                            Text("Settings")
+                            Text(NSLocalizedString("Settings", comment: ""))
                         }
                 }.edgesIgnoringSafeArea(.top)
             .onAppear {

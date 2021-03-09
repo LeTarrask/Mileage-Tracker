@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  Mileage Tracker
+
+  Created by Alex Luna on 09/03/2021.
+  
+*/
+
+// Main App View
+"Refuels" = "Refuels";
+"Other costs" = "Other costs";
+"Stats" = "Stats";
+"Settings" = "Settings";
+
+// Mileage View
+"Mileage Tracker" = "Mileage Tracker";
+"Dismiss" = "Dismiss";
+"Save" = "Save";
+
+// RefuelCardView
+"Refuel at: " = "Refuel at: ";
+"Total" = "Total";
+"km" = "km";
+"Since last" = "Since last";
+"Fuel" = "Fuel";
+"L" = "L";
+"Payment" = "Payment";
+"€" = "€";
+"Price per liter:" = "Price per liter:";
+"Difference from average:" = "Difference from average:";
+
+// AddRefuel
+"Add refuel info" = "Add refuel info";
+"Kilometers" = "Kilometers";
+"Liters" = "Liters";
+"Refuel Cost" = "Refuel Cost";
+
+// TO DO:
+// GraphicsView
+
+// OtherCostsView
+"Other vehicle costs" = "Other vehicle costs";
+
+// AddCostView
+"Cost Name" = "Cost Name";
+"Cost type" = "Cost type";
+"Cost Value" = "Cost Value";
+
+// SettingsView
+"Share Mileage Tracker" = "Share Mileage Tracker";
+"Copy App Link" = "Copy App Link";
+"Feedback" = "Feedback";
+"Rate us on the App Store" = "Rate us on the App Store";
+"Take a survey" = "Take a survey";
+"Talk to the developer" = "Talk to the developer";
+"Reset app" = "Reset app";
+"Delete all app data" = "Delete all app data";
+"Test data" = "Test data";
+"Load test data" = "Load test data";
+"App Settings" = "App Settings";
