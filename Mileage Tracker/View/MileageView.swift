@@ -29,7 +29,7 @@ struct MileageView: View {
             .navigationBarTitle(NSLocalizedString("Mileage Tracker", comment: ""), displayMode: .inline)
             .navigationBarItems(trailing:
                                     Button(action: { self.isPresented.toggle() },
-                                label: { Image(systemName: "plus.circle") }))
+                                           label: { PlusButton() }))
             .sheet(isPresented: $isPresented) {
                 NavigationView {
                     AddRefuel(refuelData: $newRefuelData)
@@ -44,12 +44,25 @@ struct MileageView: View {
             }
             .onChange(of: scenePhase) { phase in
                 if phase == .inactive { saveAction() }
-        }
+            }
         }
     }
 
     func removeItem(at offsets: IndexSet) {
         tracker.refuels.remove(atOffsets: offsets)
+    }
+}
+
+struct PlusButton: View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 9)
+                .fill(Color("Yellowish"))
+                .frame(width: 30, height: 30)
+                .shadow(color: Color.black.opacity(0.2), radius: 4, x: 7, y: 5)
+            Image(systemName: "plus")
+                .foregroundColor(Color("Redder"))
+        }
     }
 }
 

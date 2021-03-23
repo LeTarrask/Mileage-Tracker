@@ -9,9 +9,9 @@ import SwiftUI
 
 struct RefuelCardView: View {
     var refuel: Refuel
-    
+
     var average: Double
-    
+
     var formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -22,7 +22,9 @@ struct RefuelCardView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 15.0)
-                .fill(LinearGradient(gradient: Gradient(colors: [Color("Redder"), Color("Wine")]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                .fill(LinearGradient(gradient: Gradient(colors: [Color("Redder"), Color("Wine")]),
+                                     startPoint: .topLeading,
+                                     endPoint: .bottomTrailing))
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
                     Square(icon: "car", number: String(refuel.kmAdded.clean),
