@@ -10,6 +10,12 @@ import SwiftUI
 @main
 struct MileageTrackerApp: App {
     @ObservedObject private var tracker = MileageTracker()
+    
+    /// VIEW STRINGS & URLs
+    let refuelsString = NSLocalizedString("Refuels", comment: "")
+    let otherCostsString = NSLocalizedString("Other costs", comment: "")
+    let statsString = NSLocalizedString("Stats", comment: "")
+    let settingsString = NSLocalizedString("Settings", comment: "")
 
     var body: some Scene {
         WindowGroup {
@@ -18,23 +24,23 @@ struct MileageTrackerApp: App {
                         tracker.save()
                     }.tabItem {
                         Image(systemName: "drop.fill")
-                        Text(NSLocalizedString("Refuels", comment: ""))
+                        Text(refuelsString)
                     }
                     OtherCostsView(tracker: tracker) {
                         tracker.save()
                     }.tabItem {
                         Image(systemName: "wrench.and.screwdriver")
-                        Text(NSLocalizedString("Other costs", comment: ""))
+                        Text(otherCostsString)
                     }
                     GraphicsView(tracker: tracker)
                         .tabItem {
                             Image(systemName: "list.star")
-                            Text(NSLocalizedString("Stats", comment: ""))
+                            Text(statsString)
                         }
                     SettingsView(tracker: tracker)
                         .tabItem {
                             Image(systemName: "gearshape")
-                            Text(NSLocalizedString("Settings", comment: ""))
+                            Text(settingsString)
                         }
                 }.edgesIgnoringSafeArea(.top)
             .onAppear {
