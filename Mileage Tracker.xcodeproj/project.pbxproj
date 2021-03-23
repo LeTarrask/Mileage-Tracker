@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187A8DEB4E9CCC162ACBA669 /* Pods_Mileage_TrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA13BFB12CAF7178529519C /* Pods_Mileage_TrackerTests.framework */; };
+		67F32231D1FC6FEE81AF23C9 /* Pods_Mileage_Tracker_Mileage_TrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09D5AF9E67CC5BF617F3C25 /* Pods_Mileage_Tracker_Mileage_TrackerUITests.framework */; };
 		7913788C25B1F24100871ECE /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913788B25B1F24100871ECE /* Double+String.swift */; };
 		7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913789A25B2030600871ECE /* OtherCostsView.swift */; };
 		791378A025B2032700871ECE /* OtherCosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913789F25B2032700871ECE /* OtherCosts.swift */; };
 		791378A525B208C600871ECE /* AddCostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791378A425B208C600871ECE /* AddCostView.swift */; };
 		7913791A25B5FA2000871ECE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913791925B5FA1F00871ECE /* SettingsView.swift */; };
 		79259C2025B097D6006BD78E /* GraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79259C1F25B097D6006BD78E /* GraphicsView.swift */; };
-		79259C2E25B09E39006BD78E /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 79259C2D25B09E39006BD78E /* SwiftUICharts */; };
+		79259C2E25B09E39006BD78E /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 79259C2D25B09E39006BD78E /* SwiftPackageProductDependency */; };
 		7985562024C8475E00544777 /* Mileage_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985561F24C8475E00544777 /* Mileage_TrackerApp.swift */; };
 		7985562224C8475E00544777 /* MileageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985562124C8475E00544777 /* MileageView.swift */; };
 		7985562424C8476000544777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7985562324C8476000544777 /* Assets.xcassets */; };
@@ -26,6 +28,7 @@
 		79DA783225AF4801009E0FFC /* RefuelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA783125AF4801009E0FFC /* RefuelCardView.swift */; };
 		79FCD1C025F7D23A007F08FB /* English.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79FCD1C225F7D23A007F08FB /* English.strings */; };
 		79FCD1CB25F7D2C8007F08FB /* Portuguese.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79FCD1CD25F7D2C8007F08FB /* Portuguese.strings */; };
+		C6AB7E02767EEEC074BC2321 /* Pods_Mileage_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4448933977A603360CBEAB /* Pods_Mileage_Tracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EC7C05D3E3C27FD88B800B6 /* Pods-Mileage Tracker-Mileage TrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage Tracker-Mileage TrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Mileage Tracker-Mileage TrackerUITests/Pods-Mileage Tracker-Mileage TrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		13483CCC9135077EB39C4F7E /* Pods-Mileage Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage Tracker.release.xcconfig"; path = "Target Support Files/Pods-Mileage Tracker/Pods-Mileage Tracker.release.xcconfig"; sourceTree = "<group>"; };
+		3AA13BFB12CAF7178529519C /* Pods_Mileage_TrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mileage_TrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74ABE09BCE30443369CEE620 /* Pods-Mileage TrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage TrackerTests.release.xcconfig"; path = "Target Support Files/Pods-Mileage TrackerTests/Pods-Mileage TrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		75EE23B03EB1AC05B833D8C7 /* Pods-Mileage Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Mileage Tracker/Pods-Mileage Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		7913788B25B1F24100871ECE /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
 		7913789A25B2030600871ECE /* OtherCostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCostsView.swift; sourceTree = "<group>"; };
 		7913789F25B2032700871ECE /* OtherCosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCosts.swift; sourceTree = "<group>"; };
@@ -70,6 +78,10 @@
 		79DA783125AF4801009E0FFC /* RefuelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelCardView.swift; sourceTree = "<group>"; };
 		79FCD1C125F7D23A007F08FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/English.strings; sourceTree = "<group>"; };
 		79FCD1CC25F7D2C8007F08FB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Portuguese.strings"; sourceTree = "<group>"; };
+		D09D5AF9E67CC5BF617F3C25 /* Pods_Mileage_Tracker_Mileage_TrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mileage_Tracker_Mileage_TrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D77C5CC5F186E7E9390A1A02 /* Pods-Mileage Tracker-Mileage TrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage Tracker-Mileage TrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mileage Tracker-Mileage TrackerUITests/Pods-Mileage Tracker-Mileage TrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB59267BF1F286CAAF22B8B9 /* Pods-Mileage TrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage TrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-Mileage TrackerTests/Pods-Mileage TrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF4448933977A603360CBEAB /* Pods_Mileage_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mileage_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79259C2E25B09E39006BD78E /* SwiftUICharts in Frameworks */,
+				79259C2E25B09E39006BD78E /* BuildFile in Frameworks */,
+				C6AB7E02767EEEC074BC2321 /* Pods_Mileage_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187A8DEB4E9CCC162ACBA669 /* Pods_Mileage_TrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +106,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67F32231D1FC6FEE81AF23C9 /* Pods_Mileage_Tracker_Mileage_TrackerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BA2A3BEECD207DD59C4A5CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75EE23B03EB1AC05B833D8C7 /* Pods-Mileage Tracker.debug.xcconfig */,
+				13483CCC9135077EB39C4F7E /* Pods-Mileage Tracker.release.xcconfig */,
+				D77C5CC5F186E7E9390A1A02 /* Pods-Mileage Tracker-Mileage TrackerUITests.debug.xcconfig */,
+				0EC7C05D3E3C27FD88B800B6 /* Pods-Mileage Tracker-Mileage TrackerUITests.release.xcconfig */,
+				DB59267BF1F286CAAF22B8B9 /* Pods-Mileage TrackerTests.debug.xcconfig */,
+				74ABE09BCE30443369CEE620 /* Pods-Mileage TrackerTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3C078AB59869CEF5F16A8E91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF4448933977A603360CBEAB /* Pods_Mileage_Tracker.framework */,
+				D09D5AF9E67CC5BF617F3C25 /* Pods_Mileage_Tracker_Mileage_TrackerUITests.framework */,
+				3AA13BFB12CAF7178529519C /* Pods_Mileage_TrackerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7913789325B1F29500871ECE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +160,8 @@
 				7985563024C8476000544777 /* Mileage TrackerTests */,
 				7985563B24C8476000544777 /* Mileage TrackerUITests */,
 				7985561D24C8475E00544777 /* Products */,
+				3BA2A3BEECD207DD59C4A5CA /* Pods */,
+				3C078AB59869CEF5F16A8E91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,6 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7985564124C8476000544777 /* Build configuration list for PBXNativeTarget "Mileage Tracker" */;
 			buildPhases = (
+				59DC9A6DEB97CD62A652D124 /* [CP] Check Pods Manifest.lock */,
 				7985561824C8475E00544777 /* Sources */,
 				7985561924C8475E00544777 /* Frameworks */,
 				7985561A24C8475E00544777 /* Resources */,
@@ -225,7 +267,7 @@
 			);
 			name = "Mileage Tracker";
 			packageProductDependencies = (
-				79259C2D25B09E39006BD78E /* SwiftUICharts */,
+				79259C2D25B09E39006BD78E /* SwiftPackageProductDependency */,
 			);
 			productName = "Mileage Tracker";
 			productReference = 7985561C24C8475E00544777 /* Mileage Tracker.app */;
@@ -235,6 +277,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7985564424C8476000544777 /* Build configuration list for PBXNativeTarget "Mileage TrackerTests" */;
 			buildPhases = (
+				06A2704650B9CBE577ADFF21 /* [CP] Check Pods Manifest.lock */,
 				7985562924C8476000544777 /* Sources */,
 				7985562A24C8476000544777 /* Frameworks */,
 				7985562B24C8476000544777 /* Resources */,
@@ -253,6 +296,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7985564724C8476000544777 /* Build configuration list for PBXNativeTarget "Mileage TrackerUITests" */;
 			buildPhases = (
+				2A8D9E9297B1CABD3875D0FB /* [CP] Check Pods Manifest.lock */,
 				7985563424C8476000544777 /* Sources */,
 				7985563524C8476000544777 /* Frameworks */,
 				7985563624C8476000544777 /* Resources */,
@@ -300,7 +344,7 @@
 			);
 			mainGroup = 7985561324C8475E00544777;
 			packageReferences = (
-				79259C2C25B09E39006BD78E /* XCRemoteSwiftPackageReference "ChartView" */,
+				79259C2C25B09E39006BD78E /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 7985561D24C8475E00544777 /* Products */;
 			projectDirPath = "";
@@ -340,6 +384,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06A2704650B9CBE577ADFF21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mileage TrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A8D9E9297B1CABD3875D0FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mileage Tracker-Mileage TrackerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59DC9A6DEB97CD62A652D124 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mileage Tracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7985561824C8475E00544777 /* Sources */ = {
@@ -530,6 +643,7 @@
 		};
 		7985564224C8476000544777 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75EE23B03EB1AC05B833D8C7 /* Pods-Mileage Tracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -552,6 +666,7 @@
 		};
 		7985564324C8476000544777 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13483CCC9135077EB39C4F7E /* Pods-Mileage Tracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -574,6 +689,7 @@
 		};
 		7985564524C8476000544777 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB59267BF1F286CAAF22B8B9 /* Pods-Mileage TrackerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -596,6 +712,7 @@
 		};
 		7985564624C8476000544777 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74ABE09BCE30443369CEE620 /* Pods-Mileage TrackerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -618,6 +735,7 @@
 		};
 		7985564824C8476000544777 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D77C5CC5F186E7E9390A1A02 /* Pods-Mileage Tracker-Mileage TrackerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -638,6 +756,7 @@
 		};
 		7985564924C8476000544777 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EC7C05D3E3C27FD88B800B6 /* Pods-Mileage Tracker-Mileage TrackerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -698,7 +817,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		79259C2C25B09E39006BD78E /* XCRemoteSwiftPackageReference "ChartView" */ = {
+		79259C2C25B09E39006BD78E /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
 			requirement = {
@@ -709,9 +828,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		79259C2D25B09E39006BD78E /* SwiftUICharts */ = {
+		79259C2D25B09E39006BD78E /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 79259C2C25B09E39006BD78E /* XCRemoteSwiftPackageReference "ChartView" */;
+			package = 79259C2C25B09E39006BD78E /* RemoteSwiftPackageReference */;
 			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -94,6 +94,7 @@ extension Refuel {
             Refuel(totalKM: 3233, liters: 5, money: 7.20, kmAdded: 186),
             Refuel(totalKM: 3419, liters: 5.36, money: 8.36, kmAdded: 186),
             Refuel(totalKM: 3606, liters: 5.36, money: 8.36, kmAdded: 186)
+            // Refuel(totalKM: 3538, liters: 4.03, money: 6.52, kmAdded: 186) IDK pq a quilometragem baixou.
         ]
     }
 }
