@@ -9,11 +9,11 @@ import SwiftUI
 
 struct InterstitialView: View {
     var interstitial: Interstitial
-    
+
     init() {
         interstitial = Interstitial()
     }
-    
+
     var body: some View {
         Button("Show ad") {
             interstitial.showAd()

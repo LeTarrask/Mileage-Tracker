@@ -12,12 +12,12 @@ import UIKit
 final class Interstitial: NSObject, GADFullScreenContentDelegate {
     var interstitial: GADInterstitialAd?
     let interstitialID = "ca-app-pub-3940256099942544/4411468910"
-    
+
     override init() {
         super.init()
         loadInterstitial()
     }
-    
+
     func loadInterstitial() {
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID: interstitialID,
@@ -32,7 +32,7 @@ final class Interstitial: NSObject, GADFullScreenContentDelegate {
                                }
         )
     }
-    
+
     func showAd() {
         if interstitial != nil {
             let root = UIApplication.shared.windows.first?.rootViewController
@@ -41,7 +41,7 @@ final class Interstitial: NSObject, GADFullScreenContentDelegate {
             print("Not Ready")
         }
     }
-    
+
     /// Tells the delegate that the ad failed to present full screen content.
       func ad(_ advert: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         print("Ad did fail to present full screen content.")

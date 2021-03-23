@@ -5,12 +5,16 @@
 //  Created by Alex Luna on 18/01/2021.
 //
 
+import MessageUI
 import SwiftUI
 
 struct SettingsView: View {
     @ObservedObject var tracker: MileageTracker
 
     @Environment(\.openURL) var openURL
+
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isShowingMailView = false
 
     /// VIEW STRINGS & URLs
     let viewTitle = NSLocalizedString("App Settings", comment: "")
@@ -23,7 +27,6 @@ struct SettingsView: View {
     let survey = NSLocalizedString("Take a survey", comment: "")
     let surveyLink = URL(string: "https://www.tarrask.com")!
     let talkToUs = NSLocalizedString("Talk to the developer", comment: "")
-    let talkLink = URL(string: "https://www.tarrask.com")!
     let resetApp = NSLocalizedString("Reset app", comment: "")
     let deleteData = NSLocalizedString("Delete all app data", comment: "")
     let testData = NSLocalizedString("Test data", comment: "")
@@ -39,7 +42,7 @@ struct SettingsView: View {
                 Section(header: Text(feedback)) {
                     Button(rateUs) { openURL(rateLink) }
                     Button(survey) { openURL(surveyLink) }
-                    Button(talkToUs) { openURL(talkLink) }
+                    Button(talkToUs) { isShowingMailView.toggle() }
                 }
 
                 Section(header: Text(resetApp)) {
@@ -61,6 +64,9 @@ struct SettingsView: View {
             }
             .accentColor(.red)
             .navigationBarTitle(viewTitle, displayMode: .inline)
+        }
+        .sheet(isPresented: $isShowingMailView) {
+            MailView(isShowing: self.$isShowingMailView, result: self.$result)
         }
     }
 }

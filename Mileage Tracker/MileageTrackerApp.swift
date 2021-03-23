@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct MileageTrackerApp: App {
     @ObservedObject private var tracker = MileageTracker()
-    
+
     /// VIEW STRINGS & URLs
     let refuelsString = NSLocalizedString("Refuels", comment: "")
     let otherCostsString = NSLocalizedString("Other costs", comment: "")
