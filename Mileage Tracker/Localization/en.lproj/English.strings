@@ -22,12 +22,12 @@
 "Total" = "Total";
 "km" = "km";
 "Since last" = "Since last";
-"Fuel" = "Fuel";
+"Fuel" = "Fuel Added";
 "L" = "L";
 "Payment" = "Payment";
 "€" = "€";
-"Price per liter:" = "Price per liter:";
-"Difference from average:" = "Difference from average:";
+"per liter:" = "per liter:";
+"than average:" = "than average:";
 
 // AddRefuel
 "Add refuel info" = "Add refuel info";

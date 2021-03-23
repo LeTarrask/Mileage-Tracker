@@ -24,6 +24,7 @@
 		7985563D24C8476000544777 /* Mileage_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985563C24C8476000544777 /* Mileage_TrackerUITests.swift */; };
 		7985564B24C8478700544777 /* MileageTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564A24C8478700544777 /* MileageTracker.swift */; };
 		7985564D24C84D8300544777 /* AddRefuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564C24C84D8300544777 /* AddRefuel.swift */; };
+		79881D2A260A48F400B3BC83 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79881D29260A48F400B3BC83 /* Color.xcassets */; };
 		79DA782425AF1CEF009E0FFC /* RefuelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA782325AF1CEF009E0FFC /* RefuelModel.swift */; };
 		79DA783225AF4801009E0FFC /* RefuelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA783125AF4801009E0FFC /* RefuelCardView.swift */; };
 		79ED3D6B260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
@@ -91,6 +92,7 @@
 		7985563E24C8476000544777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7985564A24C8478700544777 /* MileageTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTracker.swift; sourceTree = "<group>"; };
 		7985564C24C84D8300544777 /* AddRefuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRefuel.swift; sourceTree = "<group>"; };
+		79881D29260A48F400B3BC83 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Color.xcassets; path = "Mileage Tracker/View/Color.xcassets"; sourceTree = SOURCE_ROOT; };
 		79DA782325AF1CEF009E0FFC /* RefuelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelModel.swift; sourceTree = "<group>"; };
 		79DA783125AF4801009E0FFC /* RefuelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelCardView.swift; sourceTree = "<group>"; };
 		79ED3D67260A128B00421881 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				791378A425B208C600871ECE /* AddCostView.swift */,
 				7913791925B5FA1F00871ECE /* SettingsView.swift */,
 				79ED3D96260A1AC000421881 /* MailView.swift */,
+				79881D29260A48F400B3BC83 /* Color.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			files = (
 				7985562724C8476000544777 /* Preview Assets.xcassets in Resources */,
 				79FCD1CB25F7D2C8007F08FB /* Portuguese.strings in Resources */,
+				79881D2A260A48F400B3BC83 /* Color.xcassets in Resources */,
 				79FCD1C025F7D23A007F08FB /* English.strings in Resources */,
 				7985562424C8476000544777 /* Assets.xcassets in Resources */,
 			);
