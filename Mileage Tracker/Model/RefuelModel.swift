@@ -8,6 +8,7 @@
 import SwiftUI
 
 public struct Refuel: Hashable, Codable, Identifiable {
+    // swiftlint:disable identifier_name
     public let id: UUID
     var totalKM: Double
     var liters: Double

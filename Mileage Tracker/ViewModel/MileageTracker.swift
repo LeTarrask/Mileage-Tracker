@@ -17,6 +17,7 @@ class MileageTracker: ObservableObject {
     /// and calculates totalKm for the vehicle
     func receiveNew(_ data: Refuel.Data) {
 
+// swiftlint:disable line_length
 // https://www.hackingwithswift.com/forums/swiftui/swiftui-how-can-calculations-in-swift-recognise-comma-and-not-only-decimal-point/301
         // help to sanitize money input
         let newRefuel = Refuel(totalKM: data.totalKM,

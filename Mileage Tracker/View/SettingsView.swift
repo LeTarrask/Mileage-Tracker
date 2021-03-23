@@ -12,21 +12,38 @@ struct SettingsView: View {
 
     @Environment(\.openURL) var openURL
 
+    /// VIEW STRINGS & URLs
+    let viewTitle = NSLocalizedString("App Settings", comment: "")
+    let shareTracker = NSLocalizedString("Share Mileage Tracker", comment: "")
+    let copyAppLink = NSLocalizedString("Copy App Link", comment: "")
+    let appLink = URL(string: "https://www.tarrask.com")!
+    let feedback = NSLocalizedString("Feedback", comment: "")
+    let rateUs = NSLocalizedString("Rate us on the App Store", comment: "")
+    let rateLink = URL(string: "https://www.tarrask.com")!
+    let survey = NSLocalizedString("Take a survey", comment: "")
+    let surveyLink = URL(string: "https://www.tarrask.com")!
+    let talkToUs = NSLocalizedString("Talk to the developer", comment: "")
+    let talkLink = URL(string: "https://www.tarrask.com")!
+    let resetApp = NSLocalizedString("Reset app", comment: "")
+    let deleteData = NSLocalizedString("Delete all app data", comment: "")
+    let testData = NSLocalizedString("Test data", comment: "")
+    let loadTestData = NSLocalizedString("Load test data", comment: "")
+
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text(NSLocalizedString("Share Mileage Tracker", comment: ""))) {
-                    Button(NSLocalizedString("Copy App Link", comment: "")) { openURL(URL(string: "https://www.tarrask.com")!) }
+                Section(header: Text(shareTracker)) {
+                    Button(copyAppLink) { openURL(appLink) }
                 }
 
-                Section(header: Text(NSLocalizedString("Feedback", comment: ""))) {
-                    Button(NSLocalizedString("Rate us on the App Store", comment: "")) { openURL(URL(string: "https://www.tarrask.com")!) } // URL here FPO
-                    Button(NSLocalizedString("Take a survey", comment: "")) { openURL(URL(string: "https://www.tarrask.com")!) } // URL here FPO
-                    Button(NSLocalizedString("Talk to the developer", comment: "")) { openURL(URL(string: "https://www.tarrask.com")!) } // URL here FPO
+                Section(header: Text(feedback)) {
+                    Button(rateUs) { openURL(rateLink) }
+                    Button(survey) { openURL(surveyLink) }
+                    Button(talkToUs) { openURL(talkLink) }
                 }
 
-                Section(header: Text(NSLocalizedString("Reset app", comment: ""))) {
-                    Button(NSLocalizedString("Delete all app data", comment: "")) {
+                Section(header: Text(resetApp)) {
+                    Button(deleteData) {
                         tracker.refuels = [Refuel]()
                         tracker.otherCosts = [OtherCost]()
                         tracker.save()
@@ -34,8 +51,8 @@ struct SettingsView: View {
                 }
 
                 // Comment this section to publish app
-                Section(header: Text(NSLocalizedString("Test data", comment: ""))) {
-                    Button(NSLocalizedString("Load test data", comment: "")) {
+                Section(header: Text(testData)) {
+                    Button(loadTestData) {
                         tracker.refuels = Refuel.data
                         tracker.otherCosts = OtherCost.data
                         tracker.save()
@@ -43,7 +60,7 @@ struct SettingsView: View {
                 }
             }
             .accentColor(.red)
-            .navigationBarTitle(NSLocalizedString("App Settings", comment: ""), displayMode: .inline)
+            .navigationBarTitle(viewTitle, displayMode: .inline)
         }
     }
 }

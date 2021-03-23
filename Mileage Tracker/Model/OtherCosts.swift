@@ -9,6 +9,7 @@ import Foundation
 
 struct OtherCost: Hashable, Identifiable, Codable {
     /// A data storage type to save other kinds of costs a vehicle may have.
+    // swiftlint:disable identifier_name
     var id: UUID
     var type: CostType
     var value: Double
@@ -27,6 +28,7 @@ struct OtherCost: Hashable, Identifiable, Codable {
         case tax
         case maintenance
 
+        // swiftlint:disable nesting
         enum Key: CodingKey {
             case rawValue
         }

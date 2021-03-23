@@ -12,7 +12,7 @@ struct GraphicsView: View {
     @ObservedObject var tracker: MileageTracker
 
     @State var graphType: GraphType = .spending
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -51,6 +51,7 @@ struct GraphicsView: View {
     }
 
     enum GraphType {
+        // swiftlint:disable identifier_name
         case spending, dates, km
     }
 
@@ -60,7 +61,9 @@ struct GraphicsView: View {
             return LineView(data: tracker.refuels.map { $0.money }, title: "Spending")
 
         case .dates:
-            return LineView(data: tracker.refuels.map { Double($0.creationDate.timeIntervalSince1970) }, title: "Refuel Date")
+            return LineView(data: tracker.refuels.map {
+                                Double($0.creationDate.timeIntervalSince1970) },
+                            title: "Refuel Date")
         // graph is not the best way to visualize when the refuels were made. think of something better
         case .km:
             return LineView(data: tracker.refuels.map { $0.kmAdded }, title: "KM per Refuel")

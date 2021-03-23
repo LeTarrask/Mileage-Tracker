@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RefuelCardView: View {
     var refuel: Refuel
-    
+
     var average: Double
 
     var formatter: DateFormatter = {
