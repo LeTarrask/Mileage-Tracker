@@ -9,13 +9,13 @@ import SwiftUI
 
 struct OtherCostsView: View {
     @ObservedObject var tracker: MileageTracker
-    
+
     @Environment(\.scenePhase) private var scenePhase
     let saveAction: () -> Void
-    
+
     @State private var isPresented: Bool = false
     @State private var newCostData = OtherCost.Data()
-    
+
     var body: some View {
         NavigationView {
             List(tracker.otherCosts.reversed()) { cost in
@@ -43,7 +43,9 @@ struct OtherCostsView: View {
                                 // TO DO: pode arredondar a double do valor para 2 centavos
                                 // TO DO: nao deixar salvar se for um numero
                                 // TO DO: ver se dá pra impedir a parada da virgula
-                                let newCost = OtherCost(type: newCostData.type, value: newCostData.value, name: newCostData.name)
+                                let newCost = OtherCost(type: newCostData.type,
+                                                        value: newCostData.value,
+                                                        name: newCostData.name)
                                 tracker.otherCosts.append(newCost)
                                 newCostData = OtherCost.Data()
                                 isPresented = false

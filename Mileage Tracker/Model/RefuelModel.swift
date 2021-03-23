@@ -15,7 +15,12 @@ public struct Refuel: Hashable, Codable, Identifiable {
     var creationDate: Date
     var kmAdded: Double
 
-    init(id: UUID = UUID(), totalKM: Double, liters: Double, money: Double, creationDate: Date = Date(), kmAdded: Double) {
+    init(id: UUID = UUID(),
+         totalKM: Double,
+         liters: Double,
+         money: Double,
+         creationDate: Date = Date(),
+         kmAdded: Double) {
         self.id = id
         self.totalKM = totalKM
         self.liters = liters
@@ -23,7 +28,7 @@ public struct Refuel: Hashable, Codable, Identifiable {
         self.creationDate = creationDate
         self.kmAdded = kmAdded
     }
-    
+
     var pricePerLiter: Double {
         (money/liters).rounded(toPlaces: 2)
     }
@@ -35,7 +40,6 @@ extension Refuel {
         var totalKM: Double = 0
         var liters: Double = 0
         var money: Double = 0
-        
         var kmString: String = "" {
             didSet {
                 totalKM = number(for: kmString)
@@ -51,18 +55,18 @@ extension Refuel {
                 money = number(for: moneyString)
             }
         }
-        
+
         func number(for string: String) -> Double {
-            let nf = NumberFormatter()
-            
-            return nf.number(from: string)?.doubleValue ?? 0.0
+            let numberFormatter = NumberFormatter()
+
+            return numberFormatter.number(from: string)?.doubleValue ?? 0.0
         }
     }
-    
+
     var data: Data {
         return Data(totalKM: totalKM, liters: liters, money: money)
     }
-    
+
     mutating func update(from data: Data) {
         totalKM = data.totalKM
         liters = data.liters
@@ -98,6 +102,3 @@ extension Refuel {
         ]
     }
 }
-
-
-

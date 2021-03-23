@@ -8,12 +8,12 @@
 import SwiftUI
 
 @main
-struct Mileage_TrackerApp: App {
+struct MileageTrackerApp: App {
     @ObservedObject private var tracker = MileageTracker()
-   
+
     var body: some Scene {
         WindowGroup {
-                TabView() {
+                TabView {
                     MileageView(tracker: tracker) {
                         tracker.save()
                     }.tabItem {

@@ -12,15 +12,15 @@ struct MileageView: View {
     
     @Environment(\.scenePhase) private var scenePhase
     let saveAction: () -> Void
-    
+
     @State private var isPresented: Bool = false
     @State private var newRefuelData = Refuel.Data()
-    
+
     var body: some View {
         NavigationView {
             VStack {
                 // MARK: - Refuels list
-                List{
+                List {
                     ForEach(tracker.refuels.reversed(), id: \.self) { refuel in
                         RefuelCardView(refuel: refuel, average: tracker.averagePrice)
                     }.onDelete(perform: removeItem)
@@ -47,7 +47,7 @@ struct MileageView: View {
         }
         }
     }
-    
+
     func removeItem(at offsets: IndexSet) {
         tracker.refuels.remove(atOffsets: offsets)
     }
@@ -60,6 +60,3 @@ struct ContentView_Previews: PreviewProvider {
         return view
     }
 }
-
-
-

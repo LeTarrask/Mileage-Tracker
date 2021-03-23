@@ -11,14 +11,14 @@ struct RefuelCardView: View {
     var refuel: Refuel
     
     var average: Double
-    
+
     var formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
         return formatter
     }()
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -88,7 +88,7 @@ struct RefuelCardView: View {
     }
 }
 
-struct RefuelCardView_Previews: PreviewProvider {    
+struct RefuelCardView_Previews: PreviewProvider {
     static var previews: some View {
         let refuel = Refuel(totalKM: 2329, liters: 23.99, money: 23.09, kmAdded: 123)
         return RefuelCardView(refuel: refuel, average: 1.45)

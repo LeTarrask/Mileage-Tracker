@@ -10,15 +10,14 @@ import SwiftUI
 class MileageTracker: ObservableObject {
     /// A class to log and store in memory all information regarding refuelling and other vehicle costs.
     @Published var refuels: [Refuel] = [Refuel]()
-    
     @Published var otherCosts: [OtherCost] = [OtherCost]()
-    
+
     /// This method receives a data parameter from the view and adds it to our database
     /// - Parameter data: data contains kilometers, liters, and money paid in refuel,
     /// and calculates totalKm for the vehicle
     func receiveNew(_ data: Refuel.Data) {
 
-        // https://www.hackingwithswift.com/forums/swiftui/swiftui-how-can-calculations-in-swift-recognise-comma-and-not-only-decimal-point/301
+// https://www.hackingwithswift.com/forums/swiftui/swiftui-how-can-calculations-in-swift-recognise-comma-and-not-only-decimal-point/301
         // help to sanitize money input
         let newRefuel = Refuel(totalKM: data.totalKM,
                                liters: data.liters,
@@ -100,7 +99,7 @@ class MileageTracker: ObservableObject {
             } catch {
                 fatalError("Can't write refuels to file")
             }
-    
+
             guard let costs = self?.otherCosts else { fatalError("Self out of scope") }
             guard let costData = try? JSONEncoder().encode(costs) else { fatalError("Error encoding costs data") }
             do {

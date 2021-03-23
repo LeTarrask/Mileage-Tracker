@@ -9,9 +9,9 @@ import SwiftUI
 
 struct AddCostView: View {
     @Binding var costData: OtherCost.Data
-    
+
     @State var selection: OtherCost.CostType = .tax
-    
+
     var body: some View {
         Form {
             HStack {

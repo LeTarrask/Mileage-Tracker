@@ -10,7 +10,7 @@ import Combine
 
 struct AddRefuel: View {
     @Environment(\.presentationMode) var presentationMode
-    
+
     @Binding var refuelData: Refuel.Data
       
     var body: some View {
