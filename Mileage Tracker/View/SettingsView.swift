@@ -13,8 +13,10 @@ struct SettingsView: View {
 
     @Environment(\.openURL) var openURL
 
+    // swiftlint:disable redundant_optional_initialization
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var isShowingMailView = false
+    @State var alertNoMail = false
 
     /// VIEW STRINGS & URLs
     let viewTitle = NSLocalizedString("App Settings", comment: "")
@@ -42,7 +44,9 @@ struct SettingsView: View {
                 Section(header: Text(feedback)) {
                     Button(rateUs) { openURL(rateLink) }
                     Button(survey) { openURL(surveyLink) }
-                    Button(talkToUs) { isShowingMailView.toggle() }
+                    Button(talkToUs) {
+                        MFMailComposeViewController.canSendMail() ? isShowingMailView.toggle() : alertNoMail.toggle()
+                    }
                 }
 
                 Section(header: Text(resetApp)) {
@@ -66,7 +70,10 @@ struct SettingsView: View {
             .navigationBarTitle(viewTitle, displayMode: .inline)
         }
         .sheet(isPresented: $isShowingMailView) {
-            MailView(isShowing: self.$isShowingMailView, result: self.$result)
+            MailView(isShowing: $isShowingMailView, result: $result)
+        }
+        .alert(isPresented: $alertNoMail) {
+            Alert(title: Text("Cannot send email"))
         }
     }
 }
