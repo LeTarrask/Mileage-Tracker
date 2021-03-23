@@ -15,7 +15,7 @@
 		791378A525B208C600871ECE /* AddCostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791378A425B208C600871ECE /* AddCostView.swift */; };
 		7913791A25B5FA2000871ECE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913791925B5FA1F00871ECE /* SettingsView.swift */; };
 		79259C2025B097D6006BD78E /* GraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79259C1F25B097D6006BD78E /* GraphicsView.swift */; };
-		79259C2E25B09E39006BD78E /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 79259C2D25B09E39006BD78E /* SwiftPackageProductDependency */; };
+		79259C2E25B09E39006BD78E /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 79259C2D25B09E39006BD78E /* SwiftUICharts */; };
 		7985562024C8475E00544777 /* Mileage_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985561F24C8475E00544777 /* Mileage_TrackerApp.swift */; };
 		7985562224C8475E00544777 /* MileageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985562124C8475E00544777 /* MileageView.swift */; };
 		7985562424C8476000544777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7985562324C8476000544777 /* Assets.xcassets */; };
@@ -89,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79259C2E25B09E39006BD78E /* BuildFile in Frameworks */,
+				79259C2E25B09E39006BD78E /* SwiftUICharts in Frameworks */,
 				C6AB7E02767EEEC074BC2321 /* Pods_Mileage_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,7 +123,6 @@
 				DB59267BF1F286CAAF22B8B9 /* Pods-Mileage TrackerTests.debug.xcconfig */,
 				74ABE09BCE30443369CEE620 /* Pods-Mileage TrackerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -260,6 +259,7 @@
 				7985561824C8475E00544777 /* Sources */,
 				7985561924C8475E00544777 /* Frameworks */,
 				7985561A24C8475E00544777 /* Resources */,
+				79ED3D52260A08A300421881 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -267,7 +267,7 @@
 			);
 			name = "Mileage Tracker";
 			packageProductDependencies = (
-				79259C2D25B09E39006BD78E /* SwiftPackageProductDependency */,
+				79259C2D25B09E39006BD78E /* SwiftUICharts */,
 			);
 			productName = "Mileage Tracker";
 			productReference = 7985561C24C8475E00544777 /* Mileage Tracker.app */;
@@ -318,7 +318,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					7985561B24C8475E00544777 = {
 						CreatedOnToolsVersion = 12.0;
@@ -344,7 +344,7 @@
 			);
 			mainGroup = 7985561324C8475E00544777;
 			packageReferences = (
-				79259C2C25B09E39006BD78E /* RemoteSwiftPackageReference */,
+				79259C2C25B09E39006BD78E /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 7985561D24C8475E00544777 /* Products */;
 			projectDirPath = "";
@@ -452,6 +452,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		79ED3D52260A08A300421881 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -529,6 +546,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -590,6 +608,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -817,7 +836,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		79259C2C25B09E39006BD78E /* RemoteSwiftPackageReference */ = {
+		79259C2C25B09E39006BD78E /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
 			requirement = {
@@ -828,9 +847,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		79259C2D25B09E39006BD78E /* SwiftPackageProductDependency */ = {
+		79259C2D25B09E39006BD78E /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 79259C2C25B09E39006BD78E /* RemoteSwiftPackageReference */;
+			package = 79259C2C25B09E39006BD78E /* XCRemoteSwiftPackageReference "ChartView" */;
 			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */

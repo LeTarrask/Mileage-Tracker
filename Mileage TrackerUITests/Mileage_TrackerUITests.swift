@@ -6,7 +6,7 @@
 //
 
 import XCTest
-
+// swiftlint:disable all
 class Mileage_TrackerUITests: XCTestCase {
 
     override func setUpWithError() throws {

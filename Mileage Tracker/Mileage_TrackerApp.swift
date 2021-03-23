@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct Mileage_TrackerApp: App {
     @ObservedObject private var tracker = MileageTracker()
-        
+   
     var body: some Scene {
         WindowGroup {
                 TabView() {
@@ -20,7 +20,7 @@ struct Mileage_TrackerApp: App {
                         Image(systemName: "drop.fill")
                         Text(NSLocalizedString("Refuels", comment: ""))
                     }
-                    OtherCostsView(tracker: tracker){
+                    OtherCostsView(tracker: tracker) {
                         tracker.save()
                     }.tabItem {
                         Image(systemName: "wrench.and.screwdriver")
@@ -43,4 +43,3 @@ struct Mileage_TrackerApp: App {
         }
     }
 }
-
