@@ -114,66 +114,41 @@ extension MileageTracker {
     /// These properties generate the strings for the average consumption, spending, dates, etc,
     /// to be presented in the views
     var averageConsumption: Double {
-        var average = 0.0
-        if refuels.count > 1 {
-            let totalKM = refuels.last?.totalKM
-            let totalLiters = refuels
-                .map {$0.liters}
-                .reduce(0) {$0 + $1}
-            average = ((totalKM ?? 0.0) / totalLiters).rounded(toPlaces: 2)
-        }
-
-        return average
+        (totalKM / totalLiters).rounded(toPlaces: 2)
+    }
+    
+    var totalLiters: Double {
+        refuels.map {$0.liters}.reduce(0, +)
     }
 
     var averageSpending: Double {
-        var average = 0.0
-        if refuels.count > 1 {
-            let totalKM = refuels.last?.totalKM
-            let totalMoney = refuels
-                .map {$0.money}
-                .reduce(0) {$0 + $1}
-            average = ((totalKM ?? 0.0) / totalMoney).rounded(toPlaces: 2)
-        }
-        return average
+        (totalKM / totalFuelSpending).rounded(toPlaces: 2)
     }
 
     var totalSpending: Double {
-        var total = 0.0
-        if refuels.count > 1 {
-            let totalMoney = refuels
-                                .map {$0.money}
-                                .reduce(0) {$0 + $1}
-            total = totalMoney.rounded(toPlaces: 2)
-        }
-        return total
+        refuels.map {$0.money}.reduce(0) {$0 + $1}.rounded(toPlaces: 2)
     }
 
     var totalOtherCosts: Double {
-        var total = 0.0
-        if otherCosts.count > 1 {
-            let totalCosts = otherCosts.map {$0.value}.reduce(0, +)
-            total = totalCosts.rounded(toPlaces: 2)
-        }
-        return total
+        otherCosts.map {$0.value}.reduce(0, +).rounded(toPlaces: 2)
     }
 
     var averagePrice: Double {
-        var average = 0.0
-        if refuels.count > 1 {
-            let totalMoney = refuels
-                .map {$0.money}
-                .reduce(0) {$0 + $1}
-            let totalLiters = refuels
-                .map {$0.liters}
-                .reduce(0) {$0 + $1}
-            average = (totalMoney / totalLiters).rounded(toPlaces: 2)
-        }
-        return average
+        let totalMoney = refuels
+            .map {$0.money}
+            .reduce(0, +)
+        let totalLiters = refuels
+            .map {$0.liters}
+            .reduce(0, +)
+        return (totalMoney / totalLiters).rounded(toPlaces: 2)
     }
 
     var totalKM: Double {
         refuels.last?.totalKM ?? 0.0
+    }
+    
+    var totalFuelSpending: Double {
+        refuels.map {$0.money}.reduce(0, +)
     }
 
     var lastRefuel: Date {
