@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OtherCostsView: View {
     @ObservedObject var tracker: MileageTracker
-    
+
     @Environment(\.scenePhase) private var scenePhase
     let saveAction: () -> Void
 

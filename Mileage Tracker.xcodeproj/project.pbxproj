@@ -271,9 +271,9 @@
 			isa = PBXGroup;
 			children = (
 				79ED3D67260A128B00421881 /* BannerView.swift */,
-				79ED3D68260A128B00421881 /* AdMob InterstitialVC.swift */,
-				79ED3D69260A128B00421881 /* InterstitialView.swift */,
 				79ED3D6A260A128B00421881 /* AdMob BannerVC.swift */,
+				79ED3D69260A128B00421881 /* InterstitialView.swift */,
+				79ED3D68260A128B00421881 /* AdMob InterstitialVC.swift */,
 			);
 			path = AdMob;
 			sourceTree = "<group>";
