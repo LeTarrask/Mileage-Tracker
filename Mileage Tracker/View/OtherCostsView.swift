@@ -18,19 +18,30 @@ struct OtherCostsView: View {
 
     var body: some View {
         NavigationView {
-            List(tracker.otherCosts.reversed()) { cost in
-                HStack {
-                    Text(cost.name)
-                    Spacer()
-                    Text(String(cost.value))
-                    Spacer()
-                    Text(dateToString(date: cost.creationDate))
-                }.background(cost.type == .tax ? Color.red : Color.blue)
-            }
+            ForEach(tracker.otherCosts.reversed()) { cost in
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15.0)
+                        .fill(LinearGradient(gradient: Gradient(colors: cost.type == .tax ? [Color("Redder"), Color("Wine")] : [Color("Cream"), Color("Yellowish")]),
+                                             startPoint: .topLeading,
+                                             endPoint: .bottomTrailing))
+                        .frame(height: 50, alignment: .center)
+                    HStack {
+                        Text(cost.name)
+                            .fontWeight(.bold)
+                        Spacer()
+                        Text(String(cost.value) + " €")
+                        Spacer()
+                        Text(dateToString(date: cost.creationDate))
+                    }
+                    .font(.subheadline)
+                    .foregroundColor(cost.type == .tax ? Color("Cream") : Color("Wine"))
+                    .padding()
+                }
+            }.padding(.horizontal)
             .navigationBarTitle(NSLocalizedString("Other vehicle costs", comment: ""), displayMode: .inline)
             .navigationBarItems(trailing:
-                                    Button(action: { self.isPresented.toggle() }, label: {
-                                        Image(systemName: "plus.circle")
+                                    Button(action: { isPresented.toggle() }, label: {
+                                        PlusButton()
                                     }))
             .sheet(isPresented: $isPresented) {
                 NavigationView {
@@ -39,25 +50,18 @@ struct OtherCostsView: View {
                             newCostData = OtherCost.Data()
                             isPresented = false
                         }, trailing: Button(NSLocalizedString("Save", comment: "")) {
-                            if true { // replace true pelas condições de salvar os dados
-                                // TO DO: pode arredondar a double do valor para 2 centavos
-                                // TO DO: nao deixar salvar se for um numero
-                                // TO DO: ver se dá pra impedir a parada da virgula
-                                let newCost = OtherCost(type: newCostData.type,
-                                                        value: newCostData.value,
-                                                        name: newCostData.name)
-                                tracker.otherCosts.append(newCost)
-                                newCostData = OtherCost.Data()
-                                isPresented = false
-                            } else {
-                                // mostrar ajuda para preencher o numero
-                            }
+                            let newCost = OtherCost(type: newCostData.type,
+                                                    value: newCostData.value,
+                                                    name: newCostData.name)
+                            tracker.otherCosts.append(newCost)
+                            newCostData = OtherCost.Data()
+                            isPresented = false
                         })
                 }
             }
             .onChange(of: scenePhase) { phase in
                 if phase == .inactive { saveAction() }
-        }
+            }
         }
     }
 }
