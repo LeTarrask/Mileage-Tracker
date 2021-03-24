@@ -84,6 +84,7 @@ struct RefuelCardView: View {
                 .fill(LinearGradient(gradient: Gradient(colors: [Color("Redder"), Color("Wine")]),
                                      startPoint: .topLeading,
                                      endPoint: .bottomTrailing))
+                .shadow(color: .black, radius: 3, x: 2, y: 1)
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
                     Square(icon: "car",

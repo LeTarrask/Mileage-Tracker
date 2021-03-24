@@ -18,19 +18,43 @@ struct GraphicsView: View {
             VStack {
                 // MARK: - Averages display
                 ZStack {
-                    Color.blue
+                    LinearGradient(gradient:
+                                    Gradient(colors: [Color("Redder"), Color("Wine")]),
+                                             startPoint: .topLeading,
+                                             endPoint: .bottomTrailing)
                         .frame(maxHeight: 140)
                         .cornerRadius(15)
                         .shadow(color: .black, radius: 3, x: 2, y: 1)
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .center) {
                         Text("Total KM: " + String(tracker.totalKM.clean) + " km")
-                        Text("Average consumption: " + String(tracker.averageConsumption) + " km/L")
-                        Text("Average spending: " + String(tracker.averageSpending) + " km/€")
-                        Text("Total fuel spending: " + String(tracker.totalSpending) + " €")
-                        Text("Average Fuel Price: " + String(tracker.averagePrice) + " €/l")
-                    }
-                    .foregroundColor(.white)
-                }.padding(15)
+                            .foregroundColor(Color("Yellowish"))
+                            .font(.title)
+                            .fontWeight(.bold)
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Square(icon: nil,
+                                       number: tracker.averageConsumption,
+                                       value: "km/L",
+                                       label: "Average consumption")
+                                Square(icon: nil,
+                                       number: tracker.averageSpending,
+                                       value: "km/€",
+                                       label: "Average spending")
+                            }
+                            Spacer()
+                            VStack {
+                                Square(icon: nil,
+                                       number: tracker.totalSpending,
+                                       value: "€",
+                                       label: "Total fuel spending")
+                                Square(icon: nil,
+                                       number: tracker.averagePrice,
+                                       value: "€/l",
+                                       label: "Average Fuel Price")
+                            }
+                        }
+                    }.padding()
+                }.padding()
 
                 // MARK: - Graphics display
                 HStack {
@@ -46,7 +70,7 @@ struct GraphicsView: View {
                 }
                 getGraphData(type: graphType)
             }
-            .navigationBarTitle("Spending", displayMode: .inline)
+            .navigationBarTitle("Graph View", displayMode: .inline)
         }
     }
 

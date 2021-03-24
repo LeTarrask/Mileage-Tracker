@@ -116,7 +116,7 @@ extension MileageTracker {
     var averageConsumption: Double {
         (totalKM / totalLiters).rounded(toPlaces: 2)
     }
-    
+
     var totalLiters: Double {
         refuels.map {$0.liters}.reduce(0, +)
     }
@@ -146,7 +146,7 @@ extension MileageTracker {
     var totalKM: Double {
         refuels.last?.totalKM ?? 0.0
     }
-    
+
     var totalFuelSpending: Double {
         refuels.map {$0.money}.reduce(0, +)
     }
