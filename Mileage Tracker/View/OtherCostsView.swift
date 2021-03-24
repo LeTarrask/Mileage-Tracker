@@ -19,9 +19,15 @@ struct OtherCostsView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                HStack {
-                    Text("Total Vehicle Costs: ")
-                    Text(tracker.totalOtherCosts)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15.0)
+                        .frame(minHeight: 70, maxHeight: 80)
+                        .padding()
+                    HStack {
+                        Text("Total Vehicle Costs: ")
+                        Text(String(tracker.totalOtherCosts))
+                        Text(" €")
+                    }.foregroundColor(.white)
                 }
                 ForEach(tracker.otherCosts.reversed()) { cost in
                     ZStack {
