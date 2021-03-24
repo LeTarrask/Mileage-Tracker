@@ -59,7 +59,7 @@ struct OtherCostsView: View {
                         }
                     }.padding(.horizontal)
                 }
-                Banner()
+                if !tracker.paidApp { Banner() }
             }
             .navigationBarTitle(NSLocalizedString("Other vehicle costs", comment: ""), displayMode: .inline)
             .navigationBarItems(trailing:

@@ -11,6 +11,7 @@ class MileageTracker: ObservableObject {
     /// A class to log and store in memory all information regarding refuelling and other vehicle costs.
     @Published var refuels: [Refuel] = [Refuel]()
     @Published var otherCosts: [OtherCost] = [OtherCost]()
+    var paidApp: Bool = true
 
     /// This method receives a data parameter from the view and adds it to our database
     /// - Parameter data: data contains kilometers, liters, and money paid in refuel,
@@ -38,11 +39,15 @@ class MileageTracker: ObservableObject {
     }
 
     private static var refuelsURL: URL {
-        return documentsFolder.appendingPathComponent("refuels.data")
+        documentsFolder.appendingPathComponent("refuels.data")
     }
 
     private static var costsURL: URL {
-        return documentsFolder.appendingPathComponent("costs.data")
+        documentsFolder.appendingPathComponent("costs.data")
+    }
+
+    private static var csvURL: URL {
+        documentsFolder.appendingPathComponent("tracker.csv")
     }
 
     func load() {
@@ -132,7 +137,7 @@ class MileageTracker: ObservableObject {
 
         /// Iterates other costs
         refuelStrings.append("\nCost Date, Type, Name, Price\n")
-  
+
         for cost in otherCosts {
             let array = [formatter.string(from: cost.creationDate),
                          cost.type.rawValue,
@@ -144,16 +149,20 @@ class MileageTracker: ObservableObject {
         }
 
         // gets these arrays of strings and outputs it into csv
-        let fileName = "MileageTracker.csv"
-        let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+        // let path = NSURL(fileURLWithPath: Self.csvURL)
 
+//        let data = Data(
         do {
-            try refuelStrings.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+            try refuelStrings.write(to: Self.csvURL, atomically: true, encoding: .utf8)
         } catch {
             print("Failed to create file")
             print("\(error)")
         }
-        print(path ?? "not found")
+        // print(path)
+    }
+
+    func csvFile() -> NSData? {
+        NSData(contentsOf: Self.csvURL)
     }
 }
 

@@ -12,8 +12,10 @@ struct SettingsView: View {
     @ObservedObject var tracker: MileageTracker
 
     @Environment(\.openURL) var openURL
- 
+
     @State var canExport = true
+    @State private var showShareSheet = false
+    @State public var sharedItems: [Any] = []
 
     // swiftlint:disable redundant_optional_initialization
     @State var result: Result<MFMailComposeResult, Error>? = nil
@@ -53,6 +55,15 @@ struct SettingsView: View {
                     Button(exportData) {
                         if canExport {
                             tracker.exportCSV()
+                            let file = tracker.csvFile()
+                            sharedItems = [file]
+                            print(sharedItems)
+                            showShareSheet = true
+//                            if url != nil {
+//                                print(String(describing: url))
+////                                let data = NSURL.fileURL(withPath: url!.absoluteString)
+//
+//                            }
                         } else {
                             openURL(exportURL)
                         }
@@ -93,6 +104,9 @@ struct SettingsView: View {
         }
         .sheet(isPresented: $isShowingMailView) {
             MailView(isShowing: $isShowingMailView, result: $result)
+        }
+        .sheet(isPresented: $showShareSheet) {
+            ShareSheet(activityItems: sharedItems)
         }
         .alert(isPresented: $alertNoMail) {
             Alert(title: Text("Cannot send email"))
