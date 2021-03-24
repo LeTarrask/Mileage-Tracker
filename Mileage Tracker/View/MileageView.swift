@@ -24,7 +24,7 @@ struct MileageView: View {
                     ForEach(tracker.refuels.reversed(), id: \.self) { refuel in
                         RefuelCardView(refuel: refuel, average: tracker.averagePrice)
                     }.onDelete(perform: removeItem)
-                } //.padding(.horizontal, -20)
+                } // .padding(.horizontal, -20)
                 if !tracker.paidApp { Banner() }
             }
             .navigationBarTitle(NSLocalizedString("Mileage Tracker", comment: ""), displayMode: .inline)

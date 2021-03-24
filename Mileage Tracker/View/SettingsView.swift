@@ -13,9 +13,8 @@ struct SettingsView: View {
 
     @Environment(\.openURL) var openURL
 
-    @State var canExport = true
+    @State var canExport = true // this property controls if user has bought export func
     @State private var showShareSheet = false
-    @State public var sharedItems: [Any] = []
 
     // swiftlint:disable redundant_optional_initialization
     @State var result: Result<MFMailComposeResult, Error>? = nil
@@ -54,17 +53,9 @@ struct SettingsView: View {
                     }
                     Button(exportData) {
                         if canExport {
-                            tracker.exportCSV()
-                            let file = tracker.csvFile()
-                            sharedItems = [file]
-                            print(sharedItems)
                             showShareSheet = true
-//                            if url != nil {
-//                                print(String(describing: url))
-////                                let data = NSURL.fileURL(withPath: url!.absoluteString)
-//
-//                            }
                         } else {
+                            // here should call for in app purchase
                             openURL(exportURL)
                         }
                     }
@@ -106,7 +97,7 @@ struct SettingsView: View {
             MailView(isShowing: $isShowingMailView, result: $result)
         }
         .sheet(isPresented: $showShareSheet) {
-            ShareSheet(activityItems: sharedItems)
+            ShareSheet(activityItems: [tracker.csvFile()])
         }
         .alert(isPresented: $alertNoMail) {
             Alert(title: Text("Cannot send email"))

@@ -147,22 +147,17 @@ class MileageTracker: ObservableObject {
             let line = array.joined(separator: ",")
             refuelStrings.append(line)
         }
-
-        // gets these arrays of strings and outputs it into csv
-        // let path = NSURL(fileURLWithPath: Self.csvURL)
-
-//        let data = Data(
         do {
             try refuelStrings.write(to: Self.csvURL, atomically: true, encoding: .utf8)
         } catch {
             print("Failed to create file")
             print("\(error)")
         }
-        // print(path)
     }
 
-    func csvFile() -> NSData? {
-        NSData(contentsOf: Self.csvURL)
+    func csvFile() -> URL { // NSData?
+        exportCSV()
+        return Self.csvURL // NSData(contentsOf: )
     }
 }
 
