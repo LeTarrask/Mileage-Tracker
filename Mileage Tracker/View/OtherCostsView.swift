@@ -24,7 +24,7 @@ struct OtherCostsView: View {
                         .frame(minHeight: 70, maxHeight: 80)
                         .padding()
                     HStack {
-                        Text("Total Vehicle Costs: ")
+                        Text("Total Other Costs: ")
                         Text(String(tracker.totalOtherCosts))
                         Text(" €")
                     }.foregroundColor(.white)
