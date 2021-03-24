@@ -27,35 +27,35 @@ struct RefuelCardView: View {
                                      endPoint: .bottomTrailing))
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
-                    Square(icon: "car", number: String(refuel.kmAdded.clean),
+                    Square(icon: "car",
+                           number: refuel.kmAdded,
                            value: "km",
                            label: NSLocalizedString("Since last", comment: ""))
                     Spacer()
                     Square(icon: "drop.fill",
-                           number: String(refuel.liters),
+                           number: refuel.liters,
                            value: NSLocalizedString("L", comment: ""),
                            label: NSLocalizedString("Fuel", comment: ""))
                     Spacer()
                     Square(icon: "eurosign.square",
-                           number: String(refuel.money),
+                           number: refuel.money,
                            value: NSLocalizedString("€", comment: ""),
                            label: NSLocalizedString("Payment", comment: ""))
                     Spacer()
-                    // TO DO: this math here is very strange
-                    Square(icon: "drop",
-                           number: String((refuel.pricePerLiter-average).rounded(toPlaces: 2)),
+                    Square(icon: "triangle.fill",
+                           number: refuel.pricePerLiter-average,
                            value: NSLocalizedString("€", comment: ""),
                            label: NSLocalizedString("than average:", comment: ""))
                 }
                 .padding(.bottom)
                 HStack {
-                    Spacer()
                     Square(icon: nil,
-                           number: String(refuel.pricePerLiter),
+                           number: refuel.pricePerLiter,
                            value: "€",
                            label: NSLocalizedString("per liter:", comment: ""))
+                    Spacer()
                     Square(icon: nil,
-                           number: String(refuel.totalKM),
+                           number: refuel.totalKM,
                            value: NSLocalizedString("km", comment: ""),
                            label: NSLocalizedString("Total", comment: ""))
                 }
@@ -74,19 +74,24 @@ struct RefuelCardView: View {
 
 struct Square: View {
     let icon: String?
-    let number: String
+    let number: Double
     let value: String
     let label: String
+    var flip: Bool {
+        icon == "triangle.fill"
+    }
 
     var body: some View {
         VStack(alignment: .center) {
             if icon != nil {
                 Image(systemName: icon!)
                     .font(.largeTitle)
+                    .rotationEffect(number < 0 ? .degrees(-180) : .zero)
+                    .foregroundColor(number < 0 ? .green : flip ? .red : Color("Cream"))
             }
             VStack(alignment: .leading) {
                 HStack {
-                    Text(number)
+                    Text(String(number.rounded(toPlaces: 2)))
                         .font(.subheadline)
                         .fontWeight(.bold)
                     Text(value)
