@@ -66,7 +66,7 @@ struct SettingsView: View {
                     }
                 }
             }
-            .accentColor(.red)
+            .foregroundColor(Color("Redder"))
             .navigationBarTitle(viewTitle, displayMode: .inline)
         }
         .sheet(isPresented: $isShowingMailView) {

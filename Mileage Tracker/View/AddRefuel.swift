@@ -38,7 +38,7 @@ struct AddRefuel: View {
                         .keyboardType(.decimalPad)
                 }
             }
-        }
+        }.foregroundColor(Color("Redder"))
     }
 }
 

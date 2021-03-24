@@ -26,7 +26,6 @@
 		7985564D24C84D8300544777 /* AddRefuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564C24C84D8300544777 /* AddRefuel.swift */; };
 		79881D2A260A48F400B3BC83 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79881D29260A48F400B3BC83 /* Color.xcassets */; };
 		79DA782425AF1CEF009E0FFC /* RefuelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA782325AF1CEF009E0FFC /* RefuelModel.swift */; };
-		79DA783225AF4801009E0FFC /* RefuelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA783125AF4801009E0FFC /* RefuelCardView.swift */; };
 		79ED3D6B260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
 		79ED3D6C260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
 		79ED3D6D260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
@@ -94,7 +93,6 @@
 		7985564C24C84D8300544777 /* AddRefuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRefuel.swift; sourceTree = "<group>"; };
 		79881D29260A48F400B3BC83 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Color.xcassets; path = "Mileage Tracker/View/Color.xcassets"; sourceTree = SOURCE_ROOT; };
 		79DA782325AF1CEF009E0FFC /* RefuelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelModel.swift; sourceTree = "<group>"; };
-		79DA783125AF4801009E0FFC /* RefuelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelCardView.swift; sourceTree = "<group>"; };
 		79ED3D67260A128B00421881 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		79ED3D68260A128B00421881 /* AdMob InterstitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AdMob InterstitialVC.swift"; sourceTree = "<group>"; };
 		79ED3D69260A128B00421881 /* InterstitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialView.swift; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				7985562124C8475E00544777 /* MileageView.swift */,
-				79DA783125AF4801009E0FFC /* RefuelCardView.swift */,
 				7985564C24C84D8300544777 /* AddRefuel.swift */,
 				79259C1F25B097D6006BD78E /* GraphicsView.swift */,
 				7913789A25B2030600871ECE /* OtherCostsView.swift */,
@@ -555,7 +552,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79DA783225AF4801009E0FFC /* RefuelCardView.swift in Sources */,
 				79ED3D74260A128B00421881 /* AdMob BannerVC.swift in Sources */,
 				791378A025B2032700871ECE /* OtherCosts.swift in Sources */,
 				79ED3D92260A14B200421881 /* UIApplicationVersion.swift in Sources */,

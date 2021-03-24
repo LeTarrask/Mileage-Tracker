@@ -32,7 +32,7 @@ struct AddCostView: View {
                 TextField("", text: $costData.valueString)
                     .keyboardType(.decimalPad)
             }
-        }
+        }.foregroundColor(Color("Redder"))
     }
 }
 
