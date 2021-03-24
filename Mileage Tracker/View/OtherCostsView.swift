@@ -18,27 +18,40 @@ struct OtherCostsView: View {
 
     var body: some View {
         NavigationView {
-            ForEach(tracker.otherCosts.reversed()) { cost in
-                ZStack {
-                    RoundedRectangle(cornerRadius: 15.0)
-                        .fill(LinearGradient(gradient: Gradient(colors: cost.type == .tax ? [Color("Redder"), Color("Wine")] : [Color("Cream"), Color("Yellowish")]),
-                                             startPoint: .topLeading,
-                                             endPoint: .bottomTrailing))
-                        .frame(height: 50, alignment: .center)
-                    HStack {
-                        Text(cost.name)
-                            .fontWeight(.bold)
-                        Spacer()
-                        Text(String(cost.value) + " €")
-                        Spacer()
-                        Text(dateToString(date: cost.creationDate))
-                    }
-                    .font(.subheadline)
-                    .foregroundColor(cost.type == .tax ? Color("Cream") : Color("Wine"))
-                    .padding()
+            ScrollView {
+                HStack {
+                    Text("Total Vehicle Costs: ")
+                    Text(tracker.totalOtherCosts)
                 }
-            }.padding(.horizontal)
-            .navigationBarTitle(NSLocalizedString("Other vehicle costs", comment: ""), displayMode: .inline)
+                ForEach(tracker.otherCosts.reversed()) { cost in
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15.0)
+                            .fill(LinearGradient(gradient:
+                                                    Gradient(colors: cost.type == .tax ?
+                                                                [Color("Redder"), Color("Wine")] :
+                                                                [Color("Cream"), Color("Yellowish")]),
+                                                 startPoint: .topLeading,
+                                                 endPoint: .bottomTrailing))
+                            .frame(minHeight: 70, maxHeight: 80)
+                        HStack(alignment: .bottom) {
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Image(systemName: cost.type == .tax ? "folder" : "wrench.fill")
+                                    Text(String(cost.value) + " €")
+                                        .fontWeight(.bold)
+                                }
+                                Text(cost.name)
+                                    .font(.subheadline)
+                            }
+                            Spacer()
+                            Text(dateToString(date: cost.creationDate))
+                                .font(.caption)
+                        }
+                        .foregroundColor(cost.type == .tax ? Color("Cream") : Color("Wine"))
+                        .padding()
+                    }
+                }.padding(.horizontal)
+            }.navigationBarTitle(NSLocalizedString("Other vehicle costs", comment: ""), displayMode: .inline)
             .navigationBarItems(trailing:
                                     Button(action: { isPresented.toggle() }, label: {
                                         PlusButton()

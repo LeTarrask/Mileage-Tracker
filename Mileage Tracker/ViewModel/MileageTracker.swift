@@ -142,9 +142,18 @@ extension MileageTracker {
         var total = 0.0
         if refuels.count > 1 {
             let totalMoney = refuels
-                .map {$0.money}
-                .reduce(0) {$0 + $1}
+                                .map {$0.money}
+                                .reduce(0) {$0 + $1}
             total = totalMoney.rounded(toPlaces: 2)
+        }
+        return total
+    }
+
+    var totalOtherCosts: Double {
+        var total = 0.0
+        if otherCosts.count > 1 {
+            let totalCosts = otherCosts.map {$0.value}.reduce(0, +)
+            total = totalCosts.rounded(toPlaces: 2)
         }
         return total
     }
