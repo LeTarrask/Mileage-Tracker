@@ -15,70 +15,74 @@ struct GraphicsView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                // MARK: - Averages display
-                ZStack {
-                    BackgroundCard()
-                        .frame(maxHeight: 140)
-                    VStack(alignment: .center) {
-                        Text("Total KM: " + String(tracker.totalKM.clean) + " km")
-                            .foregroundColor(Color("Yellowish"))
-                            .font(.title)
-                            .fontWeight(.bold)
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Square(icon: nil,
-                                       number: tracker.averageConsumption,
-                                       value: "km/L",
-                                       label: "Average consumption")
-                                Square(icon: nil,
-                                       number: tracker.averageSpending,
-                                       value: "km/€",
-                                       label: "Average spending")
+            ScrollView {
+                VStack {
+                    // MARK: - Averages display
+                    ZStack {
+                        BackgroundCard()
+                            .frame(maxHeight: 140)
+                        VStack(alignment: .center) {
+                            Text("Total KM: " + String(tracker.totalKM.clean) + " km")
+                                .foregroundColor(Color("Yellowish"))
+                                .font(.title)
+                                .fontWeight(.bold)
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Square(icon: nil,
+                                           number: tracker.averageConsumption,
+                                           value: "km/L",
+                                           label: "Average consumption")
+                                    Square(icon: nil,
+                                           number: tracker.averageSpending,
+                                           value: "km/€",
+                                           label: "Average spending")
+                                }
+                                Spacer()
+                                VStack {
+                                    Square(icon: nil,
+                                           number: tracker.totalSpending,
+                                           value: "€",
+                                           label: "Total fuel spending")
+                                    Square(icon: nil,
+                                           number: tracker.averagePrice,
+                                           value: "€/l",
+                                           label: "Average Fuel Price")
+                                }
                             }
-                            Spacer()
-                            VStack {
-                                Square(icon: nil,
-                                       number: tracker.totalSpending,
-                                       value: "€",
-                                       label: "Total fuel spending")
-                                Square(icon: nil,
-                                       number: tracker.averagePrice,
-                                       value: "€/l",
-                                       label: "Average Fuel Price")
-                            }
-                        }
+                        }.padding()
                     }.padding()
-                }.padding()
-                
-                // MARK: - Graphics Selector
-                ZStack {
-                    RoundedRectangle(cornerRadius: 7)
-                        .fill(Color("Cream"))
-                        .frame(maxHeight: 30)
-                        .shadow(color: .black, radius: 1, x: 1, y: 1)
-                    HStack {
-                        Button(action: {graphType = .spending}, label: {
-                            Text("Refuel Cost")
-                        })
-                        Spacer()
-                        Button(action: {graphType = .dates}, label: {
-                            Text("Price per liter")
-                        })
-                        Spacer()
-                        Button(action: {graphType = .km}, label: {
-                            Text("Kms per refuel")
-                        })
-                    }
-                    .foregroundColor(Color("Wine"))
-                    .padding()
-                }.padding()
-                
-                // MARK: - Graphic
-                Graphic(tracker: tracker, type: $graphType)
-                    .padding()
-            }
-            .navigationBarTitle("Vehicle Stats", displayMode: .inline)
+                    
+                    // MARK: - Graphics Selector
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 7)
+                            .fill(Color("Cream"))
+                            .frame(maxHeight: 30)
+                            .shadow(color: .black, radius: 1, x: 1, y: 1)
+                        HStack {
+                            Button(action: {graphType = .spending}, label: {
+                                Text("Refuel Cost")
+                            })
+                            Spacer()
+                            Button(action: {graphType = .dates}, label: {
+                                Text("Price per liter")
+                            })
+                            Spacer()
+                            Button(action: {graphType = .km}, label: {
+                                Text("Kms per refuel")
+                            })
+                        }
+                        .foregroundColor(Color("Wine"))
+                        .padding()
+                    }.padding()
+                    
+                    // MARK: - Graphic
+                    Graphic(tracker: tracker, type: $graphType)
+                        .padding()
+                }
+
+                // MARK: - Ad Banner
+                Banner()
+            }.navigationBarTitle("Vehicle Stats", displayMode: .inline)
         }
     }
 }

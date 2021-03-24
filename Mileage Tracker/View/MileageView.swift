@@ -25,6 +25,7 @@ struct MileageView: View {
                         RefuelCardView(refuel: refuel, average: tracker.averagePrice)
                     }.onDelete(perform: removeItem)
                 }.padding(.horizontal, -20)
+                Banner()
             }
             .navigationBarTitle(NSLocalizedString("Mileage Tracker", comment: ""), displayMode: .inline)
             .navigationBarItems(trailing:
