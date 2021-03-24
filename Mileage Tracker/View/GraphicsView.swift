@@ -9,14 +9,14 @@ import SwiftUI
 import SwiftUICharts // https://github.com/AppPear/ChartView
 
 struct GraphicsView: View {
-    @State var isLoading = true
+    @State var isLoading = false
     @ObservedObject var tracker: MileageTracker
     @State var graphType: GraphType = .spending
 
     var body: some View {
         NavigationView {
             VStack {
-                if isLoading && !tracker.paidApp {
+                if isLoading {
                     InterstitialView()
                 } else {
                     // MARK: - Regular Screen
@@ -88,11 +88,13 @@ struct GraphicsView: View {
                 }
             }
             .onAppear(perform: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                    isLoading = false
+                if !tracker.paidApp {
+                    isLoading = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        isLoading = false
+                    }
                 }
-            }
-            )
+            })
         }
     }
 }
