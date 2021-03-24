@@ -11,7 +11,6 @@ import SwiftUICharts // https://github.com/AppPear/ChartView
 struct GraphicsView: View {
     @ObservedObject var tracker: MileageTracker
     
-    var graphs = ["spending", "dates", "km"]
     @State var graphType: GraphType = .spending
     
     var body: some View {
@@ -21,35 +20,35 @@ struct GraphicsView: View {
                 ZStack {
                     BackgroundCard()
                         .frame(maxHeight: 140)
-                    //                    VStack(alignment: .center) {
-                    //                        Text("Total KM: " + String(tracker.totalKM.clean) + " km")
-                    //                            .foregroundColor(Color("Yellowish"))
-                    //                            .font(.title)
-                    //                            .fontWeight(.bold)
-                    //                        HStack {
-                    //                            VStack(alignment: .leading) {
-                    //                                Square(icon: nil,
-                    //                                       number: tracker.averageConsumption,
-                    //                                       value: "km/L",
-                    //                                       label: "Average consumption")
-                    //                                Square(icon: nil,
-                    //                                       number: tracker.averageSpending,
-                    //                                       value: "km/€",
-                    //                                       label: "Average spending")
-                    //                            }
-                    //                            Spacer()
-                    //                            VStack {
-                    //                                Square(icon: nil,
-                    //                                       number: tracker.totalSpending,
-                    //                                       value: "€",
-                    //                                       label: "Total fuel spending")
-                    //                                Square(icon: nil,
-                    //                                       number: tracker.averagePrice,
-                    //                                       value: "€/l",
-                    //                                       label: "Average Fuel Price")
-                    //                            }
-                    //                        }
-                    //                    }.padding()
+                    VStack(alignment: .center) {
+                        Text("Total KM: " + String(tracker.totalKM.clean) + " km")
+                            .foregroundColor(Color("Yellowish"))
+                            .font(.title)
+                            .fontWeight(.bold)
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Square(icon: nil,
+                                       number: tracker.averageConsumption,
+                                       value: "km/L",
+                                       label: "Average consumption")
+                                Square(icon: nil,
+                                       number: tracker.averageSpending,
+                                       value: "km/€",
+                                       label: "Average spending")
+                            }
+                            Spacer()
+                            VStack {
+                                Square(icon: nil,
+                                       number: tracker.totalSpending,
+                                       value: "€",
+                                       label: "Total fuel spending")
+                                Square(icon: nil,
+                                       number: tracker.averagePrice,
+                                       value: "€/l",
+                                       label: "Average Fuel Price")
+                            }
+                        }
+                    }.padding()
                 }.padding()
                 
                 // MARK: - Graphics Selector
@@ -57,52 +56,64 @@ struct GraphicsView: View {
                     RoundedRectangle(cornerRadius: 7)
                         .fill(Color("Cream"))
                         .frame(maxHeight: 30)
-                    Picker("Text", selection: $graphType) {
-                        ForEach(graphs, id: \.self) {
-                            Text($0)
-                        }
-                    }.pickerStyle(SegmentedPickerStyle())
-                    //                    HStack {
-                    //                        Button(action: {graphType = .spending}, label: {
-                    //                            Text("Spending")
-                    //                        })
-                    //                        Spacer()
-                    //                        Button(action: {graphType = .dates}, label: {
-                    //                            Text("Refuel Dates")
-                    //                        })
-                    //                        Spacer()
-                    //                        Button(action: {graphType = .km}, label: {
-                    //                            Text("KMs")
-                    //                        })
-                    //                    }
-                    //                    .foregroundColor(Color("Wine"))
-                    //                    .padding()
+                        .shadow(color: .black, radius: 1, x: 1, y: 1)
+                    HStack {
+                        Button(action: {graphType = .spending}, label: {
+                            Text("Refuel Cost")
+                        })
+                        Spacer()
+                        Button(action: {graphType = .dates}, label: {
+                            Text("Price per liter")
+                        })
+                        Spacer()
+                        Button(action: {graphType = .km}, label: {
+                            Text("Kms per refuel")
+                        })
+                    }
+                    .foregroundColor(Color("Wine"))
+                    .padding()
                 }.padding()
                 
                 // MARK: - Graphic
-                getGraphData(type: graphType)
+                Graphic(tracker: tracker, type: $graphType)
+                    .padding()
             }
             .navigationBarTitle("Vehicle Stats", displayMode: .inline)
         }
     }
+}
+
+enum GraphType {
+    // swiftlint:disable identifier_name
+    case spending, dates, km
+}
+
+struct Graphic: View {
+    @ObservedObject var tracker: MileageTracker
     
-    enum GraphType {
-        // swiftlint:disable identifier_name
-        case spending, dates, km
-    }
+    @Binding var type: GraphType
     
-    func getGraphData(type: GraphType) -> some View {
+    var body: some View {
+        let chartStyle = ChartStyle(backgroundColor: Color("Cream"),
+                                    accentColor: Color("Wine"),
+                                    gradientColor: GradientColor(start:
+                                                                    Color("Yellowish"),
+                                                                 end: Color("Wine")),
+                                    textColor: Color("Wine"),
+                                    legendTextColor: Color("Redder"),
+                                    dropShadowColor: .gray)
+
         switch type {
         case .spending:
-            return LineView(data: tracker.refuels.map { $0.money }, title: "Spending")
+            LineView(data: tracker.refuels.map { $0.money },
+                     title: "Refuel cost", style: chartStyle)
             
         case .dates:
-            return LineView(data: tracker.refuels.map {
-                                Double($0.creationDate.timeIntervalSince1970) },
-                            title: "Refuel Date")
-        // graph is not the best way to visualize when the refuels were made. think of something better
+            LineView(data: tracker.refuels.map {
+                        Double($0.pricePerLiter) },
+                     title: "Price per liter", style: chartStyle)
         case .km:
-            return LineView(data: tracker.refuels.map { $0.kmAdded }, title: "KM per Refuel")
+            LineView(data: tracker.refuels.map { $0.kmAdded }, title: "KM per Refuel", style: chartStyle)
         }
     }
 }
