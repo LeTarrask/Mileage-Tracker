@@ -108,6 +108,53 @@ class MileageTracker: ObservableObject {
             }
         }
     }
+
+    func exportCSV() {
+        /// A method that exports Refuel data and other costs into a CSV file
+        var refuelStrings = "Refuel Date, Liters, Price per Liter, km added, total km\n"
+
+        let formatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+            return formatter
+        }()
+
+        for refuel in refuels {
+            let array = [formatter.string(from: refuel.creationDate),
+                         String(refuel.liters),
+                         String(refuel.pricePerLiter),
+                         String(refuel.kmAdded),
+                         String(refuel.totalKM),
+                         "\n"]
+            let line = array.joined(separator: ",")
+            refuelStrings.append(line)
+        }
+
+        /// Iterates other costs
+        refuelStrings.append("\nCost Date, Type, Name, Price\n")
+  
+        for cost in otherCosts {
+            let array = [formatter.string(from: cost.creationDate),
+                         cost.type.rawValue,
+                         cost.name,
+                         String(cost.value),
+                         "\n"]
+            let line = array.joined(separator: ",")
+            refuelStrings.append(line)
+        }
+
+        // gets these arrays of strings and outputs it into csv
+        let fileName = "MileageTracker.csv"
+        let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+
+        do {
+            try refuelStrings.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+        } catch {
+            print("Failed to create file")
+            print("\(error)")
+        }
+        print(path ?? "not found")
+    }
 }
 
 extension MileageTracker {

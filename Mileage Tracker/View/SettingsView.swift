@@ -12,6 +12,8 @@ struct SettingsView: View {
     @ObservedObject var tracker: MileageTracker
 
     @Environment(\.openURL) var openURL
+ 
+    @State var canExport = true
 
     // swiftlint:disable redundant_optional_initialization
     @State var result: Result<MFMailComposeResult, Error>? = nil
@@ -49,7 +51,11 @@ struct SettingsView: View {
                         openURL(inAppURL)
                     }
                     Button(exportData) {
-                        openURL(exportURL)
+                        if canExport {
+                            tracker.exportCSV()
+                        } else {
+                            openURL(exportURL)
+                        }
                     }
                 }
 
