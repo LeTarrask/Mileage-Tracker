@@ -18,7 +18,14 @@ struct SettingsView: View {
     @State var isShowingMailView = false
     @State var alertNoMail = false
 
+    // TO DO: add a variable to control if user can export all data in CSV
+
     /// VIEW STRINGS & URLs
+    let buyTitle = NSLocalizedString("In-App Purchases", comment: "")
+    let removeAds = NSLocalizedString("Remove ads", comment: "")
+    let inAppURL = URL(string: "https://www.tarrask.com")!
+    let exportData = NSLocalizedString("Export data", comment: "")
+    let exportURL = URL(string: "https://www.tarrask.com")!
     let viewTitle = NSLocalizedString("App Settings", comment: "")
     let shareTracker = NSLocalizedString("Share Mileage Tracker", comment: "")
     let copyAppLink = NSLocalizedString("Copy App Link", comment: "")
@@ -37,6 +44,15 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
+                Section(header: Text(buyTitle)) {
+                    Button(removeAds) {
+                        openURL(inAppURL)
+                    }
+                    Button(exportData) {
+                        openURL(exportURL)
+                    }
+                }
+
                 Section(header: Text(shareTracker)) {
                     Button(copyAppLink) { openURL(appLink) }
                 }

@@ -25,6 +25,7 @@
 		7985564B24C8478700544777 /* MileageTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564A24C8478700544777 /* MileageTracker.swift */; };
 		7985564D24C84D8300544777 /* AddRefuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564C24C84D8300544777 /* AddRefuel.swift */; };
 		79881D2A260A48F400B3BC83 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79881D29260A48F400B3BC83 /* Color.xcassets */; };
+		79D336DF260B92CC0034BA63 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D336DE260B92CB0034BA63 /* Loading.swift */; };
 		79DA782425AF1CEF009E0FFC /* RefuelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA782325AF1CEF009E0FFC /* RefuelModel.swift */; };
 		79ED3D6B260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
 		79ED3D6C260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
@@ -92,6 +93,7 @@
 		7985564A24C8478700544777 /* MileageTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTracker.swift; sourceTree = "<group>"; };
 		7985564C24C84D8300544777 /* AddRefuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRefuel.swift; sourceTree = "<group>"; };
 		79881D29260A48F400B3BC83 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Color.xcassets; path = "Mileage Tracker/View/Color.xcassets"; sourceTree = SOURCE_ROOT; };
+		79D336DE260B92CB0034BA63 /* Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		79DA782325AF1CEF009E0FFC /* RefuelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelModel.swift; sourceTree = "<group>"; };
 		79ED3D67260A128B00421881 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		79ED3D68260A128B00421881 /* AdMob InterstitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AdMob InterstitialVC.swift"; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		7985564F24C8609000544777 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				79D336DE260B92CB0034BA63 /* Loading.swift */,
 				7985562124C8475E00544777 /* MileageView.swift */,
 				7985564C24C84D8300544777 /* AddRefuel.swift */,
 				79259C1F25B097D6006BD78E /* GraphicsView.swift */,
@@ -554,6 +557,7 @@
 			files = (
 				79ED3D74260A128B00421881 /* AdMob BannerVC.swift in Sources */,
 				791378A025B2032700871ECE /* OtherCosts.swift in Sources */,
+				79D336DF260B92CC0034BA63 /* Loading.swift in Sources */,
 				79ED3D92260A14B200421881 /* UIApplicationVersion.swift in Sources */,
 				79ED3D97260A1AC000421881 /* MailView.swift in Sources */,
 				79DA782425AF1CEF009E0FFC /* RefuelModel.swift in Sources */,

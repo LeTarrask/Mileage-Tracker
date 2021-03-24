@@ -120,7 +120,7 @@ struct Graphic: View {
         case .spending:
             LineView(data: tracker.refuels.map { $0.money },
                      title: "Refuel cost", style: chartStyle)
-    
+
         case .dates:
             LineView(data: tracker.refuels.map {
                         Double($0.pricePerLiter) },
