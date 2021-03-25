@@ -21,8 +21,6 @@ struct SettingsView: View {
     @State var isShowingMailView = false
     @State var alertNoMail = false
 
-    // TO DO: add a variable to control if user can export all data in CSV
-
     /// VIEW STRINGS & URLs
     let buyTitle = NSLocalizedString("In-App Purchases", comment: "")
     let removeAds = NSLocalizedString("Remove ads", comment: "")
