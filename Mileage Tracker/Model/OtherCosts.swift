@@ -32,6 +32,7 @@ struct OtherCost: Hashable, Identifiable, Codable {
         enum Key: CodingKey {
             case rawValue
         }
+
         enum CodingError: Error {
             case unknownValue
         }

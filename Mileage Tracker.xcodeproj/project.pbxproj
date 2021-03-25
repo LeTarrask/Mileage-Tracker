@@ -28,6 +28,9 @@
 		79D336DF260B92CC0034BA63 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D336DE260B92CB0034BA63 /* Loading.swift */; };
 		79D336E4260BAA540034BA63 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D336E3260BAA540034BA63 /* ShareSheet.swift */; };
 		79DA782425AF1CEF009E0FFC /* RefuelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA782325AF1CEF009E0FFC /* RefuelModel.swift */; };
+		79E4CAAD260CA0790061C9E0 /* Color-Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */; };
+		79E4CAB2260CA38C0061C9E0 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAB1260CA38C0061C9E0 /* ThemePicker.swift */; };
+		79E4CAB7260CAA450061C9E0 /* EnumPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAB6260CAA450061C9E0 /* EnumPicker.swift */; };
 		79ED3D6B260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
 		79ED3D6C260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
 		79ED3D6D260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
@@ -97,6 +100,9 @@
 		79D336DE260B92CB0034BA63 /* Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		79D336E3260BAA540034BA63 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		79DA782325AF1CEF009E0FFC /* RefuelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelModel.swift; sourceTree = "<group>"; };
+		79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Themes.swift"; sourceTree = "<group>"; };
+		79E4CAB1260CA38C0061C9E0 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
+		79E4CAB6260CAA450061C9E0 /* EnumPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumPicker.swift; sourceTree = "<group>"; };
 		79ED3D67260A128B00421881 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		79ED3D68260A128B00421881 /* AdMob InterstitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AdMob InterstitialVC.swift"; sourceTree = "<group>"; };
 		79ED3D69260A128B00421881 /* InterstitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialView.swift; sourceTree = "<group>"; };
@@ -168,8 +174,10 @@
 			isa = PBXGroup;
 			children = (
 				7913788B25B1F24100871ECE /* Double+String.swift */,
+				79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */,
 				79ED3D7D260A138B00421881 /* UIDeviceExtension.swift */,
 				79ED3D91260A14B200421881 /* UIApplicationVersion.swift */,
+				79E4CAB6260CAA450061C9E0 /* EnumPicker.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,6 +277,7 @@
 				79D336E3260BAA540034BA63 /* ShareSheet.swift */,
 				79ED3D96260A1AC000421881 /* MailView.swift */,
 				79881D29260A48F400B3BC83 /* Color.xcassets */,
+				79E4CAB1260CA38C0061C9E0 /* ThemePicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -560,6 +569,7 @@
 			files = (
 				79ED3D74260A128B00421881 /* AdMob BannerVC.swift in Sources */,
 				791378A025B2032700871ECE /* OtherCosts.swift in Sources */,
+				79E4CAAD260CA0790061C9E0 /* Color-Themes.swift in Sources */,
 				79D336DF260B92CC0034BA63 /* Loading.swift in Sources */,
 				79ED3D92260A14B200421881 /* UIApplicationVersion.swift in Sources */,
 				79ED3D97260A1AC000421881 /* MailView.swift in Sources */,
@@ -568,6 +578,8 @@
 				7985564B24C8478700544777 /* MileageTracker.swift in Sources */,
 				7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */,
 				7985562224C8475E00544777 /* MileageView.swift in Sources */,
+				79E4CAB7260CAA450061C9E0 /* EnumPicker.swift in Sources */,
+				79E4CAB2260CA38C0061C9E0 /* ThemePicker.swift in Sources */,
 				79ED3D71260A128B00421881 /* InterstitialView.swift in Sources */,
 				79D336E4260BAA540034BA63 /* ShareSheet.swift in Sources */,
 				7913791A25B5FA2000871ECE /* SettingsView.swift in Sources */,
