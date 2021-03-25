@@ -13,6 +13,8 @@ enum GraphType {
 }
 
 struct GraphicsView: View {
+    @State var theme: Theme = ThemeManager.currentTheme()
+
     @State var isLoading = false
     @ObservedObject var tracker: MileageTracker
     @State var graphType: GraphType = .spending
@@ -32,7 +34,7 @@ struct GraphicsView: View {
                                     .frame(maxHeight: 140)
                                 VStack(alignment: .center) {
                                     Text("Total KM: " + String(tracker.totalKM.clean) + " km")
-                                        .foregroundColor(Color("Yellowish"))
+                                        .foregroundColor(theme.highlightColor)
                                         .font(.title)
                                         .fontWeight(.bold)
                                     HStack {
@@ -63,7 +65,7 @@ struct GraphicsView: View {
                             // MARK: - Graphics Selector
                             ZStack {
                                 RoundedRectangle(cornerRadius: 7)
-                                    .fill(Color("Cream"))
+                                    .fill(theme.backgroundColor)
                                     .frame(maxHeight: 30)
                                     .shadow(color: .black, radius: 1, x: 1, y: 1)
                                 HStack {
@@ -79,7 +81,7 @@ struct GraphicsView: View {
                                         Text("Kms per refuel")
                                     })
                                 }
-                                .foregroundColor(Color("Wine"))
+                                .foregroundColor(theme.secondaryColor)
                                 .padding()
                             }.padding()
                             // MARK: - Graphic

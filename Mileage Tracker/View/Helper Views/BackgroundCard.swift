@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct BackgroundCard: View {
+    var theme: Theme = ThemeManager.currentTheme()
+
     var body: some View {
         LinearGradient(gradient:
-                        Gradient(colors: [Color("Redder"), Color("Wine")]),
+                        Gradient(colors: [theme.secondaryColor, theme.mainColor]),
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
             .cornerRadius(15)

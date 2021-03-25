@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RefuelCardView: View {
+    var theme: Theme = ThemeManager.currentTheme()
+
     var refuel: Refuel
 
     var average: Double
@@ -60,10 +62,10 @@ struct RefuelCardView: View {
                 HStack {
                     Text(NSLocalizedString("Refuel at: ", comment: ""))
                         .font(.caption)
-                    Text(formatter.string(from: refuel.creationDate))
+                    Text(dateToString(date: refuel.creationDate))
                         .font(.caption)
                 }
-                .foregroundColor(Color("Cream"))
+                .foregroundColor(theme.backgroundColor)
             }.padding()
         }
     }

@@ -9,6 +9,8 @@ import MessageUI
 import SwiftUI
 
 struct SettingsView: View {
+    @State var chosenTheme: Theme = .theme1
+
     @ObservedObject var tracker: MileageTracker
 
     @Environment(\.openURL) var openURL
@@ -25,6 +27,7 @@ struct SettingsView: View {
     let buyTitle = NSLocalizedString("In-App Purchases", comment: "")
     let removeAds = NSLocalizedString("Remove ads", comment: "")
     let inAppURL = URL(string: "https://www.tarrask.com")!
+    let chooseTheme = NSLocalizedString("Choose theme", comment: "")
     let exportData = NSLocalizedString("Export data", comment: "")
     let exportURL = URL(string: "https://www.tarrask.com")!
     let viewTitle = NSLocalizedString("App Settings", comment: "")
@@ -59,6 +62,13 @@ struct SettingsView: View {
                     }
                 }
 
+                Section(header: Text(chooseTheme)) {
+                    EnumPicker(selection: $chosenTheme, label: Text(chooseTheme.description))
+                }.onChange(of: chosenTheme, perform: { value in
+                    ThemeManager.applyTheme(theme: value)
+                    print("New theme chosen: " + value.description)
+                })
+
                 Section(header: Text(shareTracker)) {
                     Button(copyAppLink) { openURL(appLink) }
                 }
@@ -84,7 +94,7 @@ struct SettingsView: View {
                     }
                 }
             }
-            .foregroundColor(Color("Redder"))
+            .foregroundColor(chosenTheme.mainColor)
             .navigationBarTitle(viewTitle, displayMode: .inline)
         }
         .sheet(isPresented: $isShowingMailView) {

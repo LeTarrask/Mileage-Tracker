@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OtherCostsView: View {
+    var theme: Theme = ThemeManager.currentTheme()
+
     @ObservedObject var tracker: MileageTracker
 
     @Environment(\.scenePhase) private var scenePhase
@@ -22,21 +24,23 @@ struct OtherCostsView: View {
                 ScrollView {
                     ZStack {
                         RoundedRectangle(cornerRadius: 15.0)
+                            .fill(LinearGradient(gradient: theme.gradient1,
+                                                 startPoint: .bottomLeading,
+                                                 endPoint: .topTrailing))
                             .frame(minHeight: 70, maxHeight: 80)
                             .padding()
+
                         HStack {
                             Text("Total Other Costs: ")
                             Text(String(tracker.totalOtherCosts))
                             Text(" €")
-                        }.foregroundColor(.white)
+                        }.foregroundColor(theme.backgroundColor)
                     }
                     ForEach(tracker.otherCosts.reversed()) { cost in
                         ZStack {
                             RoundedRectangle(cornerRadius: 15.0)
                                 .fill(LinearGradient(gradient:
-                                                        Gradient(colors: cost.type == .tax ?
-                                                                    [Color("Redder"), Color("Wine")] :
-                                                                    [Color("Cream"), Color("Yellowish")]),
+                                                        cost.type == .tax ? theme.gradient1 : theme.gradient2,
                                                      startPoint: .topLeading,
                                                      endPoint: .bottomTrailing))
                                 .frame(minHeight: 70, maxHeight: 80)
@@ -54,7 +58,7 @@ struct OtherCostsView: View {
                                 Text(dateToString(date: cost.creationDate))
                                     .font(.caption)
                             }
-                            .foregroundColor(cost.type == .tax ? Color("Cream") : Color("Wine"))
+                            .foregroundColor(cost.type == .tax ? theme.backgroundColor : theme.mainColor)
                             .padding()
                         }
                     }.padding(.horizontal)

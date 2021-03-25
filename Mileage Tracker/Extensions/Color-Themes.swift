@@ -25,24 +25,20 @@ enum Theme: Int, Pickable {
     case theme1, theme2
 
     var mainColor: Color {
-        // TO DO: Decide for color schemes and add all colors here.
-        // Add all colors to the app here
-        // Call these colors from view
         switch self {
         case .theme1:
             return Color("mainColor")
         case .theme2:
-            return Color("Wine")
+            return Color("mainColor_2")
         }
     }
 
     var backgroundColor: Color {
-        // the same
         switch self {
         case .theme1:
             return Color("backgroundColor")
         case .theme2:
-            return Color("Wine")
+            return Color("backgroundColor_2")
         }
     }
 
@@ -51,7 +47,7 @@ enum Theme: Int, Pickable {
         case .theme1:
             return Color("secondaryColor")
         case .theme2:
-            return Color("Wine")
+            return Color("secondaryColor_2")
         }
     }
 
@@ -60,7 +56,7 @@ enum Theme: Int, Pickable {
         case .theme1:
             return Color("highlightColor")
         case .theme2:
-            return Color("Wine")
+            return Color("highlightColor_2")
         }
     }
 
@@ -69,7 +65,7 @@ enum Theme: Int, Pickable {
         case .theme1:
             return Color(UIColor.systemGray)
         case .theme2:
-            return Color("Wine")
+            return Color(UIColor.systemGray4)
         }
     }
 
@@ -78,31 +74,15 @@ enum Theme: Int, Pickable {
         case .theme1:
             return Color(UIColor.systemGray3)
         case .theme2:
-            return Color("Wine")
-        }
-    }
-}
-
-// Enum declaration
-let selectedThemeKey = "SelectedTheme"
-
-class ThemeManager {
-    /// This loads from UserDefalts the selected theme, or picks the main theme
-    static func currentTheme() -> Theme {
-        if let storedTheme = (UserDefaults.standard.value(forKey: selectedThemeKey) as AnyObject).integerValue {
-            return Theme(rawValue: storedTheme)!
-        } else {
-            return .theme1
+            return Color(UIColor.systemGray)
         }
     }
 
-    /// Gets chosen theme and applies to our view's settings.
-    static func applyTheme(theme: Theme) {
-        // First persist the selected theme using NSUserDefaults.
-        UserDefaults.standard.setValue(theme.rawValue, forKey: selectedThemeKey)
-        UserDefaults.standard.synchronize()
+    var gradient1: Gradient {
+        Gradient(colors: [secondaryColor, mainColor])
+    }
 
-// You get your current (selected) theme and apply the main color to the
-// tintColor property of your application’s window.
+    var gradient2: Gradient {
+        Gradient(colors: [backgroundColor, highlightColor])
     }
 }
