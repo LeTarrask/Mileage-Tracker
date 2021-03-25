@@ -9,6 +9,7 @@ import MessageUI
 import SwiftUI
 
 struct SettingsView: View {
+    var theme: Theme = ThemeManager.currentTheme()
     @State var chosenTheme: Theme = .theme1
 
     @ObservedObject var tracker: MileageTracker
@@ -94,7 +95,7 @@ struct SettingsView: View {
                     }
                 }
             }
-            .foregroundColor(chosenTheme.mainColor)
+            .foregroundColor(theme.mainColor)
             .navigationBarTitle(viewTitle, displayMode: .inline)
         }
         .sheet(isPresented: $isShowingMailView) {

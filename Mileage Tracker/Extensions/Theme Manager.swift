@@ -7,10 +7,9 @@
 
 import Foundation
 
-// Enum declaration
-let selectedThemeKey = "SelectedTheme"
-
 class ThemeManager {
+    static let selectedThemeKey = "SelectedTheme"
+
     /// This loads from UserDefalts the selected theme, or picks the main theme
     static func currentTheme() -> Theme {
         if let storedTheme = (UserDefaults.standard.value(forKey: selectedThemeKey) as AnyObject).integerValue {

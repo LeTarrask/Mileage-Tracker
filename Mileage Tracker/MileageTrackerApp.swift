@@ -11,6 +11,8 @@ import SwiftUI
 struct MileageTrackerApp: App {
     @ObservedObject private var tracker = MileageTracker()
 
+    @State var theme: Theme = ThemeManager.currentTheme()
+
     /// VIEW STRINGS & URLs
     let refuelsString = NSLocalizedString("Refuels", comment: "")
     let otherCostsString = NSLocalizedString("Other costs", comment: "")
@@ -19,30 +21,32 @@ struct MileageTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-                TabView {
-                    MileageView(tracker: tracker) {
-                        tracker.save()
-                    }.tabItem {
-                        Image(systemName: "drop.fill")
-                        Text(refuelsString)
-                    }
-                    OtherCostsView(tracker: tracker) {
-                        tracker.save()
-                    }.tabItem {
-                        Image(systemName: "wrench.and.screwdriver")
-                        Text(otherCostsString)
-                    }
-                    GraphicsView(tracker: tracker)
-                        .tabItem {
-                            Image(systemName: "list.star")
-                            Text(statsString)
-                        }
-                    SettingsView(tracker: tracker)
-                        .tabItem {
-                            Image(systemName: "gearshape")
-                            Text(settingsString)
-                        }
-                }.edgesIgnoringSafeArea(.top)
+            TabView {
+                MileageView(tracker: tracker) {
+                    tracker.save()
+                }.tabItem {
+                    Image(systemName: "drop.fill")
+                    Text(refuelsString)
+                }.foregroundColor(theme.mainColor)
+                OtherCostsView(tracker: tracker) {
+                    tracker.save()
+                }.tabItem {
+                    Image(systemName: "wrench.and.screwdriver")
+                    Text(otherCostsString)
+                }.foregroundColor(theme.mainColor)
+                GraphicsView(tracker: tracker)
+                    .tabItem {
+                        Image(systemName: "list.star")
+                        Text(statsString)
+                    }.foregroundColor(theme.mainColor)
+                SettingsView(tracker: tracker)
+                    .tabItem {
+                        Image(systemName: "gearshape")
+                        Text(settingsString)
+                    }.foregroundColor(theme.mainColor)
+            }
+            .accentColor(theme.mainColor)
+            .edgesIgnoringSafeArea(.top)
             .onAppear {
                 tracker.load()
             }
