@@ -35,6 +35,8 @@
 		79E4CAC8260CE0420061C9E0 /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAC7260CE0420061C9E0 /* PlusButton.swift */; };
 		79E4CAD0260CE0800061C9E0 /* RefuelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */; };
 		79E4CADB260CE0A80061C9E0 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CADA260CE0A80061C9E0 /* Square.swift */; };
+		79E4CAE3260CE2210061C9E0 /* View+dateToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */; };
+		79E4CAEB260CE2A00061C9E0 /* BackgroundCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAEA260CE29F0061C9E0 /* BackgroundCard.swift */; };
 		79ED3D6B260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
 		79ED3D6C260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
 		79ED3D6D260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
@@ -109,8 +111,10 @@
 		79E4CAB6260CAA450061C9E0 /* EnumPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumPicker.swift; sourceTree = "<group>"; };
 		79E4CAC1260CDEF00061C9E0 /* Graphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphic.swift; sourceTree = "<group>"; };
 		79E4CAC7260CE0420061C9E0 /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
-		79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RefuelCardView.swift; path = "Helper Views/RefuelCardView.swift"; sourceTree = "<group>"; };
-		79E4CADA260CE0A80061C9E0 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Square.swift; path = "Helper Views/Square.swift"; sourceTree = "<group>"; };
+		79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelCardView.swift; sourceTree = "<group>"; };
+		79E4CADA260CE0A80061C9E0 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+dateToString.swift"; sourceTree = "<group>"; };
+		79E4CAEA260CE29F0061C9E0 /* BackgroundCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCard.swift; sourceTree = "<group>"; };
 		79ED3D67260A128B00421881 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		79ED3D68260A128B00421881 /* AdMob InterstitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AdMob InterstitialVC.swift"; sourceTree = "<group>"; };
 		79ED3D69260A128B00421881 /* InterstitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialView.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				7913788B25B1F24100871ECE /* Double+String.swift */,
 				79ED3D7D260A138B00421881 /* UIDeviceExtension.swift */,
 				79ED3D91260A14B200421881 /* UIApplicationVersion.swift */,
+				79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -278,8 +283,6 @@
 			children = (
 				79D336DE260B92CB0034BA63 /* Loading.swift */,
 				7985562124C8475E00544777 /* MileageView.swift */,
-				79E4CADA260CE0A80061C9E0 /* Square.swift */,
-				79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */,
 				79259C1F25B097D6006BD78E /* GraphicsView.swift */,
 				7913789A25B2030600871ECE /* OtherCostsView.swift */,
 				7913791925B5FA1F00871ECE /* SettingsView.swift */,
@@ -293,10 +296,13 @@
 		79E4CAC6260CDFFE0061C9E0 /* Helper Views */ = {
 			isa = PBXGroup;
 			children = (
+				79E4CADA260CE0A80061C9E0 /* Square.swift */,
+				79E4CAC7260CE0420061C9E0 /* PlusButton.swift */,
+				79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */,
 				79ED3D96260A1AC000421881 /* MailView.swift */,
 				79E4CAC1260CDEF00061C9E0 /* Graphic.swift */,
+				79E4CAEA260CE29F0061C9E0 /* BackgroundCard.swift */,
 				79D336E3260BAA540034BA63 /* ShareSheet.swift */,
-				79E4CAC7260CE0420061C9E0 /* PlusButton.swift */,
 				79E4CAB1260CA38C0061C9E0 /* ThemePicker.swift */,
 			);
 			path = "Helper Views";
@@ -591,9 +597,11 @@
 				791378A025B2032700871ECE /* OtherCosts.swift in Sources */,
 				79E4CAAD260CA0790061C9E0 /* Color-Themes.swift in Sources */,
 				79D336DF260B92CC0034BA63 /* Loading.swift in Sources */,
+				79E4CAE3260CE2210061C9E0 /* View+dateToString.swift in Sources */,
 				79ED3D92260A14B200421881 /* UIApplicationVersion.swift in Sources */,
 				79ED3D97260A1AC000421881 /* MailView.swift in Sources */,
 				79E4CADB260CE0A80061C9E0 /* Square.swift in Sources */,
+				79E4CAEB260CE2A00061C9E0 /* BackgroundCard.swift in Sources */,
 				79E4CAC2260CDEF00061C9E0 /* Graphic.swift in Sources */,
 				79DA782425AF1CEF009E0FFC /* RefuelModel.swift in Sources */,
 				79ED3D6E260A128B00421881 /* AdMob InterstitialVC.swift in Sources */,

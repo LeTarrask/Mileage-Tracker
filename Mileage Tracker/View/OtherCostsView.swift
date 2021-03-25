@@ -89,14 +89,6 @@ struct OtherCostsView: View {
     }
 }
 
-extension View {
-    func dateToString(date: Date) -> String {
-        let formatter1 = DateFormatter()
-        formatter1.dateStyle = .medium
-        return formatter1.string(from: date)
-    }
-}
-
 struct OtherCostsView_Previews: PreviewProvider {
     static var previews: some View {
         let view = OtherCostsView(tracker: MileageTracker(), saveAction: {})
