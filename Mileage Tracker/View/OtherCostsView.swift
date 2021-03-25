@@ -40,7 +40,9 @@ struct OtherCostsView: View {
                         ZStack {
                             RoundedRectangle(cornerRadius: 15.0)
                                 .fill(LinearGradient(gradient:
-                                                        cost.type == .tax ? themeMG.theme.gradient1 : themeMG.theme.gradient2,
+                                                        cost.type == .tax ?
+                                                        themeMG.theme.gradient1 :
+                                                        themeMG.theme.gradient2,
                                                      startPoint: .topLeading,
                                                      endPoint: .bottomTrailing))
                                 .frame(minHeight: 70, maxHeight: 80)

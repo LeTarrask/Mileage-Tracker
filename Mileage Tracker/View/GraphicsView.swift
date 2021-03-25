@@ -22,7 +22,7 @@ struct GraphicsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if isLoading {
+                if isLoading && !tracker.paidApp {
                     InterstitialView()
                 } else {
                     // MARK: - Regular Screen
