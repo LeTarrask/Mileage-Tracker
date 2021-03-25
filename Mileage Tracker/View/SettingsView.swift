@@ -75,18 +75,14 @@ struct SettingsView: View {
 
                 Section(header: Text(resetApp)) {
                     Button(deleteData) {
-                        tracker.refuels = [Refuel]()
-                        tracker.otherCosts = [OtherCost]()
-                        tracker.save()
+                        tracker.deleteData()
                     }
                 }
 
                 // Comment this section to publish app
                 Section(header: Text(testData)) {
                     Button(loadTestData) {
-                        tracker.refuels = Refuel.data
-                        tracker.otherCosts = OtherCost.data
-                        tracker.save()
+                        tracker.loadTestData()
                     }
                 }
             }

@@ -159,6 +159,19 @@ class MileageTracker: ObservableObject {
         exportCSV()
         return Self.csvURL // NSData(contentsOf: )
     }
+    
+    /// Testing methods
+    func deleteData() {
+        refuels = [Refuel]()
+        otherCosts = [OtherCost]()
+        save()
+    }
+    
+    func loadTestData() {
+        refuels = Refuel.data
+        otherCosts = OtherCost.data
+        save()
+    }
 }
 
 extension MileageTracker {
