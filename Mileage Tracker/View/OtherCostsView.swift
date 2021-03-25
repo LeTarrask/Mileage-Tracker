@@ -89,7 +89,7 @@ struct OtherCostsView: View {
     }
 }
 
-extension OtherCostsView {
+extension View {
     func dateToString(date: Date) -> String {
         let formatter1 = DateFormatter()
         formatter1.dateStyle = .medium
