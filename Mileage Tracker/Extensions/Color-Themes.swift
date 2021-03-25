@@ -30,7 +30,7 @@ enum Theme: Int, Pickable {
         // Call these colors from view
         switch self {
         case .theme1:
-            return Color("Wine")
+            return Color("mainColor")
         case .theme2:
             return Color("Wine")
         }
@@ -40,7 +40,7 @@ enum Theme: Int, Pickable {
         // the same
         switch self {
         case .theme1:
-            return Color("Wine")
+            return Color("backgroundColor")
         case .theme2:
             return Color("Wine")
         }
@@ -49,7 +49,16 @@ enum Theme: Int, Pickable {
     var secondaryColor: Color {
         switch self {
         case .theme1:
+            return Color("secondaryColor")
+        case .theme2:
             return Color("Wine")
+        }
+    }
+
+    var highlightColor: Color {
+        switch self {
+        case .theme1:
+            return Color("highlightColor")
         case .theme2:
             return Color("Wine")
         }
@@ -58,7 +67,7 @@ enum Theme: Int, Pickable {
     var titleTextColor: Color {
         switch self {
         case .theme1:
-            return Color("Wine")
+            return Color(UIColor.systemGray)
         case .theme2:
             return Color("Wine")
         }
@@ -67,7 +76,7 @@ enum Theme: Int, Pickable {
     var subtitleTextColor: Color {
         switch self {
         case .theme1:
-            return Color("Wine")
+            return Color(UIColor.systemGray3)
         case .theme2:
             return Color("Wine")
         }
