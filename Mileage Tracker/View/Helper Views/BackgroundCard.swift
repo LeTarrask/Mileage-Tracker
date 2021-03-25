@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct BackgroundCard: View {
-    var theme: Theme = ThemeManager.currentTheme()
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
     var body: some View {
         LinearGradient(gradient:
-                        Gradient(colors: [theme.secondaryColor, theme.mainColor]),
+                        Gradient(colors: [themeMG.theme.secondaryColor, themeMG.theme.mainColor]),
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
             .cornerRadius(15)

@@ -187,7 +187,6 @@
 		7913789325B1F29500871ECE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				79E4CAF2260CED900061C9E0 /* Theme Manager.swift */,
 				79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */,
 				79E4CAB6260CAA450061C9E0 /* EnumPicker.swift */,
 				7913788B25B1F24100871ECE /* Double+String.swift */,
@@ -202,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				7985564A24C8478700544777 /* MileageTracker.swift */,
+				79E4CAF2260CED900061C9E0 /* Theme Manager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

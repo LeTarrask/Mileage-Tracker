@@ -9,19 +9,19 @@ import SwiftUI
 import SwiftUICharts // https://github.com/AppPear/ChartView
 
 struct Graphic: View {
-    var theme: Theme = ThemeManager.currentTheme()
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
     @ObservedObject var tracker: MileageTracker
     @Binding var type: GraphType
 
     var body: some View {
-        let chartStyle = ChartStyle(backgroundColor: theme.backgroundColor,
-                                    accentColor: theme.mainColor,
+        let chartStyle = ChartStyle(backgroundColor: themeMG.theme.backgroundColor,
+                                    accentColor: themeMG.theme.mainColor,
                                     gradientColor: GradientColor(start:
-                                                                    theme.highlightColor,
-                                                                 end: theme.mainColor),
-                                    textColor: theme.mainColor,
-                                    legendTextColor: theme.secondaryColor,
+                                                                    themeMG.theme.highlightColor,
+                                                                 end: themeMG.theme.mainColor),
+                                    textColor: themeMG.theme.mainColor,
+                                    legendTextColor: themeMG.theme.secondaryColor,
                                     dropShadowColor: .gray)
 
         switch type {

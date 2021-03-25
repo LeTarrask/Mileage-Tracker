@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OtherCostsView: View {
-    var theme: Theme = ThemeManager.currentTheme()
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
     @ObservedObject var tracker: MileageTracker
 
@@ -24,7 +24,7 @@ struct OtherCostsView: View {
                 ScrollView {
                     ZStack {
                         RoundedRectangle(cornerRadius: 15.0)
-                            .fill(LinearGradient(gradient: theme.gradient1,
+                            .fill(LinearGradient(gradient: themeMG.theme.gradient1,
                                                  startPoint: .bottomLeading,
                                                  endPoint: .topTrailing))
                             .frame(minHeight: 70, maxHeight: 80)
@@ -34,13 +34,13 @@ struct OtherCostsView: View {
                             Text("Total Other Costs: ")
                             Text(String(tracker.totalOtherCosts))
                             Text(" €")
-                        }.foregroundColor(theme.backgroundColor)
+                        }.foregroundColor(themeMG.theme.backgroundColor)
                     }
                     ForEach(tracker.otherCosts.reversed()) { cost in
                         ZStack {
                             RoundedRectangle(cornerRadius: 15.0)
                                 .fill(LinearGradient(gradient:
-                                                        cost.type == .tax ? theme.gradient1 : theme.gradient2,
+                                                        cost.type == .tax ? themeMG.theme.gradient1 : themeMG.theme.gradient2,
                                                      startPoint: .topLeading,
                                                      endPoint: .bottomTrailing))
                                 .frame(minHeight: 70, maxHeight: 80)
@@ -58,7 +58,8 @@ struct OtherCostsView: View {
                                 Text(dateToString(date: cost.creationDate))
                                     .font(.caption)
                             }
-                            .foregroundColor(cost.type == .tax ? theme.backgroundColor : theme.mainColor)
+                            .foregroundColor(cost.type == .tax ?
+                                                themeMG.theme.backgroundColor : themeMG.theme.mainColor)
                             .padding()
                         }
                     }.padding(.horizontal)

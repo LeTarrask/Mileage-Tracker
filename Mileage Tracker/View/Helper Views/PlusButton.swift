@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct PlusButton: View {
-    var theme: Theme = ThemeManager.currentTheme()
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 9)
-                .fill(theme.highlightColor)
+                .fill(themeMG.theme.highlightColor)
                 .frame(width: 30, height: 30)
                 .shadow(color: Color.black.opacity(0.2), radius: 4, x: 7, y: 5)
             Image(systemName: "plus")
-                .foregroundColor(theme.secondaryColor)
+                .foregroundColor(themeMG.theme.secondaryColor)
         }
     }
 }

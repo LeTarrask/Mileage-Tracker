@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Square: View {
-    var theme: Theme = ThemeManager.currentTheme()
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
     let icon: String?
     let number: Double
     let value: String
@@ -23,7 +23,7 @@ struct Square: View {
                 Image(systemName: icon!)
                     .font(.largeTitle)
                     .rotationEffect(number < 0 ? .degrees(-180) : .zero)
-                    .foregroundColor(number < 0 ? .green : flip ? .red : theme.backgroundColor)
+                    .foregroundColor(number < 0 ? .green : flip ? .red : themeMG.theme.backgroundColor)
             }
             VStack(alignment: .leading) {
                 HStack {
@@ -36,6 +36,6 @@ struct Square: View {
                     .font(.caption)
             }
         }
-        .foregroundColor(theme.backgroundColor)
+        .foregroundColor(themeMG.theme.backgroundColor)
     }
 }

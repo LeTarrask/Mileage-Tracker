@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RefuelCardView: View {
-    var theme: Theme = ThemeManager.currentTheme()
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
     var refuel: Refuel
 
@@ -65,7 +65,7 @@ struct RefuelCardView: View {
                     Text(dateToString(date: refuel.creationDate))
                         .font(.caption)
                 }
-                .foregroundColor(theme.backgroundColor)
+                .foregroundColor(themeMG.theme.backgroundColor)
             }.padding()
         }
     }

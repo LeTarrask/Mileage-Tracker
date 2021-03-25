@@ -9,7 +9,8 @@ import MessageUI
 import SwiftUI
 
 struct SettingsView: View {
-    var theme: Theme = ThemeManager.currentTheme()
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+
     @State var chosenTheme: Theme = .theme1
 
     @ObservedObject var tracker: MileageTracker
@@ -66,7 +67,7 @@ struct SettingsView: View {
                 Section(header: Text(chooseTheme)) {
                     EnumPicker(selection: $chosenTheme, label: Text(chooseTheme.description))
                 }.onChange(of: chosenTheme, perform: { value in
-                    ThemeManager.applyTheme(theme: value)
+                    ThemeManager.shared.applyTheme(theme: value)
                     print("New theme chosen: " + value.description)
                 })
 
@@ -95,7 +96,7 @@ struct SettingsView: View {
                     }
                 }
             }
-            .foregroundColor(theme.mainColor)
+            .foregroundColor(themeMG.theme.mainColor)
             .navigationBarTitle(viewTitle, displayMode: .inline)
         }
         .sheet(isPresented: $isShowingMailView) {

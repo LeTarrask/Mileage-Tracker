@@ -11,7 +11,7 @@ import SwiftUI
 struct MileageTrackerApp: App {
     @ObservedObject private var tracker = MileageTracker()
 
-    @State var theme: Theme = ThemeManager.currentTheme()
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
     /// VIEW STRINGS & URLs
     let refuelsString = NSLocalizedString("Refuels", comment: "")
@@ -27,25 +27,25 @@ struct MileageTrackerApp: App {
                 }.tabItem {
                     Image(systemName: "drop.fill")
                     Text(refuelsString)
-                }.foregroundColor(theme.mainColor)
+                }.foregroundColor(themeMG.theme.mainColor)
                 OtherCostsView(tracker: tracker) {
                     tracker.save()
                 }.tabItem {
                     Image(systemName: "wrench.and.screwdriver")
                     Text(otherCostsString)
-                }.foregroundColor(theme.mainColor)
+                }.foregroundColor(themeMG.theme.mainColor)
                 GraphicsView(tracker: tracker)
                     .tabItem {
                         Image(systemName: "list.star")
                         Text(statsString)
-                    }.foregroundColor(theme.mainColor)
+                    }.foregroundColor(themeMG.theme.mainColor)
                 SettingsView(tracker: tracker)
                     .tabItem {
                         Image(systemName: "gearshape")
                         Text(settingsString)
-                    }.foregroundColor(theme.mainColor)
+                    }.foregroundColor(themeMG.theme.mainColor)
             }
-            .accentColor(theme.mainColor)
+            .accentColor(themeMG.theme.mainColor)
             .edgesIgnoringSafeArea(.top)
             .onAppear {
                 tracker.load()
