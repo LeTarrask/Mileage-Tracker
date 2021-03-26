@@ -44,7 +44,7 @@ struct AddRefuel: View {
                     }
                 }
             }.foregroundColor(themeMG.theme.mainColor)
-            
+     
             Button("Save") {
                 tracker.receiveNew(refuelData)
                 tracker.save()

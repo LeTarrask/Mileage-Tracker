@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlusMenu: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
- 
+
     @StateObject var viewRouter: ViewRouter
 
     let widthAndHeight: CGFloat

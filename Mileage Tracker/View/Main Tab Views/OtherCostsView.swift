@@ -27,7 +27,7 @@ struct OtherCostsView: View {
                                              endPoint: .topTrailing))
                         .frame(minHeight: 70, maxHeight: 80)
                         .padding()
-            
+      
                     HStack {
                         Text("Total Other Costs: ")
                         Text(String(tracker.totalOtherCosts))
