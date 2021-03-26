@@ -11,7 +11,8 @@ class MileageTracker: ObservableObject {
     /// A class to log and store in memory all information regarding refuelling and other vehicle costs.
     @Published var refuels: [Refuel] = [Refuel]()
     @Published var otherCosts: [OtherCost] = [OtherCost]()
-    var paidApp: Bool = true
+
+    @Published var paidApp: Bool = true
 
     /// This method receives a data parameter from the view and adds it to our database
     /// - Parameter data: data contains kilometers, liters, and money paid in refuel,
