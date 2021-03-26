@@ -10,8 +10,6 @@ import SwiftUI
 struct MileageView: View {
     @ObservedObject var tracker: MileageTracker
 
-//    @Environment(\.scenePhase) private var scenePhase
-
     @State private var isPresented: Bool = false
     @State private var newRefuelData = Refuel.Data()
 

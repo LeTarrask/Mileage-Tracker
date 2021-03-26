@@ -13,8 +13,6 @@ struct AddRefuel: View {
 
     @ObservedObject var tracker: MileageTracker
 
-//    @Environment(\.presentationMode) var presentationMode
-
     @State var refuelData = Refuel.Data()
 
     var body: some View {

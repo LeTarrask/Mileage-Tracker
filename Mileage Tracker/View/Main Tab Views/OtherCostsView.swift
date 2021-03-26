@@ -12,8 +12,6 @@ struct OtherCostsView: View {
 
     @ObservedObject var tracker: MileageTracker
 
-    //    @Environment(\.scenePhase) private var scenePhase
-
     @State private var isPresented: Bool = false
     @State private var newCostData = OtherCost.Data()
 

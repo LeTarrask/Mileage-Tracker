@@ -38,7 +38,6 @@
 		79E4CAAD260CA0790061C9E0 /* Color-Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */; };
 		79E4CAB7260CAA450061C9E0 /* EnumPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAB6260CAA450061C9E0 /* EnumPicker.swift */; };
 		79E4CAC2260CDEF00061C9E0 /* Graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAC1260CDEF00061C9E0 /* Graphic.swift */; };
-		79E4CAC8260CE0420061C9E0 /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAC7260CE0420061C9E0 /* PlusButton.swift */; };
 		79E4CAD0260CE0800061C9E0 /* RefuelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */; };
 		79E4CADB260CE0A80061C9E0 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CADA260CE0A80061C9E0 /* Square.swift */; };
 		79E4CAE3260CE2210061C9E0 /* View+dateToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */; };
@@ -123,7 +122,6 @@
 		79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Themes.swift"; sourceTree = "<group>"; };
 		79E4CAB6260CAA450061C9E0 /* EnumPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumPicker.swift; sourceTree = "<group>"; };
 		79E4CAC1260CDEF00061C9E0 /* Graphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphic.swift; sourceTree = "<group>"; };
-		79E4CAC7260CE0420061C9E0 /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 		79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelCardView.swift; sourceTree = "<group>"; };
 		79E4CADA260CE0A80061C9E0 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+dateToString.swift"; sourceTree = "<group>"; };
@@ -334,12 +332,11 @@
 				793B7DE0260E565E00ABB839 /* PlusMenu.swift */,
 				793B7DD0260E540C00ABB839 /* TabBarIconView.swift */,
 				79E4CADA260CE0A80061C9E0 /* Square.swift */,
-				79E4CAC7260CE0420061C9E0 /* PlusButton.swift */,
 				79E4CAEA260CE29F0061C9E0 /* BackgroundCard.swift */,
 				79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */,
 				79ED3D96260A1AC000421881 /* MailView.swift */,
-				79E4CAC1260CDEF00061C9E0 /* Graphic.swift */,
 				79D336E3260BAA540034BA63 /* ShareSheet.swift */,
+				79E4CAC1260CDEF00061C9E0 /* Graphic.swift */,
 				79E4CAB6260CAA450061C9E0 /* EnumPicker.swift */,
 			);
 			path = "Helper Views";
@@ -654,7 +651,6 @@
 				793B7D88260D477700ABB839 /* OnboardingPage.swift in Sources */,
 				7985562224C8475E00544777 /* MileageView.swift in Sources */,
 				79E4CAB7260CAA450061C9E0 /* EnumPicker.swift in Sources */,
-				79E4CAC8260CE0420061C9E0 /* PlusButton.swift in Sources */,
 				79ED3D71260A128B00421881 /* InterstitialView.swift in Sources */,
 				793B7DE1260E565E00ABB839 /* PlusMenu.swift in Sources */,
 				79D336E4260BAA540034BA63 /* ShareSheet.swift in Sources */,
