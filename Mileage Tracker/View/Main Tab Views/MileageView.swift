@@ -11,7 +11,6 @@ struct MileageView: View {
     @ObservedObject var tracker: MileageTracker
 
     @Environment(\.scenePhase) private var scenePhase
-    let saveAction: () -> Void
 
     @State private var isPresented: Bool = false
     @State private var newRefuelData = Refuel.Data()
@@ -44,7 +43,7 @@ struct MileageView: View {
                 }
             }
             .onChange(of: scenePhase) { phase in
-                if phase == .inactive { saveAction() }
+                if phase == .inactive { tracker.save() }
             }
         }
     }
@@ -56,7 +55,7 @@ struct MileageView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let view = MileageView(tracker: MileageTracker(), saveAction: {})
+        let view = MileageView(tracker: MileageTracker())
         view.tracker.refuels = Refuel.data
         return view
     }

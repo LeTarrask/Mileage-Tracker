@@ -13,7 +13,6 @@ struct OtherCostsView: View {
     @ObservedObject var tracker: MileageTracker
 
     @Environment(\.scenePhase) private var scenePhase
-    let saveAction: () -> Void
 
     @State private var isPresented: Bool = false
     @State private var newCostData = OtherCost.Data()
@@ -90,7 +89,7 @@ struct OtherCostsView: View {
                 }
             }
             .onChange(of: scenePhase) { phase in
-                if phase == .inactive { saveAction() }
+                if phase == .inactive { tracker.save() }
             }
         }
     }
@@ -98,7 +97,7 @@ struct OtherCostsView: View {
 
 struct OtherCostsView_Previews: PreviewProvider {
     static var previews: some View {
-        let view = OtherCostsView(tracker: MileageTracker(), saveAction: {})
+        let view = OtherCostsView(tracker: MileageTracker())
         view.tracker.otherCosts = OtherCost.data
         return view
     }
