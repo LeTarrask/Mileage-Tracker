@@ -59,6 +59,7 @@ struct SettingsView: View {
                             showShareSheet = true
                         } else {
                             // here should call for in app purchase
+                            // https://blckbirds.com/post/how-to-use-in-app-purchases-in-swiftui-apps/
                             openURL(exportURL)
                         }
                     }
