@@ -27,31 +27,7 @@ struct MileageTrackerApp: App {
                 if viewRouter.currentPage == "onboardingView" {
                     OnboardingView(pages: OnboardingPage.fullOnboarding)
                 } else if viewRouter.currentPage == "homeView" {
-                    TabView {
-                        MileageView(tracker: tracker) {
-                            tracker.save()
-                        }.tabItem {
-                            Image(systemName: "drop.fill")
-                            Text(refuelsString)
-                        }.foregroundColor(themeMG.theme.mainColor)
-                        OtherCostsView(tracker: tracker) {
-                            tracker.save()
-                        }.tabItem {
-                            Image(systemName: "wrench.and.screwdriver")
-                            Text(otherCostsString)
-                        }.foregroundColor(themeMG.theme.mainColor)
-                        GraphicsView(tracker: tracker)
-                            .tabItem {
-                                Image(systemName: "list.star")
-                                Text(statsString)
-                            }.foregroundColor(themeMG.theme.mainColor)
-                        SettingsView(tracker: tracker)
-                            .tabItem {
-                                Image(systemName: "gearshape")
-                                Text(settingsString)
-                            }.foregroundColor(themeMG.theme.mainColor)
-                    }
-    
+                    MainAppTabs()
                 }
             }
             .accentColor(themeMG.theme.mainColor)
@@ -61,17 +37,4 @@ struct MileageTrackerApp: App {
             }
         }
     }
-}
-
-class ViewRouter: ObservableObject {
-    init() {
-        if !UserDefaults.standard.bool(forKey: "didLaunchBefore") {
-            UserDefaults.standard.set(true, forKey: "didLaunchBefore")
-            currentPage = "onboardingView"
-        } else {
-            currentPage = "homeView"
-        }
-    }
-
-    @Published var currentPage: String
 }
