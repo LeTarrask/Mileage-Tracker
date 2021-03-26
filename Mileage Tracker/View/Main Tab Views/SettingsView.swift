@@ -48,58 +48,54 @@ struct SettingsView: View {
     let loadTestData = NSLocalizedString("Load test data", comment: "")
 
     var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text(buyTitle)) {
-                    Button(removeAds) {
-                        openURL(inAppURL)
-                    }
-                    Button(exportData) {
-                        if canExport {
-                            showShareSheet = true
-                        } else {
-                            // here should call for in app purchase
-                            // https://blckbirds.com/post/how-to-use-in-app-purchases-in-swiftui-apps/
-                            openURL(exportURL)
-                        }
-                    }
+        Form {
+            Section(header: Text(buyTitle)) {
+                Button(removeAds) {
+                    openURL(inAppURL)
                 }
-
-                Section(header: Text(chooseTheme)) {
-                    EnumPicker(selection: $chosenTheme, label: Text(chooseTheme.description))
-                }.onChange(of: chosenTheme, perform: { value in
-                    ThemeManager.shared.applyTheme(theme: value)
-                    print("New theme chosen: " + value.description)
-                })
-
-                Section(header: Text(shareTracker)) {
-                    Button(copyAppLink) { openURL(appLink) }
-                }
-
-                Section(header: Text(feedback)) {
-                    Button(rateUs) { openURL(rateLink) }
-                    Button(survey) { openURL(surveyLink) }
-                    Button(talkToUs) {
-                        MFMailComposeViewController.canSendMail() ? isShowingMailView.toggle() : alertNoMail.toggle()
-                    }
-                }
-
-                Section(header: Text(resetApp)) {
-                    Button(deleteData) {
-                        tracker.deleteData()
-                    }
-                }
-
-                // Comment this section to publish app
-                Section(header: Text(testData)) {
-                    Button(loadTestData) {
-                        tracker.loadTestData()
+                Button(exportData) {
+                    if canExport {
+                        showShareSheet = true
+                    } else {
+                        // here should call for in app purchase
+                        // https://blckbirds.com/post/how-to-use-in-app-purchases-in-swiftui-apps/
+                        openURL(exportURL)
                     }
                 }
             }
-            .foregroundColor(themeMG.theme.mainColor)
-            .navigationBarTitle(viewTitle, displayMode: .inline)
+
+            Section(header: Text(chooseTheme)) {
+                EnumPicker(selection: $chosenTheme, label: Text(chooseTheme.description))
+            }.onChange(of: chosenTheme, perform: { value in
+                ThemeManager.shared.applyTheme(theme: value)
+                print("New theme chosen: " + value.description)
+            })
+
+            Section(header: Text(shareTracker)) {
+                Button(copyAppLink) { openURL(appLink) }
+            }
+
+            Section(header: Text(feedback)) {
+                Button(rateUs) { openURL(rateLink) }
+                Button(survey) { openURL(surveyLink) }
+                Button(talkToUs) {
+                    MFMailComposeViewController.canSendMail() ? isShowingMailView.toggle() : alertNoMail.toggle()
+                }
+            }
+
+            Section(header: Text(resetApp)) {
+                Button(deleteData) {
+                    tracker.deleteData()
+                }
+            }
+            // Comment this section to publish app
+            Section(header: Text(testData)) {
+                Button(loadTestData) {
+                    tracker.loadTestData()
+                }
+            }
         }
+        .foregroundColor(themeMG.theme.mainColor)
         .sheet(isPresented: $isShowingMailView) {
             MailView(isShowing: $isShowingMailView, result: $result)
         }

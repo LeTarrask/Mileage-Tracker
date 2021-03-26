@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PlusMenu: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
+ 
+    @StateObject var viewRouter: ViewRouter
 
     let widthAndHeight: CGFloat
 
@@ -25,6 +27,9 @@ struct PlusMenu: View {
                     .frame(width: widthAndHeight, height: widthAndHeight)
                     .foregroundColor(.white)
             }
+            .onTapGesture {
+                viewRouter.currentPage = .addrefuel
+            }
             ZStack {
                 Circle()
                     .foregroundColor(themeMG.theme.mainColor)
@@ -36,12 +41,9 @@ struct PlusMenu: View {
                     .frame(width: widthAndHeight, height: widthAndHeight)
                     .foregroundColor(.white)
             }
+            .onTapGesture {
+                viewRouter.currentPage = .addcost
+            }
         }.transition(.scale)
-    }
-}
-
-struct PlusMenu_Previews: PreviewProvider {
-    static var previews: some View {
-        PlusMenu()
     }
 }
