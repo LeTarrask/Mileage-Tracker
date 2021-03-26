@@ -8,14 +8,12 @@
 import SwiftUI
 
 class ViewRouter: ObservableObject {
-    init() {
-        if !UserDefaults.standard.bool(forKey: "didLaunchBefore") {
-            UserDefaults.standard.set(true, forKey: "didLaunchBefore")
-            currentPage = "onboardingView"
-        } else {
-            currentPage = "homeView"
-        }
-    }
+    @Published var currentPage: Page = .mileage
 
-    @Published var currentPage: String
+    enum Page: Hashable {
+        case mileage
+        case othercosts
+        case graphics
+        case settings
+    }
 }

@@ -11,9 +11,7 @@ import SwiftUI
 struct MileageTrackerApp: App {
     @ObservedObject private var tracker = MileageTracker()
 
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
-
-    private var viewRouter: ViewRouter = ViewRouter()
+    private var onboardRouter: OnboardingRouter = OnboardingRouter()
 
     /// VIEW STRINGS & URLs
     let refuelsString = NSLocalizedString("Refuels", comment: "")
@@ -24,13 +22,12 @@ struct MileageTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             VStack {
-                if viewRouter.currentPage == "onboardingView" {
+                if onboardRouter.currentPage == "onboardingView" {
                     OnboardingView(pages: OnboardingPage.fullOnboarding)
-                } else if viewRouter.currentPage == "homeView" {
-                    MainAppTabs()
+                } else if onboardRouter.currentPage == "homeView" {
+                    MainAppView()
                 }
             }
-            .accentColor(themeMG.theme.mainColor)
             .edgesIgnoringSafeArea(.top)
             .onAppear {
                 tracker.load()
