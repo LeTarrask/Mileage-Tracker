@@ -18,6 +18,8 @@
 		793B7D7B260D370400ABB839 /* GraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7D7A260D370400ABB839 /* GraphicsView.swift */; };
 		793B7D83260D474600ABB839 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7D82260D474600ABB839 /* OnboardingView.swift */; };
 		793B7D88260D477700ABB839 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7D87260D477700ABB839 /* OnboardingPage.swift */; };
+		793B7D8D260E275F00ABB839 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7D8C260E275F00ABB839 /* ViewRouter.swift */; };
+		793B7D92260E288600ABB839 /* MainAppTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7D91260E288600ABB839 /* MainAppTabs.swift */; };
 		7985562024C8475E00544777 /* MileageTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985561F24C8475E00544777 /* MileageTrackerApp.swift */; };
 		7985562224C8475E00544777 /* MileageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985562124C8475E00544777 /* MileageView.swift */; };
 		7985562424C8476000544777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7985562324C8476000544777 /* Assets.xcassets */; };
@@ -92,6 +94,8 @@
 		793B7D7A260D370400ABB839 /* GraphicsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsView.swift; sourceTree = "<group>"; };
 		793B7D82260D474600ABB839 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		793B7D87260D477700ABB839 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		793B7D8C260E275F00ABB839 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		793B7D91260E288600ABB839 /* MainAppTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppTabs.swift; sourceTree = "<group>"; };
 		7985561C24C8475E00544777 /* Mileage Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mileage Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7985561F24C8475E00544777 /* MileageTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTrackerApp.swift; sourceTree = "<group>"; };
 		7985562124C8475E00544777 /* MileageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageView.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 			children = (
 				7985564A24C8478700544777 /* MileageTracker.swift */,
 				79E4CAF2260CED900061C9E0 /* Theme Manager.swift */,
+				793B7D8C260E275F00ABB839 /* ViewRouter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 		793B7D76260D36C800ABB839 /* Main Tab Views */ = {
 			isa = PBXGroup;
 			children = (
+				793B7D91260E288600ABB839 /* MainAppTabs.swift */,
 				7985562124C8475E00544777 /* MileageView.swift */,
 				793B7D7A260D370400ABB839 /* GraphicsView.swift */,
 				7913789A25B2030600871ECE /* OtherCostsView.swift */,
@@ -622,6 +628,7 @@
 				79D336DF260B92CC0034BA63 /* Loading.swift in Sources */,
 				79E4CAE3260CE2210061C9E0 /* View+dateToString.swift in Sources */,
 				79ED3D92260A14B200421881 /* UIApplicationVersion.swift in Sources */,
+				793B7D8D260E275F00ABB839 /* ViewRouter.swift in Sources */,
 				79E4CAF3260CED900061C9E0 /* Theme Manager.swift in Sources */,
 				79ED3D97260A1AC000421881 /* MailView.swift in Sources */,
 				79E4CADB260CE0A80061C9E0 /* Square.swift in Sources */,
@@ -634,6 +641,7 @@
 				7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */,
 				793B7D88260D477700ABB839 /* OnboardingPage.swift in Sources */,
 				7985562224C8475E00544777 /* MileageView.swift in Sources */,
+				793B7D92260E288600ABB839 /* MainAppTabs.swift in Sources */,
 				79E4CAB7260CAA450061C9E0 /* EnumPicker.swift in Sources */,
 				79E4CAC8260CE0420061C9E0 /* PlusButton.swift in Sources */,
 				79ED3D71260A128B00421881 /* InterstitialView.swift in Sources */,

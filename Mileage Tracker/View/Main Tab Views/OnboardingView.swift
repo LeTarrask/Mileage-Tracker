@@ -44,7 +44,7 @@ struct OnboardingView: View {
                 )
                 .animation(.default)
             }
-            
+
             if currentPage.shouldShowDismissButton {
                 // change variable to procceed to next page
             }

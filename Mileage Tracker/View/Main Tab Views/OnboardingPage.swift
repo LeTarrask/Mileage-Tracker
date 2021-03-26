@@ -23,7 +23,7 @@ enum OnboardingPage: CaseIterable {
              return false
          }
      }
-    
+
     var shouldShowDismissButton: Bool {
          switch self {
          case .welcome, .newFeature, .permissions:
