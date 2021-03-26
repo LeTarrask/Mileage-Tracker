@@ -15,14 +15,16 @@ enum GraphType {
 struct GraphicsView: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
-    @State var isLoading = false
     @ObservedObject var tracker: MileageTracker
+
+    @State var showAdvertising = false
+
     @State var graphType: GraphType = .spending
 
     var body: some View {
         NavigationView {
             VStack {
-                if isLoading && !tracker.paidApp {
+                if showAdvertising && !tracker.paidApp {
                     InterstitialView()
                 } else {
                     // MARK: - Regular Screen
@@ -95,9 +97,9 @@ struct GraphicsView: View {
             }
             .onAppear(perform: {
                 if !tracker.paidApp {
-                    isLoading = true
+                    showAdvertising = true
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                        isLoading = false
+                        showAdvertising = false
                     }
                 }
             })
