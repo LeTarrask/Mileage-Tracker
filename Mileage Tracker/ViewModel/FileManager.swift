@@ -3,7 +3,8 @@
 //  Mileage Tracker
 //
 //  Created by Alex Luna on 24/07/2020.
-//  Some of original code can be found here: https://www.iosapptemplates.com/blog/ios-development/data-persistence-ios-swift
+//  Some of original code can be found here:
+// https://www.iosapptemplates.com/blog/ios-development/data-persistence-ios-swift
 //
 
 import Foundation
