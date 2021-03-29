@@ -17,5 +17,9 @@ class OnboardingRouter: ObservableObject {
         }
     }
 
+    func dismissOnboard() {
+        currentPage = "homeView"
+    }
+
     @Published var currentPage: String
 }

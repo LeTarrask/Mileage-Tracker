@@ -9,18 +9,24 @@ import SwiftUI
 
 @main
 struct MileageTrackerApp: App {
-    private var onboardRouter: OnboardingRouter = OnboardingRouter()
+    @ObservedObject var onboardRouter: OnboardingRouter = OnboardingRouter()
+
+    @State var onboarding: Bool = false
 
     var body: some Scene {
         WindowGroup {
             VStack {
-                if onboardRouter.currentPage == "onboardingView" {
-                    OnboardingView(pages: OnboardingPage.fullOnboarding)
-                } else if onboardRouter.currentPage == "homeView" {
-                    MainAppView()
-                }
+                MainAppView()
+                    .onAppear {
+                        if onboardRouter.currentPage == "onboardingView" {
+                            onboarding.toggle()
+                        }
+                    }
             }
             .edgesIgnoringSafeArea(.top)
+            .sheet(isPresented: $onboarding, content: {
+                OnboardingView(pages: OnboardingPage.fullOnboarding)
+            })
         }
     }
 }

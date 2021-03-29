@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @Environment(\.presentationMode) var presentationMode
+
     @State private var currentPage: OnboardingPage = .welcome
     private let pages: [OnboardingPage]
 
@@ -42,9 +44,7 @@ struct OnboardingView: View {
                 if currentPage.shouldShowDismissButton {
                     HStack {
                         Spacer()
-                        Button("Dismiss") {
-
-                        }
+                        Button("Dismiss") { dismissOnboarding() }
                     }
                 }
             }
@@ -55,10 +55,13 @@ struct OnboardingView: View {
             )
             .animation(.default)
         }
-        .frame(width: .infinity, height: .infinity)
         .onAppear {
             self.currentPage = pages.first!
         }
+    }
+
+    private func dismissOnboarding() {
+        presentationMode.wrappedValue.dismiss()
     }
 
     private func showNextPage() {
