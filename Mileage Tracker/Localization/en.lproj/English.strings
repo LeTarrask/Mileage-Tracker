@@ -35,15 +35,26 @@
 "Liters" = "Liters";
 "Refuel Cost" = "Refuel Cost";
 
-// TO DO:
 // GraphicsView
+"Total:" = "Total:";
+"Average consumption" = "Average consumption";
+"km/L" = "km/L";
+"Average spending" = "Average spending";
+"km/€" = "km/€";
+"Total fuel spending" = "Total fuel spending";
+"Average Fuel Price" = "Average Fuel Price";
+"€/l" = "€/l";
+
+"Refuel cost" = "Refuel cost";
+"Price/liter" = "Price/liter";
+"Km/refuel" = "Km/refuel";
 
 // OtherCostsView
 "Other vehicle costs" = "Other vehicle costs";
 
 // AddCostView
 "Cost Name" = "Cost Name";
-"Cost type" = "Cost type";
+"Cost type" = "Cost Type";
 "Cost Value" = "Cost Value";
 
 // SettingsView
