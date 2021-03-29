@@ -9,7 +9,18 @@ import SwiftUI
 
 struct NewFeatureOnboarding: View {
     var body: some View {
-        Text("See this new feature!")
+        VStack(alignment: .center) {
+            Image(systemName: "drop.fill")
+                .resizable()
+                .frame(width: 200, height: 300)
+            Text("Main headline")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
+            Text("Main headline")
+                .font(.body)
+                .foregroundColor(.gray)
+        }
     }
 }
 
