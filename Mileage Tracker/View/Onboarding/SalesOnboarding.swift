@@ -18,10 +18,12 @@ struct SalesOnboarding: View {
             Text("Main headline")
                 .font(.title)
                 .fontWeight(.bold)
-                .padding()
             Text("Main headline")
                 .font(.body)
                 .foregroundColor(.gray)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 30)
+                .padding(.top, 5)
         }
         .foregroundColor(themeMG.theme.mainColor)
     }

@@ -45,5 +45,6 @@ struct PlusMenu: View {
                 viewRouter.currentPage = .addcost
             }
         }.transition(.scale)
+        .animation(.easeInOut)
     }
 }

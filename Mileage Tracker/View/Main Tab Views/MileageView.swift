@@ -20,6 +20,7 @@ struct MileageView: View {
                 ForEach(tracker.refuels.reversed(), id: \.self) { refuel in
                     RefuelCardView(refuel: refuel, average: tracker.averagePrice)
                 }.onDelete(perform: removeItem)
+                .animation(.easeInOut)
             }
             if !tracker.paidApp { Banner() }
         }.edgesIgnoringSafeArea(.all)

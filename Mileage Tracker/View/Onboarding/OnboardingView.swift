@@ -69,7 +69,7 @@ struct OnboardingView: View {
                             insertion: .move(edge: .trailing),
                             removal: .move(edge: .leading))
             )
-            .animation(.default)
+            .animation(.easeInOut)
         }
         .onAppear {
             self.currentPage = pages.first!

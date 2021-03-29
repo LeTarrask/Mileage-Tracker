@@ -18,10 +18,12 @@ struct NewFeatureOnboarding: View {
             Text("Main headline")
                 .font(.title)
                 .fontWeight(.bold)
-                .padding()
-            Text("Main headline")
+            Text("Headline with features and long ipsum uasdasdasd asdasda asd asdasdasd asd asd asdasd asd asd asd asd asd asd asd ad asdasasd asdasd asd")
                 .font(.body)
                 .foregroundColor(.gray)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 30)
+                .padding(.top, 5)
         }
         .foregroundColor(themeMG.theme.mainColor)
     }

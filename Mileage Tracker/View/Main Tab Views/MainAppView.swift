@@ -25,22 +25,24 @@ struct MainAppView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                Spacer()
-
-                // MARK: - Main Page Views Switcher
-                switch viewRouter.currentPage {
-                case .mileage:
-                    MileageView(tracker: tracker)
-                case .othercosts:
-                    OtherCostsView(tracker: tracker)
-                case .graphics:
-                    GraphicsView(tracker: tracker)
-                case .settings:
-                    SettingsView(tracker: tracker)
-                case .addrefuel:
-                    AddRefuel(tracker: tracker)
-                case .addcost:
-                    AddCostView(tracker: tracker)
+                Group {
+                    // MARK: - Main Page Views Switcher
+                    switch viewRouter.currentPage {
+                    case .mileage:
+                        MileageView(tracker: tracker)
+                    case .othercosts:
+                        OtherCostsView(tracker: tracker)
+                    case .graphics:
+                        GraphicsView(tracker: tracker)
+                    case .settings:
+                        SettingsView(tracker: tracker)
+                    case .addrefuel:
+                        AddRefuel(tracker: tracker)
+                    case .addcost:
+                        AddCostView(tracker: tracker)
+                    }
+                }.onTapGesture {
+                    showPopUp = false
                 }
 
                 Spacer()
@@ -100,6 +102,7 @@ struct MainAppView: View {
                             }
                         }
                     }
+                    .animation(.easeInOut)
                     .frame(width: geometry.size.width, height: geometry.size.height/8)
                     .background(themeMG.theme.backgroundColor.shadow(radius: 2))
                 }
