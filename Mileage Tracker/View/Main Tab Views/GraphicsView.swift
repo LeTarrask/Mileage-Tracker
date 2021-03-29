@@ -21,6 +21,22 @@ struct GraphicsView: View {
 
     @State var graphType: GraphType = .spending
 
+    /// VIEW STRINGS & URLs
+    let mainTitleString = NSLocalizedString("Total:", comment: "")
+    let distanceValueString = NSLocalizedString("km", comment: "")
+    let averageConsLabel = NSLocalizedString("Average consumption", comment: "")
+    let averageConsValue = NSLocalizedString("km/L", comment: "")
+    let averageSpenLabel = NSLocalizedString("Average spending", comment: "")
+    let averageSpenValue = NSLocalizedString("km/€", comment: "")
+    let moneySymbol = NSLocalizedString("€", comment: "")
+    let totalFuelSpendingLabel = NSLocalizedString("Total fuel spending", comment: "")
+    let averageFuelPriceLabel = NSLocalizedString("Average Fuel Price", comment: "")
+    let averageFuelPriceValue = NSLocalizedString("€/l", comment: "")
+
+    let refuelString = NSLocalizedString("Refuel cost", comment: "")
+    let priceString = NSLocalizedString("Price/liter", comment: "")
+    let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")
+
     var body: some View {
         VStack {
             if showInterstitial && !tracker.paidApp {
@@ -34,31 +50,36 @@ struct GraphicsView: View {
                             ZStack {
                                 BackgroundCard()
                                 VStack(alignment: .center) {
-                                    Text("Total KM: " + String(tracker.totalKM.clean) + " km")
-                                        .foregroundColor(themeMG.theme.highlightColor)
-                                        .font(.title)
-                                        .fontWeight(.bold)
+                                    HStack {
+                                        Text(mainTitleString)
+                                            .fontWeight(.bold)
+                                        Text(" " + String(tracker.totalKM.clean) + " " )
+                                        Text(distanceValueString)
+                                            .fontWeight(.bold)
+                                    }
+                                    .foregroundColor(themeMG.theme.highlightColor)
+                                    .font(.title)
                                     HStack {
                                         VStack(alignment: .leading) {
                                             Square(icon: nil,
                                                    number: tracker.averageConsumption,
-                                                   value: "km/L",
-                                                   label: "Average consumption")
+                                                   value: averageConsValue,
+                                                   label: averageConsLabel)
                                             Square(icon: nil,
                                                    number: tracker.averageSpending,
-                                                   value: "km/€",
-                                                   label: "Average spending")
+                                                   value: averageSpenValue,
+                                                   label: averageSpenLabel)
                                         }
                                         Spacer()
                                         VStack {
                                             Square(icon: nil,
                                                    number: tracker.totalSpending,
-                                                   value: "€",
-                                                   label: "Total fuel spending")
+                                                   value: moneySymbol,
+                                                   label: totalFuelSpendingLabel)
                                             Square(icon: nil,
                                                    number: tracker.averagePrice,
-                                                   value: "€/l",
-                                                   label: "Average Fuel Price")
+                                                   value: averageFuelPriceValue,
+                                                   label: averageFuelPriceLabel)
                                         }
                                     }
                                 }.padding()
@@ -73,15 +94,15 @@ struct GraphicsView: View {
                                     .shadow(color: .black, radius: 1, x: 1, y: 1)
                                 HStack {
                                     Button(action: {graphType = .spending}, label: {
-                                        Text("Refuel Cost")
+                                        Text(refuelString)
                                     })
                                     Spacer()
                                     Button(action: {graphType = .dates}, label: {
-                                        Text("Price per liter")
+                                        Text(priceString)
                                     })
                                     Spacer()
                                     Button(action: {graphType = .km}, label: {
-                                        Text("Kms per refuel")
+                                        Text(kmRefuelString)
                                     })
                                 }
                                 .foregroundColor(themeMG.theme.secondaryColor)
