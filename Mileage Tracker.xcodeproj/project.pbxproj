@@ -23,6 +23,7 @@
 		793B7DD9260E546200ABB839 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7DD8260E546200ABB839 /* ViewRouter.swift */; };
 		793B7DE1260E565E00ABB839 /* PlusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7DE0260E565E00ABB839 /* PlusMenu.swift */; };
 		7967C5F2260E668D00665DFC /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967C5F1260E668D00665DFC /* MainAppView.swift */; };
+		7968E707261209AB0089DEFD /* MileageTracker+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968E706261209AB0089DEFD /* MileageTracker+Strings.swift */; };
 		7985562024C8475E00544777 /* MileageTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985561F24C8475E00544777 /* MileageTrackerApp.swift */; };
 		7985562224C8475E00544777 /* MileageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985562124C8475E00544777 /* MileageView.swift */; };
 		7985562424C8476000544777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7985562324C8476000544777 /* Assets.xcassets */; };
@@ -104,6 +105,7 @@
 		793B7DD8260E546200ABB839 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		793B7DE0260E565E00ABB839 /* PlusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlusMenu.swift; path = "Mileage Tracker/View/Helper Views/PlusMenu.swift"; sourceTree = SOURCE_ROOT; };
 		7967C5F1260E668D00665DFC /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
+		7968E706261209AB0089DEFD /* MileageTracker+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MileageTracker+Strings.swift"; sourceTree = "<group>"; };
 		7985561C24C8475E00544777 /* Mileage Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mileage Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7985561F24C8475E00544777 /* MileageTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTrackerApp.swift; sourceTree = "<group>"; };
 		7985562124C8475E00544777 /* MileageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageView.swift; sourceTree = "<group>"; };
@@ -204,10 +206,11 @@
 			isa = PBXGroup;
 			children = (
 				79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */,
-				7913788B25B1F24100871ECE /* Double+String.swift */,
 				79ED3D7D260A138B00421881 /* UIDeviceExtension.swift */,
 				79ED3D91260A14B200421881 /* UIApplicationVersion.swift */,
+				7968E706261209AB0089DEFD /* MileageTracker+Strings.swift */,
 				79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */,
+				7913788B25B1F24100871ECE /* Double+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				793B7D83260D474600ABB839 /* OnboardingView.swift in Sources */,
 				79D336DF260B92CC0034BA63 /* Loading.swift in Sources */,
 				79E4CAE3260CE2210061C9E0 /* View+dateToString.swift in Sources */,
+				7968E707261209AB0089DEFD /* MileageTracker+Strings.swift in Sources */,
 				79ED3D92260A14B200421881 /* UIApplicationVersion.swift in Sources */,
 				793B7D8D260E275F00ABB839 /* OnboardingRouter.swift in Sources */,
 				79E4CAF3260CED900061C9E0 /* Theme Manager.swift in Sources */,
