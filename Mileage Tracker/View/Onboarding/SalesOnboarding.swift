@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SalesOnboarding: View {
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+
     var body: some View {
         VStack(alignment: .center) {
             Image(systemName: "drop.fill")
@@ -21,6 +23,7 @@ struct SalesOnboarding: View {
                 .font(.body)
                 .foregroundColor(.gray)
         }
+        .foregroundColor(themeMG.theme.mainColor)
     }
 }
 

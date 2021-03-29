@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NewFeatureOnboarding: View {
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+
     var body: some View {
         VStack(alignment: .center) {
             Image(systemName: "drop.fill")
@@ -21,6 +23,7 @@ struct NewFeatureOnboarding: View {
                 .font(.body)
                 .foregroundColor(.gray)
         }
+        .foregroundColor(themeMG.theme.mainColor)
     }
 }
 
