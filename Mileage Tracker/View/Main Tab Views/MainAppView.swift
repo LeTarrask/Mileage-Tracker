@@ -116,9 +116,6 @@ struct MainAppView: View {
 
 struct MainAppTabs_Previews: PreviewProvider {
     static var previews: some View {
-        let tracker = MileageTracker()
-        tracker.load()
-        return MainAppView()
-            .environmentObject(tracker)
+        MainAppView()
     }
 }
