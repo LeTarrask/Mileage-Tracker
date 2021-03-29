@@ -12,6 +12,10 @@
 "Stats" = "Stats";
 "Settings" = "Settings";
 
+// Onboarding Views
+"Next" = "Next";
+"Dismiss" = "Dismiss";
+
 // Mileage View
 "Mileage Tracker" = "Mileage Tracker";
 "Dismiss" = "Dismiss";

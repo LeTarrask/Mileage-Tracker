@@ -11,12 +11,18 @@ import SwiftUI
 struct OnboardingView: View {
     @Environment(\.presentationMode) var presentationMode
 
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+
     @State private var currentPage: OnboardingPage = .welcome
     private let pages: [OnboardingPage]
 
     init(pages: [OnboardingPage]) {
         self.pages = pages
     }
+
+    /// Text Labels
+    let nextLabel = NSLocalizedString("Next", comment: "")
+    let dismissLabel = NSLocalizedString("Dismiss", comment: "")
 
     var body: some View {
         VStack {
@@ -32,19 +38,29 @@ struct OnboardingView: View {
                 }
             }
 
+            HStack {
+                ForEach(pages, id: \.self) { page in
+                    Circle()
+                        .frame(width: 10, height: 10)
+                        .foregroundColor(page == currentPage ? themeMG.theme.mainColor : themeMG.theme.highlightColor)
+                }
+            }
+
             Group {
                 if currentPage.shouldShowNextButton {
                     HStack {
                         Spacer()
                         Button(action: showNextPage, label: {
-                            Text("Next")
+                            Text(nextLabel)
+                                .foregroundColor(themeMG.theme.mainColor)
                         })
                     }
                 }
                 if currentPage.shouldShowDismissButton {
                     HStack {
                         Spacer()
-                        Button("Dismiss") { dismissOnboarding() }
+                        Button(dismissLabel) { dismissOnboarding() }
+                            .foregroundColor(themeMG.theme.mainColor)
                     }
                 }
             }
