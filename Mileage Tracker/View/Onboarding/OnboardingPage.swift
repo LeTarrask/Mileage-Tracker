@@ -10,7 +10,7 @@ import SwiftUI
 enum OnboardingPage: CaseIterable {
      case welcome
      case newFeature
-     case permissions
+//     case permissions
      case sales
 
      static let fullOnboarding = OnboardingPage.allCases
@@ -26,7 +26,7 @@ enum OnboardingPage: CaseIterable {
 
     var shouldShowDismissButton: Bool {
          switch self {
-         case .welcome, .newFeature, .permissions:
+         case .welcome, .newFeature:
              return false
          default:
              return true
@@ -38,23 +38,23 @@ enum OnboardingPage: CaseIterable {
          switch self {
          case .welcome:
             VStack {
-                Text("Welcome")
+                WelcomeOnboarding()
             }
          case .newFeature:
             VStack {
-                Text("See this new feature!")
+                NewFeatureOnboarding()
             }
-         case .permissions:
-             VStack {
-                 Text("We need permissions")
-
-                 // This button should only be enabled once permissions are set:
-                 Button(action: action, label: {
-                     Text("Continue")
-                 })
-             }
+//         case .permissions:
+//             VStack {
+//                 Text("We need permissions")
+//
+//                 // This button should only be enabled once permissions are set:
+//                 Button(action: action, label: {
+//                     Text("Continue")
+//                 })
+//             }
          case .sales:
-             Text("Become PRO for even more features")
+             SalesOnboarding()
          }
      }
  }

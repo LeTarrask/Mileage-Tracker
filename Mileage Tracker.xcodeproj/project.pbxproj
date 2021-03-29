@@ -32,6 +32,9 @@
 		7985564B24C8478700544777 /* MileageTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564A24C8478700544777 /* MileageTracker.swift */; };
 		7985564D24C84D8300544777 /* AddRefuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564C24C84D8300544777 /* AddRefuel.swift */; };
 		79881D2A260A48F400B3BC83 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79881D29260A48F400B3BC83 /* Color.xcassets */; };
+		79BA12F52611F9D800974F6D /* WelcomeOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12F42611F9D800974F6D /* WelcomeOnboarding.swift */; };
+		79BA12FA2611F9FB00974F6D /* NewFeatureOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12F92611F9FB00974F6D /* NewFeatureOnboarding.swift */; };
+		79BA12FF2611FA0F00974F6D /* SalesOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12FE2611FA0F00974F6D /* SalesOnboarding.swift */; };
 		79D336DF260B92CC0034BA63 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D336DE260B92CB0034BA63 /* Loading.swift */; };
 		79D336E4260BAA540034BA63 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D336E3260BAA540034BA63 /* ShareSheet.swift */; };
 		79DA782425AF1CEF009E0FFC /* RefuelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA782325AF1CEF009E0FFC /* RefuelModel.swift */; };
@@ -116,6 +119,9 @@
 		7985564A24C8478700544777 /* MileageTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTracker.swift; sourceTree = "<group>"; };
 		7985564C24C84D8300544777 /* AddRefuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRefuel.swift; sourceTree = "<group>"; };
 		79881D29260A48F400B3BC83 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Color.xcassets; path = "Mileage Tracker/Color.xcassets"; sourceTree = SOURCE_ROOT; };
+		79BA12F42611F9D800974F6D /* WelcomeOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOnboarding.swift; sourceTree = "<group>"; };
+		79BA12F92611F9FB00974F6D /* NewFeatureOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeatureOnboarding.swift; sourceTree = "<group>"; };
+		79BA12FE2611FA0F00974F6D /* SalesOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesOnboarding.swift; sourceTree = "<group>"; };
 		79D336DE260B92CB0034BA63 /* Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		79D336E3260BAA540034BA63 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		79DA782325AF1CEF009E0FFC /* RefuelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelModel.swift; sourceTree = "<group>"; };
@@ -234,8 +240,6 @@
 				793B7D7A260D370400ABB839 /* GraphicsView.swift */,
 				7913789A25B2030600871ECE /* OtherCostsView.swift */,
 				7913791925B5FA1F00871ECE /* SettingsView.swift */,
-				793B7D82260D474600ABB839 /* OnboardingView.swift */,
-				793B7D87260D477700ABB839 /* OnboardingPage.swift */,
 			);
 			path = "Main Tab Views";
 			sourceTree = "<group>";
@@ -320,10 +324,23 @@
 			isa = PBXGroup;
 			children = (
 				793B7D76260D36C800ABB839 /* Main Tab Views */,
+				79BA12ED2611F6AB00974F6D /* Onboarding */,
 				793B7D72260D36B500ABB839 /* AddObjectViews */,
 				79E4CAC6260CDFFE0061C9E0 /* Helper Views */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		79BA12ED2611F6AB00974F6D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				793B7D82260D474600ABB839 /* OnboardingView.swift */,
+				793B7D87260D477700ABB839 /* OnboardingPage.swift */,
+				79BA12FE2611FA0F00974F6D /* SalesOnboarding.swift */,
+				79BA12F92611F9FB00974F6D /* NewFeatureOnboarding.swift */,
+				79BA12F42611F9D800974F6D /* WelcomeOnboarding.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		79E4CAC6260CDFFE0061C9E0 /* Helper Views */ = {
@@ -630,6 +647,7 @@
 				79ED3D74260A128B00421881 /* AdMob BannerVC.swift in Sources */,
 				791378A025B2032700871ECE /* OtherCosts.swift in Sources */,
 				79E4CAAD260CA0790061C9E0 /* Color-Themes.swift in Sources */,
+				79BA12FF2611FA0F00974F6D /* SalesOnboarding.swift in Sources */,
 				793B7D83260D474600ABB839 /* OnboardingView.swift in Sources */,
 				79D336DF260B92CC0034BA63 /* Loading.swift in Sources */,
 				79E4CAE3260CE2210061C9E0 /* View+dateToString.swift in Sources */,
@@ -644,8 +662,10 @@
 				79E4CAC2260CDEF00061C9E0 /* Graphic.swift in Sources */,
 				793B7D7B260D370400ABB839 /* GraphicsView.swift in Sources */,
 				793B7DD9260E546200ABB839 /* ViewRouter.swift in Sources */,
+				79BA12F52611F9D800974F6D /* WelcomeOnboarding.swift in Sources */,
 				79DA782425AF1CEF009E0FFC /* RefuelModel.swift in Sources */,
 				79ED3D6E260A128B00421881 /* AdMob InterstitialVC.swift in Sources */,
+				79BA12FA2611F9FB00974F6D /* NewFeatureOnboarding.swift in Sources */,
 				7985564B24C8478700544777 /* MileageTracker.swift in Sources */,
 				7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */,
 				793B7D88260D477700ABB839 /* OnboardingPage.swift in Sources */,
