@@ -14,6 +14,10 @@ struct Graphic: View {
     @ObservedObject var tracker: MileageTracker
     @Binding var type: GraphType
 
+    let refuelString = NSLocalizedString("Refuel cost", comment: "")
+    let priceString = NSLocalizedString("Price/liter", comment: "")
+    let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")
+
     var body: some View {
         let chartStyle = ChartStyle(backgroundColor: themeMG.theme.backgroundColor,
                                     accentColor: themeMG.theme.mainColor,
@@ -27,14 +31,15 @@ struct Graphic: View {
         switch type {
         case .spending:
             LineView(data: tracker.refuels.map { $0.money },
-                     title: "Refuel cost", style: chartStyle)
+                     title: refuelString, style: chartStyle)
 
         case .dates:
             LineView(data: tracker.refuels.map {
                         Double($0.pricePerLiter) },
-                     title: "Price per liter", style: chartStyle)
+                     title: priceString, style: chartStyle)
         case .km:
-            LineView(data: tracker.refuels.map { $0.kmAdded }, title: "KM per Refuel", style: chartStyle)
+            LineView(data: tracker.refuels.map { $0.kmAdded },
+                     title: kmRefuelString, style: chartStyle)
         }
     }
 }
