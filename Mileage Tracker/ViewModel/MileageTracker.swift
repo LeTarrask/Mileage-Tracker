@@ -160,12 +160,17 @@ class MileageTracker: ObservableObject {
         exportCSV()
         return Self.csvURL
     }
+}
 
+extension MileageTracker {
     /// Testing methods
     func deleteData() {
         refuels = [Refuel]()
         otherCosts = [OtherCost]()
         save()
+        if UserDefaults.standard.bool(forKey: "didLaunchBefore") {
+            UserDefaults.standard.set(false, forKey: "didLaunchBefore")
+        }
     }
 
     func loadTestData() {
