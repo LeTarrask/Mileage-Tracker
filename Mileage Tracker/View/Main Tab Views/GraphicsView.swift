@@ -17,23 +17,22 @@ struct GraphicsView: View {
 
     @ObservedObject var tracker: MileageTracker
 
-    @State var showAdvertising = false
+    @State var showInterstitial = false
 
     @State var graphType: GraphType = .spending
 
     var body: some View {
         VStack {
-            if showAdvertising && !tracker.paidApp {
+            if showInterstitial && !tracker.paidApp {
                 InterstitialView()
             } else {
                 // MARK: - Regular Screen
                 VStack {
                     GeometryReader { reader in
-                        VStack {
+                        VStack(alignment: .center) {
                             // MARK: - Averages display
                             ZStack {
                                 BackgroundCard()
-                                    .frame(maxHeight: 140)
                                 VStack(alignment: .center) {
                                     Text("Total KM: " + String(tracker.totalKM.clean) + " km")
                                         .foregroundColor(themeMG.theme.highlightColor)
@@ -105,9 +104,9 @@ struct GraphicsView: View {
         .edgesIgnoringSafeArea(.all)
         .onAppear(perform: {
             if !tracker.paidApp {
-                showAdvertising = true
+                showInterstitial = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                    showAdvertising = false
+                    showInterstitial = false
                 }
             }
         })
@@ -118,7 +117,7 @@ struct GraphicsView_Previews: PreviewProvider {
     static var previews: some View {
         let view = GraphicsView(tracker: MileageTracker())
         view.tracker.refuels = Refuel.data
-        view.tracker.paidApp = false
+        view.tracker.paidApp = true
         return view
     }
 }
