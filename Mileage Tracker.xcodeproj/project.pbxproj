@@ -336,9 +336,9 @@
 			children = (
 				793B7D82260D474600ABB839 /* OnboardingView.swift */,
 				793B7D87260D477700ABB839 /* OnboardingPage.swift */,
-				79BA12FE2611FA0F00974F6D /* SalesOnboarding.swift */,
-				79BA12F92611F9FB00974F6D /* NewFeatureOnboarding.swift */,
 				79BA12F42611F9D800974F6D /* WelcomeOnboarding.swift */,
+				79BA12F92611F9FB00974F6D /* NewFeatureOnboarding.swift */,
+				79BA12FE2611FA0F00974F6D /* SalesOnboarding.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";

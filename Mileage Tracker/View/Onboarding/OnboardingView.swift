@@ -30,24 +30,30 @@ struct OnboardingView: View {
                 }
             }
 
-            if currentPage.shouldShowNextButton {
-                HStack {
-                    Spacer()
-                    Button(action: showNextPage, label: {
-                        Text("Next")
-                    })
+            Group {
+                if currentPage.shouldShowNextButton {
+                    HStack {
+                        Spacer()
+                        Button(action: showNextPage, label: {
+                            Text("Next")
+                        })
+                    }
                 }
-                .padding(EdgeInsets(top: 0, leading: 50, bottom: 50, trailing: 50))
-                .transition(AnyTransition.asymmetric(
-                                insertion: .move(edge: .trailing),
-                                removal: .move(edge: .leading))
-                )
-                .animation(.default)
-            }
+                if currentPage.shouldShowDismissButton {
+                    HStack {
+                        Spacer()
+                        Button("Dismiss") {
 
-            if currentPage.shouldShowDismissButton {
-                // change variable to procceed to next page
+                        }
+                    }
+                }
             }
+            .padding(EdgeInsets(top: 0, leading: 50, bottom: 50, trailing: 50))
+            .transition(AnyTransition.asymmetric(
+                            insertion: .move(edge: .trailing),
+                            removal: .move(edge: .leading))
+            )
+            .animation(.default)
         }
         .frame(width: .infinity, height: .infinity)
         .onAppear {

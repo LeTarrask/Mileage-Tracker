@@ -9,15 +9,7 @@ import SwiftUI
 
 @main
 struct MileageTrackerApp: App {
-    @ObservedObject private var tracker = MileageTracker()
-
     private var onboardRouter: OnboardingRouter = OnboardingRouter()
-
-    /// VIEW STRINGS & URLs
-    let refuelsString = NSLocalizedString("Refuels", comment: "")
-    let otherCostsString = NSLocalizedString("Other costs", comment: "")
-    let statsString = NSLocalizedString("Stats", comment: "")
-    let settingsString = NSLocalizedString("Settings", comment: "")
 
     var body: some Scene {
         WindowGroup {
@@ -29,9 +21,6 @@ struct MileageTrackerApp: App {
                 }
             }
             .edgesIgnoringSafeArea(.top)
-            .onAppear {
-                tracker.load()
-            }
         }
     }
 }

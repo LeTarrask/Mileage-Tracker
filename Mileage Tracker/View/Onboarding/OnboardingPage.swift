@@ -26,10 +26,10 @@ enum OnboardingPage: CaseIterable {
 
     var shouldShowDismissButton: Bool {
          switch self {
-         case .welcome, .newFeature:
-             return false
-         default:
+         case .sales:
              return true
+         default:
+             return false
          }
      }
 
