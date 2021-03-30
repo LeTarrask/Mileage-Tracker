@@ -15,27 +15,34 @@ struct AddRefuel: View {
 
     @State var refuelData = Refuel.Data()
 
+    /// Localized strings
+    let addInfoLabel = NSLocalizedString("Add refuel info", comment: "")
+    let kmLabel = NSLocalizedString("Kilometers", comment: "")
+    let literLabel = NSLocalizedString("Liters", comment: "")
+    let costLabel = NSLocalizedString("Refuel Cost", comment: "")
+    let saveLabel = NSLocalizedString("Save", comment: "")
+
     var body: some View {
         VStack {
             Form {
-                Section(header: Text(NSLocalizedString("Add refuel info", comment: ""))) {
+                Section(header: Text(addInfoLabel)) {
                     // MARK: - KM
                     HStack {
-                        Text(NSLocalizedString("Kilometers", comment: ""))
+                        Text(kmLabel)
                         Spacer()
                         TextField("", text: $refuelData.kmString)
                             .keyboardType(.decimalPad)
                     }
                     // MARK: - Liters
                     HStack {
-                        Text(NSLocalizedString("Liters", comment: ""))
+                        Text(literLabel)
                         Spacer()
                         TextField("", text: $refuelData.litersString)
                             .keyboardType(.decimalPad)
                     }
                     // MARK: - Cost
                     HStack {
-                        Text(NSLocalizedString("Refuel Cost", comment: ""))
+                        Text(costLabel)
                         Spacer()
                         TextField("", text: $refuelData.moneyString)
                             .keyboardType(.decimalPad)
@@ -43,7 +50,7 @@ struct AddRefuel: View {
                 }
             }.foregroundColor(themeMG.theme.mainColor)
 
-            Button("Save") {
+            Button(saveLabel) {
                 tracker.receiveNew(refuelData)
                 tracker.save()
                 refuelData = Refuel.Data()

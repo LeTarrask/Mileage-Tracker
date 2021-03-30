@@ -12,8 +12,11 @@ struct OtherCostsView: View {
 
     @ObservedObject var tracker: MileageTracker
 
-    @State private var isPresented: Bool = false
     @State private var newCostData = OtherCost.Data()
+
+    /// Label properties
+    let totalOtherLabel = NSLocalizedString("Total Other Costs: ", comment: "")
+    let valueLabel = NSLocalizedString("€", comment: "")
 
     var body: some View {
         VStack {
@@ -27,9 +30,9 @@ struct OtherCostsView: View {
                         .padding()
 
                     HStack {
-                        Text("Total Other Costs: ")
-                        Text(String(tracker.totalOtherCosts))
-                        Text(" €")
+                        Text(totalOtherLabel)
+                        Text(String(tracker.totalOtherCosts) + " ")
+                        Text(valueLabel)
                     }.foregroundColor(themeMG.theme.backgroundColor)
                 }
                 ForEach(tracker.otherCosts.reversed()) { cost in
@@ -46,7 +49,7 @@ struct OtherCostsView: View {
                             VStack(alignment: .leading) {
                                 HStack {
                                     Image(systemName: cost.type == .tax ? "folder" : "wrench.fill")
-                                    Text(String(cost.value) + " €")
+                                    Text(String(cost.value) + "" + valueLabel)
                                         .fontWeight(.bold)
                                 }
                                 Text(cost.name)

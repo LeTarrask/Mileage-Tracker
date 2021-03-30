@@ -41,10 +41,7 @@ struct MainAppView: View {
                     case .addcost:
                         AddCostView(tracker: tracker)
                     }
-                }.onTapGesture {
-                    showPopUp = false
                 }
-
                 Spacer()
                 ZStack {
                     // MARK: - Tab Bar
@@ -109,6 +106,9 @@ struct MainAppView: View {
             }.edgesIgnoringSafeArea(.bottom)
             .onAppear {
                 tracker.load()
+            }
+            .onTapGesture {
+                showPopUp = false
             }
         }.edgesIgnoringSafeArea(.all)
     }

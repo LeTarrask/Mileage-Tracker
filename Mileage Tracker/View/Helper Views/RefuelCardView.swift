@@ -21,6 +21,18 @@ struct RefuelCardView: View {
         return formatter
     }()
 
+    /// Localizable strings
+    let sinceLast = NSLocalizedString("Since last", comment: "")
+    let kmLabel = NSLocalizedString("km", comment: "")
+    let literLabel = NSLocalizedString("L", comment: "")
+    let fuelLabel = NSLocalizedString("Fuel", comment: "")
+    let euroLabel = NSLocalizedString("€", comment: "")
+    let paymentLabel = NSLocalizedString("Payment", comment: "")
+    let thanAverageLabel = NSLocalizedString("than average:", comment: "")
+    let perLiter = NSLocalizedString("per liter:", comment: "")
+    let totalLabel = NSLocalizedString("Total", comment: "")
+    let refuelAtLabel = NSLocalizedString("Refuel at: ", comment: "")
+
     var body: some View {
         ZStack {
             BackgroundCard()
@@ -28,39 +40,39 @@ struct RefuelCardView: View {
                 HStack(alignment: .center) {
                     Square(icon: "car",
                            number: refuel.kmAdded,
-                           value: "km",
-                           label: NSLocalizedString("Since last", comment: ""))
+                           value: kmLabel,
+                           label: sinceLast)
                     Spacer()
                     Square(icon: "drop.fill",
                            number: refuel.liters,
-                           value: NSLocalizedString("L", comment: ""),
-                           label: NSLocalizedString("Fuel", comment: ""))
+                           value: literLabel,
+                           label: fuelLabel)
                     Spacer()
                     Square(icon: "eurosign.square",
                            number: refuel.money,
-                           value: NSLocalizedString("€", comment: ""),
-                           label: NSLocalizedString("Payment", comment: ""))
+                           value: euroLabel,
+                           label: paymentLabel)
                     Spacer()
                     Square(icon: "triangle.fill",
                            number: refuel.pricePerLiter-average,
-                           value: NSLocalizedString("€", comment: ""),
-                           label: NSLocalizedString("than average:", comment: ""))
+                           value: euroLabel,
+                           label: thanAverageLabel)
                 }
                 .padding(.bottom)
                 HStack {
                     Square(icon: nil,
                            number: refuel.pricePerLiter,
-                           value: "€",
-                           label: NSLocalizedString("per liter:", comment: ""))
+                           value: euroLabel,
+                           label: perLiter)
                     Spacer()
                     Square(icon: nil,
                            number: refuel.totalKM,
-                           value: NSLocalizedString("km", comment: ""),
-                           label: NSLocalizedString("Total", comment: ""))
+                           value: kmLabel,
+                           label: totalLabel)
                 }
                 .padding(.bottom)
                 HStack {
-                    Text(NSLocalizedString("Refuel at: ", comment: ""))
+                    Text(refuelAtLabel)
                         .font(.caption)
                     Text(dateToString(date: refuel.creationDate))
                         .font(.caption)

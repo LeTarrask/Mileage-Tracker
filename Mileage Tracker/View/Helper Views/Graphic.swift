@@ -14,6 +14,7 @@ struct Graphic: View {
     @ObservedObject var tracker: MileageTracker
     @Binding var type: GraphType
 
+    /// Localizable strings
     let refuelString = NSLocalizedString("Refuel cost", comment: "")
     let priceString = NSLocalizedString("Price/liter", comment: "")
     let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")

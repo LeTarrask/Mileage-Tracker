@@ -38,6 +38,7 @@
 "Kilometers" = "Kilometers";
 "Liters" = "Liters";
 "Refuel Cost" = "Refuel Cost";
+"Save" = "Save";
 
 // GraphicsView
 "Total:" = "Total:";
@@ -49,12 +50,14 @@
 "Average Fuel Price" = "Average Fuel Price";
 "€/l" = "€/l";
 
+// Graphic struct
 "Refuel cost" = "Refuel cost";
 "Price/liter" = "Price/liter";
 "Km/refuel" = "Km/refuel";
 
 // OtherCostsView
 "Other vehicle costs" = "Other vehicle costs";
+"Total Other Costs: " = "Total Other Costs: ";
 
 // AddCostView
 "Cost Name" = "Cost Name";
@@ -77,3 +80,6 @@
 "Test data" = "Test data";
 "Load test data" = "Load test data";
 "App Settings" = "App Settings";
+
+// Mail template
+"Your App Feedback" = "Your App Feedback";

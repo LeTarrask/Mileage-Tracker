@@ -64,7 +64,7 @@ struct MailView: UIViewControllerRepresentable {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = context.coordinator
         mailComposerVC.setToRecipients([supportEmail])
-        mailComposerVC.setSubject("Your App Feedback")
+        mailComposerVC.setSubject(NSLocalizedString("Your App Feedback", comment: ""))
         mailComposerVC.setMessageBody(messageBody, isHTML: false)
         return mailComposerVC
     }

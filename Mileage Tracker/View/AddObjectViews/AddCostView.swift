@@ -16,28 +16,34 @@ struct AddCostView: View {
 
     @State var selection: OtherCost.CostType = .tax
 
+    /// Localized strings
+    let costName = NSLocalizedString("Cost Name", comment: "")
+    let costType = NSLocalizedString("Cost type", comment: "")
+    let costValue = NSLocalizedString("Cost Value", comment: "")
+    let saveLabel = NSLocalizedString("Save", comment: "")
+
     var body: some View {
         VStack {
             Form {
                 HStack {
-                    Text(NSLocalizedString("Cost Name", comment: ""))
+                    Text(costName)
                     Spacer()
                     TextField("", text: $costData.name)
                         .keyboardType(.alphabet)
                 }
-                Picker(selection: $selection, label: Text(NSLocalizedString("Cost type", comment: ""))) {
+                Picker(selection: $selection, label: Text(costType)) {
                     ForEach(OtherCost.CostType.allCases, id: \.self) { type in
                         Text(type.rawValue)
                     }
                 }
                 HStack {
-                    Text(NSLocalizedString("Cost Value", comment: ""))
+                    Text(costValue)
                     Spacer()
                     TextField("", text: $costData.valueString)
                         .keyboardType(.decimalPad)
                 }
             }.foregroundColor(themeMG.theme.mainColor)
-            Button("Save") {
+            Button(saveLabel) {
                 let newCost = OtherCost(type: costData.type,
                                         value: costData.value,
                                         name: costData.name)
