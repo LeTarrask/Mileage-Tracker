@@ -15,9 +15,9 @@ struct Graphic: View {
     @Binding var type: GraphType
 
     /// Localizable strings
-    let refuelString = NSLocalizedString("Refuel cost", comment: "")
-    let priceString = NSLocalizedString("Price/liter", comment: "")
-    let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")
+    private let refuelString = NSLocalizedString("Refuel cost", comment: "")
+    private let priceString = NSLocalizedString("Price/liter", comment: "")
+    private let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")
 
     var body: some View {
         let chartStyle = ChartStyle(backgroundColor: themeMG.theme.backgroundColor,

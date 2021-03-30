@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MailView: UIViewControllerRepresentable {
 
-    let supportEmail = "contato@tarrask.com"
+    private let supportEmail = "contato@tarrask.com"
 
     @Environment(\.presentationMode) var presentation
     @Binding var isShowing: Bool

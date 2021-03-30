@@ -16,7 +16,7 @@ class ThemeManager: ObservableObject {
         self.theme = currentTheme()
     }
 
-    let selectedThemeKey = "SelectedTheme"
+    private let selectedThemeKey = "SelectedTheme"
 
     /// This loads from UserDefalts the selected theme, or picks the main theme
     func currentTheme() -> Theme {

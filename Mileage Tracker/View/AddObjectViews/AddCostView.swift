@@ -17,10 +17,10 @@ struct AddCostView: View {
     @State var selection: OtherCost.CostType = .tax
 
     /// Localized strings
-    let costName = NSLocalizedString("Cost Name", comment: "")
-    let costType = NSLocalizedString("Cost type", comment: "")
-    let costValue = NSLocalizedString("Cost Value", comment: "")
-    let saveLabel = NSLocalizedString("Save", comment: "")
+    private let costName = NSLocalizedString("Cost Name", comment: "")
+    private let costType = NSLocalizedString("Cost type", comment: "")
+    private let costValue = NSLocalizedString("Cost Value", comment: "")
+    private let saveLabel = NSLocalizedString("Save", comment: "")
 
     var body: some View {
         VStack {

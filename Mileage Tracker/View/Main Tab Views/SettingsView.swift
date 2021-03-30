@@ -26,26 +26,26 @@ struct SettingsView: View {
     @State var alertNoMail = false
 
     /// VIEW STRINGS & URLs
-    let buyTitle = NSLocalizedString("In-App Purchases", comment: "")
-    let removeAds = NSLocalizedString("Remove ads", comment: "")
-    let inAppURL = URL(string: "https://www.tarrask.com")!
-    let chooseTheme = NSLocalizedString("Choose theme", comment: "")
-    let exportData = NSLocalizedString("Export data", comment: "")
-    let exportURL = URL(string: "https://www.tarrask.com")!
-    let viewTitle = NSLocalizedString("App Settings", comment: "")
-    let shareTracker = NSLocalizedString("Share Mileage Tracker", comment: "")
-    let copyAppLink = NSLocalizedString("Copy App Link", comment: "")
-    let appLink = URL(string: "https://www.tarrask.com")!
-    let feedback = NSLocalizedString("Feedback", comment: "")
-    let rateUs = NSLocalizedString("Rate us on the App Store", comment: "")
-    let rateLink = URL(string: "https://www.tarrask.com")!
-    let survey = NSLocalizedString("Take a survey", comment: "")
-    let surveyLink = URL(string: "https://www.tarrask.com")!
-    let talkToUs = NSLocalizedString("Talk to the developer", comment: "")
-    let resetApp = NSLocalizedString("Reset app", comment: "")
-    let deleteData = NSLocalizedString("Delete all app data", comment: "")
-    let testData = NSLocalizedString("Test data", comment: "")
-    let loadTestData = NSLocalizedString("Load test data", comment: "")
+    private let buyTitle = NSLocalizedString("In-App Purchases", comment: "")
+    private let removeAds = NSLocalizedString("Remove ads", comment: "")
+    private let inAppURL = URL(string: "https://www.tarrask.com")!
+    private let chooseTheme = NSLocalizedString("Choose theme", comment: "")
+    private let exportData = NSLocalizedString("Export data", comment: "")
+    private let exportURL = URL(string: "https://www.tarrask.com")!
+    private let viewTitle = NSLocalizedString("App Settings", comment: "")
+    private let shareTracker = NSLocalizedString("Share Mileage Tracker", comment: "")
+    private let copyAppLink = NSLocalizedString("Copy App Link", comment: "")
+    private let appLink = URL(string: "https://www.tarrask.com")!
+    private let feedback = NSLocalizedString("Feedback", comment: "")
+    private let rateUs = NSLocalizedString("Rate us on the App Store", comment: "")
+    private let rateLink = URL(string: "https://www.tarrask.com")!
+    private let survey = NSLocalizedString("Take a survey", comment: "")
+    private let surveyLink = URL(string: "https://www.tarrask.com")!
+    private let talkToUs = NSLocalizedString("Talk to the developer", comment: "")
+    private let resetApp = NSLocalizedString("Reset app", comment: "")
+    private let deleteData = NSLocalizedString("Delete all app data", comment: "")
+    private let testData = NSLocalizedString("Test data", comment: "")
+    private let loadTestData = NSLocalizedString("Load test data", comment: "")
 
     var body: some View {
         Form {

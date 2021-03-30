@@ -22,20 +22,19 @@ struct GraphicsView: View {
     @State var graphType: GraphType = .spending
 
     /// VIEW STRINGS & URLs
-    let mainTitleString = NSLocalizedString("Total:", comment: "")
-    let distanceValueString = NSLocalizedString("km", comment: "")
-    let averageConsLabel = NSLocalizedString("Average consumption", comment: "")
-    let averageConsValue = NSLocalizedString("km/L", comment: "")
-    let averageSpenLabel = NSLocalizedString("Average spending", comment: "")
-    let averageSpenValue = NSLocalizedString("km/€", comment: "")
-    let moneySymbol = NSLocalizedString("€", comment: "")
-    let totalFuelSpendingLabel = NSLocalizedString("Total fuel spending", comment: "")
-    let averageFuelPriceLabel = NSLocalizedString("Average Fuel Price", comment: "")
-    let averageFuelPriceValue = NSLocalizedString("€/l", comment: "")
-
-    let refuelString = NSLocalizedString("Refuel cost", comment: "")
-    let priceString = NSLocalizedString("Price/liter", comment: "")
-    let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")
+    private let mainTitleString = NSLocalizedString("Total:", comment: "")
+    private let distanceValueString = NSLocalizedString("km", comment: "")
+    private let averageConsLabel = NSLocalizedString("Average consumption", comment: "")
+    private let averageConsValue = NSLocalizedString("km/L", comment: "")
+    private let averageSpenLabel = NSLocalizedString("Average spending", comment: "")
+    private let averageSpenValue = NSLocalizedString("km/€", comment: "")
+    private let moneySymbol = NSLocalizedString("€", comment: "")
+    private let totalFuelSpendingLabel = NSLocalizedString("Total fuel spending", comment: "")
+    private let averageFuelPriceLabel = NSLocalizedString("Average Fuel Price", comment: "")
+    private let averageFuelPriceValue = NSLocalizedString("€/l", comment: "")
+    private let refuelString = NSLocalizedString("Refuel cost", comment: "")
+    private let priceString = NSLocalizedString("Price/liter", comment: "")
+    private let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")
 
     var body: some View {
         VStack {

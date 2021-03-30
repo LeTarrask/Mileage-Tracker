@@ -16,11 +16,11 @@ struct AddRefuel: View {
     @State var refuelData = Refuel.Data()
 
     /// Localized strings
-    let addInfoLabel = NSLocalizedString("Add refuel info", comment: "")
-    let kmLabel = NSLocalizedString("Kilometers", comment: "")
-    let literLabel = NSLocalizedString("Liters", comment: "")
-    let costLabel = NSLocalizedString("Refuel Cost", comment: "")
-    let saveLabel = NSLocalizedString("Save", comment: "")
+    private let addInfoLabel = NSLocalizedString("Add refuel info", comment: "")
+    private let kmLabel = NSLocalizedString("Kilometers", comment: "")
+    private let literLabel = NSLocalizedString("Liters", comment: "")
+    private let costLabel = NSLocalizedString("Refuel Cost", comment: "")
+    private let saveLabel = NSLocalizedString("Save", comment: "")
 
     var body: some View {
         VStack {

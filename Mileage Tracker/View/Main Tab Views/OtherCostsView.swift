@@ -15,8 +15,8 @@ struct OtherCostsView: View {
     @State private var newCostData = OtherCost.Data()
 
     /// Label properties
-    let totalOtherLabel = NSLocalizedString("Total Other Costs: ", comment: "")
-    let valueLabel = NSLocalizedString("€", comment: "")
+    private let totalOtherLabel = NSLocalizedString("Total Other Costs: ", comment: "")
+    private let valueLabel = NSLocalizedString("€", comment: "")
 
     var body: some View {
         VStack {

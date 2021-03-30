@@ -20,9 +20,9 @@ struct OnboardingView: View {
         self.pages = pages
     }
 
-    /// Text Labels
-    let nextLabel = NSLocalizedString("Next", comment: "")
-    let dismissLabel = NSLocalizedString("Dismiss", comment: "")
+    /// Localizable strings
+    private let nextLabel = NSLocalizedString("Next", comment: "")
+    private let dismissLabel = NSLocalizedString("Dismiss", comment: "")
 
     var body: some View {
         VStack {

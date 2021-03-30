@@ -17,10 +17,10 @@ struct MainAppView: View {
     @State var showPopUp = false
 
     /// VIEW STRINGS & URLs
-    let refuelsString = NSLocalizedString("Refuels", comment: "")
-    let otherCostsString = NSLocalizedString("Other costs", comment: "")
-    let statsString = NSLocalizedString("Stats", comment: "")
-    let settingsString = NSLocalizedString("Settings", comment: "")
+    private let refuelsString = NSLocalizedString("Refuels", comment: "")
+    private let otherCostsString = NSLocalizedString("Other costs", comment: "")
+    private let statsString = NSLocalizedString("Stats", comment: "")
+    private let settingsString = NSLocalizedString("Settings", comment: "")
 
     var body: some View {
         GeometryReader { geometry in
