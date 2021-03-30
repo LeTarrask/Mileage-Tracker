@@ -47,11 +47,6 @@ struct MainAppView: View {
 
                 Spacer()
                 ZStack {
-                    // MARK: - Plus Menu
-                    if showPopUp {
-                        PlusMenu(viewRouter: viewRouter, widthAndHeight: geometry.size.width/7)
-                            .offset(y: -geometry.size.height/6)
-                    }
                     // MARK: - Tab Bar
                     HStack {
                         VStack {
@@ -69,6 +64,11 @@ struct MainAppView: View {
                                            systemIconName: "wrench.and.screwdriver",
                                            tabName: otherCostsString)
                                 ZStack {
+                                    // MARK: - Plus Menu
+                                    if showPopUp {
+                                        PlusMenu(viewRouter: viewRouter, widthAndHeight: geometry.size.width/7)
+                                            .offset(y: -geometry.size.height/6)
+                                    }
                                     Circle()
                                         .foregroundColor(themeMG.theme.highlightColor)
                                         .frame(width: geometry.size.width/7, height: geometry.size.width/7)
