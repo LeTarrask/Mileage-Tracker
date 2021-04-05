@@ -34,6 +34,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let view = MileageView(tracker: MileageTracker())
         view.tracker.refuels = Refuel.data
-        return view
+        return view.preferredColorScheme(.dark)
     }
 }

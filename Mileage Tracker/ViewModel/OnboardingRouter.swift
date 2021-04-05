@@ -11,15 +11,20 @@ class OnboardingRouter: ObservableObject {
     init() {
         if !UserDefaults.standard.bool(forKey: "didLaunchBefore") {
             UserDefaults.standard.set(true, forKey: "didLaunchBefore")
-            currentPage = "onboardingView"
+            currentPage = .onboarding
         } else {
-            currentPage = "homeView"
+            currentPage = .home
         }
     }
 
     func dismissOnboard() {
-        currentPage = "homeView"
+        currentPage = .home
     }
 
-    @Published var currentPage: String
+    @Published var currentPage: LoadingState
+}
+
+enum LoadingState {
+    case onboarding
+    case home
 }

@@ -18,7 +18,7 @@ struct MileageTrackerApp: App {
             VStack {
                 MainAppView()
                     .onAppear {
-                        if onboardRouter.currentPage == "onboardingView" {
+                        if onboardRouter.currentPage == .onboarding {
                             onboarding.toggle()
                         }
                     }
