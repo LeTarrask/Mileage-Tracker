@@ -115,7 +115,7 @@ class MileageTracker: ObservableObject {
         }
     }
 
-    func exportCSV() {
+    func generateCSV() -> String {
         /// A method that exports Refuel data and other costs into a CSV file
         var refuelStrings = "Refuel Date, Liters, Price per Liter, km added, total km\n"
 
@@ -148,16 +148,17 @@ class MileageTracker: ObservableObject {
             let line = array.joined(separator: ",")
             refuelStrings.append(line)
         }
+        return refuelStrings
+    }
+
+    func csvFile() -> URL {
+        let csvString = generateCSV()
         do {
-            try refuelStrings.write(to: Self.csvURL, atomically: true, encoding: .utf8)
+            try csvString.write(to: Self.csvURL, atomically: true, encoding: .utf8)
         } catch {
             print("Failed to create file")
             print("\(error)")
         }
-    }
-
-    func csvFile() -> URL {
-        exportCSV()
         return Self.csvURL
     }
 }

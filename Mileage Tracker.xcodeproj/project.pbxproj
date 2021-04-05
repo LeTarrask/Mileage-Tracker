@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		187A8DEB4E9CCC162ACBA669 /* Pods_Mileage_TrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA13BFB12CAF7178529519C /* Pods_Mileage_TrackerTests.framework */; };
-		67F32231D1FC6FEE81AF23C9 /* Pods_Mileage_Tracker_Mileage_TrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09D5AF9E67CC5BF617F3C25 /* Pods_Mileage_Tracker_Mileage_TrackerUITests.framework */; };
 		7913788C25B1F24100871ECE /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913788B25B1F24100871ECE /* Double+String.swift */; };
 		7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913789A25B2030600871ECE /* OtherCostsView.swift */; };
 		791378A025B2032700871ECE /* OtherCosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913789F25B2032700871ECE /* OtherCosts.swift */; };
@@ -29,7 +28,6 @@
 		7985562424C8476000544777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7985562324C8476000544777 /* Assets.xcassets */; };
 		7985562724C8476000544777 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7985562624C8476000544777 /* Preview Assets.xcassets */; };
 		7985563224C8476000544777 /* MileageTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985563124C8476000544777 /* MileageTrackerTests.swift */; };
-		7985563D24C8476000544777 /* Mileage_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985563C24C8476000544777 /* Mileage_TrackerUITests.swift */; };
 		7985564B24C8478700544777 /* MileageTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564A24C8478700544777 /* MileageTracker.swift */; };
 		7985564D24C84D8300544777 /* AddRefuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564C24C84D8300544777 /* AddRefuel.swift */; };
 		79881D2A260A48F400B3BC83 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79881D29260A48F400B3BC83 /* Color.xcassets */; };
@@ -49,19 +47,14 @@
 		79E4CAF3260CED900061C9E0 /* Theme Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAF2260CED900061C9E0 /* Theme Manager.swift */; };
 		79ED3D6B260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
 		79ED3D6C260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
-		79ED3D6D260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
 		79ED3D6E260A128B00421881 /* AdMob InterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D68260A128B00421881 /* AdMob InterstitialVC.swift */; };
 		79ED3D6F260A128B00421881 /* AdMob InterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D68260A128B00421881 /* AdMob InterstitialVC.swift */; };
-		79ED3D70260A128B00421881 /* AdMob InterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D68260A128B00421881 /* AdMob InterstitialVC.swift */; };
 		79ED3D71260A128B00421881 /* InterstitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D69260A128B00421881 /* InterstitialView.swift */; };
 		79ED3D72260A128B00421881 /* InterstitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D69260A128B00421881 /* InterstitialView.swift */; };
-		79ED3D73260A128B00421881 /* InterstitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D69260A128B00421881 /* InterstitialView.swift */; };
 		79ED3D74260A128B00421881 /* AdMob BannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D6A260A128B00421881 /* AdMob BannerVC.swift */; };
 		79ED3D75260A128B00421881 /* AdMob BannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D6A260A128B00421881 /* AdMob BannerVC.swift */; };
-		79ED3D76260A128B00421881 /* AdMob BannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D6A260A128B00421881 /* AdMob BannerVC.swift */; };
 		79ED3D7E260A138B00421881 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D7D260A138B00421881 /* UIDeviceExtension.swift */; };
 		79ED3D7F260A138B00421881 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D7D260A138B00421881 /* UIDeviceExtension.swift */; };
-		79ED3D80260A138B00421881 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D7D260A138B00421881 /* UIDeviceExtension.swift */; };
 		79ED3D92260A14B200421881 /* UIApplicationVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D91260A14B200421881 /* UIApplicationVersion.swift */; };
 		79ED3D97260A1AC000421881 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D96260A1AC000421881 /* MailView.swift */; };
 		79FCD1C025F7D23A007F08FB /* English.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79FCD1C225F7D23A007F08FB /* English.strings */; };
@@ -71,13 +64,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		7985562E24C8476000544777 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7985561424C8475E00544777 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7985561B24C8475E00544777;
-			remoteInfo = "Mileage Tracker";
-		};
-		7985563924C8476000544777 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7985561424C8475E00544777 /* Project object */;
 			proxyType = 1;
@@ -115,7 +101,6 @@
 		7985562D24C8476000544777 /* Mileage TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mileage TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7985563124C8476000544777 /* MileageTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTrackerTests.swift; sourceTree = "<group>"; };
 		7985563324C8476000544777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7985563824C8476000544777 /* Mileage TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mileage TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7985563C24C8476000544777 /* Mileage_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mileage_TrackerUITests.swift; sourceTree = "<group>"; };
 		7985563E24C8476000544777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7985564A24C8478700544777 /* MileageTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTracker.swift; sourceTree = "<group>"; };
@@ -165,14 +150,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				187A8DEB4E9CCC162ACBA669 /* Pods_Mileage_TrackerTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7985563524C8476000544777 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				67F32231D1FC6FEE81AF23C9 /* Pods_Mileage_Tracker_Mileage_TrackerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +241,6 @@
 			children = (
 				7985561C24C8475E00544777 /* Mileage Tracker.app */,
 				7985562D24C8476000544777 /* Mileage TrackerTests.xctest */,
-				7985563824C8476000544777 /* Mileage TrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -427,26 +403,6 @@
 			productReference = 7985562D24C8476000544777 /* Mileage TrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7985563724C8476000544777 /* Mileage TrackerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7985564724C8476000544777 /* Build configuration list for PBXNativeTarget "Mileage TrackerUITests" */;
-			buildPhases = (
-				2A8D9E9297B1CABD3875D0FB /* [CP] Check Pods Manifest.lock */,
-				7985563424C8476000544777 /* Sources */,
-				7985563524C8476000544777 /* Frameworks */,
-				7985563624C8476000544777 /* Resources */,
-				B63A3BF0E3CE406BB81B1592 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7985563A24C8476000544777 /* PBXTargetDependency */,
-			);
-			name = "Mileage TrackerUITests";
-			productName = "Mileage TrackerUITests";
-			productReference = 7985563824C8476000544777 /* Mileage TrackerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -460,10 +416,6 @@
 						CreatedOnToolsVersion = 12.0;
 					};
 					7985562C24C8476000544777 = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = 7985561B24C8475E00544777;
-					};
-					7985563724C8476000544777 = {
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = 7985561B24C8475E00544777;
 					};
@@ -488,7 +440,6 @@
 			targets = (
 				7985561B24C8475E00544777 /* Mileage Tracker */,
 				7985562C24C8476000544777 /* Mileage TrackerTests */,
-				7985563724C8476000544777 /* Mileage TrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -507,13 +458,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7985562B24C8476000544777 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7985563624C8476000544777 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -539,28 +483,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Mileage TrackerTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2A8D9E9297B1CABD3875D0FB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Mileage Tracker-Mileage TrackerUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -622,23 +544,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		B63A3BF0E3CE406BB81B1592 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mileage Tracker-Mileage TrackerUITests/Pods-Mileage Tracker-Mileage TrackerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mileage Tracker-Mileage TrackerUITests/Pods-Mileage Tracker-Mileage TrackerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mileage Tracker-Mileage TrackerUITests/Pods-Mileage Tracker-Mileage TrackerUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -702,19 +607,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7985563424C8476000544777 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				79ED3D76260A128B00421881 /* AdMob BannerVC.swift in Sources */,
-				79ED3D73260A128B00421881 /* InterstitialView.swift in Sources */,
-				79ED3D6D260A128B00421881 /* BannerView.swift in Sources */,
-				79ED3D80260A138B00421881 /* UIDeviceExtension.swift in Sources */,
-				7985563D24C8476000544777 /* Mileage_TrackerUITests.swift in Sources */,
-				79ED3D70260A128B00421881 /* AdMob InterstitialVC.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -722,11 +614,6 @@
 			isa = PBXTargetDependency;
 			target = 7985561B24C8475E00544777 /* Mileage Tracker */;
 			targetProxy = 7985562E24C8476000544777 /* PBXContainerItemProxy */;
-		};
-		7985563A24C8476000544777 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7985561B24C8475E00544777 /* Mileage Tracker */;
-			targetProxy = 7985563924C8476000544777 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -960,48 +847,6 @@
 			};
 			name = Release;
 		};
-		7985564824C8476000544777 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D77C5CC5F186E7E9390A1A02 /* Pods-Mileage Tracker-Mileage TrackerUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2BC5TCSR5;
-				INFOPLIST_FILE = "Mileage TrackerUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.garageminfinita.Mileage-TrackerUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Mileage Tracker";
-			};
-			name = Debug;
-		};
-		7985564924C8476000544777 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EC7C05D3E3C27FD88B800B6 /* Pods-Mileage Tracker-Mileage TrackerUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2BC5TCSR5;
-				INFOPLIST_FILE = "Mileage TrackerUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.garageminfinita.Mileage-TrackerUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Mileage Tracker";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1028,15 +873,6 @@
 			buildConfigurations = (
 				7985564524C8476000544777 /* Debug */,
 				7985564624C8476000544777 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7985564724C8476000544777 /* Build configuration list for PBXNativeTarget "Mileage TrackerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7985564824C8476000544777 /* Debug */,
-				7985564924C8476000544777 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
