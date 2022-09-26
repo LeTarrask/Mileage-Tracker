@@ -34,12 +34,12 @@ final class Interstitial: NSObject, GADFullScreenContentDelegate {
     }
 
     func showAd() {
-        if interstitial != nil {
-            let root = UIApplication.shared.windows.first?.rootViewController
-            interstitial!.present(fromRootViewController: root!)
-        } else {
-            print("Not Ready")
-        }
+//        if interstitial != nil {
+//            let root = UIApplication.shared.windows.first?.rootViewController
+//            interstitial!.present(fromRootViewController: root!)
+//        } else {
+//            print("Not Ready")
+//        }
     }
 
     /// Tells the delegate that the ad failed to present full screen content.

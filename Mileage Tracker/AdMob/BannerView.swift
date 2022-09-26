@@ -10,9 +10,9 @@ import SwiftUI
 struct Banner: View {
     var body: some View {
         HStack {
-            Spacer()
-            BannerVC().frame(width: 320, height: 50, alignment: .center)
-            Spacer()
+//            Spacer()
+//            BannerVC().frame(width: 320, height: 50, alignment: .center)
+//            Spacer()
         }
     }
 }

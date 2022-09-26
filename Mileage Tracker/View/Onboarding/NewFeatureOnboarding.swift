@@ -15,12 +15,10 @@ struct NewFeatureOnboarding: View {
             Image(systemName: "drop.fill")
                 .resizable()
                 .frame(width: 200, height: 300)
-            Text("Main headline")
+            Text("Store and export your data")
                 .font(.title)
                 .fontWeight(.bold)
-            Text("""
-Headline with features and long ipsum uasdasdasd asdasda asd asdasdasd asd asd asdasd asd asd asd asd asd asd asd ad
-""")
+            Text("All data is just stored on your device. It also can be exported to a spreadsheet.")
                 .font(.body)
                 .foregroundColor(.gray)
                 .frame(maxWidth: .infinity, alignment: .leading)
