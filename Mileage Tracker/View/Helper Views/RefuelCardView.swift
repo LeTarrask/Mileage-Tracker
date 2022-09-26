@@ -82,3 +82,14 @@ struct RefuelCardView: View {
         }
     }
 }
+
+
+
+struct Previews_RefuelCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        let tracker = MileageTracker()
+        tracker.refuels = Refuel.data
+        return RefuelCardView(refuel: tracker.refuels[0],
+                              average: tracker.averagePrice)
+    }
+}

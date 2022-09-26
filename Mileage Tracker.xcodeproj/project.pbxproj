@@ -185,7 +185,6 @@
 				79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */,
 				79ED3D7D260A138B00421881 /* UIDeviceExtension.swift */,
 				79ED3D91260A14B200421881 /* UIApplicationVersion.swift */,
-				7968E706261209AB0089DEFD /* MileageTracker+Strings.swift */,
 				79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */,
 				7913788B25B1F24100871ECE /* Double+String.swift */,
 			);
@@ -197,6 +196,7 @@
 			children = (
 				793B7DD8260E546200ABB839 /* ViewRouter.swift */,
 				7985564A24C8478700544777 /* MileageTracker.swift */,
+				7968E706261209AB0089DEFD /* MileageTracker+Strings.swift */,
 				79E4CAF2260CED900061C9E0 /* Theme Manager.swift */,
 				793B7D8C260E275F00ABB839 /* OnboardingRouter.swift */,
 			);
