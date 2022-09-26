@@ -10,7 +10,6 @@ import SwiftUI
 enum OnboardingPage: CaseIterable {
      case welcome
      case newFeature
-//     case permissions
      case sales
 
      static let fullOnboarding = OnboardingPage.allCases
@@ -44,15 +43,6 @@ enum OnboardingPage: CaseIterable {
             VStack {
                 NewFeatureOnboarding()
             }
-//         case .permissions:
-//             VStack {
-//                 Text("We need permissions")
-//
-//                 // This button should only be enabled once permissions are set:
-//                 Button(action: action, label: {
-//                     Text("Continue")
-//                 })
-//             }
          case .sales:
              SalesOnboarding()
          }
