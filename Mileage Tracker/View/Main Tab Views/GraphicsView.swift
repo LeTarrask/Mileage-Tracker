@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 enum GraphType {
     // swiftlint:disable identifier_name
@@ -110,9 +111,15 @@ struct GraphicsView: View {
                             }.padding()
                             .frame(width: .infinity, height: reader.size.width * 0.1)
                             // MARK: - Graphic
-                            Graphic(tracker: tracker, type: $graphType)
-                                .padding()
-                                .frame(width: .infinity, height: reader.size.width * 0.55)
+//                            Graphic(tracker: tracker, type: $graphType)
+//                                .padding()
+//                                .frame(width: .infinity, height: reader.size.width * 0.55)
+                            
+                            Chart(tracker.refuels) { refuel in
+                                BarMark(x: .value("Date", refuel.creationDate),
+                                        y: .value("Refuel Cost", refuel.money)
+                                         )
+                            }.padding(30)
                         }
                     }
                     // MARK: - Ad Banner

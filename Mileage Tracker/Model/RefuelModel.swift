@@ -88,7 +88,7 @@ extension Refuel {
     }
     // swiftlint:disable line_length
     // https://www.hackingwithswift.com/forums/swiftui/swiftui-how-can-calculations-in-swift-recognise-comma-and-not-only-decimal-point/301
-            // help to sanitize money input
+    // help to sanitize money input
 
     var data: Data {
         return Data(totalKM: totalKM, liters: liters, money: money)
@@ -132,7 +132,13 @@ extension Refuel {
             Refuel(totalKM: 4427, liters: 4.95, money: 8.21, kmAdded: 186),
             Refuel(totalKM: 4613, liters: 4.96, money: 8.28, kmAdded: 186),
             Refuel(totalKM: 4790, liters: 4.82, money: 8.00, kmAdded: 177),
-            Refuel(totalKM: 4986, liters: 5, money: 8.30, kmAdded: 196)
+            Refuel(totalKM: 4986, liters: 5, money: 8.30, kmAdded: 196),
+            Refuel(totalKM: 5137, liters: 4.36, money: 7.54, kmAdded: 151),
+            Refuel(totalKM: 5325, liters: 4.93, money: 8.08, kmAdded: 188),
+            Refuel(totalKM: 5514, liters: 4.93, money: 8.08, kmAdded: 188),
+            Refuel(totalKM: 5713, liters: 5.23, money: 9.15, kmAdded: 188),
+            Refuel(totalKM: 5890, liters: 5.11, money: 9.60, kmAdded: 177),
+            Refuel(totalKM: 6060, liters: 4.89, money: 9.38, kmAdded: 170),
         ]
     }
 }
