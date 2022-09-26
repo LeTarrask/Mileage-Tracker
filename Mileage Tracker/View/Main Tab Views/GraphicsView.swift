@@ -85,6 +85,7 @@ struct GraphicsView: View {
                             }
                             .padding()
                             .frame(width: .infinity, height: reader.size.width * 0.40)
+
                             // MARK: - Graphics Selector
                             ZStack {
                                 RoundedRectangle(cornerRadius: 7)

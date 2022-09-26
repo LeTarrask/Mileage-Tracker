@@ -18,7 +18,9 @@ struct NewFeatureOnboarding: View {
             Text("Main headline")
                 .font(.title)
                 .fontWeight(.bold)
-            Text("Headline with features and long ipsum uasdasdasd asdasda asd asdasdasd asd asd asdasd asd asd asd asd asd asd asd ad asdasasd asdasd asd")
+            Text("""
+Headline with features and long ipsum uasdasdasd asdasda asd asdasdasd asd asd asdasd asd asd asd asd asd asd asd ad
+""")
                 .font(.body)
                 .foregroundColor(.gray)
                 .frame(maxWidth: .infinity, alignment: .leading)

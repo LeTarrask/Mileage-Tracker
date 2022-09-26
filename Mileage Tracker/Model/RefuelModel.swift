@@ -33,6 +33,28 @@ public struct Refuel: Hashable, Codable, Identifiable {
     var pricePerLiter: Double {
         (money/liters).rounded(toPlaces: 2)
     }
+
+    var kmString: String = "" {
+        didSet {
+            totalKM = number(for: kmString)
+        }
+    }
+    var litersString: String = "" {
+        didSet {
+            liters = number(for: litersString)
+        }
+    }
+    var moneyString: String = "" {
+        didSet {
+            money = number(for: moneyString)
+        }
+    }
+
+    func number(for string: String) -> Double {
+        let numberFormatter = NumberFormatter()
+
+        return numberFormatter.number(from: string)?.doubleValue ?? 0.0
+    }
 }
 
 extension Refuel {
@@ -41,6 +63,7 @@ extension Refuel {
         var totalKM: Double = 0
         var liters: Double = 0
         var money: Double = 0
+
         var kmString: String = "" {
             didSet {
                 totalKM = number(for: kmString)
@@ -101,8 +124,15 @@ extension Refuel {
             Refuel(totalKM: 3047, liters: 5.39, money: 7.76, kmAdded: 202),
             Refuel(totalKM: 3233, liters: 5, money: 7.20, kmAdded: 186),
             Refuel(totalKM: 3419, liters: 5.36, money: 8.36, kmAdded: 186),
-            Refuel(totalKM: 3606, liters: 5.36, money: 8.36, kmAdded: 186)
-            // Refuel(totalKM: 3538, liters: 4.03, money: 6.52, kmAdded: 186) IDK pq a quilometragem baixou.
+            Refuel(totalKM: 3606, liters: 5.36, money: 8.36, kmAdded: 186),
+            Refuel(totalKM: 3765, liters: 4.95, money: 8.01, kmAdded: 159),
+            Refuel(totalKM: 3942, liters: 4.85, money: 7.85, kmAdded: 177),
+            Refuel(totalKM: 4092, liters: 4.31, money: 7.02, kmAdded: 150),
+            Refuel(totalKM: 4241, liters: 4.08, money: 6.69, kmAdded: 149),
+            Refuel(totalKM: 4427, liters: 4.95, money: 8.21, kmAdded: 186),
+            Refuel(totalKM: 4613, liters: 4.96, money: 8.28, kmAdded: 186),
+            Refuel(totalKM: 4790, liters: 4.82, money: 8.00, kmAdded: 177),
+            Refuel(totalKM: 4986, liters: 5, money: 8.30, kmAdded: 196)
         ]
     }
 }

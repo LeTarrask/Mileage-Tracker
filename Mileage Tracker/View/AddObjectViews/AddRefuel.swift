@@ -38,14 +38,14 @@ struct AddRefuel: View {
                         Text(literLabel)
                         Spacer()
                         TextField("", text: $refuelData.litersString)
-                            .keyboardType(.decimalPad)
+                                .keyboardType(.decimalPad)
                     }
                     // MARK: - Cost
                     HStack {
                         Text(costLabel)
                         Spacer()
                         TextField("", text: $refuelData.moneyString)
-                            .keyboardType(.decimalPad)
+                                .keyboardType(.decimalPad)
                     }
                 }
             }.foregroundColor(themeMG.theme.mainColor)

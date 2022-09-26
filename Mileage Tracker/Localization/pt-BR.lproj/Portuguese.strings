@@ -5,3 +5,81 @@
   Created by Alex Luna on 09/03/2021.
   
 */
+
+// Main App View
+"Refuels" = "Refuels";
+"Other costs" = "Other costs";
+"Stats" = "Stats";
+"Settings" = "Settings";
+
+// Onboarding Views
+"Next" = "Next";
+"Dismiss" = "Dismiss";
+
+// Mileage View
+"Mileage Tracker" = "Mileage Tracker";
+"Dismiss" = "Dismiss";
+"Save" = "Save";
+
+// RefuelCardView
+"Refuel at: " = "Refuel at: ";
+"Total" = "Total";
+"km" = "km";
+"Since last" = "Since last";
+"Fuel" = "Fuel Added";
+"L" = "L";
+"Payment" = "Payment";
+"€" = "€";
+"per liter:" = "per liter:";
+"than average:" = "than average:";
+
+// AddRefuel
+"Add refuel info" = "Add refuel info";
+"Kilometers" = "Kilometers";
+"Liters" = "Liters";
+"Refuel Cost" = "Refuel Cost";
+"Save" = "Save";
+
+// GraphicsView
+"Total:" = "Total:";
+"Average consumption" = "Average consumption";
+"km/L" = "km/L";
+"Average spending" = "Average spending";
+"km/€" = "km/€";
+"Total fuel spending" = "Total fuel spending";
+"Average Fuel Price" = "Average Fuel Price";
+"€/l" = "€/l";
+
+// Graphic struct
+"Refuel cost" = "Refuel cost";
+"Price/liter" = "Price/liter";
+"Km/refuel" = "Km/refuel";
+
+// OtherCostsView
+"Other vehicle costs" = "Other vehicle costs";
+"Total Other Costs: " = "Total Other Costs: ";
+
+// AddCostView
+"Cost Name" = "Cost Name";
+"Cost type" = "Cost Type";
+"Cost Value" = "Cost Value";
+
+// SettingsView
+"In-App Purchases" = "In-App Purchases";
+"Remove ads" = "Remove ads";
+"Export data" = "Export data";
+"Choose theme" = "Choose theme";
+"Share Mileage Tracker" = "Share Mileage Tracker";
+"Copy App Link" = "Copy App Link";
+"Feedback" = "Feedback";
+"Rate us on the App Store" = "Rate us on the App Store";
+"Take a survey" = "Take a survey";
+"Talk to the developer" = "Talk to the developer";
+"Reset app" = "Reset app";
+"Delete all app data" = "Delete all app data";
+"Test data" = "Test data";
+"Load test data" = "Load test data";
+"App Settings" = "App Settings";
+
+// Mail template
+"Your App Feedback" = "Your App Feedback";
