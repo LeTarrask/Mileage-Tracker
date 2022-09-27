@@ -94,7 +94,6 @@ struct GraphicsView: View {
                                 Text(kmRefuelString).tag(GraphType.km)
                             }
                             .pickerStyle(.segmented)
-                            .animation(.easeInOut)
                             
                             // MARK: - Graphic
                             switch graphType {
@@ -106,12 +105,12 @@ struct GraphicsView: View {
                                 }.padding(30)
                             case .dates:
                                 Chart(tracker.refuels) { refuel in
-                                    BarMark(x: .value("Date", refuel.creationDate),
+                                    PointMark(x: .value("Date", refuel.creationDate),
                                             y: .value("Price/liter", refuel.pricePerLiter))
                                 }.padding(30)
                             case .km:
                                 Chart(tracker.refuels) { refuel in
-                                    BarMark(x: .value("Date", refuel.creationDate),
+                                    LineMark(x: .value("Date", refuel.creationDate),
                                             y: .value("KM after refuel", refuel.totalKM))
                                 }.padding(30)
                             }

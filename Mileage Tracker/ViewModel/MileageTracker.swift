@@ -89,7 +89,7 @@ class MileageTracker: ObservableObject {
         }
 
         refuels.sort {
-            $0.totalKM < $1.totalKM
+            $0.creationDate < $1.creationDate
         }
     }
 
