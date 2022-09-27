@@ -34,58 +34,56 @@ struct RefuelCardView: View {
     let refuelAtLabel = NSLocalizedString("Refuel at: ", comment: "")
 
     var body: some View {
-        ZStack {
-            BackgroundCard()
-            VStack(alignment: .leading) {
-                HStack(alignment: .center) {
-                    Square(icon: "car",
-                           number: refuel.kmAdded,
-                           value: kmLabel,
-                           label: sinceLast)
-                    Spacer()
-                    Square(icon: "drop.fill",
-                           number: refuel.liters,
-                           value: literLabel,
-                           label: fuelLabel)
-                    Spacer()
-                    Square(icon: "eurosign.square",
-                           number: refuel.money,
-                           value: euroLabel,
-                           label: paymentLabel)
-                    Spacer()
-                    Square(icon: "triangle.fill",
-                           number: refuel.pricePerLiter-average,
-                           value: euroLabel,
-                           label: thanAverageLabel)
-                }
-                .padding(.bottom)
-                HStack {
-                    Square(icon: nil,
-                           number: refuel.pricePerLiter,
-                           value: euroLabel,
-                           label: perLiter)
-                    Spacer()
-                    Square(icon: nil,
-                           number: refuel.totalKM,
-                           value: kmLabel,
-                           label: totalLabel)
-                }
-                .padding(.bottom)
-                HStack {
-                    Text(refuelAtLabel)
-                        .font(.caption)
-                    Text(dateToString(date: refuel.creationDate))
-                        .font(.caption)
-                }
-                .foregroundColor(themeMG.theme.backgroundColor)
+        VStack(alignment: .center) {
+
+            Text("Refuel at: " + dateToString(date: refuel.creationDate))
+                .foregroundColor(themeMG.theme.mainColor)
+
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    Text(String(refuel.kmAdded) + " km")
+                        .fontWeight(.bold)
+                    Text("since last")
+                        .fontWeight(.thin)
+                }.foregroundColor(themeMG.theme.mainColor)
+
+                VStack(alignment: .leading) {
+                    Text(String(refuel.liters) + " liters")
+                        .fontWeight(.bold)
+                }.foregroundColor(themeMG.theme.mainColor)
             }.padding()
+
+            HStack(alignment: .top) {
+                Spacer()
+
+                VStack(alignment: .leading) {
+                    Text(String(refuel.pricePerLiter) + " €/liter")
+                        .fontWeight(.bold)
+                }.foregroundColor(themeMG.theme.mainColor)
+            }.padding()
+
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    Text(String(refuel.totalKM) + " km")
+                        .fontWeight(.bold)
+                    Text("total")
+                        .fontWeight(.thin)
+                }.foregroundColor(themeMG.theme.mainColor)
+
+                VStack(alignment: .leading) {
+                    Text(String(refuel.money) + "€ payment")
+                        .fontWeight(.bold)
+                }.foregroundColor(themeMG.theme.mainColor)
+            }
+            .padding()
         }
+        .background(themeMG.theme.backgroundColor.cornerRadius(30))
+        .padding()
+
     }
 }
 
-
-
-struct Previews_RefuelCardView_Previews: PreviewProvider {
+struct RefuelCardView_Previews: PreviewProvider {
     static var previews: some View {
         let tracker = MileageTracker()
         tracker.refuels = Refuel.data

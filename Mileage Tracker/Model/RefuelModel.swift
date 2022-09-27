@@ -8,7 +8,6 @@
 import SwiftUI
 
 public struct Refuel: Hashable, Codable, Identifiable {
-    // swiftlint:disable identifier_name
     public let id: UUID
     var totalKM: Double
     var liters: Double
@@ -137,12 +136,11 @@ extension Refuel {
             Refuel(totalKM: 5325, liters: 4.93, money: 8.08, creationDate: Date(dateLiteralString: "2022-04-15"), kmAdded: 188),
             Refuel(totalKM: 5514, liters: 4.93, money: 8.08, creationDate: Date(dateLiteralString: "2022-05-15"), kmAdded: 188),
             Refuel(totalKM: 5713, liters: 5.23, money: 9.15, creationDate: Date(dateLiteralString: "2022-06-15"), kmAdded: 188),
-            Refuel(totalKM: 5890, liters: 5.11, money: 9.60, creationDate: Date(dateLiteralString: "2021-07-15"), kmAdded: 177),
-            Refuel(totalKM: 6060, liters: 4.89, money: 9.38, creationDate: Date(dateLiteralString: "2021-08-15"), kmAdded: 170),
+            Refuel(totalKM: 5890, liters: 5.11, money: 9.60, creationDate: Date(dateLiteralString: "2022-07-15"), kmAdded: 177),
+            Refuel(totalKM: 6060, liters: 4.89, money: 9.38, creationDate: Date(dateLiteralString: "2022-08-15"), kmAdded: 170)
         ]
     }
-    
-    
+
 }
 
 extension DateFormatter {

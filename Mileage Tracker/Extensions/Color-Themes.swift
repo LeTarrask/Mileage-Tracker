@@ -10,7 +10,6 @@ import SwiftUI
 typealias Pickable = CaseIterable & Identifiable & Hashable & CustomStringConvertible
 
 enum Theme: Int, Pickable {
-    // swiftlint:disable identifier_name
     var id: Self { self }
 
     var description: String {

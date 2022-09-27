@@ -25,8 +25,8 @@ struct MainAppView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
+                // MARK: - Main Page Views Switcher
                 Group {
-                    // MARK: - Main Page Views Switcher
                     switch viewRouter.currentPage {
                     case .mileage:
                         MileageView(tracker: tracker)
@@ -42,9 +42,8 @@ struct MainAppView: View {
                         AddCostView(tracker: tracker)
                     }
                 }
-                Spacer()
+                // MARK: - Tab Bar
                 ZStack {
-                    // MARK: - Tab Bar
                     HStack {
                         VStack {
                             HStack {
@@ -73,7 +72,7 @@ struct MainAppView: View {
                                     Image(systemName: "plus.circle.fill")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: geometry.size.width/7-6 ,
+                                        .frame(width: geometry.size.width/7-6,
                                                height: geometry.size.width/7-6)
                                         .foregroundColor(themeMG.theme.mainColor)
                                         .rotationEffect(Angle(degrees: showPopUp ? 90 : 0))
@@ -99,18 +98,18 @@ struct MainAppView: View {
                             }
                         }
                     }
-                    .animation(.easeInOut)
-                    .frame(width: geometry.size.width, height: geometry.size.height/8)
+                    .frame(width: geometry.size.width, height: geometry.size.height/10)
                     .background(themeMG.theme.backgroundColor.shadow(radius: 2))
                 }
-            }.edgesIgnoringSafeArea(.bottom)
+            }
+            .edgesIgnoringSafeArea(.bottom)
             .onAppear {
                 tracker.load()
             }
             .onTapGesture {
                 showPopUp = false
             }
-        }.edgesIgnoringSafeArea(.all)
+        }
     }
 }
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		187A8DEB4E9CCC162ACBA669 /* Pods_Mileage_TrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA13BFB12CAF7178529519C /* Pods_Mileage_TrackerTests.framework */; };
 		7913788C25B1F24100871ECE /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913788B25B1F24100871ECE /* Double+String.swift */; };
 		7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913789A25B2030600871ECE /* OtherCostsView.swift */; };
 		791378A025B2032700871ECE /* OtherCosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913789F25B2032700871ECE /* OtherCosts.swift */; };
@@ -21,6 +20,7 @@
 		793B7DD9260E546200ABB839 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7DD8260E546200ABB839 /* ViewRouter.swift */; };
 		793B7DE1260E565E00ABB839 /* PlusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7DE0260E565E00ABB839 /* PlusMenu.swift */; };
 		794A48CC28E30649000DE99C /* EnumPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794A48CB28E30649000DE99C /* EnumPicker.swift */; };
+		794FD2FA28E338A90014593B /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794FD2F928E338A90014593B /* Square.swift */; };
 		7967C5F2260E668D00665DFC /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967C5F1260E668D00665DFC /* MainAppView.swift */; };
 		7968E707261209AB0089DEFD /* MileageTracker+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968E706261209AB0089DEFD /* MileageTracker+Strings.swift */; };
 		7985562024C8475E00544777 /* MileageTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985561F24C8475E00544777 /* MileageTrackerApp.swift */; };
@@ -39,9 +39,7 @@
 		79DA782425AF1CEF009E0FFC /* RefuelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA782325AF1CEF009E0FFC /* RefuelModel.swift */; };
 		79E4CAAD260CA0790061C9E0 /* Color-Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */; };
 		79E4CAD0260CE0800061C9E0 /* RefuelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */; };
-		79E4CADB260CE0A80061C9E0 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CADA260CE0A80061C9E0 /* Square.swift */; };
 		79E4CAE3260CE2210061C9E0 /* View+dateToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */; };
-		79E4CAEB260CE2A00061C9E0 /* BackgroundCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAEA260CE29F0061C9E0 /* BackgroundCard.swift */; };
 		79E4CAF3260CED900061C9E0 /* Theme Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAF2260CED900061C9E0 /* Theme Manager.swift */; };
 		79ED3D6B260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
 		79ED3D6C260A128B00421881 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D67260A128B00421881 /* BannerView.swift */; };
@@ -57,7 +55,6 @@
 		79ED3D97260A1AC000421881 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D96260A1AC000421881 /* MailView.swift */; };
 		79FCD1C025F7D23A007F08FB /* English.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79FCD1C225F7D23A007F08FB /* English.strings */; };
 		79FCD1CB25F7D2C8007F08FB /* Portuguese.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79FCD1CD25F7D2C8007F08FB /* Portuguese.strings */; };
-		C6AB7E02767EEEC074BC2321 /* Pods_Mileage_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4448933977A603360CBEAB /* Pods_Mileage_Tracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +70,6 @@
 /* Begin PBXFileReference section */
 		0EC7C05D3E3C27FD88B800B6 /* Pods-Mileage Tracker-Mileage TrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage Tracker-Mileage TrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Mileage Tracker-Mileage TrackerUITests/Pods-Mileage Tracker-Mileage TrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		13483CCC9135077EB39C4F7E /* Pods-Mileage Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage Tracker.release.xcconfig"; path = "Target Support Files/Pods-Mileage Tracker/Pods-Mileage Tracker.release.xcconfig"; sourceTree = "<group>"; };
-		3AA13BFB12CAF7178529519C /* Pods_Mileage_TrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mileage_TrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74ABE09BCE30443369CEE620 /* Pods-Mileage TrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage TrackerTests.release.xcconfig"; path = "Target Support Files/Pods-Mileage TrackerTests/Pods-Mileage TrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		75EE23B03EB1AC05B833D8C7 /* Pods-Mileage Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Mileage Tracker/Pods-Mileage Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		7913788B25B1F24100871ECE /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
@@ -89,6 +85,7 @@
 		793B7DD8260E546200ABB839 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		793B7DE0260E565E00ABB839 /* PlusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlusMenu.swift; path = "Mileage Tracker/View/Helper Views/PlusMenu.swift"; sourceTree = SOURCE_ROOT; };
 		794A48CB28E30649000DE99C /* EnumPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumPicker.swift; path = "archived content/EnumPicker.swift"; sourceTree = SOURCE_ROOT; };
+		794FD2F928E338A90014593B /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		7967C5F1260E668D00665DFC /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		7968E706261209AB0089DEFD /* MileageTracker+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MileageTracker+Strings.swift"; sourceTree = "<group>"; };
 		7985561C24C8475E00544777 /* Mileage Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mileage Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,9 +110,7 @@
 		79DA782325AF1CEF009E0FFC /* RefuelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelModel.swift; sourceTree = "<group>"; };
 		79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Themes.swift"; sourceTree = "<group>"; };
 		79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelCardView.swift; sourceTree = "<group>"; };
-		79E4CADA260CE0A80061C9E0 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+dateToString.swift"; sourceTree = "<group>"; };
-		79E4CAEA260CE29F0061C9E0 /* BackgroundCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCard.swift; sourceTree = "<group>"; };
 		79E4CAF2260CED900061C9E0 /* Theme Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme Manager.swift"; sourceTree = "<group>"; };
 		79ED3D67260A128B00421881 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		79ED3D68260A128B00421881 /* AdMob InterstitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AdMob InterstitialVC.swift"; sourceTree = "<group>"; };
@@ -126,10 +121,8 @@
 		79ED3D96260A1AC000421881 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		79FCD1C125F7D23A007F08FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/English.strings; sourceTree = "<group>"; };
 		79FCD1CC25F7D2C8007F08FB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Portuguese.strings"; sourceTree = "<group>"; };
-		D09D5AF9E67CC5BF617F3C25 /* Pods_Mileage_Tracker_Mileage_TrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mileage_Tracker_Mileage_TrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77C5CC5F186E7E9390A1A02 /* Pods-Mileage Tracker-Mileage TrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage Tracker-Mileage TrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mileage Tracker-Mileage TrackerUITests/Pods-Mileage Tracker-Mileage TrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB59267BF1F286CAAF22B8B9 /* Pods-Mileage TrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage TrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-Mileage TrackerTests/Pods-Mileage TrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DF4448933977A603360CBEAB /* Pods_Mileage_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mileage_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +130,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6AB7E02767EEEC074BC2321 /* Pods_Mileage_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +137,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				187A8DEB4E9CCC162ACBA669 /* Pods_Mileage_TrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,16 +154,6 @@
 				74ABE09BCE30443369CEE620 /* Pods-Mileage TrackerTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		3C078AB59869CEF5F16A8E91 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DF4448933977A603360CBEAB /* Pods_Mileage_Tracker.framework */,
-				D09D5AF9E67CC5BF617F3C25 /* Pods_Mileage_Tracker_Mileage_TrackerUITests.framework */,
-				3AA13BFB12CAF7178529519C /* Pods_Mileage_TrackerTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7913789325B1F29500871ECE /* Extensions */ = {
@@ -228,7 +209,6 @@
 				7985563B24C8476000544777 /* Mileage TrackerUITests */,
 				7985561D24C8475E00544777 /* Products */,
 				3BA2A3BEECD207DD59C4A5CA /* Pods */,
-				3C078AB59869CEF5F16A8E91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -323,9 +303,8 @@
 			children = (
 				793B7DE0260E565E00ABB839 /* PlusMenu.swift */,
 				793B7DD0260E540C00ABB839 /* TabBarIconView.swift */,
-				79E4CADA260CE0A80061C9E0 /* Square.swift */,
-				79E4CAEA260CE29F0061C9E0 /* BackgroundCard.swift */,
 				79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */,
+				794FD2F928E338A90014593B /* Square.swift */,
 				79ED3D96260A1AC000421881 /* MailView.swift */,
 				79D336E3260BAA540034BA63 /* ShareSheet.swift */,
 				794A48CB28E30649000DE99C /* EnumPicker.swift */,
@@ -559,8 +538,6 @@
 				79E4CAF3260CED900061C9E0 /* Theme Manager.swift in Sources */,
 				793B7DD1260E540C00ABB839 /* TabBarIconView.swift in Sources */,
 				79ED3D97260A1AC000421881 /* MailView.swift in Sources */,
-				79E4CADB260CE0A80061C9E0 /* Square.swift in Sources */,
-				79E4CAEB260CE2A00061C9E0 /* BackgroundCard.swift in Sources */,
 				7967C5F2260E668D00665DFC /* MainAppView.swift in Sources */,
 				793B7D7B260D370400ABB839 /* GraphicsView.swift in Sources */,
 				793B7DD9260E546200ABB839 /* ViewRouter.swift in Sources */,
@@ -569,6 +546,7 @@
 				79ED3D6E260A128B00421881 /* AdMob InterstitialVC.swift in Sources */,
 				79BA12FA2611F9FB00974F6D /* NewFeatureOnboarding.swift in Sources */,
 				7985564B24C8478700544777 /* MileageTracker.swift in Sources */,
+				794FD2FA28E338A90014593B /* Square.swift in Sources */,
 				7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */,
 				793B7D88260D477700ABB839 /* OnboardingPage.swift in Sources */,
 				7985562224C8475E00544777 /* MileageView.swift in Sources */,

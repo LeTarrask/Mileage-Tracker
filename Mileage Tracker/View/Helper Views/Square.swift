@@ -36,6 +36,6 @@ struct Square: View {
                     .font(.caption)
             }
         }
-        .foregroundColor(themeMG.theme.backgroundColor)
+        .foregroundColor(themeMG.theme.mainColor)
     }
 }
