@@ -88,38 +88,31 @@ struct GraphicsView: View {
                             .frame(width: .infinity, height: reader.size.width * 0.40)
 
                             // MARK: - Graphics Selector
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 7)
-                                    .fill(themeMG.theme.backgroundColor)
-                                    .frame(maxHeight: 30)
-                                    .shadow(color: .black, radius: 1, x: 1, y: 1)
-                                HStack {
-                                    Button(action: {graphType = .spending}, label: {
-                                        Text(refuelString)
-                                    })
-                                    Spacer()
-                                    Button(action: {graphType = .dates}, label: {
-                                        Text(priceString)
-                                    })
-                                    Spacer()
-                                    Button(action: {graphType = .km}, label: {
-                                        Text(kmRefuelString)
-                                    })
-                                }
-                                .foregroundColor(themeMG.theme.secondaryColor)
-                                .padding()
-                            }.padding()
-                            .frame(width: .infinity, height: reader.size.width * 0.1)
-                            // MARK: - Graphic
-//                            Graphic(tracker: tracker, type: $graphType)
-//                                .padding()
-//                                .frame(width: .infinity, height: reader.size.width * 0.55)
+                            Picker("Graphic", selection: $graphType.animation(.easeInOut)) {
+                                Text(refuelString).tag(GraphType.spending)
+                                Text(priceString).tag(GraphType.dates)
+                                Text(kmRefuelString).tag(GraphType.km)
+                            }.pickerStyle(.segmented)
                             
-                            Chart(tracker.refuels) { refuel in
-                                BarMark(x: .value("Date", refuel.creationDate),
-                                        y: .value("Refuel Cost", refuel.money)
-                                         )
-                            }.padding(30)
+                            // MARK: - Graphic
+                            switch graphType {
+                            case .spending:
+                                Chart(tracker.refuels) { refuel in
+                                    BarMark(x: .value("Date", refuel.creationDate),
+                                            y: .value("Refuel Cost", refuel.money)
+                                    )
+                                }.padding(30)
+                            case .dates:
+                                Chart(tracker.refuels) { refuel in
+                                    BarMark(x: .value("Date", refuel.creationDate),
+                                            y: .value("Price/liter", refuel.pricePerLiter))
+                                }.padding(30)
+                            case .km:
+                                Chart(tracker.refuels) { refuel in
+                                    BarMark(x: .value("Date", refuel.creationDate),
+                                            y: .value("KM after refuel", refuel.totalKM))
+                                }.padding(30)
+                            }
                         }
                     }
                     // MARK: - Ad Banner

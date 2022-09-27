@@ -138,7 +138,7 @@ extension Refuel {
             Refuel(totalKM: 5514, liters: 4.93, money: 8.08, kmAdded: 188),
             Refuel(totalKM: 5713, liters: 5.23, money: 9.15, kmAdded: 188),
             Refuel(totalKM: 5890, liters: 5.11, money: 9.60, kmAdded: 177),
-            Refuel(totalKM: 6060, liters: 4.89, money: 9.38, kmAdded: 170),
+            Refuel(totalKM: 6060, liters: 4.89, money: 9.38, kmAdded: 170), 
         ]
     }
 }
