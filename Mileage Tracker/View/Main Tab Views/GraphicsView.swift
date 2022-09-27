@@ -15,13 +15,13 @@ enum GraphType {
 
 struct GraphicsView: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
-
+    
     @ObservedObject var tracker: MileageTracker
-
+    
     @State var showInterstitial = false
-
+    
     @State var graphType: GraphType = .spending
-
+    
     /// VIEW STRINGS & URLs
     private let mainTitleString = NSLocalizedString("Total:", comment: "")
     private let distanceValueString = NSLocalizedString("km", comment: "")
@@ -36,7 +36,7 @@ struct GraphicsView: View {
     private let refuelString = NSLocalizedString("Refuel cost", comment: "")
     private let priceString = NSLocalizedString("Price/liter", comment: "")
     private let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")
-
+    
     var body: some View {
         VStack {
             if showInterstitial && !tracker.paidApp {
@@ -86,13 +86,15 @@ struct GraphicsView: View {
                             }
                             .padding()
                             .frame(width: .infinity, height: reader.size.width * 0.40)
-
+                            
                             // MARK: - Graphics Selector
                             Picker("Graphic", selection: $graphType.animation(.easeInOut)) {
                                 Text(refuelString).tag(GraphType.spending)
                                 Text(priceString).tag(GraphType.dates)
                                 Text(kmRefuelString).tag(GraphType.km)
-                            }.pickerStyle(.segmented)
+                            }
+                            .pickerStyle(.segmented)
+                            .animation(.easeInOut)
                             
                             // MARK: - Graphic
                             switch graphType {
