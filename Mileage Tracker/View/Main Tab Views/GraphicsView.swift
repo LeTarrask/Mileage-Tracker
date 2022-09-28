@@ -71,7 +71,7 @@ struct GraphicsView: View {
                 .cornerRadius(25)
 
             VStack(alignment: .leading) {
-                Text("Total:")
+                Text(totalString)
                     .fontWeight(.black)
                     .foregroundColor(themeMG.theme.secondaryColor)
 
@@ -182,7 +182,7 @@ struct GraphicsView: View {
     }
 
     /// VIEW STRINGS & URLs
-    private let mainTitleString = NSLocalizedString("Total:", comment: "")
+    private let totalString = NSLocalizedString("Total:", comment: "")
     private let distanceValueString = NSLocalizedString("km", comment: "")
     private let averageConsLabel = NSLocalizedString("Average consumption", comment: "")
     private let averageConsValue = NSLocalizedString("km/L", comment: "")
