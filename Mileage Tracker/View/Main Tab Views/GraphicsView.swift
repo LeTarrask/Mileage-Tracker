@@ -73,14 +73,14 @@ struct GraphicsView: View {
             VStack(alignment: .leading) {
                 Text(totalString)
                     .fontWeight(.black)
-                    .foregroundColor(themeMG.theme.secondaryColor)
+                    .foregroundColor(themeMG.theme.mainColor)
 
                 HStack {
                     VStack(alignment: .leading) {
                         Text(String(tracker.averageConsumption) + " " + averageConsValue)
                             .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundColor(themeMG.theme.secondaryColor)
+                            .foregroundColor(themeMG.theme.mainColor)
                         Text(averageConsLabel)
                             .font(.caption2)
                             .foregroundColor(themeMG.theme.subtitleTextColor)
@@ -90,7 +90,7 @@ struct GraphicsView: View {
                         Text(String(tracker.totalSpending) + " " + moneySymbol)
                             .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundColor(themeMG.theme.secondaryColor)
+                            .foregroundColor(themeMG.theme.mainColor)
                         Text(totalFuelSpendingLabel)
                             .font(.caption2)
                             .foregroundColor(themeMG.theme.subtitleTextColor)
@@ -102,7 +102,7 @@ struct GraphicsView: View {
                         Text(String(tracker.averageSpending) + " " + averageSpenValue)
                             .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundColor(themeMG.theme.secondaryColor)
+                            .foregroundColor(themeMG.theme.mainColor)
                         Text(averageSpenLabel)
                             .font(.caption2)
                             .foregroundColor(themeMG.theme.subtitleTextColor)
@@ -112,7 +112,7 @@ struct GraphicsView: View {
                         Text(String(tracker.averagePrice) + " " + averageFuelPriceValue)
                             .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundColor(themeMG.theme.secondaryColor)
+                            .foregroundColor(themeMG.theme.mainColor)
                         Text(averageFuelPriceLabel)
                             .font(.caption2)
                             .foregroundColor(themeMG.theme.subtitleTextColor)
