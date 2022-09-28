@@ -12,7 +12,7 @@ class MileageTracker: ObservableObject {
     @Published var refuels: [Refuel] = [Refuel]()
     @Published var otherCosts: [OtherCost] = [OtherCost]()
 
-    @Published var paidApp: Bool = true
+    @Published var paidApp: Bool = false
 
     /// This method receives a data parameter from the view and adds it to our database
     /// - Parameter data: data contains kilometers, liters, and money paid in refuel,
@@ -45,10 +45,6 @@ class MileageTracker: ObservableObject {
 
     private static var costsURL: URL {
         documentsFolder.appendingPathComponent("costs.data")
-    }
-
-    private static var csvURL: URL {
-        documentsFolder.appendingPathComponent("tracker.csv")
     }
 
     func load() {
@@ -114,6 +110,13 @@ class MileageTracker: ObservableObject {
             }
         }
     }
+}
+
+// CSV handling methods
+extension MileageTracker {
+    private static var csvURL: URL {
+        documentsFolder.appendingPathComponent("tracker.csv")
+    }
 
     func generateCSV() -> String {
         /// A method that exports Refuel data and other costs into a CSV file
@@ -163,8 +166,8 @@ class MileageTracker: ObservableObject {
     }
 }
 
+/// Data generation for testing methods
 extension MileageTracker {
-    /// Testing methods
     func deleteData() {
         refuels = [Refuel]()
         otherCosts = [OtherCost]()

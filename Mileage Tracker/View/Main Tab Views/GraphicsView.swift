@@ -105,12 +105,23 @@ struct GraphicsView: View {
                             .frame(width: .infinity, height: reader.size.height * 0.25)
 
                             // MARK: - Graphics Selector
-                            Picker("Graphic", selection: $graphType.animation(.easeInOut)) {
+                            Picker("Graphic", selection: $graphType) {
                                 Text(refuelString).tag(GraphType.spending)
                                 Text(priceString).tag(GraphType.dates)
                                 Text(kmRefuelString).tag(GraphType.km)
                             }
-                            .foregroundColor(themeMG.theme.mainColor)
+                            .pickerStyle(SegmentedPickerStyle())
+                            .padding(.horizontal, 20)
+
+                            // TO DO: Implement this functionality on ViewModel to be callable here
+                            // MARK: - Timeframe selector Selector
+//                            Picker("Timeframe", selection: $timeframe) {
+//                                Text("Last month").tag(0)
+//                                Text("Last year").tag(1)
+//                                Text("All time").tag(2)
+//                            }
+//                            .pickerStyle(SegmentedPickerStyle())
+//                            .padding(.horizontal, 20)
 
                             // MARK: - Graphic
                             ZStack {
@@ -123,15 +134,18 @@ struct GraphicsView: View {
                                         BarMark(x: .value("Date", refuel.creationDate),
                                                 y: .value("Refuel Cost", refuel.money)
                                         )
+                                        .accessibilityValue(refuel.moneyString)
                                         .foregroundStyle(themeMG.theme.mainColor)
-                                    }.padding(30)
+                                    }
+                                    .padding(30)
                                 case .dates:
                                     Chart(tracker.refuels) { refuel in
                                         PointMark(x: .value("Date", refuel.creationDate),
-                                                y: .value("Price/liter", refuel.pricePerLiter)
+                                                  y: .value("Price/liter", refuel.pricePerLiter)
                                         )
                                         .foregroundStyle(themeMG.theme.mainColor)
-                                    }.padding(30)
+                                    }
+                                    .padding(30)
                                 case .km:
                                     Chart(tracker.refuels) { refuel in
                                         LineMark(x: .value("Date", refuel.creationDate),
@@ -139,7 +153,7 @@ struct GraphicsView: View {
                                         )
                                         .foregroundStyle(themeMG.theme.mainColor)
                                         .lineStyle(StrokeStyle(lineWidth: 2.0))
-                                        .interpolationMethod(.cardinal)
+                                        .interpolationMethod(.catmullRom)
                                         .symbol(Circle().strokeBorder(lineWidth: 2.0))
                                         .symbolSize(60)
                                     }.padding(30)
@@ -173,4 +187,35 @@ struct GraphicsView_Previews: PreviewProvider {
         view.tracker.paidApp = true
         return view
     }
+}
+
+extension GraphicsView {
+    // MARK: - dump code from intent to filter data source
+
+    //    @State private var timeframe = 2 {
+    //        didSet {
+    //            filterRefuels()
+    //        }
+    //    }
+    //
+    //    @State var originalRefuels: [Refuel] = [Refuel]()
+
+    //    func filterRefuels() {
+    //        switch timeframe {
+    //        case 0:
+    //            originalRefuels = tracker.refuels
+    //            tracker.refuels = tracker.refuels.filter({
+    //                $0.creationDate > addOrSubtractMonth(month: -1)
+    //            })
+    //        case 1:
+    //            originalRefuels = tracker.refuels
+    //            tracker.refuels.filter({
+    //                $0.creationDate > addOrSubtractYear(year: -1)
+    //            })
+    //        case 2:
+    //            originalRefuels = tracker.refuels
+    //        default:
+    //            originalRefuels = tracker.refuels
+    //        }
+    //    }
 }
