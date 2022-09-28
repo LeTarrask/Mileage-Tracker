@@ -88,6 +88,7 @@ struct MainAppView: View {
                                    systemIconName: "gearshape",
                                    tabName: settingsString)
                     }
+                    .animation(.easeInOut, value: 5)
                     .frame(width: geometry.size.width, height: geometry.size.height/10)
                     .background(themeMG.theme.backgroundColor.shadow(radius: 2))
                 }

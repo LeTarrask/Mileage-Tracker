@@ -18,6 +18,7 @@ struct MileageView: View {
                     RefuelCardView(refuel: refuel, average: tracker.averagePrice)
                 }
                 .onDelete(perform: removeItem)
+                .animation(.easeInOut, value: 5)
             }
             if !tracker.paidApp { Banner() }
         }.edgesIgnoringSafeArea(.all)
