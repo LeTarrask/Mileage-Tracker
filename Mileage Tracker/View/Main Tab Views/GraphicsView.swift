@@ -127,9 +127,9 @@ struct GraphicsView: View {
     func timeframeSelector() -> some View {
         // MARK: - Timeframe selector
         Picker("Timeframe", selection: $timeframe) {
-            Text("Last month").tag(FilterType.month)
-            Text("Last year").tag(FilterType.year)
-            Text("All time").tag(FilterType.none)
+            Text(lastMonthString).tag(FilterType.month)
+            Text(lastYearString).tag(FilterType.year)
+            Text(allTimeString).tag(FilterType.none)
         }
         .pickerStyle(SegmentedPickerStyle())
         .padding(.horizontal, 20)
@@ -157,19 +157,19 @@ struct GraphicsView: View {
             Chart(filterBy(timeframe), id: \.id) { refuel in
                 switch graphType {
                 case .spending:
-                    BarMark(x: .value("Date", refuel.creationDate),
-                            y: .value("Refuel Cost", refuel.money)
+                    BarMark(x: .value(dateLocalizedString, refuel.creationDate),
+                            y: .value(refuelString, refuel.money)
                     )
                     .accessibilityValue(refuel.moneyString)
                     .foregroundStyle(themeMG.theme.mainColor)
                 case .dates:
-                    PointMark(x: .value("Date", refuel.creationDate),
-                              y: .value("Price/liter", refuel.pricePerLiter)
+                    PointMark(x: .value(dateLocalizedString, refuel.creationDate),
+                              y: .value(priceString, refuel.pricePerLiter)
                     )
                     .foregroundStyle(themeMG.theme.mainColor)
                 case .km:
-                    LineMark(x: .value("Date", refuel.creationDate),
-                             y: .value("KM / money", refuel.kmAdded/refuel.money)
+                    LineMark(x: .value(dateLocalizedString, refuel.creationDate),
+                             y: .value(averageSpenValue, refuel.kmAdded/refuel.money)
                     )
                     .foregroundStyle(themeMG.theme.mainColor)
                     .lineStyle(StrokeStyle(lineWidth: 2.0))
@@ -195,6 +195,10 @@ struct GraphicsView: View {
     private let refuelString = NSLocalizedString("Refuel cost", comment: "")
     private let priceString = NSLocalizedString("Price/liter", comment: "")
     private let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")
+    private let dateLocalizedString = NSLocalizedString("Date", comment: "")
+    private let lastMonthString = NSLocalizedString("Last month", comment: "")
+    private let lastYearString = NSLocalizedString("Last year", comment: "")
+    private let allTimeString = NSLocalizedString("All time", comment: "")
 
     func filterBy(_ type: FilterType) -> [Refuel] {
         switch timeframe {

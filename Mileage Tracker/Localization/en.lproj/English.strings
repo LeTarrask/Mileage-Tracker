@@ -49,6 +49,10 @@
 "Total fuel spending" = "Total fuel spending";
 "Average Fuel Price" = "Average Fuel Price";
 "€/l" = "€/l";
+"Date" = "Date";
+"Last month" = "Last month";
+"Last year" = "Last year";
+"All time" = "All time";
 
 // Graphic struct
 "Refuel cost" = "Refuel cost";
