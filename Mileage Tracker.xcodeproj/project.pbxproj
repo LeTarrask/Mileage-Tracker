@@ -18,7 +18,6 @@
 		793B7D8D260E275F00ABB839 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7D8C260E275F00ABB839 /* OnboardingRouter.swift */; };
 		793B7DD1260E540C00ABB839 /* TabBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7DD0260E540C00ABB839 /* TabBarIconView.swift */; };
 		793B7DD9260E546200ABB839 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7DD8260E546200ABB839 /* ViewRouter.swift */; };
-		793B7DE1260E565E00ABB839 /* PlusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7DE0260E565E00ABB839 /* PlusMenu.swift */; };
 		794A48CC28E30649000DE99C /* EnumPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794A48CB28E30649000DE99C /* EnumPicker.swift */; };
 		794FD2FA28E338A90014593B /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794FD2F928E338A90014593B /* Square.swift */; };
 		7967C5F2260E668D00665DFC /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967C5F1260E668D00665DFC /* MainAppView.swift */; };
@@ -84,7 +83,6 @@
 		793B7D8C260E275F00ABB839 /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		793B7DD0260E540C00ABB839 /* TabBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIconView.swift; sourceTree = "<group>"; };
 		793B7DD8260E546200ABB839 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
-		793B7DE0260E565E00ABB839 /* PlusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlusMenu.swift; path = "Mileage Tracker/View/Helper Views/PlusMenu.swift"; sourceTree = SOURCE_ROOT; };
 		794A48CB28E30649000DE99C /* EnumPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumPicker.swift; path = "archived content/EnumPicker.swift"; sourceTree = SOURCE_ROOT; };
 		794FD2F928E338A90014593B /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		7967C5F1260E668D00665DFC /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
@@ -304,7 +302,6 @@
 		79E4CAC6260CDFFE0061C9E0 /* Helper Views */ = {
 			isa = PBXGroup;
 			children = (
-				793B7DE0260E565E00ABB839 /* PlusMenu.swift */,
 				793B7DD0260E540C00ABB839 /* TabBarIconView.swift */,
 				79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */,
 				794FD2F928E338A90014593B /* Square.swift */,
@@ -556,7 +553,6 @@
 				793B7D88260D477700ABB839 /* OnboardingPage.swift in Sources */,
 				7985562224C8475E00544777 /* MileageView.swift in Sources */,
 				79ED3D71260A128B00421881 /* InterstitialView.swift in Sources */,
-				793B7DE1260E565E00ABB839 /* PlusMenu.swift in Sources */,
 				79D336E4260BAA540034BA63 /* ShareSheet.swift in Sources */,
 				7913791A25B5FA2000871ECE /* SettingsView.swift in Sources */,
 				7985564D24C84D8300544777 /* AddRefuel.swift in Sources */,

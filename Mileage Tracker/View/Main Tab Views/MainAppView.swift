@@ -62,8 +62,8 @@ struct MainAppView: View {
                                 ZStack {
                                     // MARK: - Plus Menu
                                     if showPopUp {
-                                        PlusMenu(viewRouter: viewRouter, widthAndHeight: geometry.size.width/7)
-                                            .offset(y: -geometry.size.height/6)
+                                        plusMenu(widthAndHeight: geometry.size.width/7)
+                                            .offset(y: -geometry.size.height/11)
                                     }
                                     Circle()
                                         .foregroundColor(themeMG.theme.highlightColor)
@@ -77,11 +77,11 @@ struct MainAppView: View {
                                         .foregroundColor(themeMG.theme.mainColor)
                                         .rotationEffect(Angle(degrees: showPopUp ? 90 : 0))
                                 }
-                                .offset(y: -geometry.size.height/8/2)
+                                .offset(y: -geometry.size.height/20)
                                 .onTapGesture {
-                                    withAnimation {
+                                    withAnimation(.easeInOut, {
                                         showPopUp.toggle()
-                                    }
+                                    })
                                 }
                                 TabBarIcon(viewRouter: viewRouter,
                                            assignedPage: .graphics,
@@ -107,9 +107,47 @@ struct MainAppView: View {
                 tracker.load()
             }
             .onTapGesture {
-                showPopUp = false
+                withAnimation(.easeInOut, {
+                    showPopUp = false
+                })
             }
         }
+    }
+
+    @ViewBuilder
+    func plusMenu(widthAndHeight: CGFloat) -> some View {
+        HStack(spacing: 20) {
+            ZStack {
+                Circle()
+                    .foregroundColor(themeMG.theme.mainColor)
+                    .frame(width: widthAndHeight, height: widthAndHeight)
+                Image(systemName: "drop.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(15)
+                    .frame(width: widthAndHeight, height: widthAndHeight)
+                    .foregroundColor(.white)
+            }
+            .onTapGesture {
+                viewRouter.currentPage = .addrefuel
+            }
+            ZStack {
+                Circle()
+                    .foregroundColor(themeMG.theme.mainColor)
+                    .frame(width: widthAndHeight, height: widthAndHeight)
+                Image(systemName: "wrench.and.screwdriver")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(15)
+                    .frame(width: widthAndHeight, height: widthAndHeight)
+                    .foregroundColor(.white)
+            }
+            .onTapGesture {
+                viewRouter.currentPage = .addcost
+            }
+        }
+        .transition(.scale)
+        .animation(.easeInOut, value: 5)
     }
 }
 
