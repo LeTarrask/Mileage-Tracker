@@ -25,28 +25,6 @@ struct SettingsView: View {
     @State var isShowingMailView = false
     @State var alertNoMail = false
 
-    /// VIEW STRINGS & URLs
-    private let buyTitle = NSLocalizedString("In-App Purchases", comment: "")
-    private let removeAds = NSLocalizedString("Remove ads", comment: "")
-    private let inAppURL = URL(string: "https://www.tarrask.com")!
-    private let chooseTheme = NSLocalizedString("Choose theme", comment: "")
-    private let exportData = NSLocalizedString("Export data", comment: "")
-    private let exportURL = URL(string: "https://www.tarrask.com")!
-    private let viewTitle = NSLocalizedString("App Settings", comment: "")
-    private let shareTracker = NSLocalizedString("Share Mileage Tracker", comment: "")
-    private let copyAppLink = NSLocalizedString("Copy App Link", comment: "")
-    private let appLink = URL(string: "https://www.tarrask.com")!
-    private let feedback = NSLocalizedString("Feedback", comment: "")
-    private let rateUs = NSLocalizedString("Rate us on the App Store", comment: "")
-    private let rateLink = URL(string: "https://www.tarrask.com")!
-    private let survey = NSLocalizedString("Take a survey", comment: "")
-    private let surveyLink = URL(string: "https://www.tarrask.com")!
-    private let talkToUs = NSLocalizedString("Talk to the developer", comment: "")
-    private let resetApp = NSLocalizedString("Reset app", comment: "")
-    private let deleteData = NSLocalizedString("Delete all app data", comment: "")
-    private let testData = NSLocalizedString("Test data", comment: "")
-    private let loadTestData = NSLocalizedString("Load test data", comment: "")
-
     var body: some View {
         Form {
             Section(header: Text(buyTitle)) {
@@ -106,6 +84,30 @@ struct SettingsView: View {
             Alert(title: Text("Cannot send email"))
         }
     }
+
+    /// VIEW STRINGS & URLs
+    private let buyTitle = NSLocalizedString("In-App Purchases", comment: "")
+    private let removeAds = NSLocalizedString("Remove ads", comment: "")
+    private let inAppURL = URL(string: "https://www.tarrask.com")!
+    private let chooseTheme = NSLocalizedString("Choose theme", comment: "")
+    private let exportData = NSLocalizedString("Export data", comment: "")
+    private let exportURL = URL(string: "https://www.tarrask.com")!
+    private let viewTitle = NSLocalizedString("App Settings", comment: "")
+    private let shareTracker = NSLocalizedString("Share Mileage Tracker", comment: "")
+    private let copyAppLink = NSLocalizedString("Copy App Link", comment: "")
+    private let appLink = URL(string: "https://www.tarrask.com")!
+    private let feedback = NSLocalizedString("Feedback", comment: "")
+    private let rateUs = NSLocalizedString("Rate us on the App Store", comment: "")
+    private let rateLink = URL(string: "https://www.tarrask.com")!
+    private let survey = NSLocalizedString("Take a survey", comment: "")
+    private let surveyLink = URL(string: "https://www.tarrask.com")!
+    private let talkToUs = NSLocalizedString("Talk to the developer", comment: "")
+    private let resetApp = NSLocalizedString("Reset app", comment: "")
+    private let deleteData = NSLocalizedString("Delete all app data", comment: "")
+    private let testData = NSLocalizedString("Test data", comment: "")
+    private let loadTestData = NSLocalizedString("Load test data", comment: "")
+
+
 }
 
 struct SettingsView_Previews: PreviewProvider {
