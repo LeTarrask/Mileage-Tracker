@@ -21,6 +21,7 @@ struct GraphicsView: View {
     @State var showInterstitial = false
 
     @State var graphType: GraphType = .spending
+    @State var timeframe: Int = 0
 
     /// VIEW STRINGS & URLs
     private let mainTitleString = NSLocalizedString("Total:", comment: "")
@@ -115,39 +116,36 @@ struct GraphicsView: View {
 
                             // TO DO: Implement this functionality on ViewModel to be callable here
                             // MARK: - Timeframe selector Selector
-//                            Picker("Timeframe", selection: $timeframe) {
-//                                Text("Last month").tag(0)
-//                                Text("Last year").tag(1)
-//                                Text("All time").tag(2)
-//                            }
-//                            .pickerStyle(SegmentedPickerStyle())
-//                            .padding(.horizontal, 20)
+                            Picker("Timeframe", selection: $timeframe) {
+                                Text("Last month").tag(0)
+                                Text("Last year").tag(1)
+                                Text("All time").tag(2)
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                            .padding(.horizontal, 20)
 
                             // MARK: - Graphic
                             ZStack {
                                 themeMG.theme.backgroundColor
                                     .cornerRadius(25)
 
-                                switch graphType {
-                                case .spending:
-                                    Chart(tracker.refuels) { refuel in
+                                Chart(timeframe == 2 ? tracker.refuels : tracker.refuels.filter({ $0.creationDate > addOrSubtractYear(year: -1)
+
+                                }
+                                                                                               ), id: \.id) { refuel in
+                                    switch graphType {
+                                    case .spending:
                                         BarMark(x: .value("Date", refuel.creationDate),
                                                 y: .value("Refuel Cost", refuel.money)
                                         )
                                         .accessibilityValue(refuel.moneyString)
                                         .foregroundStyle(themeMG.theme.mainColor)
-                                    }
-                                    .padding(30)
-                                case .dates:
-                                    Chart(tracker.refuels) { refuel in
+                                    case .dates:
                                         PointMark(x: .value("Date", refuel.creationDate),
                                                   y: .value("Price/liter", refuel.pricePerLiter)
                                         )
                                         .foregroundStyle(themeMG.theme.mainColor)
-                                    }
-                                    .padding(30)
-                                case .km:
-                                    Chart(tracker.refuels) { refuel in
+                                    case .km:
                                         LineMark(x: .value("Date", refuel.creationDate),
                                                  y: .value("KM / money", refuel.kmAdded/refuel.money)
                                         )
@@ -156,7 +154,7 @@ struct GraphicsView: View {
                                         .interpolationMethod(.catmullRom)
                                         .symbol(Circle().strokeBorder(lineWidth: 2.0))
                                         .symbolSize(60)
-                                    }.padding(30)
+                                    }
                                 }
                             }.padding()
                         }
