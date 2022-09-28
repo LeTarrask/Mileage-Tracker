@@ -16,12 +16,6 @@ struct MainAppView: View {
 
     @State var showPopUp = false
 
-    /// VIEW STRINGS & URLs
-    private let refuelsString = NSLocalizedString("Refuels", comment: "")
-    private let otherCostsString = NSLocalizedString("Other costs", comment: "")
-    private let statsString = NSLocalizedString("Stats", comment: "")
-    private let settingsString = NSLocalizedString("Settings", comment: "")
-
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -45,58 +39,54 @@ struct MainAppView: View {
                 // MARK: - Tab Bar
                 ZStack {
                     HStack {
-                        VStack {
-                            HStack {
-                                TabBarIcon(viewRouter: viewRouter,
-                                           assignedPage: .mileage,
-                                           width: geometry.size.width/5,
-                                           height: geometry.size.height/28,
-                                           systemIconName: "drop.fill",
-                                           tabName: refuelsString)
-                                TabBarIcon(viewRouter: viewRouter,
-                                           assignedPage: .othercosts,
-                                           width: geometry.size.width/5,
-                                           height: geometry.size.height/28,
-                                           systemIconName: "wrench.and.screwdriver",
-                                           tabName: otherCostsString)
-                                ZStack {
-                                    // MARK: - Plus Menu
-                                    if showPopUp {
-                                        plusMenu(widthAndHeight: geometry.size.width/7)
-                                            .offset(y: -geometry.size.height/11)
-                                    }
-                                    Circle()
-                                        .foregroundColor(themeMG.theme.highlightColor)
-                                        .frame(width: geometry.size.width/7, height: geometry.size.width/7)
-                                        .shadow(radius: 4)
-                                    Image(systemName: "plus.circle.fill")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: geometry.size.width/7-6,
-                                               height: geometry.size.width/7-6)
-                                        .foregroundColor(themeMG.theme.mainColor)
-                                        .rotationEffect(Angle(degrees: showPopUp ? 90 : 0))
-                                }
-                                .offset(y: -geometry.size.height/20)
-                                .onTapGesture {
-                                    withAnimation(.easeInOut, {
-                                        showPopUp.toggle()
-                                    })
-                                }
-                                TabBarIcon(viewRouter: viewRouter,
-                                           assignedPage: .graphics,
-                                           width: geometry.size.width/5,
-                                           height: geometry.size.height/28,
-                                           systemIconName: "list.star",
-                                           tabName: statsString)
-                                TabBarIcon(viewRouter: viewRouter,
-                                           assignedPage: .settings,
-                                           width: geometry.size.width/5,
-                                           height: geometry.size.height/28,
-                                           systemIconName: "gearshape",
-                                           tabName: settingsString)
+                        TabBarIcon(viewRouter: viewRouter,
+                                   assignedPage: .mileage,
+                                   width: geometry.size.width/5,
+                                   height: geometry.size.height/28,
+                                   systemIconName: "drop.fill",
+                                   tabName: refuelsString)
+                        TabBarIcon(viewRouter: viewRouter,
+                                   assignedPage: .othercosts,
+                                   width: geometry.size.width/5,
+                                   height: geometry.size.height/28,
+                                   systemIconName: "wrench.and.screwdriver",
+                                   tabName: otherCostsString)
+                        ZStack {
+                            // MARK: - Plus Menu
+                            if showPopUp {
+                                plusMenu(widthAndHeight: geometry.size.width/7)
+                                    .offset(y: -geometry.size.height/11)
                             }
+                            Circle()
+                                .foregroundColor(themeMG.theme.highlightColor)
+                                .frame(width: geometry.size.width/7, height: geometry.size.width/7)
+                                .shadow(radius: 4)
+                            Image(systemName: "plus.circle.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: geometry.size.width/7-6,
+                                       height: geometry.size.width/7-6)
+                                .foregroundColor(themeMG.theme.mainColor)
+                                .rotationEffect(Angle(degrees: showPopUp ? 90 : 0))
                         }
+                        .offset(y: -geometry.size.height/20)
+                        .onTapGesture {
+                            withAnimation(.easeInOut, {
+                                showPopUp.toggle()
+                            })
+                        }
+                        TabBarIcon(viewRouter: viewRouter,
+                                   assignedPage: .graphics,
+                                   width: geometry.size.width/5,
+                                   height: geometry.size.height/28,
+                                   systemIconName: "list.star",
+                                   tabName: statsString)
+                        TabBarIcon(viewRouter: viewRouter,
+                                   assignedPage: .settings,
+                                   width: geometry.size.width/5,
+                                   height: geometry.size.height/28,
+                                   systemIconName: "gearshape",
+                                   tabName: settingsString)
                     }
                     .frame(width: geometry.size.width, height: geometry.size.height/10)
                     .background(themeMG.theme.backgroundColor.shadow(radius: 2))
@@ -149,6 +139,12 @@ struct MainAppView: View {
         .transition(.scale)
         .animation(.easeInOut, value: 5)
     }
+
+    /// VIEW STRINGS & URLs
+    private let refuelsString = NSLocalizedString("Refuels", comment: "")
+    private let otherCostsString = NSLocalizedString("Other costs", comment: "")
+    private let statsString = NSLocalizedString("Stats", comment: "")
+    private let settingsString = NSLocalizedString("Settings", comment: "")
 }
 
 struct MainAppTabs_Previews: PreviewProvider {
