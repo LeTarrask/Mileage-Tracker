@@ -13,6 +13,10 @@ enum GraphType {
     case spending, dates, km
 }
 
+enum FilterType {
+    case none, month, year
+}
+
 struct GraphicsView: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
@@ -21,7 +25,161 @@ struct GraphicsView: View {
     @State var showInterstitial = false
 
     @State var graphType: GraphType = .spending
-    @State var timeframe: Int = 0
+    @State var timeframe: FilterType = .none
+
+    var body: some View {
+        VStack {
+            if showInterstitial && !tracker.paidApp {
+                InterstitialView()
+            } else {
+                // MARK: - Regular Screen
+                VStack {
+                    VStack(alignment: .center) {
+                        averagesBoard()
+
+                        timeframeSelector()
+
+                        graphicSelector()
+
+                        graphicGenerator()
+                    }
+                }
+                // MARK: - Ad Banner
+                if !tracker.paidApp {
+                    Banner()
+                }
+            }
+        }
+        .edgesIgnoringSafeArea(.all)
+        // MARK: Paid app interstitial presenter
+        .onAppear(perform: {
+            if !tracker.paidApp {
+                showInterstitial = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    showInterstitial = false
+                }
+            }
+        })
+    }
+
+    // swiftlint:disable function_body_length
+    // MARK: - Averages display
+    @ViewBuilder
+    func averagesBoard() -> some View {
+        ZStack {
+            themeMG.theme.backgroundColor
+                .cornerRadius(25)
+
+            VStack(alignment: .leading) {
+                Text("Total:")
+                    .fontWeight(.black)
+                    .foregroundColor(themeMG.theme.secondaryColor)
+
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(String(tracker.averageConsumption) + " " + averageConsValue)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(themeMG.theme.secondaryColor)
+                        Text(averageConsLabel)
+                            .font(.caption2)
+                            .foregroundColor(themeMG.theme.subtitleTextColor)
+                    }
+
+                    VStack(alignment: .leading) {
+                        Text(String(tracker.totalSpending) + " " + moneySymbol)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(themeMG.theme.secondaryColor)
+                        Text(totalFuelSpendingLabel)
+                            .font(.caption2)
+                            .foregroundColor(themeMG.theme.subtitleTextColor)
+                    }
+                }
+
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(String(tracker.averageSpending) + " " + averageSpenValue)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(themeMG.theme.secondaryColor)
+                        Text(averageSpenLabel)
+                            .font(.caption2)
+                            .foregroundColor(themeMG.theme.subtitleTextColor)
+                    }
+
+                    VStack(alignment: .leading) {
+                        Text(String(tracker.averagePrice) + " " + averageFuelPriceValue)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(themeMG.theme.secondaryColor)
+                        Text(averageFuelPriceLabel)
+                            .font(.caption2)
+                            .foregroundColor(themeMG.theme.subtitleTextColor)
+                    }
+                }
+            }
+        }
+        .padding()
+    }
+
+    @ViewBuilder
+    func timeframeSelector() -> some View {
+        // MARK: - Timeframe selector
+        Picker("Timeframe", selection: $timeframe) {
+            Text("Last month").tag(FilterType.month)
+            Text("Last year").tag(FilterType.year)
+            Text("All time").tag(FilterType.none)
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding(.horizontal, 20)
+    }
+
+    @ViewBuilder
+    func graphicSelector() -> some View {
+        // MARK: - Graphics Selector
+        Picker("Graphic", selection: $graphType) {
+            Text(refuelString).tag(GraphType.spending)
+            Text(priceString).tag(GraphType.dates)
+            Text(kmRefuelString).tag(GraphType.km)
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding(.horizontal, 20)
+    }
+
+    @ViewBuilder
+    func graphicGenerator() -> some View {
+        // MARK: - Graphic
+        ZStack {
+            themeMG.theme.backgroundColor
+                .cornerRadius(25)
+
+            Chart(filterBy(timeframe), id: \.id) { refuel in
+                switch graphType {
+                case .spending:
+                    BarMark(x: .value("Date", refuel.creationDate),
+                            y: .value("Refuel Cost", refuel.money)
+                    )
+                    .accessibilityValue(refuel.moneyString)
+                    .foregroundStyle(themeMG.theme.mainColor)
+                case .dates:
+                    PointMark(x: .value("Date", refuel.creationDate),
+                              y: .value("Price/liter", refuel.pricePerLiter)
+                    )
+                    .foregroundStyle(themeMG.theme.mainColor)
+                case .km:
+                    LineMark(x: .value("Date", refuel.creationDate),
+                             y: .value("KM / money", refuel.kmAdded/refuel.money)
+                    )
+                    .foregroundStyle(themeMG.theme.mainColor)
+                    .lineStyle(StrokeStyle(lineWidth: 2.0))
+                    .interpolationMethod(.catmullRom)
+                    .symbol(Circle().strokeBorder(lineWidth: 2.0))
+                    .symbolSize(60)
+                }
+            }
+        }.padding()
+    }
 
     /// VIEW STRINGS & URLs
     private let mainTitleString = NSLocalizedString("Total:", comment: "")
@@ -38,143 +196,15 @@ struct GraphicsView: View {
     private let priceString = NSLocalizedString("Price/liter", comment: "")
     private let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")
 
-    var body: some View {
-        VStack {
-            if showInterstitial && !tracker.paidApp {
-                InterstitialView()
-            } else {
-                // MARK: - Regular Screen
-                VStack {
-                    GeometryReader { reader in
-                        VStack(alignment: .center) {
-                            // MARK: - Averages display
-                            ZStack {
-                                themeMG.theme.backgroundColor
-                                    .cornerRadius(25)
-
-                                VStack(alignment: .leading) {
-                                    Text("Total:")
-                                        .fontWeight(.black)
-                                        .foregroundColor(themeMG.theme.secondaryColor)
-
-                                    HStack {
-                                        VStack(alignment: .leading) {
-                                            Text(String(tracker.averageConsumption) + " " + averageConsValue)
-                                                .font(.title3)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(themeMG.theme.secondaryColor)
-                                            Text(averageConsLabel)
-                                                .font(.caption2)
-                                                .foregroundColor(themeMG.theme.subtitleTextColor)
-                                        }
-
-                                        VStack(alignment: .leading) {
-                                            Text(String(tracker.totalSpending) + " " + moneySymbol)
-                                                .font(.title3)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(themeMG.theme.secondaryColor)
-                                            Text(totalFuelSpendingLabel)
-                                                .font(.caption2)
-                                                .foregroundColor(themeMG.theme.subtitleTextColor)
-                                        }
-                                    }
-
-                                    HStack {
-                                        VStack(alignment: .leading) {
-                                            Text(String(tracker.averageSpending) + " " + averageSpenValue)
-                                                .font(.title3)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(themeMG.theme.secondaryColor)
-                                            Text(averageSpenLabel)
-                                                .font(.caption2)
-                                                .foregroundColor(themeMG.theme.subtitleTextColor)
-                                        }
-
-                                        VStack(alignment: .leading) {
-                                            Text(String(tracker.averagePrice) + " " + averageFuelPriceValue)
-                                                .font(.title3)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(themeMG.theme.secondaryColor)
-                                            Text(averageFuelPriceLabel)
-                                                .font(.caption2)
-                                                .foregroundColor(themeMG.theme.subtitleTextColor)
-                                        }
-                                    }
-                                }
-                            }
-                            .padding()
-                            .frame(width: .infinity, height: reader.size.height * 0.25)
-
-                            // MARK: - Graphics Selector
-                            Picker("Graphic", selection: $graphType) {
-                                Text(refuelString).tag(GraphType.spending)
-                                Text(priceString).tag(GraphType.dates)
-                                Text(kmRefuelString).tag(GraphType.km)
-                            }
-                            .pickerStyle(SegmentedPickerStyle())
-                            .padding(.horizontal, 20)
-
-                            // TO DO: Implement this functionality on ViewModel to be callable here
-                            // MARK: - Timeframe selector Selector
-                            Picker("Timeframe", selection: $timeframe) {
-                                Text("Last month").tag(0)
-                                Text("Last year").tag(1)
-                                Text("All time").tag(2)
-                            }
-                            .pickerStyle(SegmentedPickerStyle())
-                            .padding(.horizontal, 20)
-
-                            // MARK: - Graphic
-                            ZStack {
-                                themeMG.theme.backgroundColor
-                                    .cornerRadius(25)
-
-                                Chart(timeframe == 2 ? tracker.refuels : tracker.refuels.filter({ $0.creationDate > addOrSubtractYear(year: -1)
-
-                                }
-                                                                                               ), id: \.id) { refuel in
-                                    switch graphType {
-                                    case .spending:
-                                        BarMark(x: .value("Date", refuel.creationDate),
-                                                y: .value("Refuel Cost", refuel.money)
-                                        )
-                                        .accessibilityValue(refuel.moneyString)
-                                        .foregroundStyle(themeMG.theme.mainColor)
-                                    case .dates:
-                                        PointMark(x: .value("Date", refuel.creationDate),
-                                                  y: .value("Price/liter", refuel.pricePerLiter)
-                                        )
-                                        .foregroundStyle(themeMG.theme.mainColor)
-                                    case .km:
-                                        LineMark(x: .value("Date", refuel.creationDate),
-                                                 y: .value("KM / money", refuel.kmAdded/refuel.money)
-                                        )
-                                        .foregroundStyle(themeMG.theme.mainColor)
-                                        .lineStyle(StrokeStyle(lineWidth: 2.0))
-                                        .interpolationMethod(.catmullRom)
-                                        .symbol(Circle().strokeBorder(lineWidth: 2.0))
-                                        .symbolSize(60)
-                                    }
-                                }
-                            }.padding()
-                        }
-                    }
-                    // MARK: - Ad Banner
-                    if !tracker.paidApp {
-                        Banner()
-                    }
-                }
-            }
+    func filterBy(_ type: FilterType) -> [Refuel] {
+        switch timeframe {
+        case .month:
+            return tracker.refuels.filter({ $0.creationDate > addOrSubtractMonth(month: -1)})
+        case .year:
+            return tracker.refuels.filter({ $0.creationDate > addOrSubtractYear(year: -1)})
+        case .none:
+            return tracker.refuels
         }
-        .edgesIgnoringSafeArea(.all)
-        .onAppear(perform: {
-            if !tracker.paidApp {
-                showInterstitial = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                    showInterstitial = false
-                }
-            }
-        })
     }
 }
 
@@ -185,35 +215,4 @@ struct GraphicsView_Previews: PreviewProvider {
         view.tracker.paidApp = true
         return view
     }
-}
-
-extension GraphicsView {
-    // MARK: - dump code from intent to filter data source
-
-    //    @State private var timeframe = 2 {
-    //        didSet {
-    //            filterRefuels()
-    //        }
-    //    }
-    //
-    //    @State var originalRefuels: [Refuel] = [Refuel]()
-
-    //    func filterRefuels() {
-    //        switch timeframe {
-    //        case 0:
-    //            originalRefuels = tracker.refuels
-    //            tracker.refuels = tracker.refuels.filter({
-    //                $0.creationDate > addOrSubtractMonth(month: -1)
-    //            })
-    //        case 1:
-    //            originalRefuels = tracker.refuels
-    //            tracker.refuels.filter({
-    //                $0.creationDate > addOrSubtractYear(year: -1)
-    //            })
-    //        case 2:
-    //            originalRefuels = tracker.refuels
-    //        default:
-    //            originalRefuels = tracker.refuels
-    //        }
-    //    }
 }
