@@ -18,6 +18,7 @@ struct WelcomeOnboarding: View {
             Text("Welcome to Fuellogue")
                 .font(.title)
                 .fontWeight(.bold)
+            // swiftlint:disable line_length
             Text("Track your bike fuel expenses, other payments and vehicle mileage. See the data in a fancy SwiftUI Chart.")
                 .font(.body)
                 .foregroundColor(.gray)

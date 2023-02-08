@@ -99,7 +99,3 @@ extension Refuel {
         money = data.money
     }
 }
-
-
-
-

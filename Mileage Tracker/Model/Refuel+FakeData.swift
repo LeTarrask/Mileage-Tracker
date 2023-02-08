@@ -7,6 +7,7 @@
 
 import Foundation
 
+// swiftlint:disable line_length
 extension Refuel {
     /// Provides fake data for testing purposes
     static var data: [Refuel] {
