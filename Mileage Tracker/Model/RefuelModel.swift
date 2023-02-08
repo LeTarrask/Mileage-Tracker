@@ -33,22 +33,6 @@ public struct Refuel: Hashable, Codable, Identifiable {
         (money/liters).rounded(toPlaces: 2)
     }
 
-//    var kmString: String = "" {
-//        didSet {
-//            totalKM = number(for: kmString)
-//        }
-//    }
-//    var litersString: String = "" {
-//        didSet {
-//            liters = number(for: litersString)
-//        }
-//    }
-//    var moneyString: String = "" {
-//        didSet {
-//            money = number(for: moneyString)
-//        }
-//    }
-
     func number(for string: String) -> Double {
         let numberFormatter = NumberFormatter()
 
@@ -85,9 +69,6 @@ extension Refuel {
             return numberFormatter.number(from: string)?.doubleValue ?? 0.0
         }
     }
-    // swiftlint:disable line_length
-    // https://www.hackingwithswift.com/forums/swiftui/swiftui-how-can-calculations-in-swift-recognise-comma-and-not-only-decimal-point/301
-    // help to sanitize money input
 
     var data: Data {
         return Data(totalKM: totalKM, liters: liters, money: money)
