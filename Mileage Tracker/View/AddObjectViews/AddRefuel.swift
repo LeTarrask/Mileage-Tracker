@@ -41,14 +41,13 @@ struct AddRefuel: View {
                                 .keyboardType(.decimalPad)
                     }
                 }
+                
+                Button(saveLabel) {
+                    tracker.receiveNew(refuelData)
+                    tracker.save()
+                    refuelData = Refuel.Data()
+                }
             }.foregroundColor(themeMG.theme.mainColor)
-
-            Button(saveLabel) {
-                tracker.receiveNew(refuelData)
-                tracker.save()
-                refuelData = Refuel.Data()
-            }
-            Spacer()
         }
     }
 }

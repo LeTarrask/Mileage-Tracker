@@ -19,32 +19,35 @@ struct AddCostView: View {
     var body: some View {
         VStack {
             Form {
-                HStack {
-                    Text(costName)
-                    Spacer()
-                    TextField("", text: $costData.name)
-                        .keyboardType(.alphabet)
-                }
-                Picker(selection: $selection, label: Text(costType)) {
-                    ForEach(OtherCost.CostType.allCases, id: \.self) { type in
-                        Text(type.rawValue)
+                Section(header: Text("Add Vehicle Cost")) {
+                    HStack {
+                        Text(costName)
+                        Spacer()
+                        TextField("", text: $costData.name)
+                            .keyboardType(.alphabet)
+                    }
+                    Picker(selection: $selection, label: Text(costType)) {
+                        ForEach(OtherCost.CostType.allCases, id: \.self) { type in
+                            Text(type.rawValue)
+                        }
+                    }
+                    HStack {
+                        Text(costValue)
+                        Spacer()
+                        TextField("", text: $costData.valueString)
+                            .keyboardType(.decimalPad)
                     }
                 }
-                HStack {
-                    Text(costValue)
-                    Spacer()
-                    TextField("", text: $costData.valueString)
-                        .keyboardType(.decimalPad)
+                
+                Button(saveLabel) {
+                    let newCost = OtherCost(type: costData.type,
+                                            value: costData.value,
+                                            name: costData.name)
+                    tracker.otherCosts.append(newCost)
+                    tracker.save()
+                    costData = OtherCost.Data()
                 }
             }.foregroundColor(themeMG.theme.mainColor)
-            Button(saveLabel) {
-                let newCost = OtherCost(type: costData.type,
-                                        value: costData.value,
-                                        name: costData.name)
-                tracker.otherCosts.append(newCost)
-                tracker.save()
-                costData = OtherCost.Data()
-            }
         }
     }
 }
