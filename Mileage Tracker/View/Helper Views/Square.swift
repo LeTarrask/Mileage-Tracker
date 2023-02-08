@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-//struct Square: View {
+// struct Square: View {
 //    @StateObject var themeMG: ThemeManager = ThemeManager.shared
 //    
 //    let icon: String?
@@ -39,4 +39,4 @@ import SwiftUI
 //        }
 //        .foregroundColor(themeMG.theme.mainColor)
 //    }
-//}
+// }

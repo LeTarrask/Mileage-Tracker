@@ -30,7 +30,6 @@ struct OnboardingView: View {
                                         insertion: .move(edge: .trailing),
                                         removal: .move(edge: .leading))
                         )
-                        .animation(.default)
                 }
             }
 
@@ -65,7 +64,6 @@ struct OnboardingView: View {
                             insertion: .move(edge: .trailing),
                             removal: .move(edge: .leading))
             )
-            .animation(.easeInOut)
         }
         .onAppear {
             self.currentPage = pages.first!
@@ -80,7 +78,9 @@ struct OnboardingView: View {
         guard let currentIndex = pages.firstIndex(of: currentPage), pages.count > currentIndex + 1 else {
             return
         }
-        currentPage = pages[currentIndex + 1]
+        withAnimation(.spring()) {
+            currentPage = pages[currentIndex + 1]
+        }
     }
 }
 
