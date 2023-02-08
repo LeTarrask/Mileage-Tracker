@@ -4,7 +4,6 @@
 //
 //  Created by Alex Luna on 25/03/2021.
 //
-
 import SwiftUI
 
 struct EnumPicker<Enum: Pickable, Label: View>: View {

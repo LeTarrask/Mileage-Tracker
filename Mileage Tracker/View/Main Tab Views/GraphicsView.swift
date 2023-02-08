@@ -30,7 +30,7 @@ struct GraphicsView: View {
     var body: some View {
         VStack {
             if showInterstitial && !tracker.paidApp {
-                InterstitialView()
+//                InterstitialView()
             } else {
                 // MARK: - Regular Screen
                 VStack {
@@ -45,9 +45,7 @@ struct GraphicsView: View {
                     }
                 }
                 // MARK: - Ad Banner
-                if !tracker.paidApp {
-                    Banner()
-                }
+//                if !tracker.paidApp { Banner() }
             }
         }
         .edgesIgnoringSafeArea(.all)
@@ -77,7 +75,7 @@ struct GraphicsView: View {
 
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(String(tracker.averageConsumption) + " " + averageConsValue)
+                        Text(tracker.averageConsumption.clean + " " + averageConsValue)
                             .font(.title3)
                             .fontWeight(.bold)
                             .foregroundColor(themeMG.theme.mainColor)
@@ -87,7 +85,7 @@ struct GraphicsView: View {
                     }
 
                     VStack(alignment: .leading) {
-                        Text(String(tracker.totalSpending) + " " + moneySymbol)
+                        Text(tracker.totalSpending.clean + " " + moneySymbol)
                             .font(.title3)
                             .fontWeight(.bold)
                             .foregroundColor(themeMG.theme.mainColor)
@@ -99,7 +97,7 @@ struct GraphicsView: View {
 
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(String(tracker.averageSpending) + " " + averageSpenValue)
+                        Text(tracker.averageSpending.clean + " " + averageSpenValue)
                             .font(.title3)
                             .fontWeight(.bold)
                             .foregroundColor(themeMG.theme.mainColor)
@@ -160,7 +158,7 @@ struct GraphicsView: View {
                     BarMark(x: .value(dateLocalizedString, refuel.creationDate),
                             y: .value(refuelString, refuel.money)
                     )
-                    .accessibilityValue(refuel.moneyString)
+                    .accessibilityValue(refuel.money.clean)
                     .foregroundStyle(themeMG.theme.mainColor)
                 case .dates:
                     PointMark(x: .value(dateLocalizedString, refuel.creationDate),

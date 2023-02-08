@@ -29,6 +29,7 @@ struct OtherCost: Hashable, Identifiable, Codable {
         case maintenance
 
         // swiftlint:disable nesting
+        // swiftling:disable type_name
         enum Key: CodingKey {
             case rawValue
         }

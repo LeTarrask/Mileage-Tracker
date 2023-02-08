@@ -33,21 +33,21 @@ public struct Refuel: Hashable, Codable, Identifiable {
         (money/liters).rounded(toPlaces: 2)
     }
 
-    var kmString: String = "" {
-        didSet {
-            totalKM = number(for: kmString)
-        }
-    }
-    var litersString: String = "" {
-        didSet {
-            liters = number(for: litersString)
-        }
-    }
-    var moneyString: String = "" {
-        didSet {
-            money = number(for: moneyString)
-        }
-    }
+//    var kmString: String = "" {
+//        didSet {
+//            totalKM = number(for: kmString)
+//        }
+//    }
+//    var litersString: String = "" {
+//        didSet {
+//            liters = number(for: litersString)
+//        }
+//    }
+//    var moneyString: String = "" {
+//        didSet {
+//            money = number(for: moneyString)
+//        }
+//    }
 
     func number(for string: String) -> Double {
         let numberFormatter = NumberFormatter()

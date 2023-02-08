@@ -6,16 +6,7 @@ target 'Mileage Tracker' do
   use_frameworks!
 
   # Pods for Mileage Tracker
-  pod 'Google-Mobile-Ads-SDK'
+  # pod 'Google-Mobile-Ads-SDK'
   pod 'SwiftLint'
-
-  target 'Mileage TrackerTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'Mileage TrackerUITests' do
-    # Pods for testing
-  end
 
 end

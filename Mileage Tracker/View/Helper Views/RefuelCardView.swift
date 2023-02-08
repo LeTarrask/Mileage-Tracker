@@ -9,18 +9,18 @@ import SwiftUI
 
 struct RefuelCardView: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
-
+    
     var refuel: Refuel
-
+    
     var average: Double
-
+    
     var formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
         return formatter
     }()
-
+    
     /// Localizable strings
     let sinceLast = NSLocalizedString("Since last", comment: "")
     let kmLabel = NSLocalizedString("km", comment: "")
@@ -32,54 +32,57 @@ struct RefuelCardView: View {
     let perLiter = NSLocalizedString("per liter:", comment: "")
     let totalLabel = NSLocalizedString("Total", comment: "")
     let refuelAtLabel = NSLocalizedString("Refuel at: ", comment: "")
-
+    
     var body: some View {
-        VStack(alignment: .center) {
-
-            Text("Refuel at: " + dateToString(date: refuel.creationDate))
+        VStack {
+            
+            /// New Cell
+            VStack {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        Text(refuel.money.clean + euroLabel)
+                            .font(.callout)
+                            .fontWeight(.bold)
+                        Text(refuel.liters.clean + " " + literLabel)
+                            .font(.callout)
+                            .fontWeight(.bold)
+                        
+                    }
+                    
+                    Spacer()
+                    
+                    VStack(alignment: .leading) {
+                        
+                        Text(refuel.pricePerLiter.clean + " €/L")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        
+                        Text(dateToString(date: refuel.creationDate))
+                            .font(.caption)
+                            .fontWeight(.light)
+                    }
+                    
+                    Spacer()
+                    
+                    VStack(alignment: .leading) {
+                        Text("Since last: ")
+                            .font(.caption)
+                            .fontWeight(.light)
+                        Text(refuel.kmAdded.clean + " " + kmLabel)
+                            .font(.title)
+                            .fontWeight(.bold)
+                        
+                        Text("Total: " + refuel.totalKM.clean + " " + kmLabel)
+                            .font(.caption)
+                            .fontWeight(.light)
+                    }
+                    
+                }
                 .foregroundColor(themeMG.theme.mainColor)
-
-            HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    Text(String(refuel.kmAdded) + " km")
-                        .fontWeight(.bold)
-                    Text("since last")
-                        .fontWeight(.thin)
-                }.foregroundColor(themeMG.theme.mainColor)
-
-                VStack(alignment: .leading) {
-                    Text(String(refuel.liters) + " liters")
-                        .fontWeight(.bold)
-                }.foregroundColor(themeMG.theme.mainColor)
-            }.padding()
-
-            HStack(alignment: .top) {
-                Spacer()
-
-                VStack(alignment: .leading) {
-                    Text(String(refuel.pricePerLiter) + " €/liter")
-                        .fontWeight(.bold)
-                }.foregroundColor(themeMG.theme.mainColor)
-            }.padding()
-
-            HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    Text(String(refuel.totalKM) + " km")
-                        .fontWeight(.bold)
-                    Text("total")
-                        .fontWeight(.thin)
-                }.foregroundColor(themeMG.theme.mainColor)
-
-                VStack(alignment: .leading) {
-                    Text(String(refuel.money) + "€ payment")
-                        .fontWeight(.bold)
-                }.foregroundColor(themeMG.theme.mainColor)
+                .padding()
+                .background(themeMG.theme.backgroundColor.cornerRadius(30))
             }
-            .padding()
         }
-        .background(themeMG.theme.backgroundColor.cornerRadius(30))
-        .padding()
-
     }
 }
 

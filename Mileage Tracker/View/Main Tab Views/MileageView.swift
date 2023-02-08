@@ -11,17 +11,14 @@ struct MileageView: View {
     @ObservedObject var tracker: MileageTracker
 
     var body: some View {
-        VStack {
-            // MARK: - Refuels list
-            List {
-                ForEach(tracker.refuels.reversed(), id: \.self) { refuel in
-                    RefuelCardView(refuel: refuel, average: tracker.averagePrice)
-                }
-                .onDelete(perform: removeItem)
-                .animation(.easeInOut, value: 5)
+        // MARK: - Refuels list
+        List {
+            ForEach(tracker.refuels.reversed(), id: \.self) { refuel in
+                RefuelCardView(refuel: refuel, average: tracker.averagePrice)
             }
-            if !tracker.paidApp { Banner() }
-        }.edgesIgnoringSafeArea(.all)
+            .onDelete(perform: removeItem)
+            .animation(.easeInOut, value: 5)
+        }
     }
 
     func removeItem(at offsets: IndexSet) {

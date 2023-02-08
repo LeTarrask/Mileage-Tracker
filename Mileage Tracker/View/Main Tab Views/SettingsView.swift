@@ -106,8 +106,6 @@ struct SettingsView: View {
     private let deleteData = NSLocalizedString("Delete all app data", comment: "")
     private let testData = NSLocalizedString("Test data", comment: "")
     private let loadTestData = NSLocalizedString("Load test data", comment: "")
-
-
 }
 
 struct SettingsView_Previews: PreviewProvider {

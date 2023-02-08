@@ -65,7 +65,7 @@ struct OtherCostsView: View {
                     }
                 }.padding(.horizontal)
             }
-            if !tracker.paidApp { Banner() }
+//            if !tracker.paidApp { Banner() }
         }.edgesIgnoringSafeArea(.all)
     }
 }
