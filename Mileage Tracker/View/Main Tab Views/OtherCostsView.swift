@@ -14,10 +14,6 @@ struct OtherCostsView: View {
 
     @State private var newCostData = OtherCost.Data()
 
-    /// Label properties
-    private let totalOtherLabel = NSLocalizedString("Total Other Costs: ", comment: "")
-    private let valueLabel = NSLocalizedString("€", comment: "")
-
     var body: some View {
         VStack {
             ScrollView {
@@ -35,6 +31,7 @@ struct OtherCostsView: View {
                         Text(valueLabel)
                     }.foregroundColor(themeMG.theme.backgroundColor)
                 }
+
                 ForEach(tracker.otherCosts.reversed()) { cost in
                     ZStack {
                         RoundedRectangle(cornerRadius: 15.0)
@@ -63,10 +60,11 @@ struct OtherCostsView: View {
                                             themeMG.theme.backgroundColor : themeMG.theme.mainColor)
                         .padding()
                     }
-                }.padding(.horizontal)
+                }
+                .padding(.horizontal)
             }
 //            if !tracker.paidApp { Banner() }
-        }.edgesIgnoringSafeArea(.all)
+        }
     }
 }
 

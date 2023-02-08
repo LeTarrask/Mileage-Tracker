@@ -35,7 +35,7 @@ struct GraphicsView: View {
                 // MARK: - Regular Screen
                 VStack {
                     VStack(alignment: .center) {
-                        averagesBoard()
+                        AveragesBoard(tracker: tracker)
 
                         timeframeSelector()
 
@@ -60,67 +60,7 @@ struct GraphicsView: View {
         })
     }
 
-    // swiftlint:disable function_body_length
     // MARK: - Averages display
-    @ViewBuilder
-    func averagesBoard() -> some View {
-        ZStack {
-            themeMG.theme.backgroundColor
-                .cornerRadius(25)
-
-            VStack(alignment: .leading) {
-                Text(totalString)
-                    .fontWeight(.black)
-                    .foregroundColor(themeMG.theme.mainColor)
-
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(tracker.averageConsumption.clean + " " + averageConsValue)
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundColor(themeMG.theme.mainColor)
-                        Text(averageConsLabel)
-                            .font(.caption2)
-                            .foregroundColor(themeMG.theme.subtitleTextColor)
-                    }
-
-                    VStack(alignment: .leading) {
-                        Text(tracker.totalSpending.clean + " " + moneySymbol)
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundColor(themeMG.theme.mainColor)
-                        Text(totalFuelSpendingLabel)
-                            .font(.caption2)
-                            .foregroundColor(themeMG.theme.subtitleTextColor)
-                    }
-                }
-
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(tracker.averageSpending.clean + " " + averageSpenValue)
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundColor(themeMG.theme.mainColor)
-                        Text(averageSpenLabel)
-                            .font(.caption2)
-                            .foregroundColor(themeMG.theme.subtitleTextColor)
-                    }
-
-                    VStack(alignment: .leading) {
-                        Text(String(tracker.averagePrice) + " " + averageFuelPriceValue)
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundColor(themeMG.theme.mainColor)
-                        Text(averageFuelPriceLabel)
-                            .font(.caption2)
-                            .foregroundColor(themeMG.theme.subtitleTextColor)
-                    }
-                }
-            }
-        }
-        .padding()
-    }
-
     @ViewBuilder
     func timeframeSelector() -> some View {
         // MARK: - Timeframe selector
@@ -178,25 +118,6 @@ struct GraphicsView: View {
             }
         }.padding()
     }
-
-    /// VIEW STRINGS & URLs
-    private let totalString = NSLocalizedString("Total:", comment: "")
-    private let distanceValueString = NSLocalizedString("km", comment: "")
-    private let averageConsLabel = NSLocalizedString("Average consumption", comment: "")
-    private let averageConsValue = NSLocalizedString("km/L", comment: "")
-    private let averageSpenLabel = NSLocalizedString("Average spending", comment: "")
-    private let averageSpenValue = NSLocalizedString("km/€", comment: "")
-    private let moneySymbol = NSLocalizedString("€", comment: "")
-    private let totalFuelSpendingLabel = NSLocalizedString("Total fuel spending", comment: "")
-    private let averageFuelPriceLabel = NSLocalizedString("Average Fuel Price", comment: "")
-    private let averageFuelPriceValue = NSLocalizedString("€/l", comment: "")
-    private let refuelString = NSLocalizedString("Refuel cost", comment: "")
-    private let priceString = NSLocalizedString("Price/liter", comment: "")
-    private let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")
-    private let dateLocalizedString = NSLocalizedString("Date", comment: "")
-    private let lastMonthString = NSLocalizedString("Last month", comment: "")
-    private let lastYearString = NSLocalizedString("Last year", comment: "")
-    private let allTimeString = NSLocalizedString("All time", comment: "")
 
     func filterBy(_ type: FilterType) -> [Refuel] {
         switch timeframe {

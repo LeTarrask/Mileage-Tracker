@@ -18,7 +18,7 @@ struct MileageView: View {
             }
             .onDelete(perform: removeItem)
             .animation(.easeInOut, value: 5)
-        }
+        }.listStyle(PlainListStyle())
     }
 
     func removeItem(at offsets: IndexSet) {

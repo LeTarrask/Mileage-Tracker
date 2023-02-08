@@ -21,22 +21,10 @@ struct RefuelCardView: View {
         return formatter
     }()
     
-    /// Localizable strings
-    let sinceLast = NSLocalizedString("Since last", comment: "")
-    let kmLabel = NSLocalizedString("km", comment: "")
-    let literLabel = NSLocalizedString("L", comment: "")
-    let fuelLabel = NSLocalizedString("Fuel", comment: "")
-    let euroLabel = NSLocalizedString("€", comment: "")
-    let paymentLabel = NSLocalizedString("Payment", comment: "")
-    let thanAverageLabel = NSLocalizedString("than average:", comment: "")
-    let perLiter = NSLocalizedString("per liter:", comment: "")
-    let totalLabel = NSLocalizedString("Total", comment: "")
-    let refuelAtLabel = NSLocalizedString("Refuel at: ", comment: "")
-    
     var body: some View {
         VStack {
             
-            /// New Cell
+            // New Cell
             VStack {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {

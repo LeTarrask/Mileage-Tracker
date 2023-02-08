@@ -24,6 +24,8 @@
 		796C48A42993D53200797FB7 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48A32993D53200797FB7 /* Date+Formatter.swift */; };
 		796C48A62993D55000797FB7 /* Refuel+FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48A52993D55000797FB7 /* Refuel+FakeData.swift */; };
 		796C48A82993D56500797FB7 /* OtherCost+FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48A72993D56500797FB7 /* OtherCost+FakeData.swift */; };
+		796C48AA2993D77400797FB7 /* AveragesBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48A92993D77400797FB7 /* AveragesBoard.swift */; };
+		796C48AC2993E15400797FB7 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48AB2993E15400797FB7 /* Strings.swift */; };
 		7985562024C8475E00544777 /* MileageTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985561F24C8475E00544777 /* MileageTrackerApp.swift */; };
 		7985562224C8475E00544777 /* MileageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985562124C8475E00544777 /* MileageView.swift */; };
 		7985562424C8476000544777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7985562324C8476000544777 /* Assets.xcassets */; };
@@ -83,6 +85,8 @@
 		796C48A32993D53200797FB7 /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
 		796C48A52993D55000797FB7 /* Refuel+FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Refuel+FakeData.swift"; sourceTree = "<group>"; };
 		796C48A72993D56500797FB7 /* OtherCost+FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OtherCost+FakeData.swift"; sourceTree = "<group>"; };
+		796C48A92993D77400797FB7 /* AveragesBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AveragesBoard.swift; sourceTree = "<group>"; };
+		796C48AB2993E15400797FB7 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		7985561C24C8475E00544777 /* Mileage Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mileage Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7985561F24C8475E00544777 /* MileageTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTrackerApp.swift; sourceTree = "<group>"; };
 		7985562124C8475E00544777 /* MileageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageView.swift; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 				79ED3D96260A1AC000421881 /* MailView.swift */,
 				79D336E3260BAA540034BA63 /* ShareSheet.swift */,
 				79A95201298BDCB00087344C /* EnumPicker.swift */,
+				796C48A92993D77400797FB7 /* AveragesBoard.swift */,
 			);
 			path = "Helper Views";
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 			children = (
 				79FCD1C225F7D23A007F08FB /* English.strings */,
 				79FCD1CD25F7D2C8007F08FB /* Portuguese.strings */,
+				796C48AB2993E15400797FB7 /* Strings.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -493,6 +499,7 @@
 				7985564B24C8478700544777 /* MileageTracker.swift in Sources */,
 				794FD2FA28E338A90014593B /* Square.swift in Sources */,
 				796C48A42993D53200797FB7 /* Date+Formatter.swift in Sources */,
+				796C48AC2993E15400797FB7 /* Strings.swift in Sources */,
 				7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */,
 				793B7D88260D477700ABB839 /* OnboardingPage.swift in Sources */,
 				796C48A82993D56500797FB7 /* OtherCost+FakeData.swift in Sources */,
@@ -502,6 +509,7 @@
 				7985564D24C84D8300544777 /* AddRefuel.swift in Sources */,
 				7985562024C8475E00544777 /* MileageTrackerApp.swift in Sources */,
 				79E4CAD0260CE0800061C9E0 /* RefuelCardView.swift in Sources */,
+				796C48AA2993D77400797FB7 /* AveragesBoard.swift in Sources */,
 				7913788C25B1F24100871ECE /* Double+String.swift in Sources */,
 				791378A525B208C600871ECE /* AddCostView.swift in Sources */,
 				79ED3D7E260A138B00421881 /* UIDeviceExtension.swift in Sources */,

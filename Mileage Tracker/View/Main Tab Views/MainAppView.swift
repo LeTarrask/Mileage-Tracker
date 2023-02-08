@@ -93,7 +93,7 @@ struct MainAppView: View {
                     .background(themeMG.theme.backgroundColor.shadow(radius: 2))
                 }
             }
-            .edgesIgnoringSafeArea(.bottom)
+            .edgesIgnoringSafeArea(.all)
             .onAppear {
                 tracker.load()
             }
@@ -140,12 +140,6 @@ struct MainAppView: View {
         .transition(.scale)
         .animation(.easeInOut, value: 5)
     }
-
-    /// VIEW STRINGS & URLs
-    private let refuelsString = NSLocalizedString("Refuels", comment: "")
-    private let otherCostsString = NSLocalizedString("Other costs", comment: "")
-    private let statsString = NSLocalizedString("Stats", comment: "")
-    private let settingsString = NSLocalizedString("Settings", comment: "")
 }
 
 struct MainAppTabs_Previews: PreviewProvider {
