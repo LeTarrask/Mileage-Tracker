@@ -16,12 +16,6 @@ struct AddCostView: View {
 
     @State var selection: OtherCost.CostType = .tax
 
-    /// Localized strings
-    private let costName = NSLocalizedString("Cost Name", comment: "")
-    private let costType = NSLocalizedString("Cost type", comment: "")
-    private let costValue = NSLocalizedString("Cost Value", comment: "")
-    private let saveLabel = NSLocalizedString("Save", comment: "")
-
     var body: some View {
         VStack {
             Form {

@@ -277,8 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				793B7D76260D36C800ABB839 /* Main Tab Views */,
-				79BA12ED2611F6AB00974F6D /* Onboarding */,
 				793B7D72260D36B500ABB839 /* AddObjectViews */,
+				79BA12ED2611F6AB00974F6D /* Onboarding */,
 				79E4CAC6260CDFFE0061C9E0 /* Helper Views */,
 			);
 			path = View;

@@ -25,6 +25,16 @@ let perLiter = NSLocalizedString("per liter:", comment: "")
 let totalLabel = NSLocalizedString("Total", comment: "")
 let refuelAtLabel = NSLocalizedString("Refuel at: ", comment: "")
 
+/// AddRefuelView
+let addInfoLabel = NSLocalizedString("Add refuel info", comment: "")
+let costLabel = NSLocalizedString("Refuel Cost", comment: "")
+let saveLabel = NSLocalizedString("Save", comment: "")
+
+/// AddCostView
+let costName = NSLocalizedString("Cost Name", comment: "")
+let costType = NSLocalizedString("Cost type", comment: "")
+let costValue = NSLocalizedString("Cost Value", comment: "")
+
 /// GraphicsView
 let totalString = NSLocalizedString("Total:", comment: "")
 let distanceValueString = NSLocalizedString("km", comment: "")
