@@ -307,11 +307,11 @@
 			children = (
 				793B7DD0260E540C00ABB839 /* TabBarIconView.swift */,
 				79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */,
+				796C48A92993D77400797FB7 /* AveragesBoard.swift */,
 				794FD2F928E338A90014593B /* Square.swift */,
 				79ED3D96260A1AC000421881 /* MailView.swift */,
 				79D336E3260BAA540034BA63 /* ShareSheet.swift */,
 				79A95201298BDCB00087344C /* EnumPicker.swift */,
-				796C48A92993D77400797FB7 /* AveragesBoard.swift */,
 			);
 			path = "Helper Views";
 			sourceTree = "<group>";
