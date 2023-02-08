@@ -7,6 +7,7 @@
 
 import Foundation
 
+// swiftlint:disable line_length
 /// MainAppView
 let refuelsString = NSLocalizedString("Refuels", comment: "")
 let otherCostsString = NSLocalizedString("Other costs", comment: "")
@@ -79,3 +80,13 @@ let resetApp = NSLocalizedString("Reset app", comment: "")
 let deleteData = NSLocalizedString("Delete all app data", comment: "")
 let testData = NSLocalizedString("Test data", comment: "")
 let loadTestData = NSLocalizedString("Load test data", comment: "")
+
+/// Onboarding
+let nextLabel = NSLocalizedString("Next", comment: "")
+let dismissLabel = NSLocalizedString("Dismiss", comment: "")
+let onboardingHealine1 = NSLocalizedString("Welcome to Fuellogue", comment: "")
+let onboardingCopy1 = NSLocalizedString("Track your bike fuel expenses, other payments and vehicle mileage. See the data in a fancy SwiftUI Chart.", comment: "")
+let onboardingHealine2 = NSLocalizedString("Store and export your data", comment: "")
+let onboardingCopy2 = NSLocalizedString("All data is just stored on your device. It also can be exported to a spreadsheet.", comment: "")
+let onboardingHealine3 = NSLocalizedString("Get extra features", comment: "")
+let onboardingCopy3 = NSLocalizedString("Fuellogue will always be free. We plan to add premium features in the future. Check the roadmap.", comment: "")

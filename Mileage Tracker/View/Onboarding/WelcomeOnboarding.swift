@@ -15,11 +15,10 @@ struct WelcomeOnboarding: View {
             Image(systemName: "drop.fill")
                 .resizable()
                 .frame(width: 200, height: 300)
-            Text("Welcome to Fuellogue")
+            Text(onboardingHealine1)
                 .font(.title)
                 .fontWeight(.bold)
-            // swiftlint:disable line_length
-            Text("Track your bike fuel expenses, other payments and vehicle mileage. See the data in a fancy SwiftUI Chart.")
+            Text(onboardingCopy1)
                 .font(.body)
                 .foregroundColor(.gray)
                 .frame(maxWidth: .infinity, alignment: .leading)

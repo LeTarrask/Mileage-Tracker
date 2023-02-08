@@ -20,10 +20,6 @@ struct OnboardingView: View {
         self.pages = pages
     }
 
-    /// Localizable strings
-    private let nextLabel = NSLocalizedString("Next", comment: "")
-    private let dismissLabel = NSLocalizedString("Dismiss", comment: "")
-
     var body: some View {
         VStack {
             ForEach(pages, id: \.self) { page in
