@@ -14,15 +14,15 @@ Clone the repo and run Mileage Tracker.xcworkspace
 
 ## Swift Features
 
-+Generates charts with SwiftUI Charts.
-+Local data storage, encoded in JSON
-+Data export in CSV
-+Localization in English and Brazilian Portuguese
-+Allows UI Color customization by theme selection by the user
-+User UI preferences stored in User Defaults
-+Developer contact via auto email generation
-+User onboarding on the first time of use
-+Linted with SwiftLint
+-Generates charts with SwiftUI Charts.
+-Local data storage, encoded in JSON
+-Data export in CSV
+-Localization in English and Brazilian Portuguese
+-Allows UI Color customization by theme selection by the user
+-User UI preferences stored in User Defaults
+-Developer contact via auto email generation
+-User onboarding on the first time of use
+-Linted with SwiftLint
 
 ## Version
 
@@ -30,8 +30,8 @@ Clone the repo and run Mileage Tracker.xcworkspace
 
 ## Build and Runtime Requirements
 
-+Xcode 14.2
-+iOS 16
+-Xcode 14.2
+-iOS 16
 
 ## Author
 
