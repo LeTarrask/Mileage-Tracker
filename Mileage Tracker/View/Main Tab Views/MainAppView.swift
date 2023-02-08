@@ -93,7 +93,7 @@ struct MainAppView: View {
                     .background(themeMG.theme.backgroundColor.shadow(radius: 2))
                 }
             }
-            .edgesIgnoringSafeArea(.all)
+            .edgesIgnoringSafeArea([.bottom, .horizontal])
             .onAppear {
                 tracker.load()
             }

@@ -48,7 +48,7 @@ struct GraphicsView: View {
 //                if !tracker.paidApp { Banner() }
             }
         }
-        .edgesIgnoringSafeArea(.all)
+
         // MARK: Paid app interstitial presenter
         .onAppear(perform: {
             if !tracker.paidApp {
