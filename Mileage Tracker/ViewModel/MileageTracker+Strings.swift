@@ -11,7 +11,11 @@ extension MileageTracker {
     /// These properties generate the strings for the average consumption, spending, dates, etc,
     /// to be presented in the views
     var averageConsumption: Double {
-        (totalKM / totalLiters).rounded(toPlaces: 2)
+        if refuels.isEmpty {
+            return 0
+        } else {
+            return (totalKM / totalLiters).rounded(toPlaces: 2)
+        }
     }
 
     var totalLiters: Double {
@@ -19,7 +23,11 @@ extension MileageTracker {
     }
 
     var averageSpending: Double {
-        (totalKM / totalFuelSpending).rounded(toPlaces: 2)
+        if refuels.isEmpty {
+            return 0
+        } else {
+            return (totalKM / totalFuelSpending).rounded(toPlaces: 2)
+        }
     }
 
     var totalSpending: Double {
@@ -31,13 +39,17 @@ extension MileageTracker {
     }
 
     var averagePrice: Double {
-        let totalMoney = refuels
-            .map {$0.money}
-            .reduce(0, +)
-        let totalLiters = refuels
-            .map {$0.liters}
-            .reduce(0, +)
-        return (totalMoney / totalLiters).rounded(toPlaces: 2)
+        if refuels.isEmpty {
+            return 0
+        } else {
+            let totalMoney = refuels
+                .map {$0.money}
+                .reduce(0, +)
+            let totalLiters = refuels
+                .map {$0.liters}
+                .reduce(0, +)
+            return (totalMoney / totalLiters).rounded(toPlaces: 2)
+        }
     }
 
     var totalKM: Double {

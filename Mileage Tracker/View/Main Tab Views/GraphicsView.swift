@@ -135,7 +135,7 @@ struct GraphicsView_Previews: PreviewProvider {
     static var previews: some View {
         let view = GraphicsView()
         view.tracker.refuels = Refuel.data
-        view.tracker.paidApp = true
+        view.tracker.paidApp = false
         return view
     }
 }
