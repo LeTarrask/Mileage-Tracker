@@ -28,9 +28,9 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section(header: Text(buyTitle)) {
-                Button(removeAds) {
-                    openURL(inAppURL)
-                }
+//                Button(removeAds) {
+//                    openURL(inAppURL)
+//                }
                 Button(exportData) {
                     if canExport {
                         showShareSheet = true
