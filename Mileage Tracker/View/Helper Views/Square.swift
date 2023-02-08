@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Square: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    
     let icon: String?
     let number: Double
     let value: String

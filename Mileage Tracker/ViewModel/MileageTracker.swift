@@ -13,6 +13,9 @@ class MileageTracker: ObservableObject {
     @Published var otherCosts: [OtherCost] = [OtherCost]()
 
     @Published var paidApp: Bool = false
+    
+    // Singleton Tracker
+    static let shared = MileageTracker()
 
     /// This method receives a data parameter from the view and adds it to our database
     /// - Parameter data: data contains kilometers, liters, and money paid in refuel,

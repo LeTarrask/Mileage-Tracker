@@ -10,7 +10,7 @@ import SwiftUI
 struct AveragesBoard: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
     
-    @ObservedObject var tracker: MileageTracker
+    @ObservedObject var tracker = MileageTracker.shared
     
     var body: some View {
         HStack {

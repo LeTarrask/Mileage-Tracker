@@ -20,7 +20,7 @@ enum FilterType {
 struct GraphicsView: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
-    @ObservedObject var tracker: MileageTracker
+    @ObservedObject var tracker = MileageTracker.shared
 
     @State var showInterstitial = false
 
@@ -133,7 +133,7 @@ struct GraphicsView: View {
 
 struct GraphicsView_Previews: PreviewProvider {
     static var previews: some View {
-        let view = GraphicsView(tracker: MileageTracker())
+        let view = GraphicsView()
         view.tracker.refuels = Refuel.data
         view.tracker.paidApp = true
         return view

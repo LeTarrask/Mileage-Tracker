@@ -10,7 +10,7 @@ import SwiftUI
 struct AddCostView: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
-    @ObservedObject var tracker: MileageTracker
+    @ObservedObject var tracker = MileageTracker.shared
 
     @State var costData = OtherCost.Data()
 
@@ -54,6 +54,6 @@ struct AddCostView: View {
 
 struct AddCostView_Previews: PreviewProvider {
     static var previews: some View {
-        AddCostView(tracker: MileageTracker())
+        AddCostView()
     }
 }

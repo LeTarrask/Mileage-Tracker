@@ -10,9 +10,9 @@ import SwiftUI
 struct MainAppView: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
-    @ObservedObject private var tracker = MileageTracker()
+    @ObservedObject var tracker = MileageTracker.shared
 
-    @StateObject var viewRouter: ViewRouter = ViewRouter()
+    @ObservedObject var viewRouter = ViewRouter.shared
 
     @State var showPopUp = false
 
@@ -23,17 +23,17 @@ struct MainAppView: View {
                 Group {
                     switch viewRouter.currentPage {
                     case .mileage:
-                        MileageView(tracker: tracker)
+                        MileageView()
                     case .othercosts:
-                        OtherCostsView(tracker: tracker)
+                        OtherCostsView()
                     case .graphics:
-                        GraphicsView(tracker: tracker)
+                        GraphicsView()
                     case .settings:
-                        SettingsView(tracker: tracker)
+                        SettingsView()
                     case .addrefuel:
-                        AddRefuel(tracker: tracker)
+                        AddRefuel()
                     case .addcost:
-                        AddCostView(tracker: tracker)
+                        AddCostView()
                     }
                 }
                 // MARK: - Tab Bar

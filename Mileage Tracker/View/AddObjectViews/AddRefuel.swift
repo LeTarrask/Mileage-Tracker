@@ -11,7 +11,7 @@ import Combine
 struct AddRefuel: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
-    @ObservedObject var tracker: MileageTracker
+    @ObservedObject var tracker = MileageTracker.shared
 
     @State var refuelData = Refuel.Data()
 
@@ -54,6 +54,6 @@ struct AddRefuel: View {
 
 struct AddRefuel_Previews: PreviewProvider {
     static var previews: some View {
-        AddRefuel(tracker: MileageTracker())
+        AddRefuel()
     }
 }

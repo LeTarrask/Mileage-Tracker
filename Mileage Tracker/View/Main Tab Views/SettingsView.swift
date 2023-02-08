@@ -13,7 +13,7 @@ struct SettingsView: View {
 
     @State var chosenTheme: Theme = .theme1
 
-    @ObservedObject var tracker: MileageTracker
+    @ObservedObject var tracker = MileageTracker.shared
 
     @Environment(\.openURL) var openURL
 
@@ -88,6 +88,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(tracker: MileageTracker())
+        SettingsView()
     }
 }

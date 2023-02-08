@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MileageView: View {
-    @ObservedObject var tracker: MileageTracker
+    @ObservedObject var tracker = MileageTracker.shared
 
     var body: some View {
         // MARK: - Refuels list
@@ -30,7 +30,7 @@ struct MileageView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let view = MileageView(tracker: MileageTracker())
+        let view = MileageView()
         view.tracker.refuels = Refuel.data
         view.tracker.paidApp = false
         return view// .preferredColorScheme(.dark)

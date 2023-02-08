@@ -10,7 +10,8 @@ import SwiftUI
 struct TabBarIcon: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
-    @StateObject var viewRouter: ViewRouter
+    @StateObject var viewRouter = ViewRouter.shared
+    
     let assignedPage: ViewRouter.Page
 
     let width, height: CGFloat

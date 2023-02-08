@@ -9,6 +9,8 @@ import SwiftUI
 
 class ViewRouter: ObservableObject {
     @Published var currentPage: Page = .mileage
+    
+    static let shared = ViewRouter()
 
     enum Page: Hashable {
         case mileage
