@@ -75,6 +75,6 @@ struct AveragesBoard: View {
 
 struct AveragesBoard_Previews: PreviewProvider {
     static var previews: some View {
-        AveragesBoard(tracker: MileageTracker())
+        AveragesBoard()
     }
 }
