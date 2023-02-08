@@ -21,6 +21,9 @@
 		794FD2FA28E338A90014593B /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794FD2F928E338A90014593B /* Square.swift */; };
 		7967C5F2260E668D00665DFC /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967C5F1260E668D00665DFC /* MainAppView.swift */; };
 		7968E707261209AB0089DEFD /* MileageTracker+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968E706261209AB0089DEFD /* MileageTracker+Strings.swift */; };
+		796C48A42993D53200797FB7 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48A32993D53200797FB7 /* Date+Formatter.swift */; };
+		796C48A62993D55000797FB7 /* Refuel+FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48A52993D55000797FB7 /* Refuel+FakeData.swift */; };
+		796C48A82993D56500797FB7 /* OtherCost+FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48A72993D56500797FB7 /* OtherCost+FakeData.swift */; };
 		7985562024C8475E00544777 /* MileageTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985561F24C8475E00544777 /* MileageTrackerApp.swift */; };
 		7985562224C8475E00544777 /* MileageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985562124C8475E00544777 /* MileageView.swift */; };
 		7985562424C8476000544777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7985562324C8476000544777 /* Assets.xcassets */; };
@@ -77,6 +80,9 @@
 		794FD2F928E338A90014593B /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		7967C5F1260E668D00665DFC /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		7968E706261209AB0089DEFD /* MileageTracker+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MileageTracker+Strings.swift"; sourceTree = "<group>"; };
+		796C48A32993D53200797FB7 /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
+		796C48A52993D55000797FB7 /* Refuel+FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Refuel+FakeData.swift"; sourceTree = "<group>"; };
+		796C48A72993D56500797FB7 /* OtherCost+FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OtherCost+FakeData.swift"; sourceTree = "<group>"; };
 		7985561C24C8475E00544777 /* Mileage Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mileage Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7985561F24C8475E00544777 /* MileageTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTrackerApp.swift; sourceTree = "<group>"; };
 		7985562124C8475E00544777 /* MileageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageView.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 				79ED3D91260A14B200421881 /* UIApplicationVersion.swift */,
 				79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */,
 				7913788B25B1F24100871ECE /* Double+String.swift */,
+				796C48A32993D53200797FB7 /* Date+Formatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -256,6 +263,8 @@
 			children = (
 				79DA782325AF1CEF009E0FFC /* RefuelModel.swift */,
 				7913789F25B2032700871ECE /* OtherCosts.swift */,
+				796C48A52993D55000797FB7 /* Refuel+FakeData.swift */,
+				796C48A72993D56500797FB7 /* OtherCost+FakeData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -464,6 +473,7 @@
 				79E4CAAD260CA0790061C9E0 /* Color-Themes.swift in Sources */,
 				79C7FAC528E49CE5007E4733 /* Extension Date Add + Subtract.swift in Sources */,
 				79BA12FF2611FA0F00974F6D /* SalesOnboarding.swift in Sources */,
+				796C48A62993D55000797FB7 /* Refuel+FakeData.swift in Sources */,
 				793B7D83260D474600ABB839 /* OnboardingView.swift in Sources */,
 				79A95202298BDCB00087344C /* EnumPicker.swift in Sources */,
 				79D336DF260B92CC0034BA63 /* Loading.swift in Sources */,
@@ -482,8 +492,10 @@
 				79BA12FA2611F9FB00974F6D /* NewFeatureOnboarding.swift in Sources */,
 				7985564B24C8478700544777 /* MileageTracker.swift in Sources */,
 				794FD2FA28E338A90014593B /* Square.swift in Sources */,
+				796C48A42993D53200797FB7 /* Date+Formatter.swift in Sources */,
 				7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */,
 				793B7D88260D477700ABB839 /* OnboardingPage.swift in Sources */,
+				796C48A82993D56500797FB7 /* OtherCost+FakeData.swift in Sources */,
 				7985562224C8475E00544777 /* MileageView.swift in Sources */,
 				79D336E4260BAA540034BA63 /* ShareSheet.swift in Sources */,
 				7913791A25B5FA2000871ECE /* SettingsView.swift in Sources */,
