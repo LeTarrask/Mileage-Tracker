@@ -41,7 +41,7 @@ struct RefuelCardView: View {
                     
                     VStack(alignment: .leading) {
                         
-                        Text(refuel.pricePerLiter.clean + " €/L")
+                        Text(refuel.pricePerLiter.clean + " " + averageFuelPriceValue)
                             .font(.title)
                             .fontWeight(.bold)
                         
@@ -53,14 +53,14 @@ struct RefuelCardView: View {
                     Spacer()
                     
                     VStack(alignment: .leading) {
-                        Text("Since last: ")
+                        Text(sinceLast)
                             .font(.caption)
                             .fontWeight(.light)
                         Text(refuel.kmAdded.clean + " " + kmLabel)
                             .font(.title)
                             .fontWeight(.bold)
                         
-                        Text("Total: " + refuel.totalKM.clean + " " + kmLabel)
+                        Text(totalLabel + ": " + refuel.totalKM.clean + " " + kmLabel)
                             .font(.caption)
                             .fontWeight(.light)
                     }

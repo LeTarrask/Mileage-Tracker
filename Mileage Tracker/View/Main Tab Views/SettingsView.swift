@@ -81,7 +81,7 @@ struct SettingsView: View {
             ShareSheet(activityItems: [tracker.csvFile()])
         }
         .alert(isPresented: $alertNoMail) {
-            Alert(title: Text("Cannot send email"))
+            Alert(title: Text(cannotSendEmail))
         }
     }
 }

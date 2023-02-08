@@ -32,6 +32,7 @@ let costLabel = NSLocalizedString("Refuel Cost", comment: "")
 let saveLabel = NSLocalizedString("Save", comment: "")
 
 /// AddCostView
+let addCost = NSLocalizedString("Add Vehicle Cost", comment: "")
 let costName = NSLocalizedString("Cost Name", comment: "")
 let costType = NSLocalizedString("Cost type", comment: "")
 let costValue = NSLocalizedString("Cost Value", comment: "")
@@ -46,7 +47,7 @@ let averageSpenValue = NSLocalizedString("km/€", comment: "")
 let moneySymbol = NSLocalizedString("€", comment: "")
 let totalFuelSpendingLabel = NSLocalizedString("Total fuel spending", comment: "")
 let averageFuelPriceLabel = NSLocalizedString("Average Fuel Price", comment: "")
-let averageFuelPriceValue = NSLocalizedString("€/l", comment: "")
+let averageFuelPriceValue = NSLocalizedString("€/L", comment: "")
 let refuelString = NSLocalizedString("Refuel cost", comment: "")
 let priceString = NSLocalizedString("Price/liter", comment: "")
 let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")
@@ -54,6 +55,8 @@ let dateLocalizedString = NSLocalizedString("Date", comment: "")
 let lastMonthString = NSLocalizedString("Last month", comment: "")
 let lastYearString = NSLocalizedString("Last year", comment: "")
 let allTimeString = NSLocalizedString("All time", comment: "")
+let timeframeString = NSLocalizedString("Timeframe", comment: "")
+let graphicString = NSLocalizedString("Graphic", comment: "")
 
 /// OtherCostsView
 let totalOtherLabel = NSLocalizedString("Total Other Costs: ", comment: "")
@@ -80,6 +83,7 @@ let resetApp = NSLocalizedString("Reset app", comment: "")
 let deleteData = NSLocalizedString("Delete all app data", comment: "")
 let testData = NSLocalizedString("Test data", comment: "")
 let loadTestData = NSLocalizedString("Load test data", comment: "")
+let cannotSendEmail = NSLocalizedString("Cannot send email", comment: "")
 
 /// Onboarding
 let nextLabel = NSLocalizedString("Next", comment: "")

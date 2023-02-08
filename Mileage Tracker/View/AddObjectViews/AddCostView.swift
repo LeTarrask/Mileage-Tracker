@@ -19,7 +19,7 @@ struct AddCostView: View {
     var body: some View {
         VStack {
             Form {
-                Section(header: Text("Add Vehicle Cost")) {
+                Section(header: Text(addCost)) {
                     HStack {
                         Text(costName)
                         Spacer()

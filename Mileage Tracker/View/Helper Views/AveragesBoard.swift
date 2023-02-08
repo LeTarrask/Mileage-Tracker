@@ -71,22 +71,6 @@ struct AveragesBoard: View {
         .background(themeMG.theme.backgroundColor.cornerRadius(30))
         .padding()
     }
-    
-    /// VIEW STRINGS & URLs
-    private let totalString = NSLocalizedString("Total:", comment: "")
-    private let distanceValueString = NSLocalizedString("km", comment: "")
-    private let averageConsLabel = NSLocalizedString("Average consumption", comment: "")
-    private let averageConsValue = NSLocalizedString("km/L", comment: "")
-    private let averageSpenLabel = NSLocalizedString("Average spending", comment: "")
-    private let averageSpenValue = NSLocalizedString("km/€", comment: "")
-    private let moneySymbol = NSLocalizedString("€", comment: "")
-    private let totalFuelSpendingLabel = NSLocalizedString("Total fuel spending", comment: "")
-    private let averageFuelPriceLabel = NSLocalizedString("Average Fuel Price", comment: "")
-    private let averageFuelPriceValue = NSLocalizedString("€/l", comment: "")
-    private let refuelString = NSLocalizedString("Refuel cost", comment: "")
-    private let priceString = NSLocalizedString("Price/liter", comment: "")
-    private let kmRefuelString = NSLocalizedString("Km/refuel", comment: "")
-    private let dateLocalizedString = NSLocalizedString("Date", comment: "")
 }
 
 struct AveragesBoard_Previews: PreviewProvider {

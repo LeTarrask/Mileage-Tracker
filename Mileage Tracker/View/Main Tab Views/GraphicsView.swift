@@ -64,7 +64,7 @@ struct GraphicsView: View {
     @ViewBuilder
     func timeframeSelector() -> some View {
         // MARK: - Timeframe selector
-        Picker("Timeframe", selection: $timeframe) {
+        Picker(timeframeString, selection: $timeframe) {
             Text(lastMonthString).tag(FilterType.month)
             Text(lastYearString).tag(FilterType.year)
             Text(allTimeString).tag(FilterType.none)
@@ -76,7 +76,7 @@ struct GraphicsView: View {
     @ViewBuilder
     func graphicSelector() -> some View {
         // MARK: - Graphics Selector
-        Picker("Graphic", selection: $graphType) {
+        Picker(graphicString, selection: $graphType) {
             Text(refuelString).tag(GraphType.spending)
             Text(priceString).tag(GraphType.dates)
             Text(kmRefuelString).tag(GraphType.km)
