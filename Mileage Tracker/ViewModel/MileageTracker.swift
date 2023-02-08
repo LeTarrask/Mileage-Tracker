@@ -31,7 +31,7 @@ class MileageTracker: ObservableObject {
 
     /// These 3 properties (documentsFolder, refuelsURL and costsURL are used to define where our app info is stored.
     /// These two methods (load() and save() are responsible for converting and storing our information in JSON
-    private static var documentsFolder: URL {
+    static var documentsFolder: URL {
         do {
             return try FileManager.default.url(for: .documentDirectory,
                                                in: .userDomainMask,
@@ -114,4 +114,3 @@ class MileageTracker: ObservableObject {
         }
     }
 }
-
