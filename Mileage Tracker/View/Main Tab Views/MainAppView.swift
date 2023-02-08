@@ -39,18 +39,22 @@ struct MainAppView: View {
                 // MARK: - Tab Bar
                 ZStack {
                     HStack {
+                        // MileageView
                         TabBarIcon(viewRouter: viewRouter,
                                    assignedPage: .mileage,
                                    width: geometry.size.width/5,
                                    height: geometry.size.height/28,
                                    systemIconName: "drop.fill",
                                    tabName: refuelsString)
+                        // OtherCostsView
                         TabBarIcon(viewRouter: viewRouter,
                                    assignedPage: .othercosts,
                                    width: geometry.size.width/5,
                                    height: geometry.size.height/28,
                                    systemIconName: "wrench.and.screwdriver",
                                    tabName: otherCostsString)
+                        
+                        // Add Button
                         ZStack {
                             // MARK: - Plus Menu
                             if showPopUp {
@@ -59,7 +63,8 @@ struct MainAppView: View {
                             }
                             Circle()
                                 .foregroundColor(themeMG.theme.highlightColor)
-                                .frame(width: geometry.size.width/7, height: geometry.size.width/7)
+                                .frame(width: geometry.size.width/7,
+                                       height: geometry.size.width/7)
                                 .shadow(radius: 4)
                             Image(systemName: "plus.circle.fill")
                                 .resizable()
@@ -75,12 +80,16 @@ struct MainAppView: View {
                                 showPopUp.toggle()
                             })
                         }
+                        
+                        // StatsView
                         TabBarIcon(viewRouter: viewRouter,
                                    assignedPage: .graphics,
                                    width: geometry.size.width/5,
                                    height: geometry.size.height/28,
                                    systemIconName: "list.star",
                                    tabName: statsString)
+                        
+                        // SettingsView
                         TabBarIcon(viewRouter: viewRouter,
                                    assignedPage: .settings,
                                    width: geometry.size.width/5,
@@ -97,11 +106,11 @@ struct MainAppView: View {
             .onAppear {
                 tracker.load()
             }
-            .onTapGesture {
-                withAnimation(.easeInOut, {
-                    showPopUp = false
-                })
-            }
+        }
+        .onTapGesture {
+            withAnimation(.easeInOut, {
+                showPopUp.toggle()
+            })
         }
     }
 
@@ -121,6 +130,7 @@ struct MainAppView: View {
             }
             .onTapGesture {
                 viewRouter.currentPage = .addrefuel
+                showPopUp.toggle()
             }
             ZStack {
                 Circle()
@@ -135,6 +145,7 @@ struct MainAppView: View {
             }
             .onTapGesture {
                 viewRouter.currentPage = .addcost
+                showPopUp.toggle()
             }
         }
         .transition(.scale)
