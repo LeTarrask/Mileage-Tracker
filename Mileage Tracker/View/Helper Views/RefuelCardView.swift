@@ -14,13 +14,6 @@ struct RefuelCardView: View {
     
     var average: Double
     
-    var formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        return formatter
-    }()
-    
     var body: some View {
         VStack {
             
