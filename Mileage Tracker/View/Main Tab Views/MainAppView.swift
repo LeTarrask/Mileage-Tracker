@@ -59,8 +59,7 @@ struct MainAppView: View {
                 // New Add Button
                 TabBarIcon(assignedPage: .addobject,
                            systemIconName: "plus.circle.fill",
-                           // TODO: create translatable string for Add Cost
-                           tabName: "Add Cost")
+                           tabName: addCostString)
                 
                 // StatsView
                 TabBarIcon(assignedPage: .graphics,
