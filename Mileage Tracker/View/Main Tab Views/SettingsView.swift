@@ -27,20 +27,20 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-            Section(header: Text(buyTitle)) {
+//            Section(header: Text(buyTitle)) {
 //                Button(removeAds) {
 //                    openURL(inAppURL)
 //                }
-                Button(exportData) {
-                    if canExport {
-                        showShareSheet = true
-                    } else {
-                        // here should call for in app purchase
-                        // https://blckbirds.com/post/how-to-use-in-app-purchases-in-swiftui-apps/
-                        openURL(exportURL)
-                    }
-                }
-            }
+//                Button(exportData) {
+//                    if canExport {
+//                        showShareSheet = true
+//                    } else {
+//                        // here should call for in app purchase
+//                        // https://blckbirds.com/post/how-to-use-in-app-purchases-in-swiftui-apps/
+//                        openURL(exportURL)
+//                    }
+//                }
+//            }
 
             Section(header: Text(chooseTheme)) {
                 EnumPicker(selection: $chosenTheme, label: Text("Color Theme"))
