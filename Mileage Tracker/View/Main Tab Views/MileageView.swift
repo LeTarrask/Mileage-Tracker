@@ -12,8 +12,8 @@ struct MileageView: View {
     
     var body: some View {
         if tracker.refuels.isEmpty {
-            // TO DO: add a top banner explaining what this app is about
-            // TO DO: add an if to show refuels list if there are stored data, or instructions when it's empty
+            // TODO: add a top banner explaining what this app is about
+            // TODO: add an if to show refuels list if there are stored data, or instructions when it's empty
             Text("no items")
         } else {
             // MARK: - Refuels list

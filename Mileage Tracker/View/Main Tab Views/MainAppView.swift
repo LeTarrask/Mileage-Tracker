@@ -88,6 +88,7 @@ struct MainAppView: View {
                                    width: geometry.size.width/5,
                                    height: geometry.size.height/28,
                                    systemIconName: "plus.circle.fill",
+                                   // TODO: create translatable string for Add Cost
                                    tabName: "Add Cost")
                         
                         // StatsView

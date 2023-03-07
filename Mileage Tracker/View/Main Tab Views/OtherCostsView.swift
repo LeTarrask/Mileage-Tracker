@@ -33,6 +33,7 @@ struct OtherCostsView: View {
                 }
 
                 if tracker.otherCosts.isEmpty {
+                    // TODO: Create this view
                     Text("No costs")
                 } else {
                     ForEach(tracker.otherCosts.reversed()) { cost in

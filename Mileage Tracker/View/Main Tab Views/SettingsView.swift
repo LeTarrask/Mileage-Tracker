@@ -67,11 +67,13 @@ struct SettingsView: View {
                 }
             }
             // Comment this section to publish app
+#if targetEnvironment(simulator)
             Section(header: Text(testData)) {
                 Button(loadTestData) {
                     tracker.loadTestData()
                 }
             }
+#endif
         }
         .foregroundColor(themeMG.theme.mainColor)
         .sheet(isPresented: $isShowingMailView) {
