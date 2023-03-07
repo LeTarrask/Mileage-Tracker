@@ -17,8 +17,6 @@ class ViewRouter: ObservableObject {
         case othercosts
         case graphics
         case settings
-        case addrefuel
-        case addcost
         case addobject
     }
 }

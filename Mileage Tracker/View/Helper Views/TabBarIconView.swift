@@ -14,7 +14,8 @@ struct TabBarIcon: View {
     
     let assignedPage: ViewRouter.Page
 
-    let width, height: CGFloat
+    let width: CGFloat = 30
+    let height: CGFloat = 30
     let systemIconName, tabName: String
 
     var body: some View {
