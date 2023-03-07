@@ -34,12 +34,8 @@ struct MileageView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MileageView_Previews: PreviewProvider {
     static var previews: some View {
-        let view = MileageView()
-        view.tracker.paidApp = false
-        // Generates fake data for preview
-        view.tracker.refuels = Refuel.data
-        return view  // .preferredColorScheme(.dark)
+        MileageView()
     }
 }

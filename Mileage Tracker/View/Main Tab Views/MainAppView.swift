@@ -165,5 +165,11 @@ struct MainAppView: View {
 struct MainAppTabs_Previews: PreviewProvider {
     static var previews: some View {
         MainAppView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
+            .previewDisplayName("iPhone 14")
+        
+        MainAppView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
+            .previewDisplayName("iPhone 12")
     }
 }
