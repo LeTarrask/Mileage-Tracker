@@ -26,10 +26,13 @@ struct MainAppView: View {
                         MileageView()
                     case .othercosts:
                         OtherCostsView()
+                    case .addobject:
+                        AddObjectView()
                     case .graphics:
                         GraphicsView()
                     case .settings:
                         SettingsView()
+                    // TODO: Remove these cases if it compiles correctly
                     case .addrefuel:
                         AddRefuel()
                     case .addcost:
@@ -38,61 +41,64 @@ struct MainAppView: View {
                 }
                 // MARK: - Tab Bar
                 ZStack {
-                    // TO DO: Stop menu from spreading when + button clicked
                     HStack {
                         // MileageView
-                        TabBarIcon(viewRouter: viewRouter,
-                                   assignedPage: .mileage,
+                        TabBarIcon(assignedPage: .mileage,
                                    width: geometry.size.width/5,
                                    height: geometry.size.height/28,
                                    systemIconName: "drop.fill",
                                    tabName: refuelsString)
                         // OtherCostsView
-                        TabBarIcon(viewRouter: viewRouter,
-                                   assignedPage: .othercosts,
+                        TabBarIcon(assignedPage: .othercosts,
                                    width: geometry.size.width/5,
                                    height: geometry.size.height/28,
                                    systemIconName: "wrench.and.screwdriver",
                                    tabName: otherCostsString)
                         
+                        // TODO: Clean this, unused
                         // Add Button
-                        ZStack {
-                            // MARK: - Plus Menu
-                            if showPopUp {
-                                plusMenu(widthAndHeight: geometry.size.width/7)
-                                    .offset(y: -geometry.size.height/11)
-                            }
-                            Circle()
-                                .foregroundColor(themeMG.theme.highlightColor)
-                                .frame(width: geometry.size.width/7,
-                                       height: geometry.size.width/7)
-                                .shadow(radius: 4)
-                            Image(systemName: "plus.circle.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: geometry.size.width/7-6,
-                                       height: geometry.size.width/7-6)
-                                .foregroundColor(themeMG.theme.mainColor)
-                                .rotationEffect(Angle(degrees: showPopUp ? 90 : 0))
-                        }
-                        .offset(y: -geometry.size.height/20)
-                        .onTapGesture {
-                            withAnimation(.easeInOut, {
-                                showPopUp.toggle()
-                            })
-                        }
+//                        ZStack {
+//                            // MARK: - Plus Menu
+//                            if showPopUp {
+//                                plusMenu(widthAndHeight: geometry.size.width/7)
+//                                    .offset(y: -geometry.size.height/11)
+//                            }
+//                            Circle()
+//                                .foregroundColor(themeMG.theme.highlightColor)
+//                                .frame(width: geometry.size.width/7,
+//                                       height: geometry.size.width/7)
+//                                .shadow(radius: 4)
+//                            Image(systemName: "plus.circle.fill")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: geometry.size.width/7-6,
+//                                       height: geometry.size.width/7-6)
+//                                .foregroundColor(themeMG.theme.mainColor)
+//                                .rotationEffect(Angle(degrees: showPopUp ? 90 : 0))
+//                        }
+//                        .offset(y: -geometry.size.height/20)
+//                        .onTapGesture {
+//                            withAnimation(.easeInOut, {
+//                                showPopUp.toggle()
+//                            })
+//                        }
+                        
+                        // New Add Button
+                        TabBarIcon(assignedPage: .addobject,
+                                   width: geometry.size.width/5,
+                                   height: geometry.size.height/28,
+                                   systemIconName: "plus.circle.fill",
+                                   tabName: "Add Cost")
                         
                         // StatsView
-                        TabBarIcon(viewRouter: viewRouter,
-                                   assignedPage: .graphics,
+                        TabBarIcon(assignedPage: .graphics,
                                    width: geometry.size.width/5,
                                    height: geometry.size.height/28,
                                    systemIconName: "list.star",
                                    tabName: statsString)
                         
                         // SettingsView
-                        TabBarIcon(viewRouter: viewRouter,
-                                   assignedPage: .settings,
+                        TabBarIcon(assignedPage: .settings,
                                    width: geometry.size.width/5,
                                    height: geometry.size.height/28,
                                    systemIconName: "gearshape",
@@ -115,6 +121,7 @@ struct MainAppView: View {
         }
     }
 
+    // TODO: Clean this. Unused
     @ViewBuilder
     func plusMenu(widthAndHeight: CGFloat) -> some View {
         HStack(spacing: 20) {
