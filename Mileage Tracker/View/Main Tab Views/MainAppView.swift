@@ -23,7 +23,6 @@ struct MainAppView: View {
             // MARK: - Tab Bar
             tabBar()
         }
-        .background(Color.blue)
         .edgesIgnoringSafeArea([.bottom, .horizontal])
     }
     

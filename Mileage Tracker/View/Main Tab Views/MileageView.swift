@@ -24,7 +24,9 @@ struct MileageView: View {
                 .animation(.easeInOut, value: 5)
                 .listRowSeparator(.hidden)
             }
-            .listStyle(PlainListStyle())            
+            .listStyle(PlainListStyle())
+            // This is not working on current SwiftUI 4
+//            .scrollContentBackground(.hidden)
         }
     }
     
