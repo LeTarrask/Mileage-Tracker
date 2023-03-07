@@ -24,6 +24,9 @@ struct RefuelCardView: View {
 
                 HStack {
                     VStack(alignment: .leading) {
+                        Image("bike")
+                            .resizable()
+                            .frame(width: 100, height: 100)
                         Text(refuel.kmAdded.clean + " " + kmLabel)
                             .font(.title)
                             .fontWeight(.bold)
@@ -39,6 +42,9 @@ struct RefuelCardView: View {
                     Spacer()
                     
                     VStack(alignment: .leading) {
+                        Image("pump")
+                            .resizable()
+                            .frame(width: 100, height: 100)
                         Text(refuel.liters.clean + " " + literLabel)
                             .font(.callout)
                             .fontWeight(.bold)
