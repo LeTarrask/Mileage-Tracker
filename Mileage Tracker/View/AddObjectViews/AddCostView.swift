@@ -54,7 +54,8 @@ struct AddCostView: View {
                 Button(saveLabel) {
                     saveCost()
                 }
-            }.foregroundColor(themeMG.theme.mainColor)
+            }   .foregroundColor(themeMG.theme.mainColor)
+                .scrollContentBackground(.hidden)
                 .onSubmit {
                     switch focusedField {
                     case .name:

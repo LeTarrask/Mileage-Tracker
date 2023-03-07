@@ -17,46 +17,69 @@ struct MainAppView: View {
     @State var showPopUp = false
 
     var body: some View {
+        // TODO: We dont need a geometry reader here
         GeometryReader { geometry in
             VStack {
                 // MARK: - Main Page Views Switcher
-                Group {
-                    switch viewRouter.currentPage {
-                    case .mileage:
-                        MileageView()
-                    case .othercosts:
-                        OtherCostsView()
-                    case .addobject:
-                        AddObjectView()
-                    case .graphics:
-                        GraphicsView()
-                    case .settings:
-                        SettingsView()
-                    // TODO: Remove these cases if it compiles correctly
-                    case .addrefuel:
-                        AddRefuel()
-                    case .addcost:
-                        AddCostView()
-                    }
-                }
+                mainSwitcher()
                 // MARK: - Tab Bar
-                ZStack {
-                    HStack {
-                        // MileageView
-                        TabBarIcon(assignedPage: .mileage,
-                                   width: geometry.size.width/5,
-                                   height: geometry.size.height/28,
-                                   systemIconName: "drop.fill",
-                                   tabName: refuelsString)
-                        // OtherCostsView
-                        TabBarIcon(assignedPage: .othercosts,
-                                   width: geometry.size.width/5,
-                                   height: geometry.size.height/28,
-                                   systemIconName: "wrench.and.screwdriver",
-                                   tabName: otherCostsString)
-                        
-                        // TODO: Clean this, unused
-                        // Add Button
+                tabBar(geometry: geometry)
+            }
+            .background(Color.blue)
+            .edgesIgnoringSafeArea([.bottom, .horizontal])
+            .onAppear {
+                tracker.load()
+            }
+        }
+        .onTapGesture {
+            withAnimation(.easeInOut, {
+                showPopUp.toggle()
+            })
+        }
+    }
+    
+    @ViewBuilder
+    func mainSwitcher() -> some View {
+        Group {
+            switch viewRouter.currentPage {
+            case .mileage:
+                MileageView()
+            case .othercosts:
+                OtherCostsView()
+            case .addobject:
+                AddObjectView()
+            case .graphics:
+                GraphicsView()
+            case .settings:
+                SettingsView()
+            // TODO: Remove these cases if it compiles correctly
+            case .addrefuel:
+                AddRefuel()
+            case .addcost:
+                AddCostView()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func tabBar(geometry: GeometryProxy) -> some View {
+        ZStack {
+            HStack {
+                // MileageView
+                TabBarIcon(assignedPage: .mileage,
+                           width: geometry.size.width/5,
+                           height: geometry.size.height/28,
+                           systemIconName: "drop.fill",
+                           tabName: refuelsString)
+                // OtherCostsView
+                TabBarIcon(assignedPage: .othercosts,
+                           width: geometry.size.width/5,
+                           height: geometry.size.height/28,
+                           systemIconName: "wrench.and.screwdriver",
+                           tabName: otherCostsString)
+                
+                // TODO: Clean this, unused
+                // Add Button
 //                        ZStack {
 //                            // MARK: - Plus Menu
 //                            if showPopUp {
@@ -82,43 +105,32 @@ struct MainAppView: View {
 //                                showPopUp.toggle()
 //                            })
 //                        }
-                        
-                        // New Add Button
-                        TabBarIcon(assignedPage: .addobject,
-                                   width: geometry.size.width/5,
-                                   height: geometry.size.height/28,
-                                   systemIconName: "plus.circle.fill",
-                                   // TODO: create translatable string for Add Cost
-                                   tabName: "Add Cost")
-                        
-                        // StatsView
-                        TabBarIcon(assignedPage: .graphics,
-                                   width: geometry.size.width/5,
-                                   height: geometry.size.height/28,
-                                   systemIconName: "list.star",
-                                   tabName: statsString)
-                        
-                        // SettingsView
-                        TabBarIcon(assignedPage: .settings,
-                                   width: geometry.size.width/5,
-                                   height: geometry.size.height/28,
-                                   systemIconName: "gearshape",
-                                   tabName: settingsString)
-                    }
-                    .animation(.easeInOut, value: 5)
-                    .frame(width: geometry.size.width, height: geometry.size.height/10)
-                    .background(themeMG.theme.backgroundColor.shadow(radius: 2))
-                }
+                
+                // New Add Button
+                TabBarIcon(assignedPage: .addobject,
+                           width: geometry.size.width/5,
+                           height: geometry.size.height/28,
+                           systemIconName: "plus.circle.fill",
+                           // TODO: create translatable string for Add Cost
+                           tabName: "Add Cost")
+                
+                // StatsView
+                TabBarIcon(assignedPage: .graphics,
+                           width: geometry.size.width/5,
+                           height: geometry.size.height/28,
+                           systemIconName: "list.star",
+                           tabName: statsString)
+                
+                // SettingsView
+                TabBarIcon(assignedPage: .settings,
+                           width: geometry.size.width/5,
+                           height: geometry.size.height/28,
+                           systemIconName: "gearshape",
+                           tabName: settingsString)
             }
-            .edgesIgnoringSafeArea([.bottom, .horizontal])
-            .onAppear {
-                tracker.load()
-            }
-        }
-        .onTapGesture {
-            withAnimation(.easeInOut, {
-                showPopUp.toggle()
-            })
+            .animation(.easeInOut, value: 5)
+            .frame(width: geometry.size.width, height: geometry.size.height/10)
+            .background(themeMG.theme.backgroundColor.shadow(radius: 2))
         }
     }
 

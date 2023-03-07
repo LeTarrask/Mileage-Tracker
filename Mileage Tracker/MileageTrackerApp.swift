@@ -23,7 +23,6 @@ struct MileageTrackerApp: App {
                         }
                     }
             }
-            .edgesIgnoringSafeArea(.top)
             .sheet(isPresented: $onboarding, content: {
                 OnboardingView(pages: OnboardingPage.fullOnboarding)
             })
