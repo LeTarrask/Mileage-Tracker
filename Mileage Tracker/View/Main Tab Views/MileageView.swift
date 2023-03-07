@@ -24,7 +24,7 @@ struct MileageView: View {
                 .animation(.easeInOut, value: 5)
                 .listRowSeparator(.hidden)
             }
-            .listStyle(PlainListStyle())
+            .listStyle(PlainListStyle())            
         }
     }
     

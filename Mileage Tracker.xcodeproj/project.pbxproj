@@ -199,8 +199,8 @@
 			children = (
 				7967C5F1260E668D00665DFC /* MainAppView.swift */,
 				7985562124C8475E00544777 /* MileageView.swift */,
-				793B7D7A260D370400ABB839 /* GraphicsView.swift */,
 				7913789A25B2030600871ECE /* OtherCostsView.swift */,
+				793B7D7A260D370400ABB839 /* GraphicsView.swift */,
 				7913791925B5FA1F00871ECE /* SettingsView.swift */,
 			);
 			path = "Main Tab Views";

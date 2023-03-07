@@ -17,7 +17,7 @@ struct MainAppView: View {
     @State var showPopUp = false
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             // MARK: - Main Page Views Switcher
             mainSwitcher()
             // MARK: - Tab Bar
@@ -29,19 +29,17 @@ struct MainAppView: View {
     
     @ViewBuilder
     func mainSwitcher() -> some View {
-        Group {
-            switch viewRouter.currentPage {
-            case .mileage:
-                MileageView()
-            case .othercosts:
-                OtherCostsView()
-            case .addobject:
-                AddObjectView()
-            case .graphics:
-                GraphicsView()
-            case .settings:
-                SettingsView()
-            }
+        switch viewRouter.currentPage {
+        case .mileage:
+            MileageView()
+        case .othercosts:
+            OtherCostsView()
+        case .addobject:
+            AddObjectView()
+        case .graphics:
+            GraphicsView()
+        case .settings:
+            SettingsView()
         }
     }
     
@@ -75,7 +73,6 @@ struct MainAppView: View {
                            systemIconName: "gearshape",
                            tabName: settingsString)
             }
-            .padding()
             .frame(maxWidth: .infinity, maxHeight: 70)
             .background(themeMG.theme.backgroundColor.shadow(radius: 2))
         }

@@ -66,7 +66,6 @@ struct OtherCostsView: View {
                         }
                     }
                     .padding(.horizontal)
-
                 }
             }
 //            if !tracker.paidApp { Banner() }
