@@ -89,7 +89,7 @@ struct MainAppTabs_Previews: PreviewProvider {
             .previewDisplayName("iPhone 14")
         
         MainAppView()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
-            .previewDisplayName("iPhone 12")
+            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            .previewDisplayName("iPhone 8")
     }
 }
