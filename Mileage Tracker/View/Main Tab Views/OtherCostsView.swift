@@ -78,7 +78,7 @@ struct OtherCostsView_Previews: PreviewProvider {
     static var previews: some View {
         let view = OtherCostsView()
         // Generates fake data for preview
-//        view.tracker.otherCosts = OtherCost.data
+        view.tracker.otherCosts = OtherCost.data
         return view
     }
 }
