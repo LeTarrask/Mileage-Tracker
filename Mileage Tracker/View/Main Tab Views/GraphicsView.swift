@@ -30,14 +30,18 @@ struct GraphicsView: View {
     var body: some View {
         // MARK: - Regular Screen
         VStack {
-            VStack(alignment: .center) {
-                AveragesBoard(tracker: tracker)
+            if tracker.refuels.isEmpty {
+                Text("Is Empty Screen")
+            } else {
+                VStack(alignment: .center) {
+                    AveragesBoard(tracker: tracker)
 
-                timeframeSelector()
+                    timeframeSelector()
 
-                graphicSelector()
+                    graphicSelector()
 
-                graphicGenerator()
+                    graphicGenerator()
+                }
             }
         }
     }
@@ -116,7 +120,7 @@ struct GraphicsView: View {
 struct GraphicsView_Previews: PreviewProvider {
     static var previews: some View {
         let view = GraphicsView()
-        view.tracker.refuels = Refuel.data
+        view.tracker.refuels = []//Refuel.data
         view.tracker.paidApp = false
         return view
     }
