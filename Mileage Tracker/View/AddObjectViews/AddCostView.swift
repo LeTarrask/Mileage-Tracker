@@ -55,7 +55,6 @@ struct AddCostView: View {
                     saveCost()
                 }
             }   .foregroundColor(themeMG.theme.mainColor)
-                .scrollContentBackground(.hidden)
                 .onSubmit {
                     switch focusedField {
                     case .name:

@@ -57,7 +57,7 @@ struct AddRefuel: View {
                 Button(saveLabel) {
                     saveRefuel()
                 }
-            }   .foregroundColor(themeMG.theme.mainColor).scrollContentBackground(.hidden)
+            }   .foregroundColor(themeMG.theme.mainColor)
                 .onSubmit {
                     switch focusedField {
                     case .km:
