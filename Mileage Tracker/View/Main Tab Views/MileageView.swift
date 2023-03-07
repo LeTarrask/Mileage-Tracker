@@ -25,8 +25,8 @@ struct MileageView: View {
                 .listRowSeparator(.hidden)
             }
             .listStyle(PlainListStyle())
-            // This is not working on current SwiftUI 4
-//            .scrollContentBackground(.hidden)
+            // This is not working on current XCode 13.2, but will on 13.3 which is in Beta
+            .scrollContentBackground(.hidden)
         }
     }
     
