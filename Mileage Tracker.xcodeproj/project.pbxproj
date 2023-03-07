@@ -36,6 +36,7 @@
 		7985564B24C8478700544777 /* MileageTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564A24C8478700544777 /* MileageTracker.swift */; };
 		7985564D24C84D8300544777 /* AddRefuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564C24C84D8300544777 /* AddRefuel.swift */; };
 		79881D2A260A48F400B3BC83 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79881D29260A48F400B3BC83 /* Color.xcassets */; };
+		798C7A8A29B772E100E69845 /* AddObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798C7A8929B772E100E69845 /* AddObjectView.swift */; };
 		79A95202298BDCB00087344C /* EnumPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A95201298BDCB00087344C /* EnumPicker.swift */; };
 		79BA12F52611F9D800974F6D /* WelcomeOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12F42611F9D800974F6D /* WelcomeOnboarding.swift */; };
 		79BA12FA2611F9FB00974F6D /* NewFeatureOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12F92611F9FB00974F6D /* NewFeatureOnboarding.swift */; };
@@ -105,6 +106,7 @@
 		7985564A24C8478700544777 /* MileageTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTracker.swift; sourceTree = "<group>"; };
 		7985564C24C84D8300544777 /* AddRefuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRefuel.swift; sourceTree = "<group>"; };
 		79881D29260A48F400B3BC83 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Color.xcassets; path = "Mileage Tracker/Color.xcassets"; sourceTree = SOURCE_ROOT; };
+		798C7A8929B772E100E69845 /* AddObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectView.swift; sourceTree = "<group>"; };
 		79A95201298BDCB00087344C /* EnumPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumPicker.swift; sourceTree = "<group>"; };
 		79BA12F42611F9D800974F6D /* WelcomeOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOnboarding.swift; sourceTree = "<group>"; };
 		79BA12F92611F9FB00974F6D /* NewFeatureOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeatureOnboarding.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		793B7D72260D36B500ABB839 /* AddObjectViews */ = {
 			isa = PBXGroup;
 			children = (
+				798C7A8929B772E100E69845 /* AddObjectView.swift */,
 				7985564C24C84D8300544777 /* AddRefuel.swift */,
 				791378A425B208C600871ECE /* AddCostView.swift */,
 			);
@@ -515,6 +518,7 @@
 				79D336E4260BAA540034BA63 /* ShareSheet.swift in Sources */,
 				7913791A25B5FA2000871ECE /* SettingsView.swift in Sources */,
 				7985564D24C84D8300544777 /* AddRefuel.swift in Sources */,
+				798C7A8A29B772E100E69845 /* AddObjectView.swift in Sources */,
 				7985562024C8475E00544777 /* MileageTrackerApp.swift in Sources */,
 				79E4CAD0260CE0800061C9E0 /* RefuelCardView.swift in Sources */,
 				796C48AA2993D77400797FB7 /* AveragesBoard.swift in Sources */,

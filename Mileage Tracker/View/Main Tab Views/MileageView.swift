@@ -40,6 +40,6 @@ struct ContentView_Previews: PreviewProvider {
         view.tracker.paidApp = false
         // Generates fake data for preview
         view.tracker.refuels = Refuel.data
-        return view// .preferredColorScheme(.dark)
+        return view  // .preferredColorScheme(.dark)
     }
 }
