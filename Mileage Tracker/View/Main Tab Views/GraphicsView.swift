@@ -28,36 +28,18 @@ struct GraphicsView: View {
     @State var timeframe: FilterType = .none
 
     var body: some View {
+        // MARK: - Regular Screen
         VStack {
-            if showInterstitial && !tracker.paidApp {
-//                InterstitialView()
-            } else {
-                // MARK: - Regular Screen
-                VStack {
-                    VStack(alignment: .center) {
-                        AveragesBoard(tracker: tracker)
+            VStack(alignment: .center) {
+                AveragesBoard(tracker: tracker)
 
-                        timeframeSelector()
+                timeframeSelector()
 
-                        graphicSelector()
+                graphicSelector()
 
-                        graphicGenerator()
-                    }
-                }
-                // MARK: - Ad Banner
-//                if !tracker.paidApp { Banner() }
+                graphicGenerator()
             }
         }
-
-        // MARK: Paid app interstitial presenter
-        .onAppear(perform: {
-            if !tracker.paidApp {
-                showInterstitial = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                    showInterstitial = false
-                }
-            }
-        })
     }
 
     // MARK: - Averages display

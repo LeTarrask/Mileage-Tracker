@@ -38,6 +38,7 @@ struct MainAppView: View {
                 }
                 // MARK: - Tab Bar
                 ZStack {
+                    // TO DO: Stop menu from spreading when + button clicked
                     HStack {
                         // MileageView
                         TabBarIcon(viewRouter: viewRouter,
