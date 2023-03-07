@@ -17,52 +17,44 @@ struct RefuelCardView: View {
     var body: some View {
         VStack {
             
-            // New Cell
-            VStack {
-                HStack(alignment: .top) {
+            VStack(alignment: .leading) {
+                Text("Refuel at: " + dateToString(date: refuel.creationDate))
+                    .font(.caption)
+                    .fontWeight(.light)
+
+                HStack {
                     VStack(alignment: .leading) {
-                        Text(refuel.money.clean + euroLabel)
-                            .font(.callout)
-                            .fontWeight(.bold)
-                        Text(refuel.liters.clean + " " + literLabel)
-                            .font(.callout)
-                            .fontWeight(.bold)
-                        
-                    }
-                    
-                    Spacer()
-                    
-                    VStack(alignment: .leading) {
-                        
-                        Text(refuel.pricePerLiter.clean + " " + averageFuelPriceValue)
-                            .font(.title)
-                            .fontWeight(.bold)
-                        
-                        Text(dateToString(date: refuel.creationDate))
-                            .font(.caption)
-                            .fontWeight(.light)
-                    }
-                    
-                    Spacer()
-                    
-                    VStack(alignment: .leading) {
-                        Text(sinceLast)
-                            .font(.caption)
-                            .fontWeight(.light)
                         Text(refuel.kmAdded.clean + " " + kmLabel)
                             .font(.title)
                             .fontWeight(.bold)
+                        Text(sinceLast)
+                            .font(.caption)
+                            .fontWeight(.light)
                         
                         Text(totalLabel + ": " + refuel.totalKM.clean + " " + kmLabel)
                             .font(.caption)
                             .fontWeight(.light)
-                    }
+                    }.padding()
                     
+                    Spacer()
+                    
+                    VStack(alignment: .leading) {
+                        Text(refuel.liters.clean + " " + literLabel)
+                            .font(.callout)
+                            .fontWeight(.bold)
+                        Text(refuel.pricePerLiter.clean + " " + averageFuelPriceValue)
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Text(refuel.money.clean + euroLabel)
+                            .font(.callout)
+                            .fontWeight(.bold)
+                    }.padding()
                 }
-                .foregroundColor(themeMG.theme.mainColor)
                 .padding()
-                .background(themeMG.theme.backgroundColor.cornerRadius(30))
             }
+            .foregroundColor(themeMG.theme.mainColor)
+            .padding()
+            .background(themeMG.theme.backgroundColor.cornerRadius(30))
         }
     }
 }
