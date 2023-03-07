@@ -53,7 +53,7 @@ class MileageTracker: ObservableObject {
     func load() {
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let data = try? Data(contentsOf: Self.refuelsURL) else {
-                #if DEBUG
+                #if targetEnvironment(simulator)
                 DispatchQueue.main.async {
                     self?.refuels = Refuel.data
                     print("refuelled")
@@ -62,7 +62,7 @@ class MileageTracker: ObservableObject {
                 return
             }
             guard let costs = try? Data(contentsOf: Self.costsURL) else {
-                #if DEBUG
+                #if targetEnvironment(simulator)
                 DispatchQueue.main.async {
                     self?.otherCosts = OtherCost.data
                     print("recosted")

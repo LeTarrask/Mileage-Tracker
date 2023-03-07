@@ -14,6 +14,7 @@ struct MileageView: View {
         if tracker.refuels.isEmpty {
             // TO DO: add a top banner explaining what this app is about
             // TO DO: add an if to show refuels list if there are stored data, or instructions when it's empty
+            Text("no items")
         } else {
             // MARK: - Refuels list
             List {
@@ -37,6 +38,8 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let view = MileageView()
         view.tracker.paidApp = false
+        // Generates fake data for preview
+        view.tracker.refuels = Refuel.data
         return view// .preferredColorScheme(.dark)
     }
 }

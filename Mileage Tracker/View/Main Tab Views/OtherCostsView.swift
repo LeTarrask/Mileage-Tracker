@@ -32,36 +32,41 @@ struct OtherCostsView: View {
                     }.foregroundColor(themeMG.theme.backgroundColor)
                 }
 
-                ForEach(tracker.otherCosts.reversed()) { cost in
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15.0)
-                            .fill(LinearGradient(gradient:
-                                                    cost.type == .tax ?
-                                                    themeMG.theme.gradient1 :
-                                                    themeMG.theme.gradient2,
-                                                 startPoint: .topLeading,
-                                                 endPoint: .bottomTrailing))
-                            .frame(minHeight: 70, maxHeight: 80)
-                        HStack(alignment: .bottom) {
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    Image(systemName: cost.type == .tax ? "folder" : "wrench.fill")
-                                    Text(String(cost.value) + "" + valueLabel)
-                                        .fontWeight(.bold)
+                if tracker.otherCosts.isEmpty {
+                    Text("No costs")
+                } else {
+                    ForEach(tracker.otherCosts.reversed()) { cost in
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .fill(LinearGradient(gradient:
+                                                        cost.type == .tax ?
+                                                        themeMG.theme.gradient1 :
+                                                        themeMG.theme.gradient2,
+                                                     startPoint: .topLeading,
+                                                     endPoint: .bottomTrailing))
+                                .frame(minHeight: 70, maxHeight: 80)
+                            HStack(alignment: .bottom) {
+                                VStack(alignment: .leading) {
+                                    HStack {
+                                        Image(systemName: cost.type == .tax ? "folder" : "wrench.fill")
+                                        Text(String(cost.value) + "" + valueLabel)
+                                            .fontWeight(.bold)
+                                    }
+                                    Text(cost.name)
+                                        .font(.subheadline)
                                 }
-                                Text(cost.name)
-                                    .font(.subheadline)
+                                Spacer()
+                                Text(dateToString(date: cost.creationDate))
+                                    .font(.caption)
                             }
-                            Spacer()
-                            Text(dateToString(date: cost.creationDate))
-                                .font(.caption)
+                            .foregroundColor(cost.type == .tax ?
+                                                themeMG.theme.backgroundColor : themeMG.theme.mainColor)
+                            .padding()
                         }
-                        .foregroundColor(cost.type == .tax ?
-                                            themeMG.theme.backgroundColor : themeMG.theme.mainColor)
-                        .padding()
                     }
+                    .padding(.horizontal)
+
                 }
-                .padding(.horizontal)
             }
 //            if !tracker.paidApp { Banner() }
         }
@@ -71,7 +76,8 @@ struct OtherCostsView: View {
 struct OtherCostsView_Previews: PreviewProvider {
     static var previews: some View {
         let view = OtherCostsView()
-        view.tracker.otherCosts = OtherCost.data
+        // Generates fake data for preview
+//        view.tracker.otherCosts = OtherCost.data
         return view
     }
 }
