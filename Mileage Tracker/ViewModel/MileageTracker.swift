@@ -11,24 +11,24 @@ class MileageTracker: ObservableObject {
     /// A class to log and store in memory all information regarding refuelling and other vehicle costs.
     @Published var refuels: [Refuel] = [Refuel]()
     @Published var otherCosts: [OtherCost] = [OtherCost]()
-
+    
     @Published var paidApp: Bool = false
     
     // Singleton Tracker
     static let shared = MileageTracker()
-
+    
     /// This method receives a data parameter from the view and adds it to our database
     /// - Parameter data: data contains kilometers, liters, and money paid in refuel,
     /// and calculates totalKm for the vehicle
     func receiveNew(_ data: Refuel.Data) {
-
+        
         let newRefuel = Refuel(totalKM: data.totalKM,
                                liters: data.liters,
                                money: data.money,
                                kmAdded: data.totalKM - self.totalKM)
         refuels.append(newRefuel)
     }
-
+    
     /// These 3 properties (documentsFolder, refuelsURL and costsURL are used to define where our app info is stored.
     /// These two methods (load() and save() are responsible for converting and storing our information in JSON
     static var documentsFolder: URL {
@@ -41,16 +41,20 @@ class MileageTracker: ObservableObject {
             fatalError("Can't find documents directory.")
         }
     }
-
+    
     private static var refuelsURL: URL {
         documentsFolder.appendingPathComponent("refuels.data")
     }
-
+    
     private static var costsURL: URL {
         documentsFolder.appendingPathComponent("costs.data")
     }
+    
+    init() {
+        load()
+    }
 
-    func load() {
+    private func load() {
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let data = try? Data(contentsOf: Self.refuelsURL) else {
                 #if targetEnvironment(simulator)

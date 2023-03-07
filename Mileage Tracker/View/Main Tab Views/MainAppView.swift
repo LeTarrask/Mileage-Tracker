@@ -27,9 +27,6 @@ struct MainAppView: View {
             }
             .background(Color.blue)
             .edgesIgnoringSafeArea([.bottom, .horizontal])
-            .onAppear {
-                tracker.load()
-            }
         }
         .onTapGesture {
             withAnimation(.easeInOut, {
