@@ -16,7 +16,8 @@ let settingsString = NSLocalizedString("Settings", comment: "")
 let addCostString = NSLocalizedString("Add Cost", comment: "")
 
 /// RefuelCardView
-let sinceLast = NSLocalizedString("Since last", comment: "")
+let refuelAtString = NSLocalizedString("Refuel at: ", comment: "")
+let sinceLast = NSLocalizedString("**Since last**", comment: "")
 let kmLabel = NSLocalizedString("km", comment: "")
 let literLabel = NSLocalizedString("L", comment: "")
 let fuelLabel = NSLocalizedString("Fuel", comment: "")

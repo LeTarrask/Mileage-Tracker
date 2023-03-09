@@ -18,7 +18,7 @@ struct RefuelCardView: View {
         VStack {
             
             VStack(alignment: .leading) {
-                Text("Refuel at: " + dateToString(date: refuel.creationDate))
+                Text(refuelAtString + dateToString(date: refuel.creationDate))
                     .font(.caption)
                     .fontWeight(.light)
 
@@ -48,11 +48,11 @@ struct RefuelCardView: View {
                         Text(refuel.liters.clean + " " + literLabel)
                             .font(.callout)
                             .fontWeight(.bold)
-                        Text(refuel.pricePerLiter.clean + " " + averageFuelPriceValue)
-                            .font(.title)
-                            .fontWeight(.bold)
                         Text(refuel.money.clean + euroLabel)
                             .font(.callout)
+                            .fontWeight(.bold)
+                        Text(refuel.pricePerLiter.clean + " " + averageFuelPriceValue)
+                            .font(.title)
                             .fontWeight(.bold)
                     }.padding()
                 }
