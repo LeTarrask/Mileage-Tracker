@@ -12,6 +12,17 @@ class MileageTracker: ObservableObject {
     @Published var refuels: [Refuel] = [Refuel]()
     @Published var otherCosts: [OtherCost] = [OtherCost]()
     
+    /// Properties used to track the consumption
+    @Published var averageConsumption: Double = 0
+    @Published var totalLiters: Double = 0
+    @Published var averageSpending: Double = 0
+    @Published var totalSpending: Double = 0
+    @Published var totalOtherCosts: Double = 0
+    @Published var averagePrice: Double = 0
+    @Published var totalKM: Double = 0
+    @Published var totalFuelSpending: Double = 0
+    @Published var lastRefuel: Date = Date()
+    
     @Published var paidApp: Bool = false
     
     // Singleton Tracker
@@ -27,6 +38,7 @@ class MileageTracker: ObservableObject {
                                money: data.money,
                                kmAdded: data.totalKM - self.totalKM)
         refuels.append(newRefuel)
+        recalculateStats()
     }
     
     /// These 3 properties (documentsFolder, refuelsURL and costsURL are used to define where our app info is stored.
@@ -94,6 +106,7 @@ class MileageTracker: ObservableObject {
         refuels.sort {
             $0.creationDate < $1.creationDate
         }
+        recalculateStats()
     }
 
     func save() {

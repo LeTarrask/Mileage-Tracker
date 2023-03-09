@@ -10,38 +10,50 @@ import Foundation
 extension MileageTracker {
     /// These properties generate the strings for the average consumption, spending, dates, etc,
     /// to be presented in the views
-    // TODO: instead of computed properties, maybe we could have them as stored values, and calculate them just when necessary?
-    var averageConsumption: Double {
+    
+    func recalculateStats() {
+        calculateAverageConsumption()
+        calculateTotalLiters()
+        calculateAverageSpending()
+        calculateTotalSpending()
+        calculateTotalOtherCosts()
+        calculateAveragePrice()
+        calculateTotalKM()
+        calculateTotalFuelSpending()
+        searchLastRefuel()
+    }
+    
+    func calculateAverageConsumption() {
         if refuels.isEmpty {
-            return 0
+            averageConsumption = 0
         } else {
-            return (totalKM / totalLiters).rounded(toPlaces: 2)
+            averageConsumption = (totalKM / totalLiters).rounded(toPlaces: 2)
         }
     }
 
-    var totalLiters: Double {
-        refuels.map {$0.liters}.reduce(0, +)
+    func calculateTotalLiters() {
+        totalLiters = refuels.map {$0.liters}.reduce(0, +)
     }
 
-    var averageSpending: Double {
+    func calculateAverageSpending() {
         if refuels.isEmpty {
-            return 0
+            averageSpending = 0
         } else {
-            return (totalKM / totalFuelSpending).rounded(toPlaces: 2)
+            averageSpending = (totalKM / totalFuelSpending).rounded(toPlaces: 2)
         }
     }
 
-    var totalSpending: Double {
-        refuels.map {$0.money}.reduce(0) {$0 + $1}.rounded(toPlaces: 2)
+    func calculateTotalSpending() {
+        totalSpending = refuels.map {$0.money}.reduce(0) {$0 + $1}.rounded(toPlaces: 2)
     }
 
-    var totalOtherCosts: Double {
-        otherCosts.map {$0.value}.reduce(0, +).rounded(toPlaces: 2)
+    func calculateTotalOtherCosts() {
+        totalOtherCosts = otherCosts.map {$0.value}.reduce(0, +).rounded(toPlaces: 2)
     }
-
-    var averagePrice: Double {
+    
+    func calculateAveragePrice() {
         if refuels.isEmpty {
-            return 0
+            averagePrice = 0
         } else {
             let totalMoney = refuels
                 .map {$0.money}
@@ -49,19 +61,19 @@ extension MileageTracker {
             let totalLiters = refuels
                 .map {$0.liters}
                 .reduce(0, +)
-            return (totalMoney / totalLiters).rounded(toPlaces: 2)
+            averagePrice = (totalMoney / totalLiters).rounded(toPlaces: 2)
         }
     }
 
-    var totalKM: Double {
-        refuels.last?.totalKM ?? 0.0
+    func calculateTotalKM() {
+        totalKM = refuels.last?.totalKM ?? 0.0
     }
 
-    var totalFuelSpending: Double {
-        refuels.map {$0.money}.reduce(0, +)
+    func calculateTotalFuelSpending() {
+        totalFuelSpending = refuels.map {$0.money}.reduce(0, +)
     }
 
-    var lastRefuel: Date {
-        refuels.last?.creationDate ?? Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+    func searchLastRefuel() {
+        lastRefuel = refuels.last?.creationDate ?? Calendar.current.date(byAdding: .day, value: -7, to: Date())!
     }
 }
