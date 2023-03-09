@@ -31,7 +31,7 @@ struct GraphicsView: View {
         // MARK: - Regular Screen
         VStack {
             if tracker.refuels.isEmpty {
-                LoadingView(headline: "headline", paragraph: "paragraph")
+                LoadingView(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
             } else {
                 VStack(alignment: .center) {
                     AveragesBoard(tracker: tracker)
