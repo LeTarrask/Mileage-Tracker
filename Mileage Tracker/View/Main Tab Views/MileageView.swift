@@ -35,6 +35,8 @@ struct MileageView: View {
 
 struct MileageView_Previews: PreviewProvider {
     static var previews: some View {
-        MileageView()
+        let view = MileageView()
+        view.tracker.refuels = []
+        return view
     }
 }
