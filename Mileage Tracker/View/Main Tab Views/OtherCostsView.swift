@@ -34,7 +34,7 @@ struct OtherCostsView: View {
 
                 if tracker.otherCosts.isEmpty {
                     // MARK: Shows if there's no data
-                    Loading(headline: loadCostsHeadline, paragraph: loadCostsParagraph)
+                    LoadingView(headline: loadCostsHeadline, paragraph: loadCostsParagraph)
                 } else {
                     ForEach(tracker.otherCosts.reversed()) { cost in
                         ZStack {

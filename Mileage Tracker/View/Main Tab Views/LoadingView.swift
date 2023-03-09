@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Loading: View {
+struct LoadingView: View {
     var headline: String
     var paragraph: String
     
@@ -122,6 +122,6 @@ struct Fluid: Shape {
 
 struct Loading_Previews: PreviewProvider {
     static var previews: some View {
-        Loading(headline: "Fuellogue", paragraph: "Fill the tank with your refuel information and see your bike stats.")
+        LoadingView(headline: "Fuellogue", paragraph: "Fill the tank with your refuel information and see your bike stats.")
     }
 }
