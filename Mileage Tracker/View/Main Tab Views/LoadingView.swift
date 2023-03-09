@@ -120,7 +120,7 @@ struct Fluid: Shape {
     }
 }
 
-struct Loading_Previews: PreviewProvider {
+struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
         LoadingView(headline: "Fuellogue", paragraph: "Fill the tank with your refuel information and see your bike stats.")
     }
