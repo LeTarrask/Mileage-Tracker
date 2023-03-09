@@ -10,6 +10,7 @@ import Foundation
 extension MileageTracker {
     /// These properties generate the strings for the average consumption, spending, dates, etc,
     /// to be presented in the views
+    // TODO: instead of computed properties, maybe we could have them as stored values, and calculate them just when necessary?
     var averageConsumption: Double {
         if refuels.isEmpty {
             return 0
