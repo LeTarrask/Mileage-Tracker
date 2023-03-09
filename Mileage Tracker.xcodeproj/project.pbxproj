@@ -18,7 +18,6 @@
 		793B7D8D260E275F00ABB839 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7D8C260E275F00ABB839 /* OnboardingRouter.swift */; };
 		793B7DD1260E540C00ABB839 /* TabBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7DD0260E540C00ABB839 /* TabBarIconView.swift */; };
 		793B7DD9260E546200ABB839 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B7DD8260E546200ABB839 /* ViewRouter.swift */; };
-		794FD2FA28E338A90014593B /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794FD2F928E338A90014593B /* Square.swift */; };
 		7967C5F2260E668D00665DFC /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967C5F1260E668D00665DFC /* MainAppView.swift */; };
 		7968E707261209AB0089DEFD /* MileageTracker+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968E706261209AB0089DEFD /* MileageTracker+Strings.swift */; };
 		796C48A42993D53200797FB7 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48A32993D53200797FB7 /* Date+Formatter.swift */; };
@@ -85,7 +84,6 @@
 		793B7D8C260E275F00ABB839 /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		793B7DD0260E540C00ABB839 /* TabBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIconView.swift; sourceTree = "<group>"; };
 		793B7DD8260E546200ABB839 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
-		794FD2F928E338A90014593B /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		7967C5F1260E668D00665DFC /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		7968E706261209AB0089DEFD /* MileageTracker+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MileageTracker+Strings.swift"; sourceTree = "<group>"; };
 		796C48A32993D53200797FB7 /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
@@ -314,7 +312,6 @@
 				793B7DD0260E540C00ABB839 /* TabBarIconView.swift */,
 				79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */,
 				796C48A92993D77400797FB7 /* AveragesBoard.swift */,
-				794FD2F928E338A90014593B /* Square.swift */,
 				79ED3D96260A1AC000421881 /* MailView.swift */,
 				79D336E3260BAA540034BA63 /* ShareSheet.swift */,
 				79A95201298BDCB00087344C /* EnumPicker.swift */,
@@ -510,7 +507,6 @@
 				796C48B02994028600797FB7 /* MileageTracker+FakeData.swift in Sources */,
 				79BA12FA2611F9FB00974F6D /* NewFeatureOnboarding.swift in Sources */,
 				7985564B24C8478700544777 /* MileageTracker.swift in Sources */,
-				794FD2FA28E338A90014593B /* Square.swift in Sources */,
 				796C48AE2994025100797FB7 /* MileageTracker+CSV.swift in Sources */,
 				796C48A42993D53200797FB7 /* Date+Formatter.swift in Sources */,
 				796C48AC2993E15400797FB7 /* Strings.swift in Sources */,

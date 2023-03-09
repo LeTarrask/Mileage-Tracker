@@ -10,7 +10,7 @@ import SwiftUI
 struct MainAppView: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
     
-    @ObservedObject var tracker = MileageTracker.shared
+    @StateObject var tracker = MileageTracker.shared
     
     @ObservedObject var viewRouter = ViewRouter.shared
     
@@ -80,6 +80,7 @@ struct MainAppView: View {
 struct MainAppTabs_Previews: PreviewProvider {
     static var previews: some View {
         MainAppView()
+            .environmentObject(MileageTracker.shared)
             .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
             .previewDisplayName("iPhone 14")
         

@@ -11,7 +11,7 @@ import Combine
 struct AddRefuel: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
     
-    @ObservedObject var tracker = MileageTracker.shared
+    @EnvironmentObject var tracker: MileageTracker
     
     @State var refuelData = Refuel.Data()
     
@@ -105,6 +105,6 @@ struct ColorButtonStyle: ButtonStyle {
 
 struct AddRefuel_Previews: PreviewProvider {
     static var previews: some View {
-        AddRefuel()
+        AddRefuel().environmentObject(MileageTracker.shared)
     }
 }

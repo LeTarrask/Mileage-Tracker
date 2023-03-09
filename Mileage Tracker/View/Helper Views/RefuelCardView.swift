@@ -10,7 +10,7 @@ import SwiftUI
 struct RefuelCardView: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
     
-    @ObservedObject var tracker = MileageTracker.shared
+    @EnvironmentObject var tracker: MileageTracker
     
     var refuel: Refuel
     
