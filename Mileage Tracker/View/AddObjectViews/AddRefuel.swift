@@ -95,6 +95,7 @@ struct ColorButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .font(.headline)
+            .fontWeight(.bold)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .contentShape(Rectangle())
             .foregroundColor(configuration.isPressed ? themeMG.theme.mainColor.opacity(0.5) : themeMG.theme.mainColor)
