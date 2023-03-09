@@ -26,7 +26,7 @@ class MileageTrackerTests: XCTestCase {
     func testTrackerLoadTestData() throws {
         tracker.loadTestData()
 
-        XCTAssertEqual(tracker.refuels.count, 35, "Tracker didn't load test data")
+        XCTAssertEqual(tracker.refuels.count, 35, "Tracker didn't load test Refuels")
     }
     
     func testDeleteData() throws {
