@@ -15,8 +15,15 @@ struct AddObjectView: View {
     
     @State private var selection: CostType = .refuel
     
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    
     var body: some View {
         VStack {
+            Text("Add new cost")
+                .font(.largeTitle)
+                .fontWeight(.black)
+                .foregroundColor(themeMG.theme.mainColor)
+
             Picker("Type of Cost", selection: $selection) {
                 ForEach(CostType.allCases) { cost in
                     Text(cost.rawValue.capitalized)

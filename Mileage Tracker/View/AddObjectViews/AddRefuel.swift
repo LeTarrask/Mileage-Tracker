@@ -27,7 +27,7 @@ struct AddRefuel: View {
                 Section(header: Text(addInfoLabel)) {
                     // MARK: - KM
                     HStack {
-                        Text(kmLabel)
+                        Text(kmAddedLabel)
                         Spacer()
                         TextField("", text: $refuelData.kmString)
                             .keyboardType(.decimalPad)
@@ -36,7 +36,7 @@ struct AddRefuel: View {
                     }
                     // MARK: - Liters
                     HStack {
-                        Text(literLabel)
+                        Text(litersAddedLabel)
                         Spacer()
                         TextField("", text: $refuelData.litersString)
                             .keyboardType(.decimalPad)

@@ -29,6 +29,8 @@ let refuelAtLabel = NSLocalizedString("Refuel at: ", comment: "")
 
 /// AddRefuelView
 let addInfoLabel = NSLocalizedString("Add refuel info", comment: "")
+let kmAddedLabel = NSLocalizedString("Kilometers added", comment: "")
+let litersAddedLabel = NSLocalizedString("Liters added", comment: "")
 let costLabel = NSLocalizedString("Refuel Cost", comment: "")
 let saveLabel = NSLocalizedString("Save", comment: "")
 
