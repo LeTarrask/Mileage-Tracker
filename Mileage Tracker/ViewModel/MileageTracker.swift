@@ -92,6 +92,7 @@ class MileageTracker: ObservableObject {
             }
             DispatchQueue.main.async {
                 self?.refuels = refuels
+                self?.recalculateStats()
             }
 
             guard let otherCosts = try? JSONDecoder().decode([OtherCost].self, from: costs) else {
@@ -100,13 +101,14 @@ class MileageTracker: ObservableObject {
 
             DispatchQueue.main.async {
                 self?.otherCosts = otherCosts
+                self?.recalculateStats()
             }
         }
 
         refuels.sort {
             $0.creationDate < $1.creationDate
         }
-        recalculateStats()
+        
     }
 
     func save() {
