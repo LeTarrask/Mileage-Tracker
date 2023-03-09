@@ -63,8 +63,4 @@ extension MileageTracker {
     var lastRefuel: Date {
         refuels.last?.creationDate ?? Calendar.current.date(byAdding: .day, value: -7, to: Date())!
     }
-    
-    func differenceFromAverage(value: Double) -> Double {
-        return value - averagePrice
-    }
 }

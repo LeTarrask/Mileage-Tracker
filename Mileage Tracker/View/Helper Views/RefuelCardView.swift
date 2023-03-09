@@ -82,6 +82,8 @@ struct RefuelCardView: View {
                                 .fontWeight(.bold)
                             Text(" " + averageFuelPriceValue)
                             // TODO: Add variation icon
+                            
+                            
                         }
                     }.padding()
                 }
