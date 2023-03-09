@@ -34,7 +34,7 @@ struct GraphicsView: View {
                 LoadingView(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
             } else {
                 VStack(alignment: .center) {
-                    AveragesBoard(tracker: tracker)
+                    AveragesBoard()
 
                     timeframeSelector()
 
