@@ -124,6 +124,6 @@ struct Fluid: Shape {
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingView(headline: "Fuellogue", paragraph: "Fill the tank with your refuel information and see your bike stats.")
+        LoadingView(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
     }
 }
