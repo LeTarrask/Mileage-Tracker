@@ -56,8 +56,8 @@ struct AddRefuel: View {
                 
                 Button(saveLabel) {
                     saveRefuel()
-                }
-            }   .foregroundColor(themeMG.theme.mainColor)
+                }.buttonStyle(ColorButtonStyle())
+            }
                 .onSubmit {
                     switch focusedField {
                     case .km:
@@ -70,7 +70,7 @@ struct AddRefuel: View {
                         focusedField = nil
                     }
                 }
-        }
+        }.foregroundColor(themeMG.theme.mainColor)
     }
     
     func saveRefuel() {
@@ -88,6 +88,19 @@ extension View {
     }
 }
 #endif
+
+struct ColorButtonStyle: ButtonStyle {
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .font(.headline)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .contentShape(Rectangle())
+            .foregroundColor(configuration.isPressed ? themeMG.theme.mainColor.opacity(0.5) : themeMG.theme.mainColor)
+            .listRowBackground(configuration.isPressed ? themeMG.theme.mainColor.opacity(0.5) : themeMG.theme.mainColor)
+    }
+}
 
 struct AddRefuel_Previews: PreviewProvider {
     static var previews: some View {

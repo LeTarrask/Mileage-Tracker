@@ -53,8 +53,8 @@ struct AddCostView: View {
                 
                 Button(saveLabel) {
                     saveCost()
-                }
-            }   .foregroundColor(themeMG.theme.mainColor)
+                }.buttonStyle(ColorButtonStyle())
+            }
                 .onSubmit {
                     switch focusedField {
                     case .name:
@@ -67,7 +67,7 @@ struct AddCostView: View {
                         focusedField = nil
                     }
                 }
-        }
+        }.foregroundColor(themeMG.theme.mainColor)
     }
     
     func saveCost() {
