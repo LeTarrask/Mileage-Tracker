@@ -34,7 +34,7 @@ struct OtherCostsView: View {
 
                 if tracker.otherCosts.isEmpty {
                     // MARK: Shows if there's no data
-                    Loading(headline: "Add your bike costs info", paragraph: "Fill our tank with your bike costs info and we'll create charts detailing how your bike's performing")
+                    Loading(headline: loadCostsHeadline, paragraph: loadCostsParagraph)
                 } else {
                     ForEach(tracker.otherCosts.reversed()) { cost in
                         ZStack {

@@ -95,3 +95,9 @@ let onboardingHealine2 = NSLocalizedString("Store and export your data", comment
 let onboardingCopy2 = NSLocalizedString("All data is just stored on your device. It also can be exported to a spreadsheet.", comment: "")
 let onboardingHealine3 = NSLocalizedString("Get extra features", comment: "")
 let onboardingCopy3 = NSLocalizedString("Fuellogue will always be free. We plan to add premium features in the future. Check the roadmap.", comment: "")
+
+// Loading
+let loadCostsHeadline = NSLocalizedString("Add your bike costs info", comment: "")
+let loadCostsParagraph = NSLocalizedString("Fill our tank with your bike costs info and we'll create charts detailing how your bike's performing", comment: "")
+let loadRefuelsHeadline = NSLocalizedString("Add your refuel info", comment: "")
+let loadRefuelParagraph = NSLocalizedString("Fill our tank with your refuel info and we'll create charts detailing how your bike's performing", comment: "")

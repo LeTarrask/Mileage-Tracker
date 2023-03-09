@@ -13,7 +13,7 @@ struct MileageView: View {
     var body: some View {
         if tracker.refuels.isEmpty {
             // MARK: - Loading screen when VM is empty
-            Loading(headline: "Add your refuel info", paragraph: "Fill our tank with your refuel info and we'll create charts detailing how your bike's performing")
+            Loading(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
         } else {
             // MARK: - Refuels list
             List {
