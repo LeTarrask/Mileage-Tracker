@@ -16,26 +16,26 @@ struct OtherCostsView: View {
 
     var body: some View {
         VStack {
-            ScrollView {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 15.0)
-                        .fill(LinearGradient(gradient: themeMG.theme.gradient1,
-                                             startPoint: .bottomLeading,
-                                             endPoint: .topTrailing))
-                        .frame(minHeight: 70, maxHeight: 80)
-                        .padding()
+            if tracker.otherCosts.isEmpty {
+                // MARK: Shows if there's no data
+                LoadingView(headline: loadCostsHeadline, paragraph: loadCostsParagraph)
+            } else {
+                ScrollView {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15.0)
+                            .fill(LinearGradient(gradient: themeMG.theme.gradient1,
+                                                 startPoint: .bottomLeading,
+                                                 endPoint: .topTrailing))
+                            .frame(minHeight: 70, maxHeight: 80)
+                            .padding()
 
-                    HStack {
-                        Text(totalOtherLabel)
-                        Text(String(tracker.totalOtherCosts) + " ")
-                        Text(valueLabel)
-                    }.foregroundColor(themeMG.theme.backgroundColor)
-                }
+                        HStack {
+                            Text(totalOtherLabel)
+                            Text(String(tracker.totalOtherCosts) + " ")
+                            Text(valueLabel)
+                        }.foregroundColor(themeMG.theme.backgroundColor)
+                    }
 
-                if tracker.otherCosts.isEmpty {
-                    // MARK: Shows if there's no data
-                    LoadingView(headline: loadCostsHeadline, paragraph: loadCostsParagraph)
-                } else {
                     ForEach(tracker.otherCosts.reversed()) { cost in
                         ZStack {
                             RoundedRectangle(cornerRadius: 15.0)
@@ -67,8 +67,9 @@ struct OtherCostsView: View {
                     }
                     .padding(.horizontal)
                 }
+    //            if !tracker.paidApp { Banner() }
             }
-//            if !tracker.paidApp { Banner() }
+            
         }
     }
 }
