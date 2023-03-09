@@ -43,5 +43,39 @@ class MileageTrackerTests: XCTestCase {
 
         XCTAssertNotNil(file, "Didn't generate CSV URL")
     }
-
+    
+    func testCalculateTotalSpending() throws {
+        tracker.loadTestData()
+        tracker.recalculateStats()
+        
+        XCTAssertEqual(tracker.totalSpending, 265.13, "Total spending was \(tracker.totalSpending)")
+    }
+    
+    func testCalculateTotalKM() throws {
+        tracker.loadTestData()
+        tracker.recalculateStats()
+        
+        XCTAssertEqual(tracker.totalKM, 6215, "Total km was \(tracker.totalKM)")
+    }
+    
+    func testCalculateAverageConsumption() throws {
+        tracker.loadTestData()
+        tracker.recalculateStats()
+        
+        XCTAssertEqual(tracker.averageConsumption, 36.5, "Average consumption was \(tracker.averageConsumption)")
+    }
+        
+    func testCalculateAverageSpending() throws {
+        tracker.loadTestData()
+        tracker.recalculateStats()
+        
+        XCTAssertEqual(tracker.averageSpending, 23.44, "Average spending was \(tracker.averageSpending)")
+    }
+    
+    func testCalculateAveragePrice() throws {
+        tracker.loadTestData()
+        tracker.recalculateStats()
+        
+        XCTAssertEqual(tracker.averagePrice, 1.56, "Average price was \(tracker.averagePrice)")
+    }
 }

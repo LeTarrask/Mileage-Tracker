@@ -12,15 +12,38 @@ extension MileageTracker {
     /// to be presented in the views
     
     func recalculateStats() {
-        calculateAverageConsumption()
-        calculateTotalLiters()
-        calculateAverageSpending()
-        calculateTotalSpending()
-        calculateTotalOtherCosts()
-        calculateAveragePrice()
+        /// Calculates the totals for all the variables first, then the averages
         calculateTotalKM()
+        calculateTotalLiters()
         calculateTotalFuelSpending()
+        calculateTotalOtherCosts()
+        calculateTotalSpending()
+        
+        calculateAverageConsumption()
+        calculateAverageSpending()
+        calculateAveragePrice()
+        
         searchLastRefuel()
+    }
+    
+    func calculateTotalKM() {
+        totalKM = refuels.last?.totalKM ?? 0.0
+    }
+    
+    func calculateTotalLiters() {
+        totalLiters = refuels.map {$0.liters}.reduce(0, +)
+    }
+    
+    func calculateTotalFuelSpending() {
+        totalFuelSpending = refuels.map {$0.money}.reduce(0, +)
+    }
+    
+    func calculateTotalOtherCosts() {
+        totalOtherCosts = otherCosts.map {$0.value}.reduce(0, +).rounded(toPlaces: 2)
+    }
+    
+    func calculateTotalSpending() {
+        totalSpending = refuels.map {$0.money}.reduce(0) {$0 + $1}.rounded(toPlaces: 2)
     }
     
     func calculateAverageConsumption() {
@@ -30,25 +53,13 @@ extension MileageTracker {
             averageConsumption = (totalKM / totalLiters).rounded(toPlaces: 2)
         }
     }
-
-    func calculateTotalLiters() {
-        totalLiters = refuels.map {$0.liters}.reduce(0, +)
-    }
-
+    
     func calculateAverageSpending() {
         if refuels.isEmpty {
             averageSpending = 0
         } else {
             averageSpending = (totalKM / totalFuelSpending).rounded(toPlaces: 2)
         }
-    }
-
-    func calculateTotalSpending() {
-        totalSpending = refuels.map {$0.money}.reduce(0) {$0 + $1}.rounded(toPlaces: 2)
-    }
-
-    func calculateTotalOtherCosts() {
-        totalOtherCosts = otherCosts.map {$0.value}.reduce(0, +).rounded(toPlaces: 2)
     }
     
     func calculateAveragePrice() {
@@ -64,15 +75,7 @@ extension MileageTracker {
             averagePrice = (totalMoney / totalLiters).rounded(toPlaces: 2)
         }
     }
-
-    func calculateTotalKM() {
-        totalKM = refuels.last?.totalKM ?? 0.0
-    }
-
-    func calculateTotalFuelSpending() {
-        totalFuelSpending = refuels.map {$0.money}.reduce(0, +)
-    }
-
+    
     func searchLastRefuel() {
         lastRefuel = refuels.last?.creationDate ?? Calendar.current.date(byAdding: .day, value: -7, to: Date())!
     }

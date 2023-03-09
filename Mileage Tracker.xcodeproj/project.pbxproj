@@ -39,6 +39,8 @@
 		798C7A8A29B772E100E69845 /* AddObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798C7A8929B772E100E69845 /* AddObjectView.swift */; };
 		79A95202298BDCB00087344C /* EnumPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A95201298BDCB00087344C /* EnumPicker.swift */; };
 		79A9AEC929BA0E9300B61585 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D336DE260B92CB0034BA63 /* LoadingView.swift */; };
+		79A9AECA29BA765800B61585 /* Theme Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAF2260CED900061C9E0 /* Theme Manager.swift */; };
+		79A9AECB29BA768300B61585 /* Color-Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */; };
 		79BA12F52611F9D800974F6D /* WelcomeOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12F42611F9D800974F6D /* WelcomeOnboarding.swift */; };
 		79BA12FA2611F9FB00974F6D /* NewFeatureOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12F92611F9FB00974F6D /* NewFeatureOnboarding.swift */; };
 		79BA12FF2611FA0F00974F6D /* SalesOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12FE2611FA0F00974F6D /* SalesOnboarding.swift */; };
@@ -533,7 +535,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79A9AECA29BA765800B61585 /* Theme Manager.swift in Sources */,
 				79ED3D7F260A138B00421881 /* UIDeviceExtension.swift in Sources */,
+				79A9AECB29BA768300B61585 /* Color-Themes.swift in Sources */,
 				79A9AEC929BA0E9300B61585 /* LoadingView.swift in Sources */,
 				7985563224C8476000544777 /* MileageTrackerTests.swift in Sources */,
 			);
