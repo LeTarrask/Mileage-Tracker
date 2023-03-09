@@ -18,25 +18,40 @@ struct RefuelCardView: View {
         VStack {
             
             VStack(alignment: .leading) {
-                Text(refuelAtString + dateToString(date: refuel.creationDate))
-                    .font(.caption)
-                    .fontWeight(.light)
+                Group {
+                    Text(refuelAtString).fontWeight(.bold) +
+                    Text(dateToString(date: refuel.creationDate)).fontWeight(.light)
+                }.font(.caption)
 
-                HStack {
+                HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         Image("bike")
                             .resizable()
                             .frame(width: 100, height: 100)
-                        Text(refuel.kmAdded.clean + " " + kmLabel)
-                            .font(.title)
-                            .fontWeight(.bold)
+                        
+                        HStack {
+                            Text(refuel.kmAdded.clean)
+                                .fontWeight(.bold)
+                            Text(" " + kmLabel)
+                        }
+                            
                         Text(sinceLast)
                             .font(.caption)
                             .fontWeight(.light)
                         
-                        Text(totalLabel + ": " + refuel.totalKM.clean + " " + kmLabel)
-                            .font(.caption)
-                            .fontWeight(.light)
+                        Spacer()
+                        
+                        Group {
+                            HStack {
+                                Text(refuel.totalKM.clean)
+                                    .fontWeight(.bold)
+                                Text(" " + kmLabel)
+                            }
+                            
+                            Text(totalLabel)
+                                .font(.caption)
+                                .fontWeight(.light)
+                        }.foregroundColor(themeMG.theme.highlightColor)
                     }.padding()
                     
                     Spacer()
@@ -45,15 +60,29 @@ struct RefuelCardView: View {
                         Image("pump")
                             .resizable()
                             .frame(width: 100, height: 100)
-                        Text(refuel.liters.clean + " " + literLabel)
-                            .font(.callout)
-                            .fontWeight(.bold)
-                        Text(refuel.money.clean + euroLabel)
-                            .font(.callout)
-                            .fontWeight(.bold)
-                        Text(refuel.pricePerLiter.clean + " " + averageFuelPriceValue)
-                            .font(.title)
-                            .fontWeight(.bold)
+                        
+                        HStack {
+                            Text(refuel.liters.clean)
+                                .fontWeight(.bold)
+                            Text(" " + literLabel)
+                        }
+                        
+                        Spacer()
+                        
+                        HStack {
+                            Text(refuel.money.clean)
+                                .fontWeight(.bold)
+                            Text(" " + euroLabel)
+                        }.foregroundColor(themeMG.theme.highlightColor)
+                        
+                        Spacer()
+                           
+                        HStack {
+                            Text(refuel.pricePerLiter.clean)
+                                .fontWeight(.bold)
+                            Text(" " + averageFuelPriceValue)
+                            // TODO: Add variation icon
+                        }
                     }.padding()
                 }
                 .padding()
