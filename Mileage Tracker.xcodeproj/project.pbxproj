@@ -38,6 +38,7 @@
 		79881D2A260A48F400B3BC83 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79881D29260A48F400B3BC83 /* Color.xcassets */; };
 		798C7A8A29B772E100E69845 /* AddObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798C7A8929B772E100E69845 /* AddObjectView.swift */; };
 		79A95202298BDCB00087344C /* EnumPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A95201298BDCB00087344C /* EnumPicker.swift */; };
+		79A9AEC929BA0E9300B61585 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D336DE260B92CB0034BA63 /* Loading.swift */; };
 		79BA12F52611F9D800974F6D /* WelcomeOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12F42611F9D800974F6D /* WelcomeOnboarding.swift */; };
 		79BA12FA2611F9FB00974F6D /* NewFeatureOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12F92611F9FB00974F6D /* NewFeatureOnboarding.swift */; };
 		79BA12FF2611FA0F00974F6D /* SalesOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12FE2611FA0F00974F6D /* SalesOnboarding.swift */; };
@@ -199,6 +200,7 @@
 			children = (
 				7967C5F1260E668D00665DFC /* MainAppView.swift */,
 				7985562124C8475E00544777 /* MileageView.swift */,
+				79D336DE260B92CB0034BA63 /* Loading.swift */,
 				7913789A25B2030600871ECE /* OtherCostsView.swift */,
 				793B7D7A260D370400ABB839 /* GraphicsView.swift */,
 				7913791925B5FA1F00871ECE /* SettingsView.swift */,
@@ -232,7 +234,6 @@
 			children = (
 				7985562824C8476000544777 /* Info.plist */,
 				7985561F24C8475E00544777 /* MileageTrackerApp.swift */,
-				79D336DE260B92CB0034BA63 /* Loading.swift */,
 				7985564F24C8609000544777 /* View */,
 				7925077625EA639B007315ED /* ViewModel */,
 				7985564E24C8608800544777 /* Model */,
@@ -533,6 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79ED3D7F260A138B00421881 /* UIDeviceExtension.swift in Sources */,
+				79A9AEC929BA0E9300B61585 /* Loading.swift in Sources */,
 				7985563224C8476000544777 /* MileageTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

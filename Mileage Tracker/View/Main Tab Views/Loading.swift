@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Loading: View {
+    var headline: String
+    var paragraph: String
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -16,11 +19,15 @@ struct Loading: View {
                                  curveHeight: 10,
                                  curveLength: 2.5,
                                  speed: 1,
-                                 color: Color("Wine"))
-                Text("Mileage Tracker")
-                    .foregroundColor(Color.white)
-                    .fontWeight(.black)
-                    .font(.largeTitle)
+                                 color: Color.red)
+                VStack {
+                    Text(headline)
+                        .fontWeight(.black)
+                        .font(.largeTitle)
+                        .padding()
+                    Text(paragraph)
+                        .padding(.horizontal)
+                }.foregroundColor(Color.white)
             }
 
         }.edgesIgnoringSafeArea(.all)
@@ -115,6 +122,6 @@ struct Fluid: Shape {
 
 struct Loading_Previews: PreviewProvider {
     static var previews: some View {
-        Loading()
+        Loading(headline: "Fuellogue", paragraph: "Fill the tank with your refuel information and see your bike stats.")
     }
 }
