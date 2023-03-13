@@ -94,13 +94,13 @@ let cannotSendEmail = NSLocalizedString("Cannot send email", comment: "")
 let nextLabel = NSLocalizedString("Next", comment: "")
 let dismissLabel = NSLocalizedString("Dismiss", comment: "")
 let onboardingHealine1 = NSLocalizedString("Welcome to Fuellogue", comment: "")
-let onboardingCopy1 = NSLocalizedString("Track your bike fuel expenses, other payments and vehicle mileage. See the data in a fancy SwiftUI Chart.", comment: "")
+let onboardingCopy1 = NSLocalizedString("Monitor your motorbike's fuel costs, payments, and mileage all in one place. \n\nView your information on a sleek SwiftUI chart that updates in real-time as you add new data.", comment: "")
 let creditText1: LocalizedStringKey = "Photo: [Gijs Coolen](https://unsplash.com/@gijsparadijs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) from [Unsplash](https://unsplash.com/pt-br/fotografias/v5tvgLFvX70?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
-let onboardingHealine2 = NSLocalizedString("Store and export your data", comment: "")
-let onboardingCopy2 = NSLocalizedString("All data is just stored on your device. It also can be exported to a spreadsheet.", comment: "")
+let onboardingHealine2 = NSLocalizedString("Understand, store and export your data", comment: "")
+let onboardingCopy2 = NSLocalizedString("Your data is securely stored on your device and can be easily exported to a spreadsheet. \n\nThe information you input is used to generate charts for different timeframes, allowing you to see how your bike expenses and mileage are trending. With our user-friendly interface, it's simple to understand whether you're spending more or less than the average.", comment: "")
 let creditText2: LocalizedStringKey = "Photo: [Summer Chan](https://unsplash.com/@chansummerla?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) from [Unsplash](https://unsplash.com/pt-br/fotografias/nvxxjqAfWKo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
-let onboardingHealine3 = NSLocalizedString("Get extra features", comment: "")
-let onboardingCopy3 = NSLocalizedString("Fuellogue will always be free. We plan to add premium features in the future. Check the roadmap.", comment: "")
+let onboardingHealine3 = NSLocalizedString("New features coming", comment: "")
+let onboardingCopy3 = NSLocalizedString("Fuellogue is a hobby project and completely free to use. While we plan to introduce premium features in the future, your basic account will always be free. \n\nWe welcome suggestions for new features that you would like to see, and we encourage you to check out our roadmap to see what we have planned.", comment: "")
 let creditText3: LocalizedStringKey = "Photo: [Gijs Coolen](https://unsplash.com/@gijsparadijs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) from [Unsplash](https://unsplash.com/pt-br/fotografias/v5tvgLFvX70?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
 
 // Loading
