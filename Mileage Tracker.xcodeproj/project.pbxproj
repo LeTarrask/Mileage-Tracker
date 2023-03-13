@@ -36,6 +36,7 @@
 		7985564D24C84D8300544777 /* AddRefuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985564C24C84D8300544777 /* AddRefuel.swift */; };
 		79881D2A260A48F400B3BC83 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79881D29260A48F400B3BC83 /* Color.xcassets */; };
 		798C7A8A29B772E100E69845 /* AddObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798C7A8929B772E100E69845 /* AddObjectView.swift */; };
+		79A14E9529BF8AD200DF097B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79A14E9329BF8AD200DF097B /* Localizable.strings */; };
 		79A95202298BDCB00087344C /* EnumPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A95201298BDCB00087344C /* EnumPicker.swift */; };
 		79A9AEC929BA0E9300B61585 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D336DE260B92CB0034BA63 /* LoadingView.swift */; };
 		79A9AECA29BA765800B61585 /* Theme Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAF2260CED900061C9E0 /* Theme Manager.swift */; };
@@ -55,8 +56,6 @@
 		79ED3D7F260A138B00421881 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D7D260A138B00421881 /* UIDeviceExtension.swift */; };
 		79ED3D92260A14B200421881 /* UIApplicationVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D91260A14B200421881 /* UIApplicationVersion.swift */; };
 		79ED3D97260A1AC000421881 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D96260A1AC000421881 /* MailView.swift */; };
-		79FCD1C025F7D23A007F08FB /* English.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79FCD1C225F7D23A007F08FB /* English.strings */; };
-		79FCD1CB25F7D2C8007F08FB /* Portuguese.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79FCD1CD25F7D2C8007F08FB /* Portuguese.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +107,7 @@
 		7985564C24C84D8300544777 /* AddRefuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRefuel.swift; sourceTree = "<group>"; };
 		79881D29260A48F400B3BC83 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Color.xcassets; path = "Mileage Tracker/Color.xcassets"; sourceTree = SOURCE_ROOT; };
 		798C7A8929B772E100E69845 /* AddObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectView.swift; sourceTree = "<group>"; };
+		79A14E9429BF8AD200DF097B /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		79A95201298BDCB00087344C /* EnumPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumPicker.swift; sourceTree = "<group>"; };
 		79BA12F42611F9D800974F6D /* WelcomeOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOnboarding.swift; sourceTree = "<group>"; };
 		79BA12F92611F9FB00974F6D /* NewFeatureOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeatureOnboarding.swift; sourceTree = "<group>"; };
@@ -123,8 +123,6 @@
 		79ED3D7D260A138B00421881 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		79ED3D91260A14B200421881 /* UIApplicationVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationVersion.swift; sourceTree = "<group>"; };
 		79ED3D96260A1AC000421881 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
-		79FCD1C125F7D23A007F08FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/English.strings; sourceTree = "<group>"; };
-		79FCD1CC25F7D2C8007F08FB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Portuguese.strings"; sourceTree = "<group>"; };
 		D77C5CC5F186E7E9390A1A02 /* Pods-Mileage Tracker-Mileage TrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage Tracker-Mileage TrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mileage Tracker-Mileage TrackerUITests/Pods-Mileage Tracker-Mileage TrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -322,8 +320,7 @@
 		79FCD1BF25F7D216007F08FB /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				79FCD1C225F7D23A007F08FB /* English.strings */,
-				79FCD1CD25F7D2C8007F08FB /* Portuguese.strings */,
+				79A14E9329BF8AD200DF097B /* Localizable.strings */,
 				796C48AB2993E15400797FB7 /* Strings.swift */,
 			);
 			path = Localization;
@@ -420,9 +417,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7985562724C8476000544777 /* Preview Assets.xcassets in Resources */,
-				79FCD1CB25F7D2C8007F08FB /* Portuguese.strings in Resources */,
+				79A14E9529BF8AD200DF097B /* Localizable.strings in Resources */,
 				79881D2A260A48F400B3BC83 /* Color.xcassets in Resources */,
-				79FCD1C025F7D23A007F08FB /* English.strings in Resources */,
 				7985562424C8476000544777 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,20 +546,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		79FCD1C225F7D23A007F08FB /* English.strings */ = {
+		79A14E9329BF8AD200DF097B /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				79FCD1C125F7D23A007F08FB /* en */,
+				79A14E9429BF8AD200DF097B /* pt-BR */,
 			);
-			name = English.strings;
-			sourceTree = "<group>";
-		};
-		79FCD1CD25F7D2C8007F08FB /* Portuguese.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				79FCD1CC25F7D2C8007F08FB /* pt-BR */,
-			);
-			name = Portuguese.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
