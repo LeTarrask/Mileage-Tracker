@@ -11,19 +11,23 @@ struct WelcomeOnboarding: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
     var body: some View {
-        VStack(alignment: .center) {
-            Image(systemName: "drop.fill")
+        VStack(alignment: .leading) {
+            Image("bike01")
                 .resizable()
-                .frame(width: 200, height: 300)
-            Text(onboardingHealine1)
-                .font(.title)
-                .fontWeight(.bold)
-            Text(onboardingCopy1)
-                .font(.body)
-                .foregroundColor(.gray)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 30)
-                .padding(.top, 5)
+                .frame(height: 300)
+            VStack(alignment: .leading, spacing: 30) {
+                Text(onboardingHealine1)
+                    .font(.title)
+                    .fontWeight(.bold)
+                Text(onboardingCopy1)
+                    .font(.body)
+                    .foregroundColor(.gray)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text(creditText1)
+                    .font(.caption2)
+                    .foregroundColor(.gray)
+            }
+            .padding(.horizontal, 30)
         }
         .foregroundColor(themeMG.theme.mainColor)
     }
@@ -34,3 +38,4 @@ struct WelcomeOnboarding_Previews: PreviewProvider {
         WelcomeOnboarding()
     }
 }
+ 

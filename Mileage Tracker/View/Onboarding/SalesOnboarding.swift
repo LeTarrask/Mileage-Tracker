@@ -12,18 +12,22 @@ struct SalesOnboarding: View {
 
     var body: some View {
         VStack(alignment: .center) {
-            Image(systemName: "drop.fill")
+            Image("bike03")
                 .resizable()
-                .frame(width: 200, height: 300)
-            Text(onboardingHealine3)
-                .font(.title)
-                .fontWeight(.bold)
-            Text(onboardingCopy3)
-                .font(.body)
-                .foregroundColor(.gray)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 30)
-                .padding(.top, 5)
+                .frame(height: 300)
+            VStack(alignment: .leading, spacing: 30) {
+                Text(onboardingHealine3)
+                    .font(.title)
+                    .fontWeight(.bold)
+                Text(onboardingCopy3)
+                    .font(.body)
+                    .foregroundColor(.gray)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text(creditText3)
+                    .font(.caption2)
+                    .foregroundColor(.gray)
+            }
+            .padding(.horizontal, 30)
         }
         .foregroundColor(themeMG.theme.mainColor)
     }

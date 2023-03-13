@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 // swiftlint:disable line_length
 /// MainAppView
@@ -94,10 +95,13 @@ let nextLabel = NSLocalizedString("Next", comment: "")
 let dismissLabel = NSLocalizedString("Dismiss", comment: "")
 let onboardingHealine1 = NSLocalizedString("Welcome to Fuellogue", comment: "")
 let onboardingCopy1 = NSLocalizedString("Track your bike fuel expenses, other payments and vehicle mileage. See the data in a fancy SwiftUI Chart.", comment: "")
+let creditText1: LocalizedStringKey = "Photo: [Gijs Coolen](https://unsplash.com/@gijsparadijs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) from [Unsplash](https://unsplash.com/pt-br/fotografias/v5tvgLFvX70?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
 let onboardingHealine2 = NSLocalizedString("Store and export your data", comment: "")
 let onboardingCopy2 = NSLocalizedString("All data is just stored on your device. It also can be exported to a spreadsheet.", comment: "")
+let creditText2: LocalizedStringKey = "Photo: [Summer Chan](https://unsplash.com/@chansummerla?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) from [Unsplash](https://unsplash.com/pt-br/fotografias/nvxxjqAfWKo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
 let onboardingHealine3 = NSLocalizedString("Get extra features", comment: "")
 let onboardingCopy3 = NSLocalizedString("Fuellogue will always be free. We plan to add premium features in the future. Check the roadmap.", comment: "")
+let creditText3: LocalizedStringKey = "Photo: [Gijs Coolen](https://unsplash.com/@gijsparadijs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) from [Unsplash](https://unsplash.com/pt-br/fotografias/v5tvgLFvX70?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"  
 
 // Loading
 let loadCostsHeadline = NSLocalizedString("Add your bike costs info", comment: "")

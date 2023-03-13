@@ -12,18 +12,22 @@ struct NewFeatureOnboarding: View {
 
     var body: some View {
         VStack(alignment: .center) {
-            Image(systemName: "drop.fill")
+            Image("bike02")
                 .resizable()
-                .frame(width: 200, height: 300)
-            Text(onboardingHealine2)
-                .font(.title)
-                .fontWeight(.bold)
-            Text(onboardingCopy2)
-                .font(.body)
-                .foregroundColor(.gray)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 30)
-                .padding(.top, 5)
+                .frame(height: 300)
+            VStack(alignment: .leading, spacing: 30) {
+                Text(onboardingHealine2)
+                    .font(.title)
+                    .fontWeight(.bold)
+                Text(onboardingCopy2)
+                    .font(.body)
+                    .foregroundColor(.gray)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text(creditText2)
+                    .font(.caption2)
+                    .foregroundColor(.gray)
+            }
+            .padding(.horizontal, 30)
         }
         .foregroundColor(themeMG.theme.mainColor)
     }
