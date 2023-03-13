@@ -7,93 +7,93 @@
 */
 
 /// MainAppView
-"Refuels" = "Refuels";
-"Other costs" = "Other costs";
-"Stats" = "Stats";
-"Settings" = "Settings";
-"Add Cost" = "Add Cost";
+"Refuels" = "Abastecimentos";
+"Other costs" = "Outros custos";
+"Stats" = "Estatísticas";
+"Settings" = "Configurações";
+"Add Cost" = "Adicionar custo";
 
 /// RefuelCardView
-"Refuel at: " = "Refuel at";
-"Since last" = "Refuel at";
+"Refuel at: " = "Abastecido em: ";
+"Since last" = "Desde o último";
 "km" = "km";
 "L" = "L";
-"Fuel" = "Fuel";
+"Fuel" = "Combustível";
 "€" = "€";
-"Payment" = "Payment";
-"than average:" = "than average:";
-"per liter:" = "per liter";
+"Payment" = "Pagamento";
+"than average:" = "mais que a média:";
+"per liter:" = "por litro:";
 "Total" = "Total";
-"Refuel at: " = "Refuel at: ";
+"Refuel at: " = "Abastecido em: ";
 
 /// AddRefuelView
-"Add refuel info" = "Add refuel info";
-"Kilometers added" = "Kilometers added";
-"Liters added" = "Liters added";
-"Refuel Cost" = "Refuel Cost";
-"Save" = "Save";
+"Add refuel info" = "Adicionar informações do abastecimento";
+"Kilometers added" = "Quilômetros adicionados";
+"Liters added" = "Litros adicionados";
+"Refuel Cost" = "Custo do abastecimento";
+"Save" = "Salvar";
 
 /// AddCostView
-"Add Vehicle Cost" = "Add Vehicle Cost";
-"Cost Name" = "Cost Name";
-"Cost type" = "Cost type";
-"Cost Value" = "Cost Value";
+"Add Vehicle Cost" = "Adicionar custo do veículo";
+"Cost Name" = "Nome do custo";
+"Cost type" = "Tipo de custo";
+"Cost Value" = "Valor do custo";
 
 /// GraphicsView
 "Total:" = "Total:";
-"Average consumption" = "Average consumption";
+"Average consumption" = "Consumo médio";
 "km/L" = "km/L";
-"Average spending" = "Average spending";
+"Average spending" = "Gasto médio";
 "km/€" = "km/€";
 "€" = "€";
-"Total fuel spending" = "Total fuel spending";
-"Average Fuel Price" = "Average Fuel Price";
+"Total fuel spending" = "Gasto total de combustível";
+"Average Fuel Price" = "Preço médio do combustível";
 "€/L" = "€/L";
-"Refuel cost" = "Refuel cost";
-"Price/liter" = "Price/liter";
-"Km/refuel" = "Km/refuel";
-"Date" = "Date";
-"KM/€" = "KM/€";
-"Last month" = "Last month";
-"Last year" = "Last year";
-"All time" = "All time";
-"Timeframe" = "Timeframe";
-"Graphic" = "Graphic";
+"Refuel cost" = "Custo do abastecimento";
+"Price/liter" = "Preço por litro";
+"Km/refuel" = "km por abastecimento";
+"Date" = "Data";
+"KM/€" = "km/€";
+"Last month" = "Mês passado";
+"Last year" = "Ano passado";
+"All time" = "Todo o tempo";
+"Timeframe" = "Período";
+"Graphic" = "Gráfico";
 
 /// OtherCostsView
-"Total Other Costs: " = "Total Other Costs: ";
+"Total Other Costs: " = "Total de outros custos: ";
 "€" = "€";
 
 /// SettingsView
-"In-App Purchases" = "In-App Purchases";
-"Remove ads" = "Remove ads";
-"Choose theme" = "Choose theme";
-"Export data" = "Export data";
-"App Settings" = "App Settings";
-"Share Mileage Tracker" = "";
-"Copy App Link" = "Copy App Link";
+"In-App Purchases" = "Compras dentro do app";
+"Remove ads" = "Remover anúncios";
+"Choose theme" = "Escolher tema";
+"Export data" = "Exportar dados";
+"App Settings" = "Configurações do app";
+"Share Mileage Tracker" = "Compartilhar Mileage Tracker";
+"Copy App Link" = "Copiar link do app";
 "Feedback" = "Feedback";
-"Rate us on the App Store" = "Rate us on the App Store";
-"Take a survey" = "Take a survey";
-"Talk to the developer" = "Talk to the developer";
-"Reset app" = "Reset app";
-"Delete all app data" = "Delete all app data";
-"Test data" = "Test data";
-"Load test data" = "Load test data";
-"Cannot send email" = "Cannot send email";
+"Rate us on the App Store" = "Avalie-nos na App Store";
+"Take a survey" = "Fazer uma pesquisa";
+"Talk to the developer" = "Falar com o desenvolvedor";
+"Reset app" = "Redefinir app";
+"Delete all app data" = "Excluir todos os dados do app";
+"Test data" = "Dados de teste";
+"Load test data" = "Carregar dados de teste";
+"Cannot send email" = "Não é possível enviar e-mail";
 
 /// Onboarding
-"Next" = "Next";
-"Dismiss" = "Dismiss";
-"Welcome to Fuellogue" = "Welcome to Fuellogue";
-"Monitor your motorbike's fuel costs, payments, and mileage all in one place. \n\nView your information on a sleek SwiftUI chart that updates in real-time as you add new data." = "Monitor your motorbike's fuel costs, payments, and mileage all in one place. \n\nView your information on a sleek SwiftUI chart that updates in real-time as you add new data.";
-"Understand, store and export your data" = "Understand, store and export your data";
-"Your data is securely stored on your device and can be easily exported to a spreadsheet. \n\nThe information you input is used to generate charts for different timeframes, allowing you to see how your bike expenses and mileage are trending. With our user-friendly interface, it's simple to understand whether you're spending more or less than the average." = "Your data is securely stored on your device and can be easily exported to a spreadsheet. \n\nThe information you input is used to generate charts for different timeframes, allowing you to see how your bike expenses and mileage are trending. With our user-friendly interface, it's simple to understand whether you're spending more or less than the average.";
-"New features coming" = "New features coming";
-"Fuellogue is a hobby project and completely free to use. While we plan to introduce premium features in the future, your basic account will always be free. \n\nWe welcome suggestions for new features that you would like to see, and we encourage you to check out our roadmap to see what we have planned." = "Fuellogue is a hobby project and completely free to use. While we plan to introduce premium features in the future, your basic account will always be free. \n\nWe welcome suggestions for new features that you would like to see, and we encourage you to check out our roadmap to see what we have planned.";
+"Next" = "Próximo";
+"Dismiss" = "Descartar";
+"Welcome to Fuellogue" = "Bem-vindo ao Fuellogue";
+"Monitor your motorbike's fuel costs, payments, and mileage all in one place. \n\nView your information on a sleek SwiftUI chart that updates in real-time as you add new data." = "Monitore os custos de combustível, pagamentos e quilometragem da sua motocicleta em um só lugar. \n\nVisualize suas informações em um gráfico elegante do SwiftUI que atualiza em tempo real conforme você adiciona novos dados.";
+"Understand, store and export your data" = "Entenda, armazene e exporte seus dados";
+"Your data is securely stored on your device and can be easily exported to a spreadsheet. \n\nThe information you input is used to generate charts for different timeframes, allowing you to see how your bike expenses and mileage are trending. With our user-friendly interface, it's simple to understand whether you're spending more or less than the average." = "Seus dados são armazenados com segurança em seu dispositivo e podem ser facilmente exportados para uma planilha. \n\nAs informações que você insere são usadas para gerar gráficos para diferentes períodos, permitindo que você veja como suas despesas e quilometragem da moto estão evoluindo. Com nossa interface amigável, é simples entender se você está gastando mais ou menos do que a média.";
+"New features coming" = "Novos recursos em breve";
+"Fuellogue is a hobby project and completely free to use. While we plan to introduce premium features in the future, your basic account will always be free. \n\nWe welcome suggestions for new features that you would like to see, and we encourage you to check out our roadmap to see what we have planned." = "Fuellogue é um projeto de hobby e totalmente gratuito para usar. Embora planejemos introduzir recursos premium no futuro, sua conta básica sempre será gratuita. \n\nAceitamos sugestões para novos recursos que você gostaria de ver e incentivamos você a verificar nosso roteiro para ver o que planejamos.";
 
 // Loading
-"Add your bike costs info" = "Add your bike costs info";
-"Fill our tank with your bike costs info and we'll create charts detailing how your bike's performing" = "Fill our tank with your bike costs info and we'll create charts detailing how your bike's performing";
-"Add your refuel info" = "Add your refuel info";
-"Fill our tank with your refuel info and we'll create charts detailing how your bike's performing" = "Fill our tank with your refuel info and we'll create charts detailing how your bike's performing";
+"Add your bike costs info" = "Adicione as informações de custos da sua moto";
+"Fill our tank with your bike costs info and we'll create charts detailing how your bike's performing" = "Preencha nosso tanque com as informações de custos da sua moto e criaremos gráficos detalhando como sua moto está se saindo";
+"Add your refuel info" = "Adicione as informações de reabastecimento";
+"Fill our tank with your refuel info and we'll create charts detailing how your bike's performing" = "Preencha nosso tanque com as informações de reabastecimento e criaremos gráficos detalhando como sua moto está se saindo";
