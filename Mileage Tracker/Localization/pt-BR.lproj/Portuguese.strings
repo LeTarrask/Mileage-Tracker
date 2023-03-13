@@ -6,70 +6,71 @@
   
 */
 
-// Main App View
+/// MainAppView
 "Refuels" = "Refuels";
 "Other costs" = "Other costs";
 "Stats" = "Stats";
 "Settings" = "Settings";
+"Add Cost" = "Add Cost";
 
-// Onboarding Views
-"Next" = "Next";
-"Dismiss" = "Dismiss";
-
-// Mileage View
-"Mileage Tracker" = "Mileage Tracker";
-"Dismiss" = "Dismiss";
-"Save" = "Save";
-
-// RefuelCardView
-"Refuel at: " = "Refuel at: ";
-"Total" = "Total";
+/// RefuelCardView
+"Refuel at: " = "Refuel at";
+"Since last" = "Refuel at";
 "km" = "km";
-"Since last" = "Since last";
-"Fuel" = "Fuel Added";
 "L" = "L";
-"Payment" = "Payment";
+"Fuel" = "Fuel";
 "€" = "€";
-"per liter:" = "per liter:";
+"Payment" = "Payment";
 "than average:" = "than average:";
+"per liter:" = "per liter";
+"Total" = "Total";
+"Refuel at: " = "Refuel at: ";
 
-// AddRefuel
+/// AddRefuelView
 "Add refuel info" = "Add refuel info";
-"Kilometers" = "Kilometers";
-"Liters" = "Liters";
+"Kilometers added" = "Kilometers added";
+"Liters added" = "Liters added";
 "Refuel Cost" = "Refuel Cost";
 "Save" = "Save";
 
-// GraphicsView
+/// AddCostView
+"Add Vehicle Cost" = "Add Vehicle Cost";
+"Cost Name" = "Cost Name";
+"Cost type" = "Cost type";
+"Cost Value" = "Cost Value";
+
+/// GraphicsView
 "Total:" = "Total:";
 "Average consumption" = "Average consumption";
 "km/L" = "km/L";
 "Average spending" = "Average spending";
 "km/€" = "km/€";
+"€" = "€";
 "Total fuel spending" = "Total fuel spending";
 "Average Fuel Price" = "Average Fuel Price";
-"€/l" = "€/l";
-
-// Graphic struct
+"€/L" = "€/L";
 "Refuel cost" = "Refuel cost";
 "Price/liter" = "Price/liter";
 "Km/refuel" = "Km/refuel";
+"Date" = "Date";
+"KM/€" = "KM/€";
+"Last month" = "Last month";
+"Last year" = "Last year";
+"All time" = "All time";
+"Timeframe" = "Timeframe";
+"Graphic" = "Graphic";
 
-// OtherCostsView
-"Other vehicle costs" = "Other vehicle costs";
+/// OtherCostsView
 "Total Other Costs: " = "Total Other Costs: ";
+"€" = "€";
 
-// AddCostView
-"Cost Name" = "Cost Name";
-"Cost type" = "Cost Type";
-"Cost Value" = "Cost Value";
-
-// SettingsView
+/// SettingsView
 "In-App Purchases" = "In-App Purchases";
 "Remove ads" = "Remove ads";
-"Export data" = "Export data";
 "Choose theme" = "Choose theme";
-"Share Mileage Tracker" = "Share Mileage Tracker";
+"Export data" = "Export data";
+"App Settings" = "App Settings";
+"Share Mileage Tracker" = "";
 "Copy App Link" = "Copy App Link";
 "Feedback" = "Feedback";
 "Rate us on the App Store" = "Rate us on the App Store";
@@ -79,7 +80,20 @@
 "Delete all app data" = "Delete all app data";
 "Test data" = "Test data";
 "Load test data" = "Load test data";
-"App Settings" = "App Settings";
+"Cannot send email" = "Cannot send email";
 
-// Mail template
-"Your App Feedback" = "Your App Feedback";
+/// Onboarding
+"Next" = "Next";
+"Dismiss" = "Dismiss";
+"Welcome to Fuellogue" = "Welcome to Fuellogue";
+"Monitor your motorbike's fuel costs, payments, and mileage all in one place. \n\nView your information on a sleek SwiftUI chart that updates in real-time as you add new data." = "Monitor your motorbike's fuel costs, payments, and mileage all in one place. \n\nView your information on a sleek SwiftUI chart that updates in real-time as you add new data.";
+"Understand, store and export your data" = "Understand, store and export your data";
+"Your data is securely stored on your device and can be easily exported to a spreadsheet. \n\nThe information you input is used to generate charts for different timeframes, allowing you to see how your bike expenses and mileage are trending. With our user-friendly interface, it's simple to understand whether you're spending more or less than the average." = "Your data is securely stored on your device and can be easily exported to a spreadsheet. \n\nThe information you input is used to generate charts for different timeframes, allowing you to see how your bike expenses and mileage are trending. With our user-friendly interface, it's simple to understand whether you're spending more or less than the average.";
+"New features coming" = "New features coming";
+"Fuellogue is a hobby project and completely free to use. While we plan to introduce premium features in the future, your basic account will always be free. \n\nWe welcome suggestions for new features that you would like to see, and we encourage you to check out our roadmap to see what we have planned." = "Fuellogue is a hobby project and completely free to use. While we plan to introduce premium features in the future, your basic account will always be free. \n\nWe welcome suggestions for new features that you would like to see, and we encourage you to check out our roadmap to see what we have planned.";
+
+// Loading
+"Add your bike costs info" = "Add your bike costs info";
+"Fill our tank with your bike costs info and we'll create charts detailing how your bike's performing" = "Fill our tank with your bike costs info and we'll create charts detailing how your bike's performing";
+"Add your refuel info" = "Add your refuel info";
+"Fill our tank with your refuel info and we'll create charts detailing how your bike's performing" = "Fill our tank with your refuel info and we'll create charts detailing how your bike's performing";
