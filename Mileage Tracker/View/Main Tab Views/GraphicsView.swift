@@ -65,7 +65,7 @@ struct GraphicsView: View {
         Picker(graphicString, selection: $graphType) {
             Text(refuelString).tag(GraphType.spending)
             Text(priceString).tag(GraphType.dates)
-            Text(kmRefuelString).tag(GraphType.km)
+            Text(kmPerEuro).tag(GraphType.km)
         }
         .pickerStyle(SegmentedPickerStyle())
         .padding(.horizontal, 20)
