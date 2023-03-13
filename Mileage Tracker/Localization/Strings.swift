@@ -101,7 +101,7 @@ let onboardingCopy2 = NSLocalizedString("All data is just stored on your device.
 let creditText2: LocalizedStringKey = "Photo: [Summer Chan](https://unsplash.com/@chansummerla?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) from [Unsplash](https://unsplash.com/pt-br/fotografias/nvxxjqAfWKo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
 let onboardingHealine3 = NSLocalizedString("Get extra features", comment: "")
 let onboardingCopy3 = NSLocalizedString("Fuellogue will always be free. We plan to add premium features in the future. Check the roadmap.", comment: "")
-let creditText3: LocalizedStringKey = "Photo: [Gijs Coolen](https://unsplash.com/@gijsparadijs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) from [Unsplash](https://unsplash.com/pt-br/fotografias/v5tvgLFvX70?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"  
+let creditText3: LocalizedStringKey = "Photo: [Gijs Coolen](https://unsplash.com/@gijsparadijs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) from [Unsplash](https://unsplash.com/pt-br/fotografias/v5tvgLFvX70?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
 
 // Loading
 let loadCostsHeadline = NSLocalizedString("Add your bike costs info", comment: "")

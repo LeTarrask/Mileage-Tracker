@@ -14,7 +14,9 @@ struct SalesOnboarding: View {
         VStack(alignment: .center) {
             Image("bike03")
                 .resizable()
+                .scaledToFill()
                 .frame(height: 300)
+                .clipped()
             VStack(alignment: .leading, spacing: 30) {
                 Text(onboardingHealine3)
                     .font(.title)

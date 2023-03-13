@@ -14,7 +14,9 @@ struct NewFeatureOnboarding: View {
         VStack(alignment: .center) {
             Image("bike02")
                 .resizable()
+                .scaledToFill()
                 .frame(height: 300)
+                .clipped()
             VStack(alignment: .leading, spacing: 30) {
                 Text(onboardingHealine2)
                     .font(.title)
