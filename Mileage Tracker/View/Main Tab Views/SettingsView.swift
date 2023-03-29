@@ -13,7 +13,7 @@ struct SettingsView: View {
 
     @State var chosenTheme: Theme = .theme1
 
-    @EnvironmentObject var tracker: MileageTracker
+    @StateObject var tracker = MileageTracker.shared
 
     @Environment(\.openURL) var openURL
 

@@ -10,7 +10,7 @@ import SwiftUI
 struct OtherCostsView: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
-    @EnvironmentObject var tracker: MileageTracker
+    @StateObject var tracker = MileageTracker.shared
 
     @State private var newCostData = OtherCost.Data()
 

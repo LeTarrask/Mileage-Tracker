@@ -11,7 +11,7 @@ import Combine
 struct AddRefuel: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
     
-    @EnvironmentObject var tracker: MileageTracker
+    @StateObject var tracker = MileageTracker.shared
     
     @State var refuelData = Refuel.Data()
     

@@ -21,6 +21,10 @@ extension MileageTracker {
     func loadTestData() {
         refuels = Refuel.data
         otherCosts = OtherCost.data
+        recalculateStats()
+        refuels.sort {
+            $0.creationDate < $1.creationDate
+        }
         save()
     }
 }

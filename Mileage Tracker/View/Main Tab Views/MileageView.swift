@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MileageView: View {
-    @EnvironmentObject var tracker: MileageTracker
+    @StateObject var tracker = MileageTracker.shared
     
     var body: some View {
         if tracker.refuels.isEmpty {
