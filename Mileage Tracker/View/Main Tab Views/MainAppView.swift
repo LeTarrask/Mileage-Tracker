@@ -80,13 +80,12 @@ struct MainAppView: View {
 struct MainAppTabs_Previews: PreviewProvider {
     static var previews: some View {
         MainAppView()
-            .environmentObject(MileageTracker.shared)
             .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
             .previewDisplayName("iPhone 14")
             .environment(\.locale, .init(identifier: "pt-BR"))
         
         MainAppView()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-            .previewDisplayName("iPhone 8")
+            .previewDevice(PreviewDevice(rawValue: "iPhone SE (3rd generation)"))
+            .previewDisplayName("iPhone SE (3rd generation)")
     }
 }

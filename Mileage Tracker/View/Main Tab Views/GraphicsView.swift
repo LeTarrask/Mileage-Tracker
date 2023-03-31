@@ -20,7 +20,7 @@ enum FilterType {
 struct GraphicsView: View {
     @StateObject var themeMG: ThemeManager = ThemeManager.shared
 
-    @EnvironmentObject var tracker: MileageTracker
+    @StateObject var tracker = MileageTracker.shared
 
     @State var showInterstitial = false
 
@@ -131,6 +131,10 @@ struct GraphicsView: View {
 
 struct GraphicsView_Previews: PreviewProvider {
     static var previews: some View {
-        GraphicsView().environmentObject(MileageTracker.shared)
+        GraphicsView()
+        
+        GraphicsView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone SE (3rd generation)"))
+            .previewDisplayName("iPhone SE (3rd generation)")
     }
 }

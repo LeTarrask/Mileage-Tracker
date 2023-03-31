@@ -43,5 +43,9 @@ struct MileageView: View {
 struct MileageView_Previews: PreviewProvider {
     static var previews: some View {
         MileageView()
+        
+        MileageView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone SE (3rd generation)"))
+            .previewDisplayName("iPhone SE (3rd generation)")
     }
 }
