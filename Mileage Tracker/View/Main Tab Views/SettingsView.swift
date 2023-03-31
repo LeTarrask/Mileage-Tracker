@@ -58,8 +58,8 @@ struct SettingsView: View {
             .listRowBackground(chosenTheme.backgroundColor)
 
             Section(header: Text(feedback)) {
-                Button(rateUs) { openURL(rateLink) }
-                Button(survey) { openURL(surveyLink) }
+//                Button(rateUs) { openURL(rateLink) }
+//                Button(survey) { openURL(surveyLink) }
                 Button(talkToUs) {
                     MFMailComposeViewController.canSendMail() ? isShowingMailView.toggle() : alertNoMail.toggle()
                 }
