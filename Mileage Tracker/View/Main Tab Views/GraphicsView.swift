@@ -33,7 +33,7 @@ struct GraphicsView: View {
             if tracker.refuels.isEmpty {
                 LoadingView(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
             } else {
-                VStack(alignment: .center) {
+                VStack(alignment: .center, spacing: 0) {
                     AveragesBoard()
 
                     ZStack {
@@ -113,7 +113,7 @@ struct GraphicsView: View {
                     .symbolSize(60)
                     
                 }
-            }.padding(.horizontal, 20)
+            }.padding([.horizontal, .top], 20)
         }.padding()
     }
 
