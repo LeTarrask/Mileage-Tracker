@@ -26,83 +26,29 @@ enum Theme: Int, Pickable {
     }
 
     case theme1, theme2, theme3, theme4
-
+    
     var mainColor: Color {
-        switch self {
-        case .theme1:
-            return Color("mainColor")
-        case .theme2:
-            return Color("mainColor_0")
-        case .theme3:
-            return Color("mainColor_2")
-        case .theme4:
-            return Color("mainColor_1")
-        }
+        colors["mainColor"]!
     }
 
     var backgroundColor: Color {
-        switch self {
-        case .theme1:
-            return Color("backgroundColor")
-        case .theme2:
-            return Color("backgroundColor_0")
-        case .theme3:
-            return Color("backgroundColor_2")
-        case .theme4:
-            return Color("backgroundColor_1")
-        }
+        colors["backgroundColor"]!
     }
 
     var secondaryColor: Color {
-        switch self {
-        case .theme1:
-            return Color("secondaryColor")
-        case .theme2:
-            return Color("secondaryColor_0")
-        case .theme3:
-            return Color("secondaryColor_2")
-        case .theme4:
-            return Color("secondaryColor_1")
-        }
+        colors["secondaryColor"]!
     }
 
     var highlightColor: Color {
-        switch self {
-        case .theme1:
-            return Color("highlightColor")
-        case .theme2:
-            return Color("highlightColor_0")
-        case .theme3:
-            return Color("highlightColor_2")
-        case .theme4:
-            return Color("highlightColor_1")
-        }
+        colors["highlightColor"]!
     }
 
     var titleTextColor: Color {
-        switch self {
-        case .theme1:
-            return Color(UIColor.systemGray)
-        case .theme2:
-            return Color(UIColor.systemGray4)
-        case .theme3:
-            return Color(UIColor.systemGray4)
-        case .theme4:
-            return Color(UIColor.systemGray4)
-        }
+        colors["titleTextColor"]!
     }
 
     var subtitleTextColor: Color {
-        switch self {
-        case .theme1:
-            return Color(UIColor.systemGray3)
-        case .theme2:
-            return Color(UIColor.systemGray)
-        case .theme3:
-            return Color(UIColor.systemGray)
-        case .theme4:
-            return Color(UIColor.systemGray)
-        }
+        colors["subtitleTextColor"]!
     }
 
     var gradient1: Gradient {
@@ -112,11 +58,45 @@ enum Theme: Int, Pickable {
     var gradient2: Gradient {
         Gradient(colors: [backgroundColor, highlightColor])
     }
-}
 
-//var themeDict1 = [
-//    "mainColor": Color("mainColor"),
-//    "backgroundColor": Color("backgroundColor"),
-//    "secondaryColor": Color("secondaryColor"),
-//    "highlightColor": Color("highlightColor")
-//]
+    private var colors: [String: Color] {
+        switch self {
+        case .theme1:
+            return [
+                "mainColor": Color("mainColor"),
+                "backgroundColor": Color("backgroundColor"),
+                "secondaryColor": Color("secondaryColor"),
+                "highlightColor": Color("highlightColor"),
+                "titleTextColor": Color(UIColor.systemGray),
+                "subtitleTextColor": Color(UIColor.systemGray3)
+            ]
+        case .theme2:
+            return [
+                "mainColor": Color("mainColor_0"),
+                "backgroundColor": Color("backgroundColor_0"),
+                "secondaryColor": Color("secondaryColor_0"),
+                "highlightColor": Color("highlightColor_0"),
+                "titleTextColor": Color(UIColor.systemGray4),
+                "subtitleTextColor": Color(UIColor.systemGray)
+            ]
+        case .theme3:
+            return [
+                "mainColor": Color("mainColor_2"),
+                "backgroundColor": Color("backgroundColor_2"),
+                "secondaryColor": Color("secondaryColor_2"),
+                "highlightColor": Color("highlightColor_2"),
+                "titleTextColor": Color(UIColor.systemGray4),
+                "subtitleTextColor": Color(UIColor.systemGray)
+            ]
+        case .theme4:
+            return [
+                "mainColor": Color("mainColor_1"),
+                "backgroundColor": Color("backgroundColor_1"),
+                "secondaryColor": Color("secondaryColor_1"),
+                "highlightColor": Color("highlightColor_1"),
+                "titleTextColor": Color(UIColor.systemGray4),
+                "subtitleTextColor": Color(UIColor.systemGray)
+            ]
+        }
+    }
+}
