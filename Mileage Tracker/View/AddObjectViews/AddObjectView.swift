@@ -22,11 +22,12 @@ struct AddObjectView: View {
             Text("Add new cost")
                 .font(.largeTitle)
                 .fontWeight(.black)
-                .foregroundColor(themeMG.theme.backgroundColor)
+                .foregroundColor(themeMG.theme.mainColor)
 
             Picker("Type of Cost", selection: $selection) {
                 ForEach(CostType.allCases) { cost in
                     Text(cost.rawValue.capitalized)
+                        .foregroundColor(themeMG.theme.mainColor)
                 }
             }
             .pickerStyle(.segmented)

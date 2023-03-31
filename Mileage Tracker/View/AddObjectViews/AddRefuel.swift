@@ -52,11 +52,11 @@ struct AddRefuel: View {
                             .submitLabel(.done)
                             .keyboardType(.decimalPad)
                     }
-                }.listRowBackground(Color.clear)
+                }
                 
                 Button(saveLabel) {
                     saveRefuel()
-                }.buttonStyle(ColorButtonStyle()).listRowBackground(Color.clear)
+                }.buttonStyle(ColorButtonStyle())
             }
                 .onSubmit {
                     switch focusedField {
@@ -73,7 +73,7 @@ struct AddRefuel: View {
         }
         .foregroundColor(themeMG.theme.mainColor)
         .scrollContentBackground(.hidden)
-        .background(themeMG.theme.backgroundColor)
+        .background(themeMG.theme.secondaryColor)
     }
     
     func saveRefuel() {

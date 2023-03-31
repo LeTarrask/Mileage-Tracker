@@ -99,3 +99,10 @@ enum Theme: Int, Pickable {
         Gradient(colors: [backgroundColor, highlightColor])
     }
 }
+
+var themeDict1 = [
+    "mainColor": Color("mainColor"),
+    "backgroundColor": Color("backgroundColor"),
+    "secondaryColor": Color("secondaryColor"),
+    "highlightColor": Color("highlightColor"),
+]
