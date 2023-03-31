@@ -18,16 +18,20 @@ enum Theme: Int, Pickable {
             return "Theme 1"
         case .theme2:
             return "Theme 2"
+        case .theme3:
+            return "Theme 3"
         }
     }
 
-    case theme1, theme2
+    case theme1, theme2, theme3
 
     var mainColor: Color {
         switch self {
         case .theme1:
             return Color("mainColor")
         case .theme2:
+            return Color("mainColor_1")
+        case .theme3:
             return Color("mainColor_2")
         }
     }
@@ -37,6 +41,8 @@ enum Theme: Int, Pickable {
         case .theme1:
             return Color("backgroundColor")
         case .theme2:
+            return Color("backgroundColor_1")
+        case .theme3:
             return Color("backgroundColor_2")
         }
     }
@@ -46,6 +52,8 @@ enum Theme: Int, Pickable {
         case .theme1:
             return Color("secondaryColor")
         case .theme2:
+            return Color("secondaryColor_1")
+        case .theme3:
             return Color("secondaryColor_2")
         }
     }
@@ -55,6 +63,8 @@ enum Theme: Int, Pickable {
         case .theme1:
             return Color("highlightColor")
         case .theme2:
+            return Color("highlightColor_1")
+        case .theme3:
             return Color("highlightColor_2")
         }
     }
@@ -65,6 +75,8 @@ enum Theme: Int, Pickable {
             return Color(UIColor.systemGray)
         case .theme2:
             return Color(UIColor.systemGray4)
+        case .theme3:
+            return Color(UIColor.systemGray4)
         }
     }
 
@@ -73,6 +85,8 @@ enum Theme: Int, Pickable {
         case .theme1:
             return Color(UIColor.systemGray3)
         case .theme2:
+            return Color(UIColor.systemGray)
+        case .theme3:
             return Color(UIColor.systemGray)
         }
     }
