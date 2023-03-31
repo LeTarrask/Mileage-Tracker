@@ -30,15 +30,15 @@ struct MainAppView: View {
     func mainSwitcher() -> some View {
         switch viewRouter.currentPage {
         case .mileage:
-            MileageView().environmentObject(tracker)
+            MileageView()
         case .othercosts:
-            OtherCostsView().environmentObject(tracker)
+            OtherCostsView()
         case .addobject:
-            AddObjectView().environmentObject(tracker)
+            AddObjectView()
         case .graphics:
-            GraphicsView().environmentObject(tracker)
+            GraphicsView()
         case .settings:
-            SettingsView().environmentObject(tracker)
+            SettingsView()
         }
     }
     
