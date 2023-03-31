@@ -33,6 +33,6 @@ struct TabBarIcon: View {
             viewRouter.currentPage = assignedPage
         }
         .foregroundColor(viewRouter.currentPage == assignedPage ?
-                            themeMG.theme.secondaryColor : themeMG.theme.highlightColor)
+                            themeMG.theme.mainColor : themeMG.theme.highlightColor)
     }
 }
