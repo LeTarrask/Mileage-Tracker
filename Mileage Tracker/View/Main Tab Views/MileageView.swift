@@ -17,16 +17,21 @@ struct MileageView: View {
             LoadingView(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
         } else {
             // MARK: - Refuels list
-            List {
-                ForEach(tracker.refuels.reversed(), id: \.self) { refuel in
-                    RefuelCardView(refuel: refuel, average: tracker.averagePrice)
+            ZStack {
+                themeMG.theme.backgroundColor
+                
+                List {
+                    ForEach(tracker.refuels.reversed(), id: \.self) { refuel in
+                        RefuelCardView(refuel: refuel, average: tracker.averagePrice)
+                            .listRowBackground(Color.clear)
+                    }
+                    .onDelete(perform: removeItem)
+                    .animation(.easeInOut, value: 5)
+                    .listRowSeparator(.hidden)
                 }
-                .onDelete(perform: removeItem)
-                .animation(.easeInOut, value: 5)
-                .listRowSeparator(.hidden)
+                .scrollContentBackground(.hidden)
+                .background(themeMG.theme.secondaryColor)
             }
-            .listStyle(PlainListStyle())
-            .background(themeMG.theme.secondaryColor)
         }
     }
     

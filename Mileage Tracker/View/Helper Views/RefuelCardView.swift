@@ -93,7 +93,8 @@ struct RefuelCardView: View {
             .foregroundColor(themeMG.theme.mainColor)
             .padding()
             .background(themeMG.theme.backgroundColor.cornerRadius(30))
-        }.background(themeMG.theme.secondaryColor)
+        }
+        .background(themeMG.theme.secondaryColor)
     }
     
     @ViewBuilder
@@ -101,7 +102,7 @@ struct RefuelCardView: View {
         if refuel.pricePerLiter > tracker.averagePrice {
             Image(systemName: "triangle.fill")
                 .foregroundColor(.red)
-                .rotationEffect(Angle(degrees: 180))// price paid was more than average
+                .rotationEffect(Angle(degrees: 180)) // price paid was more than average
         } else {
             Image(systemName: "triangle.fill")
                 .foregroundColor(.green) // price paid was less than average
