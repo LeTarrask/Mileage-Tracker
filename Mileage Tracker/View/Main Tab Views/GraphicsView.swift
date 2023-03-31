@@ -36,9 +36,19 @@ struct GraphicsView: View {
                 VStack(alignment: .center) {
                     AveragesBoard()
 
-                    timeframeSelector()
-
-                    graphicSelector()
+                    ZStack {
+                        themeMG.theme.backgroundColor
+                            .cornerRadius(25)
+                        
+                        VStack {
+                            timeframeSelector()
+                            
+                            graphicSelector()
+                        }
+                        .padding(20)
+                    }
+                    .padding(20)
+                    .fixedSize(horizontal: false, vertical: true)
 
                     graphicGenerator()
                 }
@@ -101,8 +111,9 @@ struct GraphicsView: View {
                     .interpolationMethod(.catmullRom)
                     .symbol(Circle().strokeBorder(lineWidth: 2.0))
                     .symbolSize(60)
+                    
                 }
-            }
+            }.padding(.horizontal, 20)
         }.padding()
     }
 
