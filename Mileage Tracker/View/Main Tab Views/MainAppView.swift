@@ -87,5 +87,9 @@ struct MainAppTabs_Previews: PreviewProvider {
         MainAppView()
             .previewDevice(PreviewDevice(rawValue: "iPhone SE (3rd generation)"))
             .previewDisplayName("iPhone SE (3rd generation)")
+        
+        MainAppView()
+            .previewDevice(PreviewDevice(rawValue: "iPad (9th generation)"))
+            .previewDisplayName("iPad (9th generation)")
     }
 }
