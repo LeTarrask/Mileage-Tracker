@@ -44,14 +44,18 @@ struct SettingsView: View {
 
             Section(header: Text(chooseTheme)) {
                 EnumPicker(selection: $chosenTheme, label: Text("Color Theme"))
-            }.onChange(of: chosenTheme, perform: { value in
+            }
+            
+            .onChange(of: chosenTheme, perform: { value in
                 ThemeManager.shared.applyTheme(theme: value)
                 print("New theme chosen: " + value.description)
             })
+            .listRowBackground(chosenTheme.backgroundColor)
 
             Section(header: Text(shareTracker)) {
                 Button(copyAppLink) { openURL(appLink) }
             }
+            .listRowBackground(chosenTheme.backgroundColor)
 
             Section(header: Text(feedback)) {
                 Button(rateUs) { openURL(rateLink) }
@@ -60,12 +64,15 @@ struct SettingsView: View {
                     MFMailComposeViewController.canSendMail() ? isShowingMailView.toggle() : alertNoMail.toggle()
                 }
             }
+            .listRowBackground(chosenTheme.backgroundColor)
 
             Section(header: Text(resetApp)) {
                 Button(deleteData) {
                     tracker.deleteData()
                 }
             }
+            .listRowBackground(chosenTheme.backgroundColor)
+            
             // Comment this section to publish app
 #if targetEnvironment(simulator)
             Section(header: Text(testData)) {
@@ -73,6 +80,7 @@ struct SettingsView: View {
                     tracker.loadTestData()
                 }
             }
+            .listRowBackground(chosenTheme.backgroundColor)
 #endif
         }
         .onAppear {
