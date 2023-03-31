@@ -82,6 +82,7 @@ class MileageTracker: ObservableObject {
                 DispatchQueue.main.async {
                     self?.otherCosts = OtherCost.data
                     print("recosted")
+                    self?.recalculateStats()
                 }
                 #endif
                 return
