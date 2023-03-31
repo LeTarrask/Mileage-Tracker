@@ -24,7 +24,7 @@ struct RefuelCardView: View {
                     Text(refuelAtString).fontWeight(.bold) +
                     Text(dateToString(date: refuel.creationDate)).fontWeight(.light)
                 }.font(.caption)
-
+                
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         Image("bike")
@@ -36,7 +36,7 @@ struct RefuelCardView: View {
                                 .fontWeight(.bold)
                             Text(" " + kmLabel)
                         }
-                            
+                        
                         Text(sinceLast)
                             .font(.caption)
                             .fontWeight(.light)
@@ -78,7 +78,7 @@ struct RefuelCardView: View {
                         }.foregroundColor(themeMG.theme.highlightColor)
                         
                         Spacer()
-                           
+                        
                         HStack {
                             Text(refuel.pricePerLiter.clean)
                                 .fontWeight(.bold)
@@ -93,7 +93,7 @@ struct RefuelCardView: View {
             .foregroundColor(themeMG.theme.mainColor)
             .padding()
             .background(themeMG.theme.backgroundColor.cornerRadius(30))
-        }
+        }.background(themeMG.theme.secondaryColor)
     }
     
     @ViewBuilder

@@ -44,6 +44,7 @@ struct GraphicsView: View {
                 }
             }
         }
+        .background(themeMG.theme.secondaryColor)
     }
 
     // MARK: - Averages display

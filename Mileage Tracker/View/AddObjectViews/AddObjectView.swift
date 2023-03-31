@@ -22,7 +22,7 @@ struct AddObjectView: View {
             Text("Add new cost")
                 .font(.largeTitle)
                 .fontWeight(.black)
-                .foregroundColor(themeMG.theme.mainColor)
+                .foregroundColor(themeMG.theme.backgroundColor)
 
             Picker("Type of Cost", selection: $selection) {
                 ForEach(CostType.allCases) { cost in
@@ -38,7 +38,7 @@ struct AddObjectView: View {
             case .other:
                 AddCostView()
             }
-        }
+        }.background(themeMG.theme.secondaryColor)
     }
 }
 

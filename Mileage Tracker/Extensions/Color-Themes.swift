@@ -78,7 +78,7 @@ enum Theme: Int, Pickable {
     }
 
     var gradient1: Gradient {
-        Gradient(colors: [secondaryColor, mainColor])
+        Gradient(colors: [highlightColor, mainColor])
     }
 
     var gradient2: Gradient {

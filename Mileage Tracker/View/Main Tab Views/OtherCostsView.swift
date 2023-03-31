@@ -68,6 +68,7 @@ struct OtherCostsView: View {
                     .padding(.horizontal)
                 }
     //            if !tracker.paidApp { Banner() }
+                .background(themeMG.theme.secondaryColor)
             }
             
         }
@@ -76,6 +77,6 @@ struct OtherCostsView: View {
 
 struct OtherCostsView_Previews: PreviewProvider {
     static var previews: some View {
-        OtherCostsView().environmentObject(MileageTracker.shared)
+        OtherCostsView()
     }
 }

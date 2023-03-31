@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MileageView: View {
     @StateObject var tracker = MileageTracker.shared
+    @StateObject var themeMG: ThemeManager = ThemeManager.shared
     
     var body: some View {
         if tracker.refuels.isEmpty {
@@ -25,6 +26,7 @@ struct MileageView: View {
                 .listRowSeparator(.hidden)
             }
             .listStyle(PlainListStyle())
+            .background(themeMG.theme.secondaryColor)
         }
     }
     
@@ -35,6 +37,6 @@ struct MileageView: View {
 
 struct MileageView_Previews: PreviewProvider {
     static var previews: some View {
-        MileageView().environmentObject(MileageTracker.shared)
+        MileageView()
     }
 }

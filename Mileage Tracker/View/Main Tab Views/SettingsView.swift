@@ -75,7 +75,12 @@ struct SettingsView: View {
             }
 #endif
         }
+        .onAppear {
+            chosenTheme = themeMG.theme
+        }
         .foregroundColor(themeMG.theme.mainColor)
+        .background(themeMG.theme.secondaryColor)
+        .scrollContentBackground(.hidden)
         .sheet(isPresented: $isShowingMailView) {
             MailView(isShowing: $isShowingMailView, result: $result)
         }

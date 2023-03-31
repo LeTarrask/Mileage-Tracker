@@ -67,7 +67,10 @@ struct AddCostView: View {
                         focusedField = nil
                     }
                 }
-        }.foregroundColor(themeMG.theme.mainColor)
+        }
+        .foregroundColor(themeMG.theme.mainColor)
+        .scrollContentBackground(.hidden)
+        .background(themeMG.theme.secondaryColor)
     }
     
     func saveCost() {
