@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7985561B24C8475E00544777"
-               BuildableName = "Mileage Tracker.app"
-               BlueprintName = "Mileage Tracker"
-               ReferencedContainer = "container:Mileage Tracker.xcodeproj">
+               BuildableName = "Fuel Logue.app"
+               BlueprintName = "Fuel Logue"
+               ReferencedContainer = "container:Fuel Logue.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7985562C24C8476000544777"
-               BuildableName = "Mileage TrackerTests.xctest"
-               BlueprintName = "Mileage TrackerTests"
-               ReferencedContainer = "container:Mileage Tracker.xcodeproj">
+               BuildableName = "Fuel LogueTests.xctest"
+               BlueprintName = "Fuel LogueTests"
+               ReferencedContainer = "container:Fuel Logue.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7985561B24C8475E00544777"
-            BuildableName = "Mileage Tracker.app"
-            BlueprintName = "Mileage Tracker"
-            ReferencedContainer = "container:Mileage Tracker.xcodeproj">
+            BuildableName = "Fuel Logue.app"
+            BlueprintName = "Fuel Logue"
+            ReferencedContainer = "container:Fuel Logue.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7985561B24C8475E00544777"
-            BuildableName = "Mileage Tracker.app"
-            BlueprintName = "Mileage Tracker"
-            ReferencedContainer = "container:Mileage Tracker.xcodeproj">
+            BuildableName = "Fuel Logue.app"
+            BlueprintName = "Fuel Logue"
+            ReferencedContainer = "container:Fuel Logue.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

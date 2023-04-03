@@ -27,7 +27,7 @@
 		796C48AC2993E15400797FB7 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48AB2993E15400797FB7 /* Strings.swift */; };
 		796C48AE2994025100797FB7 /* MileageTracker+CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48AD2994025100797FB7 /* MileageTracker+CSV.swift */; };
 		796C48B02994028600797FB7 /* MileageTracker+FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48AF2994028600797FB7 /* MileageTracker+FakeData.swift */; };
-		7985562024C8475E00544777 /* MileageTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985561F24C8475E00544777 /* MileageTrackerApp.swift */; };
+		7985562024C8475E00544777 /* FuelLogueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985561F24C8475E00544777 /* FuelLogueApp.swift */; };
 		7985562224C8475E00544777 /* MileageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7985562124C8475E00544777 /* MileageView.swift */; };
 		7985562424C8476000544777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7985562324C8476000544777 /* Assets.xcassets */; };
 		7985562724C8476000544777 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7985562624C8476000544777 /* Preview Assets.xcassets */; };
@@ -92,13 +92,13 @@
 		796C48AB2993E15400797FB7 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		796C48AD2994025100797FB7 /* MileageTracker+CSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MileageTracker+CSV.swift"; sourceTree = "<group>"; };
 		796C48AF2994028600797FB7 /* MileageTracker+FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MileageTracker+FakeData.swift"; sourceTree = "<group>"; };
-		7985561C24C8475E00544777 /* Mileage Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mileage Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7985561F24C8475E00544777 /* MileageTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTrackerApp.swift; sourceTree = "<group>"; };
+		7985561C24C8475E00544777 /* Fuel Logue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fuel Logue.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7985561F24C8475E00544777 /* FuelLogueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelLogueApp.swift; sourceTree = "<group>"; };
 		7985562124C8475E00544777 /* MileageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageView.swift; sourceTree = "<group>"; };
 		7985562324C8476000544777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7985562624C8476000544777 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7985562824C8476000544777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7985562D24C8476000544777 /* Mileage TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mileage TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7985562D24C8476000544777 /* Fuel LogueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fuel LogueTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7985563124C8476000544777 /* MileageTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTrackerTests.swift; sourceTree = "<group>"; };
 		7985563324C8476000544777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7985563C24C8476000544777 /* Mileage_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mileage_TrackerUITests.swift; sourceTree = "<group>"; };
@@ -221,8 +221,8 @@
 		7985561D24C8475E00544777 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7985561C24C8475E00544777 /* Mileage Tracker.app */,
-				7985562D24C8476000544777 /* Mileage TrackerTests.xctest */,
+				7985561C24C8475E00544777 /* Fuel Logue.app */,
+				7985562D24C8476000544777 /* Fuel LogueTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				7985562824C8476000544777 /* Info.plist */,
-				7985561F24C8475E00544777 /* MileageTrackerApp.swift */,
+				7985561F24C8475E00544777 /* FuelLogueApp.swift */,
 				7985564F24C8609000544777 /* View */,
 				7925077625EA639B007315ED /* ViewModel */,
 				7985564E24C8608800544777 /* Model */,
@@ -336,9 +336,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7985561B24C8475E00544777 /* Mileage Tracker */ = {
+		7985561B24C8475E00544777 /* Fuel Logue */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7985564124C8476000544777 /* Build configuration list for PBXNativeTarget "Mileage Tracker" */;
+			buildConfigurationList = 7985564124C8476000544777 /* Build configuration list for PBXNativeTarget "Fuel Logue" */;
 			buildPhases = (
 				59DC9A6DEB97CD62A652D124 /* [CP] Check Pods Manifest.lock */,
 				7985561824C8475E00544777 /* Sources */,
@@ -350,14 +350,14 @@
 			);
 			dependencies = (
 			);
-			name = "Mileage Tracker";
+			name = "Fuel Logue";
 			productName = "Mileage Tracker";
-			productReference = 7985561C24C8475E00544777 /* Mileage Tracker.app */;
+			productReference = 7985561C24C8475E00544777 /* Fuel Logue.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7985562C24C8476000544777 /* Mileage TrackerTests */ = {
+		7985562C24C8476000544777 /* Fuel LogueTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7985564424C8476000544777 /* Build configuration list for PBXNativeTarget "Mileage TrackerTests" */;
+			buildConfigurationList = 7985564424C8476000544777 /* Build configuration list for PBXNativeTarget "Fuel LogueTests" */;
 			buildPhases = (
 				7985562924C8476000544777 /* Sources */,
 				7985562A24C8476000544777 /* Frameworks */,
@@ -368,9 +368,9 @@
 			dependencies = (
 				7985562F24C8476000544777 /* PBXTargetDependency */,
 			);
-			name = "Mileage TrackerTests";
+			name = "Fuel LogueTests";
 			productName = "Mileage TrackerTests";
-			productReference = 7985562D24C8476000544777 /* Mileage TrackerTests.xctest */;
+			productReference = 7985562D24C8476000544777 /* Fuel LogueTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -391,7 +391,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7985561724C8475E00544777 /* Build configuration list for PBXProject "Mileage Tracker" */;
+			buildConfigurationList = 7985561724C8475E00544777 /* Build configuration list for PBXProject "Fuel Logue" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -405,8 +405,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7985561B24C8475E00544777 /* Mileage Tracker */,
-				7985562C24C8476000544777 /* Mileage TrackerTests */,
+				7985561B24C8475E00544777 /* Fuel Logue */,
+				7985562C24C8476000544777 /* Fuel LogueTests */,
 			);
 		};
 /* End PBXProject section */
@@ -514,7 +514,7 @@
 				7913791A25B5FA2000871ECE /* SettingsView.swift in Sources */,
 				7985564D24C84D8300544777 /* AddRefuel.swift in Sources */,
 				798C7A8A29B772E100E69845 /* AddObjectView.swift in Sources */,
-				7985562024C8475E00544777 /* MileageTrackerApp.swift in Sources */,
+				7985562024C8475E00544777 /* FuelLogueApp.swift in Sources */,
 				79E4CAD0260CE0800061C9E0 /* RefuelCardView.swift in Sources */,
 				796C48AA2993D77400797FB7 /* AveragesBoard.swift in Sources */,
 				7913788C25B1F24100871ECE /* Double+String.swift in Sources */,
@@ -540,7 +540,7 @@
 /* Begin PBXTargetDependency section */
 		7985562F24C8476000544777 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7985561B24C8475E00544777 /* Mileage Tracker */;
+			target = 7985561B24C8475E00544777 /* Fuel Logue */;
 			targetProxy = 7985562E24C8476000544777 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -749,7 +749,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mileage Tracker.app/Mileage Tracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fuel Logue.app/Fuel Logue";
 			};
 			name = Debug;
 		};
@@ -771,14 +771,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mileage Tracker.app/Mileage Tracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fuel Logue.app/Fuel Logue";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7985561724C8475E00544777 /* Build configuration list for PBXProject "Mileage Tracker" */ = {
+		7985561724C8475E00544777 /* Build configuration list for PBXProject "Fuel Logue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7985563F24C8476000544777 /* Debug */,
@@ -787,7 +787,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7985564124C8476000544777 /* Build configuration list for PBXNativeTarget "Mileage Tracker" */ = {
+		7985564124C8476000544777 /* Build configuration list for PBXNativeTarget "Fuel Logue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7985564224C8476000544777 /* Debug */,
@@ -796,7 +796,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7985564424C8476000544777 /* Build configuration list for PBXNativeTarget "Mileage TrackerTests" */ = {
+		7985564424C8476000544777 /* Build configuration list for PBXNativeTarget "Fuel LogueTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7985564524C8476000544777 /* Debug */,

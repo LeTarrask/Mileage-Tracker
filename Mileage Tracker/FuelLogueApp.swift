@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct MileageTrackerApp: App {
+struct FuelLogueApp: App {
     @ObservedObject var onboardRouter: OnboardingRouter = OnboardingRouter()
 
     @State var onboarding: Bool = false
