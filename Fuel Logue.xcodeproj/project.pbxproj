@@ -686,6 +686,7 @@
 				DEVELOPMENT_TEAM = L2BC5TCSR5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Mileage Tracker/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Fuel Logue";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -714,6 +715,7 @@
 				DEVELOPMENT_TEAM = L2BC5TCSR5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Mileage Tracker/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Fuel Logue";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
