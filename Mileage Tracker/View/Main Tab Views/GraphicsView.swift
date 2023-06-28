@@ -18,7 +18,7 @@ enum FilterType {
 }
 
 struct GraphicsView: View {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
 
     @StateObject var tracker = MileageTracker.shared
 
@@ -37,7 +37,7 @@ struct GraphicsView: View {
                     AveragesBoard()
 
                     ZStack {
-                        themeMG.theme.backgroundColor
+                        settingsMG.theme.backgroundColor
                             .cornerRadius(25)
                         
                         VStack {
@@ -54,7 +54,7 @@ struct GraphicsView: View {
                 }
             }
         }
-        .background(themeMG.theme.secondaryColor)
+        .background(settingsMG.theme.secondColor)
     }
 
     // MARK: - Averages display
@@ -75,8 +75,8 @@ struct GraphicsView: View {
         // MARK: - Graphics Selector
         Picker(graphicString, selection: $graphType) {
             Text(refuelString).tag(GraphType.spending)
-            Text(priceString).tag(GraphType.dates)
-            Text(kmPerEuro).tag(GraphType.km)
+            Text("Price/"+settingsMG.chosenVolume).tag(GraphType.dates)
+            Text(settingsMG.chosenDistance+"/"+settingsMG.chosenCurrency).tag(GraphType.km)
         }
         .pickerStyle(SegmentedPickerStyle())
         .padding(.horizontal, 20)
@@ -86,7 +86,7 @@ struct GraphicsView: View {
     func graphicGenerator() -> some View {
         // MARK: - Graphic
         ZStack {
-            themeMG.theme.backgroundColor
+            settingsMG.theme.backgroundColor
                 .cornerRadius(25)
 
             Chart(filterBy(timeframe), id: \.id) { refuel in
@@ -96,17 +96,17 @@ struct GraphicsView: View {
                             y: .value(refuelString, refuel.money)
                     )
                     .accessibilityValue(refuel.money.clean)
-                    .foregroundStyle(themeMG.theme.mainColor)
+                    .foregroundStyle(settingsMG.theme.mainColor)
                 case .dates:
                     PointMark(x: .value(dateLocalizedString, refuel.creationDate),
                               y: .value(priceString, refuel.pricePerLiter)
                     )
-                    .foregroundStyle(themeMG.theme.mainColor)
+                    .foregroundStyle(settingsMG.theme.mainColor)
                 case .km:
                     LineMark(x: .value(dateLocalizedString, refuel.creationDate),
                              y: .value(averageSpenValue, refuel.kmAdded/refuel.money)
                     )
-                    .foregroundStyle(themeMG.theme.mainColor)
+                    .foregroundStyle(settingsMG.theme.mainColor)
                     .lineStyle(StrokeStyle(lineWidth: 2.0))
                     .interpolationMethod(.catmullRom)
                     .symbol(Circle().strokeBorder(lineWidth: 2.0))

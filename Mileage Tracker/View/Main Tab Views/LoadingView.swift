@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoadingView: View {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
     
     var headline: String
     var paragraph: String
@@ -21,7 +21,7 @@ struct LoadingView: View {
                                  curveHeight: 10,
                                  curveLength: 2.5,
                                  speed: 1,
-                                 color: themeMG.theme.mainColor)
+                                 color: settingsMG.theme.mainColor)
                 VStack {
                     Text(headline)
                         .fontWeight(.black)

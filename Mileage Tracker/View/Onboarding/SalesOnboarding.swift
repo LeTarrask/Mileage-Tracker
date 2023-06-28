@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SalesOnboarding: View {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
 
     var body: some View {
         VStack(alignment: .center) {
@@ -31,7 +31,7 @@ struct SalesOnboarding: View {
             }
             .padding(.horizontal, 30)
         }
-        .foregroundColor(themeMG.theme.mainColor)
+        .foregroundColor(settingsMG.theme.mainColor)
     }
 }
 

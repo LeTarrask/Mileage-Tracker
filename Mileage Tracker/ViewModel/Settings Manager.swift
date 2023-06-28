@@ -5,19 +5,27 @@
 //  Created by Alex Luna on 25/03/2021.
 //
 
-import Foundation
+import SwiftUI
 
-class ThemeManager: ObservableObject {
-    static let shared = ThemeManager()
+class SettingsManager: ObservableObject {
+    static let shared = SettingsManager()
 
     @Published var theme: Theme = Theme.theme1
+    
+    @AppStorage("ChosenDistance") var chosenDistance: String = "km"
+    @AppStorage("ChosenVolume") var chosenVolume: String = "L"
+    @AppStorage("Currency") var chosenCurrency: String = "€"
+    @AppStorage("MeasureUnit") var chosenMeasure: String = ""
 
     private init() {
         self.theme = currentTheme()
     }
+    
 
+    // MARK: - Manages Color Theme
+    
     private let selectedThemeKey = "SelectedTheme"
-
+    
     /// This loads from UserDefalts the selected theme, or picks the main theme
     private func currentTheme() -> Theme {
         if let storedTheme = (UserDefaults.standard.value(forKey: selectedThemeKey) as AnyObject).integerValue {

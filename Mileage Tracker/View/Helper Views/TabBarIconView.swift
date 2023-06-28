@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabBarIcon: View {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
 
     @StateObject var viewRouter = ViewRouter.shared
     
@@ -33,6 +33,6 @@ struct TabBarIcon: View {
             viewRouter.currentPage = assignedPage
         }
         .foregroundColor(viewRouter.currentPage == assignedPage ?
-                            themeMG.theme.mainColor : themeMG.theme.highlightColor)
+                            settingsMG.theme.mainColor : settingsMG.theme.highlightColor)
     }
 }

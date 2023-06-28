@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OtherCostsView: View {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
 
     @StateObject var tracker = MileageTracker.shared
 
@@ -23,7 +23,7 @@ struct OtherCostsView: View {
                 ScrollView {
                     ZStack {
                         RoundedRectangle(cornerRadius: 15.0)
-                            .fill(LinearGradient(gradient: themeMG.theme.gradient1,
+                            .fill(LinearGradient(gradient: settingsMG.theme.gradient1,
                                                  startPoint: .bottomLeading,
                                                  endPoint: .topTrailing))
                             .frame(minHeight: 70, maxHeight: 80)
@@ -33,7 +33,7 @@ struct OtherCostsView: View {
                             Text(totalOtherLabel)
                             Text(String(tracker.totalOtherCosts) + " ")
                             Text(valueLabel)
-                        }.foregroundColor(themeMG.theme.backgroundColor)
+                        }.foregroundColor(settingsMG.theme.backgroundColor)
                     }
 
                     ForEach(tracker.otherCosts.reversed()) { cost in
@@ -41,8 +41,8 @@ struct OtherCostsView: View {
                             RoundedRectangle(cornerRadius: 15.0)
                                 .fill(LinearGradient(gradient:
                                                         cost.type == .tax ?
-                                                        themeMG.theme.gradient1 :
-                                                        themeMG.theme.gradient2,
+                                                        settingsMG.theme.gradient1 :
+                                                        settingsMG.theme.gradient2,
                                                      startPoint: .topLeading,
                                                      endPoint: .bottomTrailing))
                                 .frame(minHeight: 70, maxHeight: 80)
@@ -61,14 +61,14 @@ struct OtherCostsView: View {
                                     .font(.caption)
                             }
                             .foregroundColor(cost.type == .tax ?
-                                                themeMG.theme.backgroundColor : themeMG.theme.mainColor)
+                                                settingsMG.theme.backgroundColor : settingsMG.theme.mainColor)
                             .padding()
                         }
                     }
                     .padding(.horizontal)
                 }
     //            if !tracker.paidApp { Banner() }
-                .background(themeMG.theme.secondaryColor)
+                .background(settingsMG.theme.secondColor)
             }
             
         }

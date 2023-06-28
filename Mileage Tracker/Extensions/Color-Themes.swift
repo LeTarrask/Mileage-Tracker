@@ -35,8 +35,8 @@ enum Theme: Int, Pickable {
         colors["backgroundColor"]!
     }
 
-    var secondaryColor: Color {
-        colors["secondaryColor"]!
+    var secondColor: Color {
+        colors["secondColor"]!
     }
 
     var highlightColor: Color {
@@ -65,7 +65,7 @@ enum Theme: Int, Pickable {
             return [
                 "mainColor": Color("mainColor"),
                 "backgroundColor": Color("backgroundColor"),
-                "secondaryColor": Color("secondaryColor"),
+                "secondColor": Color("secondColor"),
                 "highlightColor": Color("highlightColor"),
                 "titleTextColor": Color(UIColor.systemGray),
                 "subtitleTextColor": Color(UIColor.systemGray3)
@@ -74,7 +74,7 @@ enum Theme: Int, Pickable {
             return [
                 "mainColor": Color("mainColor_0"),
                 "backgroundColor": Color("backgroundColor_0"),
-                "secondaryColor": Color("secondaryColor_0"),
+                "secondColor": Color("secondColor_0"),
                 "highlightColor": Color("highlightColor_0"),
                 "titleTextColor": Color(UIColor.systemGray4),
                 "subtitleTextColor": Color(UIColor.systemGray)
@@ -83,7 +83,7 @@ enum Theme: Int, Pickable {
             return [
                 "mainColor": Color("mainColor_2"),
                 "backgroundColor": Color("backgroundColor_2"),
-                "secondaryColor": Color("secondaryColor_2"),
+                "secondColor": Color("secondColor_2"),
                 "highlightColor": Color("highlightColor_2"),
                 "titleTextColor": Color(UIColor.systemGray4),
                 "subtitleTextColor": Color(UIColor.systemGray)
@@ -92,7 +92,7 @@ enum Theme: Int, Pickable {
             return [
                 "mainColor": Color("mainColor_1"),
                 "backgroundColor": Color("backgroundColor_1"),
-                "secondaryColor": Color("secondaryColor_1"),
+                "secondColor": Color("secondColor_1"),
                 "highlightColor": Color("highlightColor_1"),
                 "titleTextColor": Color(UIColor.systemGray4),
                 "subtitleTextColor": Color(UIColor.systemGray)
@@ -100,3 +100,39 @@ enum Theme: Int, Pickable {
         }
     }
 }
+
+//struct Theme {
+//    
+//    let theme1 = [
+//        "mainColor": Color("mainColor_2"),
+//        "backgroundColor": Color("backgroundColor_2"),
+//        "secondColor": Color("secondColor_2"),
+//        "highlightColor": Color("highlightColor_2"),
+//        "titleTextColor": Color(UIColor.systemGray6),
+//        "subtitleTextColor": Color(UIColor.systemGray)
+//    ]
+//    let theme2 = [
+//        "mainColor": Color("mainColor_0"),
+//        "backgroundColor": Color("backgroundColor_0"),
+//        "secondColor": Color("secondColor_0"),
+//        "highlightColor": Color("highlightColor_0"),
+//        "titleTextColor": Color(UIColor.systemGray4),
+//        "subtitleTextColor": Color(UIColor.systemGray)
+//    ]
+//    let theme3 = [
+//        "mainColor": Color("mainColor_2"),
+//        "backgroundColor": Color("backgroundColor_2"),
+//        "secondColor": Color("secondColor_2"),
+//        "highlightColor": Color("highlightColor_2"),
+//        "titleTextColor": Color(UIColor.systemGray4),
+//        "subtitleTextColor": Color(UIColor.systemGray)
+//    ]
+//    let theme4 = [
+//        "mainColor": Color("mainColor_1"),
+//        "backgroundColor": Color("backgroundColor_1"),
+//        "secondColor": Color("secondColor_1"),
+//        "highlightColor": Color("highlightColor_1"),
+//        "titleTextColor": Color(UIColor.systemGray4),
+//        "subtitleTextColor": Color(UIColor.systemGray)
+//    ]
+//}

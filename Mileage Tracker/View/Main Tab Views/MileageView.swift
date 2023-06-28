@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MileageView: View {
     @StateObject var tracker = MileageTracker.shared
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
     
     var body: some View {
         if tracker.refuels.isEmpty {
@@ -18,7 +18,7 @@ struct MileageView: View {
         } else {
             // MARK: - Refuels list
             ZStack {
-                themeMG.theme.backgroundColor
+                settingsMG.theme.backgroundColor
                 
                 List {
                     ForEach(tracker.refuels.reversed(), id: \.self) { refuel in
@@ -30,7 +30,7 @@ struct MileageView: View {
                     .listRowSeparator(.hidden)
                 }
                 .scrollContentBackground(.hidden)
-                .background(themeMG.theme.secondaryColor)
+                .background(settingsMG.theme.secondColor)
             }
         }
     }

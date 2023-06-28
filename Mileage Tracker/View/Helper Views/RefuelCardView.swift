@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RefuelCardView: View {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
     
     @StateObject var tracker = MileageTracker.shared
     
@@ -34,7 +34,7 @@ struct RefuelCardView: View {
                         HStack {
                             Text(refuel.kmAdded.clean)
                                 .fontWeight(.bold)
-                            Text(" " + kmLabel)
+                            Text(" " + settingsMG.chosenDistance)
                         }
                         
                         Text(sinceLast)
@@ -47,13 +47,13 @@ struct RefuelCardView: View {
                             HStack {
                                 Text(refuel.totalKM.clean)
                                     .fontWeight(.bold)
-                                Text(" " + kmLabel)
+                                Text(" " + settingsMG.chosenDistance)
                             }
                             
                             Text(totalLabel)
                                 .font(.caption)
                                 .fontWeight(.light)
-                        }.foregroundColor(themeMG.theme.highlightColor)
+                        }.foregroundColor(settingsMG.theme.highlightColor)
                     }.padding()
                     
                     Spacer()
@@ -66,7 +66,7 @@ struct RefuelCardView: View {
                         HStack {
                             Text(refuel.liters.clean)
                                 .fontWeight(.bold)
-                            Text(" " + literLabel)
+                            Text(" " + settingsMG.chosenVolume)
                         }
                         
                         Spacer()
@@ -74,15 +74,15 @@ struct RefuelCardView: View {
                         HStack {
                             Text(refuel.money.clean)
                                 .fontWeight(.bold)
-                            Text(" " + euroLabel)
-                        }.foregroundColor(themeMG.theme.highlightColor)
+                            Text(" " + settingsMG.chosenCurrency)
+                        }.foregroundColor(settingsMG.theme.highlightColor)
                         
                         Spacer()
                         
                         HStack {
                             Text(refuel.pricePerLiter.clean)
                                 .fontWeight(.bold)
-                            Text(" " + averageFuelPriceValue)
+                            Text(" " + settingsMG.chosenCurrency + "/" + settingsMG.chosenVolume)
                             
                             indicator
                         }
@@ -90,11 +90,11 @@ struct RefuelCardView: View {
                 }
                 .padding()
             }
-            .foregroundColor(themeMG.theme.mainColor)
+            .foregroundColor(settingsMG.theme.mainColor)
             .padding()
-            .background(themeMG.theme.backgroundColor.cornerRadius(30))
+            .background(settingsMG.theme.backgroundColor.cornerRadius(30))
         }
-        .background(themeMG.theme.secondaryColor)
+        .background(settingsMG.theme.secondColor)
     }
     
     @ViewBuilder

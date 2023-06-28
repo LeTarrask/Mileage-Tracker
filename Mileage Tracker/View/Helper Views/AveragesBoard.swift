@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AveragesBoard: View {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
     
     @StateObject var tracker = MileageTracker.shared
     
@@ -19,62 +19,66 @@ struct AveragesBoard: View {
             VStack(alignment: .leading) {
                 Text(totalString)
                     .fontWeight(.black)
-                    .foregroundColor(themeMG.theme.mainColor)
+                    .foregroundColor(settingsMG.theme.mainColor)
 
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(tracker.averageConsumption.clean + " " + averageConsValue)
+                        Text(tracker.averageConsumption.clean + " " + settingsMG.chosenDistance + "/" + settingsMG.chosenVolume)
                             .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundColor(themeMG.theme.mainColor)
+                            .foregroundColor(settingsMG.theme.mainColor)
                         Text(averageConsLabel)
                             .font(.caption2)
-                            .foregroundColor(themeMG.theme.subtitleTextColor)
+                            .foregroundColor(settingsMG.theme.subtitleTextColor)
                     }
 
                     VStack(alignment: .leading) {
-                        Text(tracker.totalSpending.clean + " " + moneySymbol)
+                        Text(tracker.totalSpending.clean + " " + settingsMG.chosenCurrency)
                             .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundColor(themeMG.theme.mainColor)
+                            .foregroundColor(settingsMG.theme.mainColor)
                         Text(totalFuelSpendingLabel)
                             .font(.caption2)
-                            .foregroundColor(themeMG.theme.subtitleTextColor)
+                            .foregroundColor(settingsMG.theme.subtitleTextColor)
                     }
                 }
 
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(tracker.averageSpending.clean + " " + averageSpenValue)
+                        Text(tracker.averageSpending.clean + " " + settingsMG.chosenDistance + "/" + settingsMG.chosenCurrency)
                             .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundColor(themeMG.theme.mainColor)
+                            .foregroundColor(settingsMG.theme.mainColor)
                         Text(averageSpenLabel)
                             .font(.caption2)
-                            .foregroundColor(themeMG.theme.subtitleTextColor)
+                            .foregroundColor(settingsMG.theme.subtitleTextColor)
                     }
 
                     VStack(alignment: .leading) {
-                        Text(String(tracker.averagePrice) + " " + averageFuelPriceValue)
+                        Text(String(tracker.averagePrice) + " " + settingsMG.chosenCurrency + "/" + settingsMG.chosenVolume)
                             .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundColor(themeMG.theme.mainColor)
+                            .foregroundColor(settingsMG.theme.mainColor)
                         Text(averageFuelPriceLabel)
                             .font(.caption2)
-                            .foregroundColor(themeMG.theme.subtitleTextColor)
+                            .foregroundColor(settingsMG.theme.subtitleTextColor)
                     }
                 }
             }
             
             Spacer()
-        }.padding()
-        .background(themeMG.theme.backgroundColor.cornerRadius(30))
+        }
+        .onAppear {
+            tracker.recalculateStats()
+        }
+        .padding()
+        .background(settingsMG.theme.backgroundColor.cornerRadius(30))
         .padding()
     }
 }
 
 struct AveragesBoard_Previews: PreviewProvider {
     static var previews: some View {
-        AveragesBoard().environmentObject(MileageTracker.shared)
+        AveragesBoard(tracker: MileageTracker.shared)
     }
 }

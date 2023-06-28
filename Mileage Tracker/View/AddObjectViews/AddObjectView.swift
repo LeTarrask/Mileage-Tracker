@@ -15,19 +15,19 @@ struct AddObjectView: View {
     
     @State private var selection: CostType = .refuel
     
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
     
     var body: some View {
         VStack {
             Text("Add new cost")
                 .font(.largeTitle)
                 .fontWeight(.black)
-                .foregroundColor(themeMG.theme.mainColor)
+                .foregroundColor(settingsMG.theme.mainColor)
 
             Picker("Type of Cost", selection: $selection) {
                 ForEach(CostType.allCases) { cost in
                     Text(cost.rawValue.capitalized)
-                        .foregroundColor(themeMG.theme.mainColor)
+                        .foregroundColor(settingsMG.theme.mainColor)
                 }
             }
             .pickerStyle(.segmented)
@@ -39,7 +39,7 @@ struct AddObjectView: View {
             case .other:
                 AddCostView()
             }
-        }.background(themeMG.theme.secondaryColor)
+        }.background(settingsMG.theme.secondColor)
     }
 }
 

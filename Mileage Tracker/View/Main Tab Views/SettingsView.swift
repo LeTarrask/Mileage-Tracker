@@ -9,9 +9,15 @@ import MessageUI
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
 
     @State var chosenTheme: Theme = .theme1
+    @State var selectedMeasure: MeasureUnits = .metric
+    
+    @AppStorage("ChosenDistance") var chosenDistance: String = ""
+    @AppStorage("ChosenVolume") var chosenVolume: String = ""
+    @AppStorage("Currency") var chosenCurrency: String = ""
+    @AppStorage("MeasureUnit") var chosenMeasure: String = ""
 
     @StateObject var tracker = MileageTracker.shared
 
@@ -36,10 +42,32 @@ struct SettingsView: View {
             Section(header: Text(chooseTheme)) {
                 EnumPicker(selection: $chosenTheme, label: Text("Color Theme"))
             }
-            
             .onChange(of: chosenTheme, perform: { value in
-                ThemeManager.shared.applyTheme(theme: value)
+                SettingsManager.shared.applyTheme(theme: value)
                 print("New theme chosen: " + value.description)
+            })
+            .listRowBackground(chosenTheme.backgroundColor)
+            
+            Section(header: Text("Choose Measurement Units")) {
+                Picker("Measurement Unit: \(chosenDistance)/\(chosenVolume)", selection: $selectedMeasure) {
+                    Text("Metric").tag(MeasureUnits.metric)
+                    Text("Imperial").tag(MeasureUnits.imperial)
+                }
+                .onAppear {
+                    if chosenMeasure == "imperial" {
+                        selectedMeasure = .imperial
+                    }
+                }
+                
+                Picker("Currency: \(chosenCurrency)", selection: $chosenCurrency) {
+                    Text("€").tag("€")
+                    Text("$").tag("$")
+                }
+            }
+            .onChange(of: selectedMeasure, perform: { newValue in
+                chosenDistance = newValue.distance
+                chosenVolume = newValue.volume
+                chosenMeasure = selectedMeasure.rawValue
             })
             .listRowBackground(chosenTheme.backgroundColor)
 
@@ -65,7 +93,7 @@ struct SettingsView: View {
             .listRowBackground(chosenTheme.backgroundColor)
             
             // Comment this section to publish app
-//#if targetEnvironment(simulator)
+// #if targetEnvironment(simulator)
             Section(header: Text(testData)) {
                 Button(loadTestData) {
                     tracker.loadTestData()
@@ -82,13 +110,13 @@ struct SettingsView: View {
                 }
             }
             .listRowBackground(chosenTheme.backgroundColor)
-//#endif
+// #endif
         }
         .onAppear {
-            chosenTheme = themeMG.theme
+            chosenTheme = settingsMG.theme
         }
-        .foregroundColor(themeMG.theme.mainColor)
-        .background(themeMG.theme.secondaryColor)
+        .foregroundColor(settingsMG.theme.mainColor)
+        .background(settingsMG.theme.secondColor)
         .scrollContentBackground(.hidden)
         .sheet(isPresented: $isShowingMailView) {
             MailView(isShowing: $isShowingMailView, result: $result)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		791042BC2A4C7B56002DB195 /* MeasureUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791042BB2A4C7B56002DB195 /* MeasureUnits.swift */; };
 		7913788C25B1F24100871ECE /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913788B25B1F24100871ECE /* Double+String.swift */; };
 		7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913789A25B2030600871ECE /* OtherCostsView.swift */; };
 		791378A025B2032700871ECE /* OtherCosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913789F25B2032700871ECE /* OtherCosts.swift */; };
@@ -39,7 +40,7 @@
 		79A14E9529BF8AD200DF097B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79A14E9329BF8AD200DF097B /* Localizable.strings */; };
 		79A95202298BDCB00087344C /* EnumPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A95201298BDCB00087344C /* EnumPicker.swift */; };
 		79A9AEC929BA0E9300B61585 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D336DE260B92CB0034BA63 /* LoadingView.swift */; };
-		79A9AECA29BA765800B61585 /* Theme Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAF2260CED900061C9E0 /* Theme Manager.swift */; };
+		79A9AECA29BA765800B61585 /* Settings Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAF2260CED900061C9E0 /* Settings Manager.swift */; };
 		79A9AECB29BA768300B61585 /* Color-Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */; };
 		79BA12F52611F9D800974F6D /* WelcomeOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12F42611F9D800974F6D /* WelcomeOnboarding.swift */; };
 		79BA12FA2611F9FB00974F6D /* NewFeatureOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12F92611F9FB00974F6D /* NewFeatureOnboarding.swift */; };
@@ -51,7 +52,7 @@
 		79E4CAAD260CA0790061C9E0 /* Color-Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */; };
 		79E4CAD0260CE0800061C9E0 /* RefuelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */; };
 		79E4CAE3260CE2210061C9E0 /* View+dateToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */; };
-		79E4CAF3260CED900061C9E0 /* Theme Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAF2260CED900061C9E0 /* Theme Manager.swift */; };
+		79E4CAF3260CED900061C9E0 /* Settings Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAF2260CED900061C9E0 /* Settings Manager.swift */; };
 		79ED3D7E260A138B00421881 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D7D260A138B00421881 /* UIDeviceExtension.swift */; };
 		79ED3D7F260A138B00421881 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D7D260A138B00421881 /* UIDeviceExtension.swift */; };
 		79ED3D92260A14B200421881 /* UIApplicationVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED3D91260A14B200421881 /* UIApplicationVersion.swift */; };
@@ -72,6 +73,7 @@
 		0EC7C05D3E3C27FD88B800B6 /* Pods-Mileage Tracker-Mileage TrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage Tracker-Mileage TrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Mileage Tracker-Mileage TrackerUITests/Pods-Mileage Tracker-Mileage TrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		13483CCC9135077EB39C4F7E /* Pods-Mileage Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage Tracker.release.xcconfig"; path = "Target Support Files/Pods-Mileage Tracker/Pods-Mileage Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		75EE23B03EB1AC05B833D8C7 /* Pods-Mileage Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mileage Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Mileage Tracker/Pods-Mileage Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		791042BB2A4C7B56002DB195 /* MeasureUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureUnits.swift; sourceTree = "<group>"; };
 		7913788B25B1F24100871ECE /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
 		7913789A25B2030600871ECE /* OtherCostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCostsView.swift; sourceTree = "<group>"; };
 		7913789F25B2032700871ECE /* OtherCosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCosts.swift; sourceTree = "<group>"; };
@@ -119,7 +121,7 @@
 		79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Themes.swift"; sourceTree = "<group>"; };
 		79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelCardView.swift; sourceTree = "<group>"; };
 		79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+dateToString.swift"; sourceTree = "<group>"; };
-		79E4CAF2260CED900061C9E0 /* Theme Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme Manager.swift"; sourceTree = "<group>"; };
+		79E4CAF2260CED900061C9E0 /* Settings Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings Manager.swift"; sourceTree = "<group>"; };
 		79ED3D7D260A138B00421881 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		79ED3D91260A14B200421881 /* UIApplicationVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationVersion.swift; sourceTree = "<group>"; };
 		79ED3D96260A1AC000421881 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				79E4CAE2260CE2210061C9E0 /* View+dateToString.swift */,
 				7913788B25B1F24100871ECE /* Double+String.swift */,
 				796C48A32993D53200797FB7 /* Date+Formatter.swift */,
+				791042BB2A4C7B56002DB195 /* MeasureUnits.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,7 +177,7 @@
 			children = (
 				793B7DD8260E546200ABB839 /* ViewRouter.swift */,
 				793B7D8C260E275F00ABB839 /* OnboardingRouter.swift */,
-				79E4CAF2260CED900061C9E0 /* Theme Manager.swift */,
+				79E4CAF2260CED900061C9E0 /* Settings Manager.swift */,
 				7985564A24C8478700544777 /* MileageTracker.swift */,
 				7968E706261209AB0089DEFD /* MileageTracker+Strings.swift */,
 				796C48AD2994025100797FB7 /* MileageTracker+CSV.swift */,
@@ -344,7 +347,6 @@
 				7985561824C8475E00544777 /* Sources */,
 				7985561924C8475E00544777 /* Frameworks */,
 				7985561A24C8475E00544777 /* Resources */,
-				79ED3D52260A08A300421881 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -379,8 +381,9 @@
 		7985561424C8475E00544777 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					7985561B24C8475E00544777 = {
 						CreatedOnToolsVersion = 12.0;
@@ -455,24 +458,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		79ED3D52260A08A300421881 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -492,7 +477,7 @@
 				7968E707261209AB0089DEFD /* MileageTracker+Strings.swift in Sources */,
 				79ED3D92260A14B200421881 /* UIApplicationVersion.swift in Sources */,
 				793B7D8D260E275F00ABB839 /* OnboardingRouter.swift in Sources */,
-				79E4CAF3260CED900061C9E0 /* Theme Manager.swift in Sources */,
+				79E4CAF3260CED900061C9E0 /* Settings Manager.swift in Sources */,
 				793B7DD1260E540C00ABB839 /* TabBarIconView.swift in Sources */,
 				79ED3D97260A1AC000421881 /* MailView.swift in Sources */,
 				7967C5F2260E668D00665DFC /* MainAppView.swift in Sources */,
@@ -509,6 +494,7 @@
 				7913789B25B2030600871ECE /* OtherCostsView.swift in Sources */,
 				793B7D88260D477700ABB839 /* OnboardingPage.swift in Sources */,
 				796C48A82993D56500797FB7 /* OtherCost+FakeData.swift in Sources */,
+				791042BC2A4C7B56002DB195 /* MeasureUnits.swift in Sources */,
 				7985562224C8475E00544777 /* MileageView.swift in Sources */,
 				79D336E4260BAA540034BA63 /* ShareSheet.swift in Sources */,
 				7913791A25B5FA2000871ECE /* SettingsView.swift in Sources */,
@@ -527,7 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79A9AECA29BA765800B61585 /* Theme Manager.swift in Sources */,
+				79A9AECA29BA765800B61585 /* Settings Manager.swift in Sources */,
 				79ED3D7F260A138B00421881 /* UIDeviceExtension.swift in Sources */,
 				79A9AECB29BA768300B61585 /* Color-Themes.swift in Sources */,
 				79A9AEC929BA0E9300B61585 /* LoadingView.swift in Sources */,
@@ -561,6 +547,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -595,6 +582,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -623,6 +611,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -657,6 +646,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -693,7 +683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tarrask.Mileage-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -723,7 +713,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tarrask.Mileage-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainAppView: View {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
     
     @StateObject var tracker = MileageTracker.shared
     
@@ -72,7 +72,7 @@ struct MainAppView: View {
                            tabName: settingsString)
             }
             .frame(maxWidth: .infinity, maxHeight: 70)
-            .background(themeMG.theme.backgroundColor.shadow(radius: 2))
+            .background(settingsMG.theme.backgroundColor.shadow(radius: 2))
         }
     }
 }

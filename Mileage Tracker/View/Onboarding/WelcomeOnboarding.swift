@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WelcomeOnboarding: View {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -29,7 +29,7 @@ struct WelcomeOnboarding: View {
             }
             .padding(.horizontal, 30)
         }
-        .foregroundColor(themeMG.theme.mainColor)
+        .foregroundColor(settingsMG.theme.mainColor)
     }
 }
 

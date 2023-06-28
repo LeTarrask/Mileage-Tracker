@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddCostView: View {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
 
     @StateObject var tracker = MileageTracker.shared
 
@@ -68,9 +68,9 @@ struct AddCostView: View {
                     }
                 }
         }
-        .foregroundColor(themeMG.theme.mainColor)
+        .foregroundColor(settingsMG.theme.mainColor)
         .scrollContentBackground(.hidden)
-        .background(themeMG.theme.secondaryColor)
+        .background(settingsMG.theme.secondColor)
     }
     
     func saveCost() {

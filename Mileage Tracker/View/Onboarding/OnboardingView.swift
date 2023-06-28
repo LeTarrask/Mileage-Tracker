@@ -11,7 +11,7 @@ import SwiftUI
 struct OnboardingView: View {
     @Environment(\.presentationMode) var presentationMode
 
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
 
     @State private var currentPage: OnboardingPage = .welcome
     private let pages: [OnboardingPage]
@@ -37,7 +37,7 @@ struct OnboardingView: View {
                 ForEach(pages, id: \.self) { page in
                     Circle()
                         .frame(width: 10, height: 10)
-                        .foregroundColor(page == currentPage ? themeMG.theme.mainColor : themeMG.theme.highlightColor)
+                        .foregroundColor(page == currentPage ? settingsMG.theme.mainColor : settingsMG.theme.highlightColor)
                 }
             }
 
@@ -47,7 +47,7 @@ struct OnboardingView: View {
                         Spacer()
                         Button(action: showNextPage, label: {
                             Text(nextLabel)
-                                .foregroundColor(themeMG.theme.mainColor)
+                                .foregroundColor(settingsMG.theme.mainColor)
                         })
                     }
                 }
@@ -55,7 +55,7 @@ struct OnboardingView: View {
                     HStack {
                         Spacer()
                         Button(dismissLabel) { dismissOnboarding() }
-                            .foregroundColor(themeMG.theme.mainColor)
+                            .foregroundColor(settingsMG.theme.mainColor)
                     }
                 }
             }

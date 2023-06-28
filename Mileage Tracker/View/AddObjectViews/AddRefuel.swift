@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct AddRefuel: View {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
     
     @StateObject var tracker = MileageTracker.shared
     
@@ -27,7 +27,7 @@ struct AddRefuel: View {
                 Section(header: Text(addInfoLabel)) {
                     // MARK: - KM
                     HStack {
-                        Text(kmAddedLabel)
+                        Text("Added " + settingsMG.chosenDistance + ":")
                         Spacer()
                         TextField("", text: $refuelData.kmString)
                             .keyboardType(.decimalPad)
@@ -36,7 +36,7 @@ struct AddRefuel: View {
                     }
                     // MARK: - Liters
                     HStack {
-                        Text(litersAddedLabel)
+                        Text("Added " + settingsMG.chosenVolume + ":")
                         Spacer()
                         TextField("", text: $refuelData.litersString)
                             .keyboardType(.decimalPad)
@@ -71,9 +71,9 @@ struct AddRefuel: View {
                     }
                 }
         }
-        .foregroundColor(themeMG.theme.mainColor)
+        .foregroundColor(settingsMG.theme.mainColor)
         .scrollContentBackground(.hidden)
-        .background(themeMG.theme.secondaryColor)
+        .background(settingsMG.theme.secondColor)
     }
     
     func saveRefuel() {
@@ -93,7 +93,7 @@ extension View {
 #endif
 
 struct ColorButtonStyle: ButtonStyle {
-    @StateObject var themeMG: ThemeManager = ThemeManager.shared
+    @StateObject var themeMG: SettingsManager = SettingsManager.shared
     
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
