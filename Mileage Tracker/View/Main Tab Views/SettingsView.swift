@@ -28,17 +28,8 @@ struct SettingsView: View {
     var body: some View {
         Form {
 //            Section(header: Text(buyTitle)) {
-//                Button(removeAds) {
+//               Button(removeAds) {
 //                    openURL(inAppURL)
-//                }
-//                Button(exportData) {
-//                    if canExport {
-//                        showShareSheet = true
-//                    } else {
-//                        // here should call for in app purchase
-//                        // https://blckbirds.com/post/how-to-use-in-app-purchases-in-swiftui-apps/
-//                        openURL(exportURL)
-//                    }
 //                }
 //            }
 
@@ -78,6 +69,16 @@ struct SettingsView: View {
             Section(header: Text(testData)) {
                 Button(loadTestData) {
                     tracker.loadTestData()
+                }
+                
+                Button(exportData) {
+                    if canExport {
+                        showShareSheet = true
+                    } else {
+                        // here should call for in app purchase
+                        // https://blckbirds.com/post/how-to-use-in-app-purchases-in-swiftui-apps/
+                        openURL(exportURL)
+                    }
                 }
             }
             .listRowBackground(chosenTheme.backgroundColor)
