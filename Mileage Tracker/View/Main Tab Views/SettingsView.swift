@@ -74,14 +74,14 @@ struct SettingsView: View {
             .listRowBackground(chosenTheme.backgroundColor)
             
             // Comment this section to publish app
-#if targetEnvironment(simulator)
+//#if targetEnvironment(simulator)
             Section(header: Text(testData)) {
                 Button(loadTestData) {
                     tracker.loadTestData()
                 }
             }
             .listRowBackground(chosenTheme.backgroundColor)
-#endif
+//#endif
         }
         .onAppear {
             chosenTheme = themeMG.theme
