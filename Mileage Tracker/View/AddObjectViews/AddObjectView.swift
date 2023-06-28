@@ -15,7 +15,8 @@ struct AddObjectView: View {
     
     @State private var selection: CostType = .refuel
     
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
+    @ObservedObject var tracker: MileageTracker
+    @ObservedObject var settingsMG: SettingsManager
     
     var body: some View {
         VStack {
@@ -35,9 +36,9 @@ struct AddObjectView: View {
             
             switch selection {
             case .refuel:
-                AddRefuel()
+                AddRefuel(tracker: tracker, settingsMG: settingsMG)
             case .other:
-                AddCostView()
+                AddCostView(tracker: tracker, settingsMG: settingsMG)
             }
         }.background(settingsMG.theme.secondColor)
     }
@@ -45,6 +46,6 @@ struct AddObjectView: View {
 
 struct AddObjectView_Previews: PreviewProvider {
     static var previews: some View {
-        AddObjectView()
+        AddObjectView(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
     }
 }

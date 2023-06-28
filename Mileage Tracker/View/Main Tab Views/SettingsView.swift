@@ -9,7 +9,8 @@ import MessageUI
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
+    @ObservedObject var tracker: MileageTracker
+    @ObservedObject var settingsMG: SettingsManager
 
     @State var chosenTheme: Theme = .theme1
     @State var selectedMeasure: MeasureUnits = .metric
@@ -18,8 +19,6 @@ struct SettingsView: View {
     @AppStorage("ChosenVolume") var chosenVolume: String = ""
     @AppStorage("Currency") var chosenCurrency: String = ""
     @AppStorage("MeasureUnit") var chosenMeasure: String = ""
-
-    @StateObject var tracker = MileageTracker.shared
 
     @Environment(\.openURL) var openURL
 
@@ -132,6 +131,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView().environmentObject(MileageTracker.shared)
+    SettingsView(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
     }
 }

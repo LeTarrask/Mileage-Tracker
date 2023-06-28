@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MileageView: View {
-    @StateObject var tracker = MileageTracker.shared
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
+    @ObservedObject var tracker: MileageTracker
+    @ObservedObject var settingsMG: SettingsManager
     
     var body: some View {
         if tracker.refuels.isEmpty {
@@ -42,9 +42,9 @@ struct MileageView: View {
 
 struct MileageView_Previews: PreviewProvider {
     static var previews: some View {
-        MileageView()
+        MileageView(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
         
-        MileageView()
+        MileageView(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
             .previewDevice(PreviewDevice(rawValue: "iPhone SE (3rd generation)"))
             .previewDisplayName("iPhone SE (3rd generation)")
     }

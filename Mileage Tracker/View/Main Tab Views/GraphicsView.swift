@@ -18,9 +18,8 @@ enum FilterType {
 }
 
 struct GraphicsView: View {
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
-
-    @StateObject var tracker = MileageTracker.shared
+    @ObservedObject var tracker: MileageTracker
+    @ObservedObject var settingsMG: SettingsManager
 
     @State var showInterstitial = false
 
@@ -131,9 +130,9 @@ struct GraphicsView: View {
 
 struct GraphicsView_Previews: PreviewProvider {
     static var previews: some View {
-        GraphicsView()
+        GraphicsView(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
         
-        GraphicsView()
+        GraphicsView(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
             .previewDevice(PreviewDevice(rawValue: "iPhone SE (3rd generation)"))
             .previewDisplayName("iPhone SE (3rd generation)")
     }

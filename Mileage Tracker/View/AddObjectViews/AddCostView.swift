@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct AddCostView: View {
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
-
-    @StateObject var tracker = MileageTracker.shared
+    @ObservedObject var tracker: MileageTracker
+    @ObservedObject var settingsMG: SettingsManager
 
     @State var costData = OtherCost.Data()
 
@@ -86,6 +85,6 @@ struct AddCostView: View {
 
 struct AddCostView_Previews: PreviewProvider {
     static var previews: some View {
-        AddCostView().environmentObject(MileageTracker.shared)
+        AddCostView(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
     }
 }

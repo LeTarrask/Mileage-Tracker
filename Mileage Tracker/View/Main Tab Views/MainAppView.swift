@@ -12,7 +12,7 @@ struct MainAppView: View {
     
     @StateObject var tracker = MileageTracker.shared
     
-    @ObservedObject var viewRouter = ViewRouter.shared
+    @StateObject var viewRouter = ViewRouter.shared
     
     @State var showPopUp = false
     
@@ -30,15 +30,15 @@ struct MainAppView: View {
     func mainSwitcher() -> some View {
         switch viewRouter.currentPage {
         case .mileage:
-            MileageView()
+            MileageView(tracker: tracker, settingsMG: settingsMG)
         case .othercosts:
-            OtherCostsView()
+            OtherCostsView(tracker: tracker, settingsMG: settingsMG)
         case .addobject:
-            AddObjectView()
+            AddObjectView(tracker: tracker, settingsMG: settingsMG)
         case .graphics:
-            GraphicsView()
+            GraphicsView(tracker: tracker, settingsMG: settingsMG)
         case .settings:
-            SettingsView()
+            SettingsView(tracker: tracker, settingsMG: settingsMG)
         }
     }
     
