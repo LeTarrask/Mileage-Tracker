@@ -17,7 +17,7 @@ struct OtherCostsView: View {
         VStack {
             if tracker.otherCosts.isEmpty {
                 // MARK: Shows if there's no data
-                LoadingView(headline: loadCostsHeadline, paragraph: loadCostsParagraph)
+                LoadingView(settingsMG: settingsMG, headline: loadCostsHeadline, paragraph: loadCostsParagraph)
             } else {
                 ScrollView {
                     ZStack {

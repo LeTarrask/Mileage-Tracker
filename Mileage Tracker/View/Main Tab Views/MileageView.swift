@@ -14,7 +14,7 @@ struct MileageView: View {
     var body: some View {
         if tracker.refuels.isEmpty {
             // MARK: - Loading screen when VM is empty
-            LoadingView(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
+            LoadingView(settingsMG: settingsMG, headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
         } else {
             // MARK: - Refuels list
             ZStack {

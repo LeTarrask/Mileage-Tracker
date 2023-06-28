@@ -13,9 +13,7 @@ struct MainAppView: View {
     @StateObject var tracker = MileageTracker.shared
     
     @StateObject var viewRouter = ViewRouter.shared
-    
-    @State var showPopUp = false
-    
+        
     var body: some View {
         VStack(spacing: 0) {
             // MARK: - Main Page Views Switcher

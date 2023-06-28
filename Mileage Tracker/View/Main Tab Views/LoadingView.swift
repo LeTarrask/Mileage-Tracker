@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoadingView: View {
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
+    @ObservedObject var settingsMG: SettingsManager
     
     var headline: String
     var paragraph: String
@@ -124,6 +124,6 @@ struct Fluid: Shape {
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingView(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
+        LoadingView(settingsMG: SettingsManager.shared, headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
     }
 }
