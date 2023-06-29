@@ -7,9 +7,25 @@
 
 import SwiftUI
 
+/**
+ The `MileageTracker` class is used to log and store in-memory information regarding refueling and other vehicle costs.
+
+ ## Usage Example ##
+ let mileageTracker = MileageTracker.shared
+ mileageTracker.receiveNew(refuelData)
+ 
+ - Note: This class is implemented as a singleton, accessible through the `shared` property.
+
+ - Important: Make sure to call the `save()` method to persist the data before terminating the application.
+
+ - SeeAlso: `Refuel`, `OtherCost`
+ **/
 class MileageTracker: ObservableObject {
-    /// A class to log and store in memory all information regarding refuelling and other vehicle costs.
+
+    /// An array of `Refuel` objects representing the refueling events.
     @Published var refuels: [Refuel] = [Refuel]()
+    
+    /// An array of `OtherCost` objects representing other vehicle costs.
     @Published var otherCosts: [OtherCost] = [OtherCost]()
     
     /// Properties used to track the consumption
@@ -25,7 +41,7 @@ class MileageTracker: ObservableObject {
     
     @Published var paidApp: Bool = false
     
-    // Singleton Tracker
+    /// The shared instance of the `MileageTracker` class.
     static let shared = MileageTracker()
     
     /// This method receives a data parameter from the view and adds it to our database
@@ -41,6 +57,7 @@ class MileageTracker: ObservableObject {
         recalculateStats()
     }
     
+    // MARK: - Data Persistence
     /// These 3 properties (documentsFolder, refuelsURL and costsURL are used to define where our app info is stored.
     /// These two methods (load() and save() are responsible for converting and storing our information in JSON
     static var documentsFolder: URL {
@@ -66,6 +83,13 @@ class MileageTracker: ObservableObject {
         load()
     }
 
+    /**
+        Loads the saved data from disk.
+
+        - Important: This method is called automatically during initialization.
+
+        - SeeAlso: `save()`
+    */
     private func load() {
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let data = try? Data(contentsOf: Self.refuelsURL) else {
@@ -112,6 +136,11 @@ class MileageTracker: ObservableObject {
         
     }
 
+    /**
+        Saves the data to disk.
+
+        - Important: This method should be called to persist the data before terminating the application.
+    */
     func save() {
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let refuels = self?.refuels else { fatalError("Self out of scope") }

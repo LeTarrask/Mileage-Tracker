@@ -7,12 +7,25 @@
 
 import Foundation
 
-// CSV handling methods
+/**
+ Extension for `MileageTracker` that provides methods for handling CSV files.
+ */
 extension MileageTracker {
+    
+    /**
+    The URL of the CSV file.
+
+    - Returns: The URL of the CSV file.
+    */
     private static var csvURL: URL {
         documentsFolder.appendingPathComponent("tracker.csv")
     }
 
+    /**
+    Generates a CSV string containing the refuel and other cost data.
+
+    - Returns: A CSV string representing the refuel and other cost data.
+    */
     func generateCSV() -> String {
         /// A method that exports Refuel data and other costs into a CSV file
         var refuelStrings = "Refuel Date, Liters, Price per Liter, km added, total km\n"
@@ -49,6 +62,11 @@ extension MileageTracker {
         return refuelStrings
     }
 
+    /**
+    Writes the CSV file to disk.
+
+    - Returns: The URL of the generated CSV file.
+    */
     func csvFile() -> URL {
         let csvString = generateCSV()
         do {
