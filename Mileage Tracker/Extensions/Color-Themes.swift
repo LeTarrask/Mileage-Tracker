@@ -1,14 +1,17 @@
-//
-//  Color-Themes.swift
-//  Mileage Tracker
-//
-//  Created by Alex Luna on 25/03/2021.
-//
+/**
+ Color-Themes.swift
+
+ This file defines an enum `Theme` that represents different color themes for the Mileage Tracker app.
+
+ Created by Alex Luna on 25/03/2021.
+*/
 
 import SwiftUI
 
+/// Protocol for pickable items
 typealias Pickable = CaseIterable & Identifiable & Hashable & CustomStringConvertible
 
+/// Enum representing different color themes for the app
 enum Theme: Int, Pickable {
     var id: Self { self }
 
@@ -26,39 +29,48 @@ enum Theme: Int, Pickable {
     }
 
     case theme1, theme2, theme3, theme4
-    
+
+    /// The main color of the theme
     var mainColor: Color {
         colors["mainColor"]!
     }
 
+    /// The background color of the theme
     var backgroundColor: Color {
         colors["backgroundColor"]!
     }
 
+    /// The secondary color of the theme
     var secondColor: Color {
         colors["secondColor"]!
     }
 
+    /// The highlight color of the theme
     var highlightColor: Color {
         colors["highlightColor"]!
     }
 
+    /// The title text color of the theme
     var titleTextColor: Color {
         colors["titleTextColor"]!
     }
 
+    /// The subtitle text color of the theme
     var subtitleTextColor: Color {
         colors["subtitleTextColor"]!
     }
 
+    /// The gradient 1 of the theme
     var gradient1: Gradient {
         Gradient(colors: [highlightColor, mainColor])
     }
 
+    /// The gradient 2 of the theme
     var gradient2: Gradient {
         Gradient(colors: [backgroundColor, highlightColor])
     }
 
+    /// Dictionary of colors for each theme
     private var colors: [String: Color] {
         switch self {
         case .theme1:
@@ -100,6 +112,9 @@ enum Theme: Int, Pickable {
         }
     }
 }
+
+// TODO: - Struct Implementation
+
 
 //struct Theme {
 //    

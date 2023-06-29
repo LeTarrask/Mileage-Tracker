@@ -8,6 +8,7 @@
 import SwiftUI
 
 extension View {
+    // Method to convert a Date object to a string representation
     func dateToString(date: Date) -> String {
         let formatter1 = DateFormatter()
         formatter1.dateStyle = .medium

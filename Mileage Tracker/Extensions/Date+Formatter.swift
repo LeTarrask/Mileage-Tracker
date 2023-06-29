@@ -19,11 +19,13 @@ extension DateFormatter {
 }
 
 extension Date {
+    // Initialize a Date object from a yyyyMMdd formatted string
     init?(yyyyMMdd: String) {
         guard let date = DateFormatter.yyyyMMdd.date(from: yyyyMMdd) else { return nil }
         self.init(timeInterval: 0, since: date)
     }
 
+    // Initialize a Date object from a yyyyMMdd formatted string (literal version)
     init(dateLiteralString yyyyMMdd: String) {
         let date = DateFormatter.yyyyMMdd.date(from: yyyyMMdd)!
         self.init(timeInterval: 0, since: date)

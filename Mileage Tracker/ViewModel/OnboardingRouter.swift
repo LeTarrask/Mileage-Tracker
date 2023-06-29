@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+/**
+     Initializes a new instance of `OnboardingRouter`.
+
+     The initialization checks if the app has been launched before by looking at the value stored in `UserDefaults`.
+     If it's the first launch, the onboarding page is displayed. Otherwise, the home page is displayed.
+*/
 class OnboardingRouter: ObservableObject {
     init() {
         if !UserDefaults.standard.bool(forKey: "didLaunchBefore") {
@@ -17,6 +23,9 @@ class OnboardingRouter: ObservableObject {
         }
     }
 
+    /**
+         Dismisses the onboarding and sets the current page to the home page.
+    */
     func dismissOnboard() {
         currentPage = .home
     }
@@ -24,6 +33,9 @@ class OnboardingRouter: ObservableObject {
     @Published var currentPage: LoadingState
 }
 
+/**
+ Possible loading states of the app.
+*/
 enum LoadingState {
     case onboarding
     case home

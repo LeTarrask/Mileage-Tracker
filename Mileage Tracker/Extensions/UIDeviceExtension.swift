@@ -8,6 +8,9 @@
 import SystemConfiguration
 import UIKit
 
+/**
+ This code uses the utsname struct from the system library to access the device's machine identifier. It then maps the identifier to a human-readable device name using a switch statement. The mapping includes various iPhone, iPad, and Apple TV models. Additionally, it handles simulator devices by appending the simulator model identifier obtained from the ProcessInfo environment.
+*/
 public extension UIDevice {
   static let modelName: String = {
     var systemInfo = utsname()
