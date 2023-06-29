@@ -48,6 +48,7 @@
 		79C7FAC528E49CE5007E4733 /* Extension Date Add + Subtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C7FAC428E49CE5007E4733 /* Extension Date Add + Subtract.swift */; };
 		79D336DF260B92CC0034BA63 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D336DE260B92CB0034BA63 /* LoadingView.swift */; };
 		79D336E4260BAA540034BA63 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D336E3260BAA540034BA63 /* ShareSheet.swift */; };
+		79D7F0C92A4DA10A00DB5976 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C48AB2993E15400797FB7 /* Strings.swift */; };
 		79DA782425AF1CEF009E0FFC /* RefuelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA782325AF1CEF009E0FFC /* RefuelModel.swift */; };
 		79E4CAAD260CA0790061C9E0 /* Color-Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */; };
 		79E4CAD0260CE0800061C9E0 /* RefuelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CACF260CE0800061C9E0 /* RefuelCardView.swift */; };
@@ -517,6 +518,7 @@
 				79ED3D7F260A138B00421881 /* UIDeviceExtension.swift in Sources */,
 				79A9AECB29BA768300B61585 /* Color-Themes.swift in Sources */,
 				79A9AEC929BA0E9300B61585 /* LoadingView.swift in Sources */,
+				79D7F0C92A4DA10A00DB5976 /* Strings.swift in Sources */,
 				7985563224C8476000544777 /* MileageTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,14 +6,14 @@
 //
 
 import XCTest
-@testable import Mileage_Tracker
+@testable import Fuel_Logue
 
 class MileageTrackerTests: XCTestCase {
     let tracker = MileageTracker()
 
     func testTracker() throws {
         tracker.refuels = Refuel.data
-        XCTAssertEqual(tracker.refuels.count, 35, "Tracker didn't load test Refuels")
+        XCTAssertEqual(tracker.refuels.count, 36, "Tracker didn't load test Refuels")
         tracker.otherCosts = OtherCost.data
         XCTAssertEqual(tracker.otherCosts.count, 5, "Tracker didn't load test otherCosts")
     }
@@ -26,7 +26,7 @@ class MileageTrackerTests: XCTestCase {
     func testTrackerLoadTestData() throws {
         tracker.loadTestData()
 
-        XCTAssertEqual(tracker.refuels.count, 35, "Tracker didn't load test Refuels")
+        XCTAssertEqual(tracker.refuels.count, 36, "Tracker didn't load test Refuels")
     }
     
     func testDeleteData() throws {
@@ -48,28 +48,28 @@ class MileageTrackerTests: XCTestCase {
         tracker.loadTestData()
         tracker.recalculateStats()
         
-        XCTAssertEqual(tracker.totalSpending, 265.13, "Total spending was \(tracker.totalSpending)")
+        XCTAssertEqual(tracker.totalSpending, 271.13, "Total spending was \(tracker.totalSpending)")
     }
     
     func testCalculateTotalKM() throws {
         tracker.loadTestData()
         tracker.recalculateStats()
         
-        XCTAssertEqual(tracker.totalKM, 6215, "Total km was \(tracker.totalKM)")
+        XCTAssertEqual(tracker.totalKM, 6395, "Total km was \(tracker.totalKM)")
     }
     
     func testCalculateAverageConsumption() throws {
         tracker.loadTestData()
         tracker.recalculateStats()
         
-        XCTAssertEqual(tracker.averageConsumption, 36.5, "Average consumption was \(tracker.averageConsumption)")
+        XCTAssertEqual(tracker.averageConsumption, 36.81, "Average consumption was \(tracker.averageConsumption)")
     }
         
     func testCalculateAverageSpending() throws {
         tracker.loadTestData()
         tracker.recalculateStats()
         
-        XCTAssertEqual(tracker.averageSpending, 23.44, "Average spending was \(tracker.averageSpending)")
+        XCTAssertEqual(tracker.averageSpending, 23.59, "Average spending was \(tracker.averageSpending)")
     }
     
     func testCalculateAveragePrice() throws {
