@@ -112,7 +112,8 @@ struct GraphicsView: View {
                     .symbolSize(60)
                     
                 }
-            }.padding([.horizontal, .top], 20)
+            }
+            .padding([.horizontal, .top], 20)
         }.padding()
     }
 
