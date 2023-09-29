@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct OtherCostsView: View {
-    @ObservedObject var tracker: MileageTracker
-    @ObservedObject var settingsMG: SettingsManager
+    @EnvironmentObject var tracker: MileageTracker
+    @EnvironmentObject var settingsMG: SettingsManager
 
     @State private var newCostData = OtherCost.Data()
 
@@ -17,7 +17,8 @@ struct OtherCostsView: View {
         VStack {
             if tracker.otherCosts.isEmpty {
                 // MARK: Shows if there's no data
-                LoadingView(settingsMG: settingsMG, headline: loadCostsHeadline, paragraph: loadCostsParagraph)
+                LoadingView(headline: loadCostsHeadline, 
+                            paragraph: loadCostsParagraph)
             } else {
                 ScrollView {
                     ZStack {
@@ -76,6 +77,8 @@ struct OtherCostsView: View {
 
 struct OtherCostsView_Previews: PreviewProvider {
     static var previews: some View {
-        OtherCostsView(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
+        OtherCostsView()
+            .environmentObject(MileageTracker.shared)
+            .environmentObject(SettingsManager.shared)
     }
 }

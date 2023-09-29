@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SalesOnboarding: View {
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
+    @EnvironmentObject var settingsMG: SettingsManager
 
     var body: some View {
         VStack(alignment: .center) {
@@ -38,5 +38,6 @@ struct SalesOnboarding: View {
 struct SalesOnboarding_Previews: PreviewProvider {
     static var previews: some View {
         SalesOnboarding()
+            .environmentObject(SettingsManager.shared)
     }
 }

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct TabBarIcon: View {
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
+    @EnvironmentObject var settingsMG: SettingsManager
 
-    @StateObject var viewRouter = ViewRouter.shared
+    @EnvironmentObject var viewRouter: ViewRouter
     
     let assignedPage: ViewRouter.Page
 

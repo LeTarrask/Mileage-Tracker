@@ -18,8 +18,8 @@ enum FilterType {
 }
 
 struct GraphicsView: View {
-    @ObservedObject var tracker: MileageTracker
-    @ObservedObject var settingsMG: SettingsManager
+    @EnvironmentObject var tracker: MileageTracker
+    @EnvironmentObject var settingsMG: SettingsManager
 
     @State var showInterstitial = false
 
@@ -30,7 +30,7 @@ struct GraphicsView: View {
         // MARK: - Regular Screen
         VStack {
             if tracker.refuels.isEmpty {
-                LoadingView(settingsMG: settingsMG, headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
+                LoadingView(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
             } else {
                 VStack(alignment: .center, spacing: 0) {
                     AveragesBoard()
@@ -131,9 +131,13 @@ struct GraphicsView: View {
 
 struct GraphicsView_Previews: PreviewProvider {
     static var previews: some View {
-        GraphicsView(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
-        
-        GraphicsView(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
+        GraphicsView()
+            .environmentObject(MileageTracker.shared)
+            .environmentObject(SettingsManager.shared)
+
+        GraphicsView()
+            .environmentObject(MileageTracker.shared)
+            .environmentObject(SettingsManager.shared)
             .previewDevice(PreviewDevice(rawValue: "iPhone SE (3rd generation)"))
             .previewDisplayName("iPhone SE (3rd generation)")
     }

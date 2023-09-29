@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct MileageView: View {
-    @ObservedObject var tracker: MileageTracker
-    @ObservedObject var settingsMG: SettingsManager
+    @EnvironmentObject var tracker: MileageTracker
+    @EnvironmentObject var settingsMG: SettingsManager
     
     var body: some View {
         if tracker.refuels.isEmpty {
             // MARK: - Loading screen when VM is empty
-            LoadingView(settingsMG: settingsMG, headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
+            LoadingView(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
         } else {
             // MARK: - Refuels list
             ZStack {
@@ -42,9 +42,13 @@ struct MileageView: View {
 
 struct MileageView_Previews: PreviewProvider {
     static var previews: some View {
-        MileageView(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
-        
-        MileageView(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
+        MileageView()
+            .environmentObject(MileageTracker.shared)
+            .environmentObject(SettingsManager.shared)
+
+        MileageView()
+            .environmentObject(MileageTracker.shared)
+            .environmentObject(SettingsManager.shared)
             .previewDevice(PreviewDevice(rawValue: "iPhone SE (3rd generation)"))
             .previewDisplayName("iPhone SE (3rd generation)")
     }
