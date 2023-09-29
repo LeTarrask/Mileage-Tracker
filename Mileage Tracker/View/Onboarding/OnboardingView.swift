@@ -11,7 +11,7 @@ import SwiftUI
 struct OnboardingView: View {
     @Environment(\.presentationMode) var presentationMode
 
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
+    @EnvironmentObject var settingsMG: SettingsManager
 
     @State private var currentPage: OnboardingPage = .welcome
     private let pages: [OnboardingPage]
@@ -88,5 +88,6 @@ struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         let pages = OnboardingPage.fullOnboarding
         return OnboardingView(pages: pages)
+                .environmentObject(SettingsManager.shared)
     }
 }

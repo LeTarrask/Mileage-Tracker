@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct RefuelCardView: View {
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
-    
-    @StateObject var tracker = MileageTracker.shared
-    
+    @EnvironmentObject var settingsMG: SettingsManager
+
+    @EnvironmentObject var tracker: MileageTracker
+
     var refuel: Refuel
     
     var average: Double
@@ -116,5 +116,7 @@ struct RefuelCardView_Previews: PreviewProvider {
         tracker.refuels = Refuel.data
         return RefuelCardView(refuel: tracker.refuels[0],
                               average: tracker.averagePrice)
+                .environmentObject(MileageTracker.shared)
+                .environmentObject(SettingsManager.shared)
     }
 }

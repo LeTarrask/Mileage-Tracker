@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MainAppView: View {
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
-    
-    @StateObject var tracker = MileageTracker.shared
-    
-    @StateObject var viewRouter = ViewRouter.shared
-        
+    @EnvironmentObject var settingsMG: SettingsManager
+
+    @ObservedObject var tracker = MileageTracker.shared
+
+    @ObservedObject var viewRouter = ViewRouter.shared
+
     var body: some View {
         VStack(spacing: 0) {
             // MARK: - Main Page Views Switcher
@@ -21,6 +21,8 @@ struct MainAppView: View {
             // MARK: - Tab Bar
             tabBar()
         }
+        .environmentObject(tracker)
+        .environmentObject(viewRouter)
         .edgesIgnoringSafeArea([.bottom, .horizontal])
     }
     
@@ -28,15 +30,15 @@ struct MainAppView: View {
     func mainSwitcher() -> some View {
         switch viewRouter.currentPage {
         case .mileage:
-            MileageView(tracker: tracker, settingsMG: settingsMG)
+            MileageView()
         case .othercosts:
-            OtherCostsView(tracker: tracker, settingsMG: settingsMG)
+            OtherCostsView()
         case .addobject:
-            AddObjectView(tracker: tracker, settingsMG: settingsMG)
+            AddObjectView()
         case .graphics:
-            GraphicsView(tracker: tracker, settingsMG: settingsMG)
+            GraphicsView()
         case .settings:
-            SettingsView(tracker: tracker, settingsMG: settingsMG)
+            SettingsView()
         }
     }
     
@@ -78,15 +80,18 @@ struct MainAppView: View {
 struct MainAppTabs_Previews: PreviewProvider {
     static var previews: some View {
         MainAppView()
+            .environmentObject(SettingsManager.shared)
             .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
             .previewDisplayName("iPhone 14")
             .environment(\.locale, .init(identifier: "pt-BR"))
         
         MainAppView()
+            .environmentObject(SettingsManager.shared)
             .previewDevice(PreviewDevice(rawValue: "iPhone SE (3rd generation)"))
             .previewDisplayName("iPhone SE (3rd generation)")
         
         MainAppView()
+            .environmentObject(SettingsManager.shared)
             .previewDevice(PreviewDevice(rawValue: "iPad (9th generation)"))
             .previewDisplayName("iPad (9th generation)")
     }

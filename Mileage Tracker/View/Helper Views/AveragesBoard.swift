@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct AveragesBoard: View {
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
-    
-    @StateObject var tracker = MileageTracker.shared
-    
+    @EnvironmentObject var settingsMG: SettingsManager
+
+    @EnvironmentObject var tracker: MileageTracker
+
     var body: some View {
         HStack {
             Spacer()
@@ -79,6 +79,8 @@ struct AveragesBoard: View {
 
 struct AveragesBoard_Previews: PreviewProvider {
     static var previews: some View {
-        AveragesBoard(tracker: MileageTracker.shared)
+        AveragesBoard()
+            .environmentObject(MileageTracker.shared)
+            .environmentObject(SettingsManager.shared)
     }
 }

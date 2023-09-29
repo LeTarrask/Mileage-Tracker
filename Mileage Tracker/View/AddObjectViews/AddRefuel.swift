@@ -9,8 +9,8 @@ import SwiftUI
 import Combine
 
 struct AddRefuel: View {
-    @ObservedObject var tracker: MileageTracker
-    @ObservedObject var settingsMG: SettingsManager
+    @EnvironmentObject var tracker: MileageTracker
+    @EnvironmentObject var settingsMG: SettingsManager
     
     @State var refuelData = Refuel.Data()
     
@@ -107,6 +107,8 @@ struct ColorButtonStyle: ButtonStyle {
 
 struct AddRefuel_Previews: PreviewProvider {
     static var previews: some View {
-        AddRefuel(tracker: MileageTracker.shared, settingsMG: SettingsManager.shared)
+        AddRefuel()
+            .environmentObject(MileageTracker.shared)
+            .environmentObject(SettingsManager.shared)
     }
 }

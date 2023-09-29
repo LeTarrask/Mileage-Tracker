@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewFeatureOnboarding: View {
-    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
+    @EnvironmentObject var settingsMG: SettingsManager
 
     var body: some View {
         VStack(alignment: .center) {
@@ -38,5 +38,6 @@ struct NewFeatureOnboarding: View {
 struct NewFeatureOnboarding_Previews: PreviewProvider {
     static var previews: some View {
         NewFeatureOnboarding()
+            .environmentObject(SettingsManager.shared)
     }
 }
