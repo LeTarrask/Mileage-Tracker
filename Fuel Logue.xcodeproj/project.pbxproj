@@ -39,7 +39,6 @@
 		798C7A8A29B772E100E69845 /* AddObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798C7A8929B772E100E69845 /* AddObjectView.swift */; };
 		79A14E9529BF8AD200DF097B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79A14E9329BF8AD200DF097B /* Localizable.strings */; };
 		79A95202298BDCB00087344C /* EnumPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A95201298BDCB00087344C /* EnumPicker.swift */; };
-		79A9AEC929BA0E9300B61585 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D336DE260B92CB0034BA63 /* LoadingView.swift */; };
 		79A9AECA29BA765800B61585 /* Settings Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAF2260CED900061C9E0 /* Settings Manager.swift */; };
 		79A9AECB29BA768300B61585 /* Color-Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4CAAC260CA0790061C9E0 /* Color-Themes.swift */; };
 		79BA12F52611F9D800974F6D /* WelcomeOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA12F42611F9D800974F6D /* WelcomeOnboarding.swift */; };
@@ -517,7 +516,6 @@
 				79A9AECA29BA765800B61585 /* Settings Manager.swift in Sources */,
 				79ED3D7F260A138B00421881 /* UIDeviceExtension.swift in Sources */,
 				79A9AECB29BA768300B61585 /* Color-Themes.swift in Sources */,
-				79A9AEC929BA0E9300B61585 /* LoadingView.swift in Sources */,
 				79D7F0C92A4DA10A00DB5976 /* Strings.swift in Sources */,
 				7985563224C8476000544777 /* MileageTrackerTests.swift in Sources */,
 			);

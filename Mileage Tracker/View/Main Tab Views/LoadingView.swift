@@ -12,7 +12,7 @@ struct LoadingView: View {
     
     var headline: String
     var paragraph: String
-    
+
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -23,12 +23,19 @@ struct LoadingView: View {
                                  speed: 1,
                                  color: settingsMG.theme.mainColor)
                 VStack {
-                    Text(headline)
-                        .fontWeight(.black)
-                        .font(.largeTitle)
-                        .padding()
-                    Text(paragraph)
-                        .padding(.horizontal)
+
+                    if #available(iOS 17.0, *) {
+                        ContentUnavailableView(headline,
+                                               image: "fuelpump",
+                                               description: Text(paragraph))
+                    } else {
+                        Text(headline)
+                            .fontWeight(.black)
+                            .font(.largeTitle)
+                            .padding()
+                        Text(paragraph)
+                            .padding(.horizontal)
+                    }
                 }.foregroundColor(Color.white)
             }
 
