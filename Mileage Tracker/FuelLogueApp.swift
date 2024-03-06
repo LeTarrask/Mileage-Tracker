@@ -19,6 +19,7 @@ struct FuelLogueApp: App {
         WindowGroup {
             VStack {
                 MainAppView()
+                    .environmentObject(settingsMG)
                     .onAppear {
                         if onboardRouter.currentPage == .onboarding {
                             onboarding.toggle()

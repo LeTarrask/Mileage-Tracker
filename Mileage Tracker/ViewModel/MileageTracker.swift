@@ -37,7 +37,7 @@ class MileageTracker: ObservableObject {
     @Published var averagePrice: Double = 0
     @Published var totalKM: Double = 0
     @Published var totalFuelSpending: Double = 0
-    @Published var lastRefuel: Date = Date()
+    @Published var lastRefuelDate: Date = Date()
     
     @Published var paidApp: Bool = false
     

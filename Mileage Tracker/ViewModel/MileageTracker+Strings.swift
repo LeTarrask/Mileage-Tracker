@@ -23,7 +23,7 @@ extension MileageTracker {
         calculateAverageSpending()
         calculateAveragePrice()
         
-        searchLastRefuel()
+        calculateLastRefuelDate()
     }
     
     func calculateTotalKM() {
@@ -76,7 +76,7 @@ extension MileageTracker {
         }
     }
     
-    func searchLastRefuel() {
-        lastRefuel = refuels.last?.creationDate ?? Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+    func calculateLastRefuelDate() {
+        lastRefuelDate = refuels.last?.creationDate ?? Calendar.current.date(byAdding: .day, value: -7, to: Date())!
     }
 }
