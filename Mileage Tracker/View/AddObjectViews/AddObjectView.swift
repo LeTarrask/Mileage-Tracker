@@ -20,12 +20,12 @@ struct AddObjectView: View {
     
     var body: some View {
         VStack {
-            Text("Add new cost")
+            Text(addNewCost)
                 .font(.largeTitle)
                 .fontWeight(.black)
                 .foregroundColor(settingsMG.theme.mainColor)
 
-            Picker("Type of Cost", selection: $selection) {
+            Picker(typeOfCost, selection: $selection) {
                 ForEach(CostType.allCases) { cost in
                     Text(cost.rawValue.capitalized)
                         .foregroundColor(settingsMG.theme.mainColor)
