@@ -32,24 +32,23 @@ struct GraphicsView: View {
             if tracker.refuels.isEmpty {
                 LoadingView(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
             } else {
-                VStack(alignment: .center, spacing: 0) {
+                VStack(alignment: .center) {
                     AveragesBoard()
 
-                    ZStack {
+                    VStack {
+                        timeframeSelector()
+
+                        graphicSelector()
+                    }
+                    .padding(.vertical, 20)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .background {
                         settingsMG.theme.backgroundColor
                             .cornerRadius(25)
-                        
-                        VStack {
-                            timeframeSelector()
-                            
-                            graphicSelector()
-                        }
-                        .padding(20)
                     }
                     .padding(20)
-                    .fixedSize(horizontal: false, vertical: true)
 
-                    graphicGenerator()
+                    graphicDisplay()
                 }
             }
         }
@@ -82,7 +81,7 @@ struct GraphicsView: View {
     }
 
     @ViewBuilder
-    func graphicGenerator() -> some View {
+    func graphicDisplay() -> some View {
         // MARK: - Graphic
         ZStack {
             settingsMG.theme.backgroundColor
