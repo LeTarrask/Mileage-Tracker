@@ -16,9 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Xcode
-        uses: actions/setup-xcode@v2
-        with:
-          xcode-version: '12' # Choose appropriate Xcode version
+        run: sudo xcode-select --install
 
       - name: Build and Test
         run: xcodebuild test -scheme "Fuel Logue" -destination 'platform=iOS Simulator,name=iPhone 11'
