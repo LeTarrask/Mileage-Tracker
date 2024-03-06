@@ -21,11 +21,11 @@ struct OtherCostsView: View {
                             paragraph: loadCostsParagraph)
             } else {
                 VStack {
-                    HStack {
+                    HStack(alignment: .top) {
                         Text(totalOtherLabel.uppercased())
+                        Spacer()
                         Text(String(tracker.totalOtherCosts) + " ")
                         Text(valueLabel)
-                        Spacer()
                     }
                     .font(.headline)
                     .bold()
