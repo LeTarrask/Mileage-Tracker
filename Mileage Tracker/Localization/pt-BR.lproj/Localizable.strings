@@ -1,216 +1,145 @@
-/* No comment provided by engineer. */
 "Add Cost" = "Adicionar custo";
 
-/* No comment provided by engineer. */
 "Add new cost" = "Adicionar novo custo";
 
-/* No comment provided by engineer. */
+"Type of Cost" = "Tipo de custo";
+
 "Add refuel info" = "Adicionar abastecimento";
 
-/* No comment provided by engineer. */
 "Add Vehicle Cost" = "Adicionar custo";
 
-/* No comment provided by engineer. */
 "Add your bike costs info" = "Adicione custos da moto";
 
-/* No comment provided by engineer. */
 "Add your refuel info" = "Adicione reabastecimento";
 
-/* No comment provided by engineer. */
 "All time" = "Todo o tempo";
 
-/* No comment provided by engineer. */
 "App Settings" = "Configurações";
 
-/* No comment provided by engineer. */
 "Average consumption" = "Consumo médio";
 
-/* No comment provided by engineer. */
 "Average Fuel Price" = "Preço médio do combustível";
 
-/* No comment provided by engineer. */
 "Average spending" = "Gasto médio";
 
-/* No comment provided by engineer. */
 "Cannot send email" = "Não é possível enviar e-mail";
 
-/* No comment provided by engineer. */
 "Choose theme" = "Escolher tema";
 
-/* No comment provided by engineer. */
 "Color Theme" = "Tema de cores";
 
-/* No comment provided by engineer. */
 "Copy App Link" = "Copiar link do app";
 
-/* No comment provided by engineer. */
 "Cost Name" = "Gasto";
 
-/* No comment provided by engineer. */
 "Cost type" = "Tipo de gasto";
 
-/* No comment provided by engineer. */
 "Cost Value" = "Valor do gasto";
 
-/* No comment provided by engineer. */
 "Date" = "Data";
 
-/* No comment provided by engineer. */
 "Delete all app data" = "Excluir todos os dados";
 
-/* No comment provided by engineer. */
 "Dismiss" = "Descartar";
 
-/* No comment provided by engineer. */
 "Export data" = "Exportar dados";
 
-/* No comment provided by engineer. */
 "Feedback" = "Comentários";
 
-/* No comment provided by engineer. */
 "Fill our tank with your bike costs info and we'll create charts detailing how your bike's performing" = "Preencha o tanque com os custos da sua moto para ver o gráfico de desempenho";
 
-/* No comment provided by engineer. */
 "Fill our tank with your refuel info and we'll create charts detailing how your bike's performing" = "Preencha o tanque com os reabastecimentos da sua moto para ver o gráfico de desempenho";
 
-/* No comment provided by engineer. */
 "Fuel" = "Combustível";
 
-/* No comment provided by engineer. */
 "Fuellogue is a hobby project and completely free to use. While we plan to introduce premium features in the future, your basic account will always be free. \n\nWe welcome suggestions for new features that you would like to see, and we encourage you to check out our roadmap to see what we have planned." = "Fuellogue é um projeto de hobby e totalmente gratuito para usar. Embora planejemos introduzir recursos premium no futuro, sua conta básica sempre será gratuita. \n\nAceitamos sugestões para novos recursos que você gostaria de ver e incentivamos você a verificar nosso roteiro para ver o que planejamos.";
 
-/* No comment provided by engineer. */
 "Graphic" = "Gráfico";
 
-/* No comment provided by engineer. */
 "In-App Purchases" = "Compras dentro do app";
 
-/* No comment provided by engineer. */
 "Kilometers added" = "Quilômetros adicionados";
 
-/* No comment provided by engineer. */
 "km" = "km";
 
-/* No comment provided by engineer. */
 "km/€" = "km/€";
 
-/* No comment provided by engineer. */
 "KM/€" = "km/€";
 
-/* No comment provided by engineer. */
 "km/L" = "km/L";
 
-/* No comment provided by engineer. */
 "Km/refuel" = "km/reabastecimento";
 
-/* No comment provided by engineer. */
 "L" = "L";
 
-/* No comment provided by engineer. */
 "Last month" = "Último mês";
 
-/* No comment provided by engineer. */
 "Last year" = "Último ano";
 
-/* No comment provided by engineer. */
 "Liters added" = "Litros adicionados";
 
-/* No comment provided by engineer. */
 "Load test data" = "Carregar dados de teste";
 
-/* No comment provided by engineer. */
 "Monitor your motorbike's fuel costs, payments, and mileage all in one place. \n\nView your information on a sleek SwiftUI chart that updates in real-time as you add new data." = "Monitore os custos de combustível, pagamentos e quilometragem da sua motocicleta em um só lugar. \n\nVisualize suas informações em um gráfico elegante do SwiftUI que atualiza em tempo real conforme você adiciona novos dados.";
 
-/* No comment provided by engineer. */
 "New features coming" = "Novos recursos em breve";
 
-/* No comment provided by engineer. */
 "Next" = "Próximo";
 
-/* No comment provided by engineer. */
 "Other costs" = "Outros gastos";
 
-/* No comment provided by engineer. */
 "Payment" = "Pagamento";
 
-/* No comment provided by engineer. */
 "per liter:" = "por litro:";
 
-/* No comment provided by engineer. */
 "Price/liter" = "Preço por litro";
 
-/* No comment provided by engineer. */
 "Rate us on the App Store" = "Avalie-nos na App Store";
 
-/* No comment provided by engineer. */
 "Refuel at: " = "Abastecido em: ";
 
-/* No comment provided by engineer. */
 "Refuel cost" = "Custo do abastecimento";
 
-/* No comment provided by engineer. */
 "Refuel Cost" = "Custo do abastecimento";
 
-/* No comment provided by engineer. */
 "Refuels" = "Abastecimentos";
 
-/* No comment provided by engineer. */
 "Remove ads" = "Remover anúncios";
 
-/* No comment provided by engineer. */
 "Reset app" = "Resetar app";
 
-/* No comment provided by engineer. */
 "Save" = "Salvar";
 
-/* No comment provided by engineer. */
 "Settings" = "Configurações";
 
-/* No comment provided by engineer. */
 "Share Mileage Tracker" = "Compartilhar Fuellogue";
 
-/* No comment provided by engineer. */
 "Since last" = "Desde o último";
 
-/* No comment provided by engineer. */
 "Stats" = "Estatísticas";
 
-/* No comment provided by engineer. */
 "Take a survey" = "Responder pesquisa";
 
-/* No comment provided by engineer. */
 "Talk to the developer" = "Falar com o desenvolvedor";
 
-/* No comment provided by engineer. */
 "Test data" = "Dados de teste";
 
-/* No comment provided by engineer. */
 "than average:" = "que a média";
 
-/* No comment provided by engineer. */
 "Timeframe" = "Linha do tempo";
 
-/* No comment provided by engineer. */
 "Total" = "Total";
 
-/* No comment provided by engineer. */
 "Total fuel spending" = "Gasto total em combustível";
 
-/* No comment provided by engineer. */
 "Total Other Costs: " = "Total de outros gastos: ";
 
-/* No comment provided by engineer. */
 "Total:" = "Total:";
 
-/* No comment provided by engineer. */
 "Understand, store and export your data" = "Entenda, armazene e exporte seus dados";
 
-/* No comment provided by engineer. */
 "Welcome to Fuellogue" = "Bem-vindo ao Fuellogue";
 
-/* No comment provided by engineer. */
 "Your App Feedback" = "Sua opinião sobre o app";
 
-/* No comment provided by engineer. */
 "Your data is securely stored on your device and can be easily exported to a spreadsheet. \n\nThe information you input is used to generate charts for different timeframes, allowing you to see how your bike expenses and mileage are trending. With our user-friendly interface, it's simple to understand whether you're spending more or less than the average." = "Seus dados são armazenados com segurança em seu dispositivo e podem ser facilmente exportados para uma planilha. \n\nAs informações que você insere são usadas para gerar gráficos para diferentes períodos, permitindo que você veja como suas despesas e quilometragem da moto estão evoluindo. Com nossa interface amigável, é simples entender se você está gastando mais ou menos do que a média.";
-

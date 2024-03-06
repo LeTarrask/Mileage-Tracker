@@ -1,6 +1,6 @@
 //
-//  Mileage_TrackerApp.swift
-//  Mileage Tracker
+//  FuelLogueApp.swift
+//  Fuel Logue
 //
 //  Created by Alex Luna on 22/07/2020.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct FuelLogueApp: App {
-    @ObservedObject var settingsMG: SettingsManager = SettingsManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
 
     @StateObject var onboardRouter: OnboardingRouter = OnboardingRouter()
 
@@ -19,6 +19,7 @@ struct FuelLogueApp: App {
         WindowGroup {
             VStack {
                 MainAppView()
+                    .environmentObject(settingsMG)
                     .onAppear {
                         if onboardRouter.currentPage == .onboarding {
                             onboarding.toggle()
@@ -27,6 +28,7 @@ struct FuelLogueApp: App {
             }
             .sheet(isPresented: $onboarding, content: {
                 OnboardingView(pages: OnboardingPage.fullOnboarding)
+                    .environmentObject(settingsMG)
             })
         }
     }

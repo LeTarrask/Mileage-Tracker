@@ -1,6 +1,6 @@
 //
 //  MailView.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 23/03/2021.
 //
@@ -60,6 +60,7 @@ struct MailView: UIViewControllerRepresentable {
         } else {
             messageBody = "\n\n\n\n\(topDivider)\nDevice model: \(deviceModelName)\niOS version: \(iOSVersion)\n\(divider)"
         }
+        // swiftlint:enable line_length
 
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = context.coordinator

@@ -1,14 +1,14 @@
 //
 //  OtherCosts.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 15/01/2021.
 //
 
 import Foundation
 
+/// A data storage type to save other kinds of costs a vehicle may have.
 struct OtherCost: Hashable, Identifiable, Codable {
-    /// A data storage type to save other kinds of costs a vehicle may have.
     // swiftlint:disable identifier_name
     var id: UUID
     var type: CostType
@@ -28,11 +28,12 @@ struct OtherCost: Hashable, Identifiable, Codable {
         case tax
         case maintenance
 
-        // swiftlint:disable nesting
         // swiftlint:disable type_name
         enum Key: CodingKey {
             case rawValue
         }
+        // swiftlint:enable identifier_name
+        // swiftlint:enable type_name
 
         enum CodingError: Error {
             case unknownValue

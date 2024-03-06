@@ -1,6 +1,6 @@
 //
 //  AddCostView.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 15/01/2021.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddCostView: View {
-    @EnvironmentObject var tracker: MileageTracker
+    @EnvironmentObject var tracker: MileageViewModel
     @EnvironmentObject var settingsMG: SettingsManager
 
     @State var costData = OtherCost.Data()
@@ -86,7 +86,7 @@ struct AddCostView: View {
 struct AddCostView_Previews: PreviewProvider {
     static var previews: some View {
         AddCostView()
-            .environmentObject(MileageTracker.shared)
+            .environmentObject(MileageViewModel.shared)
             .environmentObject(SettingsManager.shared)
     }
 }

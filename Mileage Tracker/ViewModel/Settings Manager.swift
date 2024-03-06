@@ -1,6 +1,6 @@
 //
 //  Theme Manager.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 25/03/2021.
 //
@@ -20,7 +20,6 @@ class SettingsManager: ObservableObject {
     private init() {
         self.theme = currentTheme()
     }
-    
 
     // MARK: - Manages Color Theme
     

@@ -1,6 +1,6 @@
 //
 //  AddRefuel.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 22/07/2020.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct AddRefuel: View {
-    @EnvironmentObject var tracker: MileageTracker
+    @EnvironmentObject var tracker: MileageViewModel
     @EnvironmentObject var settingsMG: SettingsManager
     
     @State var refuelData = Refuel.Data()
@@ -108,7 +108,7 @@ struct ColorButtonStyle: ButtonStyle {
 struct AddRefuel_Previews: PreviewProvider {
     static var previews: some View {
         AddRefuel()
-            .environmentObject(MileageTracker.shared)
+            .environmentObject(MileageViewModel.shared)
             .environmentObject(SettingsManager.shared)
     }
 }

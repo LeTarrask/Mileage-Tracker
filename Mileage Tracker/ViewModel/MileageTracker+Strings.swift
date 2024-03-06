@@ -1,13 +1,13 @@
 //
-//  MileageTracker+Strings.swift
-//  Mileage Tracker
+//  MileageViewModel+Strings.swift
+// Fuel Logue
 //
 //  Created by Alex Luna on 29/03/2021.
 //
 
 import Foundation
 
-extension MileageTracker {
+extension MileageViewModel {
     /// These properties generate the strings for the average consumption, spending, dates, etc,
     /// to be presented in the views
     
@@ -23,7 +23,7 @@ extension MileageTracker {
         calculateAverageSpending()
         calculateAveragePrice()
         
-        searchLastRefuel()
+        calculateLastRefuelDate()
     }
     
     func calculateTotalKM() {
@@ -76,7 +76,7 @@ extension MileageTracker {
         }
     }
     
-    func searchLastRefuel() {
-        lastRefuel = refuels.last?.creationDate ?? Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+    func calculateLastRefuelDate() {
+        lastRefuelDate = refuels.last?.creationDate ?? Calendar.current.date(byAdding: .day, value: -7, to: Date())!
     }
 }

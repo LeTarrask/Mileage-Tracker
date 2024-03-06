@@ -1,6 +1,6 @@
 //
 //  OnboardingView.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 25/03/2021.
 //
@@ -37,7 +37,9 @@ struct OnboardingView: View {
                 ForEach(pages, id: \.self) { page in
                     Circle()
                         .frame(width: 10, height: 10)
-                        .foregroundColor(page == currentPage ? settingsMG.theme.mainColor : settingsMG.theme.highlightColor)
+                        .foregroundColor(
+                            page == currentPage ? settingsMG.theme.mainColor : settingsMG.theme.highlightColor
+                        )
                 }
             }
 

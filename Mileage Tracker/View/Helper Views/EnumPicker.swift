@@ -1,6 +1,6 @@
 //
 //  EnumPicker.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 25/03/2021.
 //

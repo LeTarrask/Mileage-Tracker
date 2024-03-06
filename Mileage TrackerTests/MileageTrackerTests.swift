@@ -1,6 +1,6 @@
 //
 //  Mileage_TrackerTests.swift
-//  Mileage TrackerTests
+//  Fuel LogueTests
 //
 //  Created by Alex Luna on 22/07/2020.
 //
@@ -9,7 +9,7 @@ import XCTest
 @testable import Fuel_Logue
 
 class MileageTrackerTests: XCTestCase {
-    let tracker = MileageTracker()
+    let tracker = MileageViewModel.shared
 
     func testTracker() throws {
         tracker.refuels = Refuel.data

@@ -1,6 +1,6 @@
 //
-//  MileageTracker+CSV.swift
-//  Mileage Tracker
+//  MileageViewModel+CSV.swift
+// Fuel Logue
 //
 //  Created by tarrask on 08/02/2023.
 //
@@ -8,9 +8,9 @@
 import Foundation
 
 /**
- Extension for `MileageTracker` that provides methods for handling CSV files.
+ Extension for `MileageViewModel` that provides methods for handling CSV files.
  */
-extension MileageTracker {
+extension MileageViewModel {
     
     /**
     The URL of the CSV file.

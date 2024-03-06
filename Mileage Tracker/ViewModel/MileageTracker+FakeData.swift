@@ -1,6 +1,6 @@
 //
-//  MileageTracker+FakeData.swift
-//  Mileage Tracker
+//  MileageViewModel+FakeData.swift
+// Fuel Logue
 //
 //  Created by tarrask on 08/02/2023.
 //
@@ -8,7 +8,7 @@
 import Foundation
 
 /// Data generation for testing methods
-extension MileageTracker {
+extension MileageViewModel {
     func deleteData() {
         refuels = [Refuel]()
         otherCosts = [OtherCost]()

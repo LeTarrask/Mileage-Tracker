@@ -1,6 +1,6 @@
 //
 //  RefuelModel.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 22/07/2020.
 //

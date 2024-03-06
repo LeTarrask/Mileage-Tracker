@@ -1,6 +1,6 @@
 //
 //  AddObjectView.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by tarrask on 07/03/2023.
 //
@@ -15,17 +15,16 @@ struct AddObjectView: View {
     
     @State private var selection: CostType = .refuel
     
-    @EnvironmentObject var tracker: MileageTracker
     @EnvironmentObject var settingsMG: SettingsManager
     
     var body: some View {
         VStack {
-            Text("Add new cost")
+            Text(addNewCost)
                 .font(.largeTitle)
                 .fontWeight(.black)
                 .foregroundColor(settingsMG.theme.mainColor)
 
-            Picker("Type of Cost", selection: $selection) {
+            Picker(typeOfCost, selection: $selection) {
                 ForEach(CostType.allCases) { cost in
                     Text(cost.rawValue.capitalized)
                         .foregroundColor(settingsMG.theme.mainColor)
@@ -47,7 +46,7 @@ struct AddObjectView: View {
 struct AddObjectView_Previews: PreviewProvider {
     static var previews: some View {
         AddObjectView()
-            .environmentObject(MileageTracker.shared)
+            .environmentObject(MileageViewModel.shared)
             .environmentObject(SettingsManager.shared)
     }
 }

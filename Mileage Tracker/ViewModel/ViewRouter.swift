@@ -1,6 +1,6 @@
 //
 //  ViewRouter.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 26/03/2021.
 //
@@ -14,9 +14,6 @@ class ViewRouter: ObservableObject {
     
     /// The current page in the app.
     @Published var currentPage: Page = .mileage
-    
-    /// Shared instance of `ViewRouter`.
-    static let shared = ViewRouter()
 
     /**
     The possible pages in the app.
