@@ -14,8 +14,6 @@ struct RefuelCardView: View {
 
     var refuel: Refuel
     
-    var average: Double
-    
     var body: some View {
         VStack {
             
@@ -114,8 +112,7 @@ struct RefuelCardView_Previews: PreviewProvider {
     static var previews: some View {
         let tracker = MileageTracker()
         tracker.refuels = Refuel.data
-        return RefuelCardView(refuel: tracker.refuels[0],
-                              average: tracker.averagePrice)
+        return RefuelCardView(refuel: tracker.refuels[0])
                 .environmentObject(MileageTracker.shared)
                 .environmentObject(SettingsManager.shared)
     }

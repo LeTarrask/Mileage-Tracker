@@ -22,7 +22,7 @@ struct MileageView: View {
                 
                 List {
                     ForEach(tracker.refuels.reversed(), id: \.self) { refuel in
-                        RefuelCardView(refuel: refuel, average: tracker.averagePrice)
+                        RefuelCardView(refuel: refuel)
                             .listRowBackground(Color.clear)
                     }
                     .onDelete(perform: removeItem)
