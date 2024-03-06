@@ -13,98 +13,101 @@ struct RefuelCardView: View {
     @EnvironmentObject var tracker: MileageTracker
 
     var refuel: Refuel
-    
+
     var body: some View {
-        VStack {
-            
-            VStack(alignment: .leading) {
-                Group {
-                    Text(refuelAtString).fontWeight(.bold) +
-                    Text(dateToString(date: refuel.creationDate)).fontWeight(.light)
-                }.font(.caption)
-                
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading) {
-                        Image("bike")
-                            .resizable()
-                            .frame(width: 100, height: 100)
-                        
-                        HStack {
-                            Text(refuel.kmAdded.clean)
-                                .fontWeight(.bold)
-                            Text(" " + settingsMG.chosenDistance)
-                        }
-                        
-                        Text(sinceLast)
-                            .font(.caption)
-                            .fontWeight(.light)
-                        
-                        Spacer()
-                        
-                        Group {
-                            HStack {
-                                Text(refuel.totalKM.clean)
-                                    .fontWeight(.bold)
-                                Text(" " + settingsMG.chosenDistance)
-                            }
-                            
-                            Text(totalLabel)
-                                .font(.caption)
-                                .fontWeight(.light)
-                        }.foregroundColor(settingsMG.theme.highlightColor)
-                    }.padding()
-                    
-                    Spacer()
-                    
-                    VStack(alignment: .leading) {
-                        Image("pump")
-                            .resizable()
-                            .frame(width: 100, height: 100)
-                        
-                        HStack {
-                            Text(refuel.liters.clean)
-                                .fontWeight(.bold)
-                            Text(" " + settingsMG.chosenVolume)
-                        }
-                        
-                        Spacer()
-                        
-                        HStack {
-                            Text(refuel.money.clean)
-                                .fontWeight(.bold)
-                            Text(" " + settingsMG.chosenCurrency)
-                        }.foregroundColor(settingsMG.theme.highlightColor)
-                        
-                        Spacer()
-                        
-                        HStack {
-                            Text(refuel.pricePerLiter.clean)
-                                .fontWeight(.bold)
-                            Text(" " + settingsMG.chosenCurrency + "/" + settingsMG.chosenVolume)
-                            
-                            indicator
-                        }
-                    }.padding()
-                }
-                .padding()
+        VStack(alignment: .leading) {
+            Group {
+                Text(refuelAtString) +
+                Text(dateToString(date: refuel.creationDate))
+                    .foregroundColor(settingsMG.theme.mainColor.opacity(0.7))
             }
-            .foregroundColor(settingsMG.theme.mainColor)
-            .padding()
-            .background(settingsMG.theme.backgroundColor.cornerRadius(30))
+            .font(.title)
+            .fontWeight(.bold)
+
+            HStack {
+                Image("bike")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+
+                Spacer()
+
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(refuel.kmAdded.clean)
+                            .fontWeight(.bold)
+                        Text(" " + settingsMG.chosenDistance)
+                    }
+
+                    Text(sinceLast.uppercased())
+                        .fontWeight(.light)
+                }
+
+                Spacer()
+
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(refuel.totalKM.clean)
+                            .fontWeight(.bold)
+                        Text(" " + settingsMG.chosenDistance)
+                    }
+
+                    Text(totalLabel.uppercased())
+                        .fontWeight(.light)
+
+
+                }.foregroundColor(settingsMG.theme.mainColor).opacity(0.7)
+            }
+
+
+            HStack {
+                Image("pump")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+
+                HStack {
+                    Text(refuel.liters.clean)
+                        .fontWeight(.bold)
+                        .fixedSize(horizontal: true, vertical: true)
+                    Text(" " + settingsMG.chosenVolume)
+                }
+
+                Spacer()
+
+                HStack {
+                    Text(refuel.money.clean)
+                        .fontWeight(.bold)
+                        .fixedSize(horizontal: true, vertical: true)
+                    Text(" " + settingsMG.chosenCurrency)
+                }
+
+                Spacer()
+
+                HStack {
+                    Text(refuel.pricePerLiter.clean)
+                        .fontWeight(.bold)
+                        .fixedSize(horizontal: true, vertical: true)
+                    Text(" " + settingsMG.chosenCurrency + "/" + settingsMG.chosenVolume)
+
+                    indicator
+                }
+            }
         }
-        .background(settingsMG.theme.secondColor)
+        .foregroundColor(settingsMG.theme.mainColor)
+        .padding(16)
+        .background(settingsMG.theme.backgroundColor)
+        .frame(maxWidth: .infinity)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(settingsMG.theme.mainColor, lineWidth: 1)
+        )
     }
     
     @ViewBuilder
     var indicator: some View {
-        if refuel.pricePerLiter > tracker.averagePrice {
-            Image(systemName: "triangle.fill")
-                .foregroundColor(.red)
-                .rotationEffect(Angle(degrees: 180)) // price paid was more than average
-        } else {
-            Image(systemName: "triangle.fill")
-                .foregroundColor(.green) // price paid was less than average
-        }
+        Image(systemName: "triangle.fill")
+            .foregroundColor(refuel.pricePerLiter > tracker.averagePrice ? .red : .green)
+            .rotationEffect(Angle(degrees: refuel.pricePerLiter > tracker.averagePrice ? 180 : 0))
     }
 }
 
@@ -112,8 +115,14 @@ struct RefuelCardView_Previews: PreviewProvider {
     static var previews: some View {
         let tracker = MileageTracker()
         tracker.refuels = Refuel.data
-        return RefuelCardView(refuel: tracker.refuels[0])
-                .environmentObject(MileageTracker.shared)
-                .environmentObject(SettingsManager.shared)
+        return ScrollView {
+            RefuelCardView(refuel: tracker.refuels[0])
+
+            RefuelCardView(refuel: tracker.refuels[1])
+
+            RefuelCardView(refuel: tracker.refuels[2])
+        }
+        .environmentObject(MileageTracker.shared)
+        .environmentObject(SettingsManager.shared)
     }
 }

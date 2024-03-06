@@ -29,6 +29,7 @@ struct MileageView: View {
                     .animation(.easeInOut, value: 5)
                     .listRowSeparator(.hidden)
                 }
+                .listStyle(.plain)
                 .scrollContentBackground(.hidden)
                 .background(settingsMG.theme.secondColor)
             }
