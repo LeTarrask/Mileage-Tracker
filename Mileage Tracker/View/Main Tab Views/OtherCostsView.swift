@@ -18,7 +18,8 @@ struct OtherCostsView: View {
             if tracker.otherCosts.isEmpty {
                 // MARK: Shows if there's no data
                 LoadingView(headline: loadCostsHeadline,
-                            paragraph: loadCostsParagraph)
+                            paragraph: loadCostsParagraph,
+                            image: "bicycle")
             } else {
                 VStack {
                     HStack(alignment: .top) {

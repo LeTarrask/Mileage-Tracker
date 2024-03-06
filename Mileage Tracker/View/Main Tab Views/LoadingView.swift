@@ -12,6 +12,7 @@ struct LoadingView: View {
     
     var headline: String
     var paragraph: String
+    var image: String
 
     var body: some View {
         GeometryReader { geometry in
@@ -26,7 +27,7 @@ struct LoadingView: View {
 
                     if #available(iOS 17.0, *) {
                         ContentUnavailableView(headline,
-                                               systemImage: "fuelpump",
+                                               systemImage: image,
                                                description: Text(paragraph))
                     } else {
                         Text(headline)
@@ -131,7 +132,7 @@ struct Fluid: Shape {
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingView(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph)
+        LoadingView(headline: loadRefuelsHeadline, paragraph: loadRefuelParagraph, image: "fuelpump")
             .environmentObject(SettingsManager.shared)
     }
 }
