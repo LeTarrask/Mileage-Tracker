@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct FuelLogueApp: App {
-    @ObservedObject var settingsMG: SettingsManager = SettingsManager.shared
+    @StateObject var settingsMG: SettingsManager = SettingsManager.shared
 
     @StateObject var onboardRouter: OnboardingRouter = OnboardingRouter()
 

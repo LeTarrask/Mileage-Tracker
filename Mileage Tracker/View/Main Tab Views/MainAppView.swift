@@ -10,9 +10,9 @@ import SwiftUI
 struct MainAppView: View {
     @EnvironmentObject var settingsMG: SettingsManager
 
-    @ObservedObject var tracker = MileageTracker.shared
+    @StateObject var tracker = MileageTracker.shared
 
-    @ObservedObject var viewRouter = ViewRouter.shared
+    @StateObject var viewRouter = ViewRouter.shared
 
     var body: some View {
         VStack(spacing: 0) {
