@@ -20,7 +20,11 @@ struct AveragesBoard: View {
 
             HStack {
                 VStack(alignment: .leading) {
-                    Text(tracker.averageConsumption.clean + " " + settingsMG.chosenDistance + "/" + settingsMG.chosenVolume)
+                    Text(
+                        tracker.averageConsumption.clean 
+                        + " " + settingsMG.chosenDistance
+                        + "/" + settingsMG.chosenVolume
+                    )
                         .font(.title3)
                         .fontWeight(.bold)
                     Text(averageConsLabel)
@@ -42,7 +46,11 @@ struct AveragesBoard: View {
 
             HStack {
                 VStack(alignment: .leading) {
-                    Text(tracker.averageSpending.clean + " " + settingsMG.chosenDistance + "/" + settingsMG.chosenCurrency)
+                    Text(
+                        tracker.averageSpending.clean + " " 
+                        + settingsMG.chosenDistance + "/"
+                        + settingsMG.chosenCurrency
+                    )
                         .font(.title3)
                         .fontWeight(.bold)
                     Text(averageSpenLabel)

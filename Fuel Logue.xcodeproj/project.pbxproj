@@ -319,7 +319,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7985564124C8476000544777 /* Build configuration list for PBXNativeTarget "Fuel Logue" */;
 			buildPhases = (
-				59DC9A6DEB97CD62A652D124 /* [CP] Check Pods Manifest.lock */,
 				7985561824C8475E00544777 /* Sources */,
 				7985561924C8475E00544777 /* Frameworks */,
 				7985561A24C8475E00544777 /* Resources */,
@@ -327,6 +326,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				79C5BB8B2B990CCC008D4CE7 /* PBXTargetDependency */,
 			);
 			name = "Fuel Logue";
 			productName = "Mileage Tracker";
@@ -414,31 +414,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		59DC9A6DEB97CD62A652D124 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Mileage Tracker-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		7985561824C8475E00544777 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -507,6 +482,10 @@
 			isa = PBXTargetDependency;
 			target = 7985561B24C8475E00544777 /* Fuel Logue */;
 			targetProxy = 7985562E24C8476000544777 /* PBXContainerItemProxy */;
+		};
+		79C5BB8B2B990CCC008D4CE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 79C5BB8A2B990CCC008D4CE7 /* SwiftLintPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -796,6 +775,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		79C5BB8A2B990CCC008D4CE7 /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7907E2962B99034400ED75B1 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7985561424C8475E00544777 /* Project object */;
 }

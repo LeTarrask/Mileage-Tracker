@@ -51,3 +51,4 @@ extension Refuel {
         ]
     }
 }
+// swiftlint:enable line_length

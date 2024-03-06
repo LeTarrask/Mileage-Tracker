@@ -86,8 +86,6 @@ struct RefuelCardView: View {
 
                     Text(totalLabel.uppercased())
                         .fontWeight(.light)
-
-
                 }.foregroundColor(settingsMG.theme.mainColor).opacity(0.7)
             }
         }

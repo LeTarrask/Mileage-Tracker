@@ -27,6 +27,7 @@ struct SettingsView: View {
 
     // swiftlint:disable redundant_optional_initialization
     @State var result: Result<MFMailComposeResult, Error>? = nil
+    // swiftlint:enable redundant_optional_initialization
     @State var isShowingMailView = false
     @State var alertNoMail = false
 

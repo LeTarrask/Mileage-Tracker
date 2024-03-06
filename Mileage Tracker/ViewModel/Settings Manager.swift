@@ -20,7 +20,6 @@ class SettingsManager: ObservableObject {
     private init() {
         self.theme = currentTheme()
     }
-    
 
     // MARK: - Manages Color Theme
     

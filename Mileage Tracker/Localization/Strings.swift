@@ -113,3 +113,5 @@ let loadCostsHeadline = NSLocalizedString("Add your bike costs info", comment: "
 let loadCostsParagraph = NSLocalizedString("Fill our tank with your bike costs info and we'll create charts detailing how your bike's performing", comment: "")
 let loadRefuelsHeadline = NSLocalizedString("Add your refuel info", comment: "")
 let loadRefuelParagraph = NSLocalizedString("Fill our tank with your refuel info and we'll create charts detailing how your bike's performing", comment: "")
+
+// swiftlint:enable line_length

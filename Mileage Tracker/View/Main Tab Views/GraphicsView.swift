@@ -11,6 +11,7 @@ import Charts
 enum GraphType {
     // swiftlint:disable identifier_name
     case spending, dates, km
+    // swiftlint:enable identifier_name
 }
 
 enum FilterType {

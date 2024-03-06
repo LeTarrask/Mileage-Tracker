@@ -60,6 +60,7 @@ struct MailView: UIViewControllerRepresentable {
         } else {
             messageBody = "\n\n\n\n\(topDivider)\nDevice model: \(deviceModelName)\niOS version: \(iOSVersion)\n\(divider)"
         }
+        // swiftlint:enable line_length
 
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = context.coordinator

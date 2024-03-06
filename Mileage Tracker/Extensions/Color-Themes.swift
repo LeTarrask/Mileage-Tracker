@@ -113,10 +113,9 @@ enum Theme: Int, Pickable {
     }
 }
 
-// TODO: - Struct Implementation
+// - Struct Implementation
 
-
-//struct Theme {
+// struct Theme {
 //    
 //    let theme1 = [
 //        "mainColor": Color("mainColor_2"),
@@ -150,4 +149,4 @@ enum Theme: Int, Pickable {
 //        "titleTextColor": Color(UIColor.systemGray4),
 //        "subtitleTextColor": Color(UIColor.systemGray)
 //    ]
-//}
+// }
