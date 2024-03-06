@@ -25,6 +25,39 @@ struct RefuelCardView: View {
             .fontWeight(.bold)
 
             HStack {
+                Image("pump")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+
+                HStack {
+                    Text(refuel.liters.clean)
+                        .fontWeight(.bold)
+                        .fixedSize(horizontal: true, vertical: true)
+                    Text(" " + settingsMG.chosenVolume)
+                }
+
+                Spacer()
+
+                HStack {
+                    Text(refuel.money.clean)
+                        .fontWeight(.bold)
+                        .fixedSize(horizontal: true, vertical: true)
+                    Text(" " + settingsMG.chosenCurrency)
+                }
+
+                Spacer()
+
+                HStack {
+                    Text(refuel.pricePerLiter.clean)
+                        .fontWeight(.bold)
+                        .fixedSize(horizontal: true, vertical: true)
+                    Text(" " + settingsMG.chosenCurrency + "/" + settingsMG.chosenVolume)
+
+                    indicator
+                }
+            }
+
+            HStack {
                 Image("bike")
                     .resizable()
                     .frame(width: 50, height: 50)
@@ -56,40 +89,6 @@ struct RefuelCardView: View {
 
 
                 }.foregroundColor(settingsMG.theme.mainColor).opacity(0.7)
-            }
-
-
-            HStack {
-                Image("pump")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-
-                HStack {
-                    Text(refuel.liters.clean)
-                        .fontWeight(.bold)
-                        .fixedSize(horizontal: true, vertical: true)
-                    Text(" " + settingsMG.chosenVolume)
-                }
-
-                Spacer()
-
-                HStack {
-                    Text(refuel.money.clean)
-                        .fontWeight(.bold)
-                        .fixedSize(horizontal: true, vertical: true)
-                    Text(" " + settingsMG.chosenCurrency)
-                }
-
-                Spacer()
-
-                HStack {
-                    Text(refuel.pricePerLiter.clean)
-                        .fontWeight(.bold)
-                        .fixedSize(horizontal: true, vertical: true)
-                    Text(" " + settingsMG.chosenCurrency + "/" + settingsMG.chosenVolume)
-
-                    indicator
-                }
             }
         }
         .foregroundColor(settingsMG.theme.mainColor)
