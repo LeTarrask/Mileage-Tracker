@@ -15,8 +15,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Xcode
-        run: sudo xcode-select --install
-
       - name: Build and Test
         run: xcodebuild test -scheme "Fuel Logue" -destination 'platform=iOS Simulator,name=iPhone 11'
