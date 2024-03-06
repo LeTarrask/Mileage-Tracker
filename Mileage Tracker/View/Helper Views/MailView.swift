@@ -1,6 +1,6 @@
 //
 //  MailView.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 23/03/2021.
 //

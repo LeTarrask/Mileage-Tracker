@@ -1,6 +1,6 @@
 //
-//  Mileage_TrackerApp.swift
-//  Mileage Tracker
+//  FuelLogueApp.swift
+//  Fuel Logue
 //
 //  Created by Alex Luna on 22/07/2020.
 //

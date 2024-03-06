@@ -1,6 +1,6 @@
 //
 //  AddObjectView.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by tarrask on 07/03/2023.
 //
@@ -15,7 +15,6 @@ struct AddObjectView: View {
     
     @State private var selection: CostType = .refuel
     
-    @EnvironmentObject var tracker: MileageTracker
     @EnvironmentObject var settingsMG: SettingsManager
     
     var body: some View {
@@ -47,7 +46,7 @@ struct AddObjectView: View {
 struct AddObjectView_Previews: PreviewProvider {
     static var previews: some View {
         AddObjectView()
-            .environmentObject(MileageTracker.shared)
+            .environmentObject(MileageViewModel.shared)
             .environmentObject(SettingsManager.shared)
     }
 }

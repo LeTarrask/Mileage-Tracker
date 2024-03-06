@@ -1,13 +1,13 @@
 //
-//  MileageTracker+Strings.swift
-//  Mileage Tracker
+//  MileageViewModel+Strings.swift
+// Fuel Logue
 //
 //  Created by Alex Luna on 29/03/2021.
 //
 
 import Foundation
 
-extension MileageTracker {
+extension MileageViewModel {
     /// These properties generate the strings for the average consumption, spending, dates, etc,
     /// to be presented in the views
     

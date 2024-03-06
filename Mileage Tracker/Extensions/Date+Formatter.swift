@@ -1,6 +1,6 @@
 //
 //  Date+Formatter.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by tarrask on 08/02/2023.
 //

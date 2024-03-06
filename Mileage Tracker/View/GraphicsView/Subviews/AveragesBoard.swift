@@ -1,6 +1,6 @@
 //
 //  AveragesBoard.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by tarrask on 08/02/2023.
 //
@@ -10,7 +10,7 @@ import SwiftUI
 struct AveragesBoard: View {
     @EnvironmentObject var settingsMG: SettingsManager
 
-    @EnvironmentObject var tracker: MileageTracker
+    @EnvironmentObject var tracker: MileageViewModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -84,7 +84,7 @@ struct AveragesBoard: View {
 struct AveragesBoard_Previews: PreviewProvider {
     static var previews: some View {
         AveragesBoard()
-            .environmentObject(MileageTracker.shared)
+            .environmentObject(MileageViewModel.shared)
             .environmentObject(SettingsManager.shared)
     }
 }

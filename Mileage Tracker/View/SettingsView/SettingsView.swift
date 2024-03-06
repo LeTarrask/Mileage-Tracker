@@ -1,6 +1,6 @@
 //
 //  SettingsView.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 18/01/2021.
 //
@@ -9,7 +9,7 @@ import MessageUI
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var tracker: MileageTracker
+    @EnvironmentObject var tracker: MileageViewModel
     @EnvironmentObject var settingsMG: SettingsManager
 
     @State var chosenTheme: Theme = .theme1
@@ -133,7 +133,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
     SettingsView()
-            .environmentObject(MileageTracker.shared)
+            .environmentObject(MileageViewModel.shared)
             .environmentObject(SettingsManager.shared)
     }
 }

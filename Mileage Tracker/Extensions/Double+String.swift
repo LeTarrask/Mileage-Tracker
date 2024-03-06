@@ -1,6 +1,6 @@
 //
 //  ExtensionFloat+String.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 15/01/2021.
 //

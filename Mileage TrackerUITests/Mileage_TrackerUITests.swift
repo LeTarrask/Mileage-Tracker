@@ -1,6 +1,6 @@
 //
 //  Mileage_TrackerUITests.swift
-//  Mileage TrackerUITests
+// Fuel LogueUITests
 //
 //  Created by Alex Luna on 22/07/2020.
 //

@@ -1,6 +1,6 @@
 //
 //  TabBarIconView.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 26/03/2021.
 //
@@ -14,8 +14,8 @@ struct TabBarIcon: View {
     
     let assignedPage: ViewRouter.Page
 
-    let width: CGFloat = 30
-    let height: CGFloat = 30
+    let width: CGFloat = 25
+    let height: CGFloat = 25
     let systemIconName, tabName: String
 
     var body: some View {
@@ -30,7 +30,9 @@ struct TabBarIcon: View {
             Spacer()
         }.padding(.horizontal, -4)
         .onTapGesture {
-            viewRouter.currentPage = assignedPage
+            withAnimation(.easeInOut) {
+                viewRouter.currentPage = assignedPage
+            }
         }
         .foregroundColor(viewRouter.currentPage == assignedPage ?
                             settingsMG.theme.mainColor : settingsMG.theme.highlightColor)

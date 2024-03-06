@@ -1,6 +1,6 @@
 //
 //  CardView.swift
-//  Mileage Tracker
+// Fuel Logue
 //
 //  Created by Alex Luna on 25/03/2021.
 //
@@ -10,7 +10,7 @@ import SwiftUI
 struct RefuelCardView: View {
     @EnvironmentObject var settingsMG: SettingsManager
 
-    @EnvironmentObject var tracker: MileageTracker
+    @EnvironmentObject var mileageVM: MileageViewModel
 
     var refuel: Refuel
 
@@ -103,23 +103,23 @@ struct RefuelCardView: View {
     @ViewBuilder
     var indicator: some View {
         Image(systemName: "triangle.fill")
-            .foregroundColor(refuel.pricePerLiter >= tracker.averagePrice ? .red : .green)
-            .rotationEffect(Angle(degrees: refuel.pricePerLiter >= tracker.averagePrice ? 0 : 180))
+            .foregroundColor(refuel.pricePerLiter >= mileageVM.averagePrice ? .red : .green)
+            .rotationEffect(Angle(degrees: refuel.pricePerLiter >= mileageVM.averagePrice ? 0 : 180))
     }
 }
 
 struct RefuelCardView_Previews: PreviewProvider {
     static var previews: some View {
-        let tracker = MileageTracker()
-        tracker.refuels = Refuel.data
+        let mileageVM = MileageViewModel.shared
+        mileageVM.refuels = Refuel.data
         return ScrollView {
-            RefuelCardView(refuel: tracker.refuels[0])
+            RefuelCardView(refuel: mileageVM.refuels[0])
 
-            RefuelCardView(refuel: tracker.refuels[1])
+            RefuelCardView(refuel: mileageVM.refuels[1])
 
-            RefuelCardView(refuel: tracker.refuels[2])
+            RefuelCardView(refuel: mileageVM.refuels[2])
         }
-        .environmentObject(MileageTracker.shared)
+        .environmentObject(MileageViewModel.shared)
         .environmentObject(SettingsManager.shared)
     }
 }

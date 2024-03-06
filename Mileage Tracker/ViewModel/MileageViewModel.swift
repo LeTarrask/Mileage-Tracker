@@ -1,6 +1,6 @@
 //
-//  MileageTracker.swift
-//  Mileage Tracker
+//  MileageViewModel.swift
+// Fuel Logue
 //
 //  Created by Alex Luna on 22/07/2020.
 //
@@ -8,10 +8,11 @@
 import SwiftUI
 
 /**
- The `MileageTracker` class is used to log and store in-memory information regarding refueling and other vehicle costs.
+ The `MileageViewModel` class is used to log and store 
+ in-memory information regarding refueling and other vehicle costs.
 
  ## Usage Example ##
- let mileageTracker = MileageTracker.shared
+ let mileageTracker = MileageViewModel.shared
  mileageTracker.receiveNew(refuelData)
  
  - Note: This class is implemented as a singleton, accessible through the `shared` property.
@@ -20,7 +21,7 @@ import SwiftUI
 
  - SeeAlso: `Refuel`, `OtherCost`
  **/
-class MileageTracker: ObservableObject {
+class MileageViewModel: ObservableObject {
 
     /// An array of `Refuel` objects representing the refueling events.
     @Published var refuels: [Refuel] = [Refuel]()
@@ -42,7 +43,7 @@ class MileageTracker: ObservableObject {
     @Published var paidApp: Bool = false
     
     /// The shared instance of the `MileageTracker` class.
-    static let shared = MileageTracker()
+    static let shared = MileageViewModel()
     
     /// This method receives a data parameter from the view and adds it to our database
     /// - Parameter data: data contains kilometers, liters, and money paid in refuel,
@@ -79,7 +80,7 @@ class MileageTracker: ObservableObject {
         documentsFolder.appendingPathComponent("costs.data")
     }
     
-    init() {
+    private init() {
         load()
     }
 
