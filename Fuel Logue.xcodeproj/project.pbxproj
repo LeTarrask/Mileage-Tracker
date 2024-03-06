@@ -414,7 +414,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				79C5BB8B2B990CCC008D4CE7 /* PBXTargetDependency */,
 			);
 			name = "Fuel Logue";
 			productName = "Mileage Tracker";
@@ -579,10 +578,6 @@
 			target = 7985561B24C8475E00544777 /* Fuel Logue */;
 			targetProxy = 7985562E24C8476000544777 /* PBXContainerItemProxy */;
 		};
-		79C5BB8B2B990CCC008D4CE7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 79C5BB8A2B990CCC008D4CE7 /* SwiftLintPlugin */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -725,6 +720,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mileage Tracker/Preview Content\"";
 				DEVELOPMENT_TEAM = L2BC5TCSR5;
 				ENABLE_PREVIEWS = YES;
@@ -736,7 +732,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tarrask.Mileage-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -754,6 +750,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mileage Tracker/Preview Content\"";
 				DEVELOPMENT_TEAM = L2BC5TCSR5;
 				ENABLE_PREVIEWS = YES;
@@ -765,7 +762,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tarrask.Mileage-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -871,14 +868,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		79C5BB8A2B990CCC008D4CE7 /* SwiftLintPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7907E2962B99034400ED75B1 /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = "plugin:SwiftLintPlugin";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7985561424C8475E00544777 /* Project object */;
 }

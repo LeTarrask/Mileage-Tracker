@@ -28,6 +28,7 @@ struct FuelLogueApp: App {
             }
             .sheet(isPresented: $onboarding, content: {
                 OnboardingView(pages: OnboardingPage.fullOnboarding)
+                    .environmentObject(settingsMG)
             })
         }
     }
