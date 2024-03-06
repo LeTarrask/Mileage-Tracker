@@ -26,7 +26,7 @@ struct LoadingView: View {
 
                     if #available(iOS 17.0, *) {
                         ContentUnavailableView(headline,
-                                               image: "fuelpump",
+                                               systemImage: "fuelpump",
                                                description: Text(paragraph))
                     } else {
                         Text(headline)
