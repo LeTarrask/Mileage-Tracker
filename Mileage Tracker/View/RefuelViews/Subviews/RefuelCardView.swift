@@ -95,10 +95,6 @@ struct RefuelCardView: View {
         .background(settingsMG.theme.backgroundColor)
         .frame(maxWidth: .infinity)
         .clipShape(RoundedRectangle(cornerRadius: 16))
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(settingsMG.theme.mainColor, lineWidth: 1)
-        )
     }
     
     @ViewBuilder
