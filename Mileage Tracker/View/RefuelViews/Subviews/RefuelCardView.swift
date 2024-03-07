@@ -21,6 +21,7 @@ struct RefuelCardView: View {
                 Text(dateToString(date: refuel.creationDate))
                     .foregroundColor(settingsMG.theme.mainColor.opacity(0.7))
             }
+            .lineLimit(1)
             .font(.title)
             .fontWeight(.bold)
 

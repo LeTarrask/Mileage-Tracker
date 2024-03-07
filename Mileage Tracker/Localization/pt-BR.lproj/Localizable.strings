@@ -143,3 +143,19 @@
 "Your App Feedback" = "Sua opinião sobre o app";
 
 "Your data is securely stored on your device and can be easily exported to a spreadsheet. \n\nThe information you input is used to generate charts for different timeframes, allowing you to see how your bike expenses and mileage are trending. With our user-friendly interface, it's simple to understand whether you're spending more or less than the average." = "Seus dados são armazenados com segurança em seu dispositivo e podem ser facilmente exportados para uma planilha. \n\nAs informações que você insere são usadas para gerar gráficos para diferentes períodos, permitindo que você veja como suas despesas e quilometragem da moto estão evoluindo. Com nossa interface amigável, é simples entender se você está gastando mais ou menos do que a média.";
+
+"Choose Measurement Unit" = "Escolha unidade de medida";
+
+"Measurement Unit" = "Unidade de medida";
+
+"Refuel: " = "Abastecimento";
+
+"Since last refuel" = "Desde último";
+
+"Total" = "Total";
+
+"Added " = "Adicionar ";
+
+"Refuel Cost:" = "Custo abastecimento:";
+
+"Currency" = "Moeda";

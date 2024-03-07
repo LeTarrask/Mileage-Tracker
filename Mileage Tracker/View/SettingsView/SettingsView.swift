@@ -15,10 +15,10 @@ struct SettingsView: View {
     @State var chosenTheme: Theme = .theme1
     @State var selectedMeasure: MeasureUnits = .metric
     
-    @AppStorage("ChosenDistance") var chosenDistance: String = ""
-    @AppStorage("ChosenVolume") var chosenVolume: String = ""
-    @AppStorage("Currency") var chosenCurrency: String = ""
-    @AppStorage("MeasureUnit") var chosenMeasure: String = ""
+    @AppStorage("ChosenDistance") var chosenDistance: String = "km"
+    @AppStorage("ChosenVolume") var chosenVolume: String = "l"
+    @AppStorage("Currency") var chosenCurrency: String = "€"
+    @AppStorage("MeasureUnit") var chosenMeasure: String = "metric"
 
     @Environment(\.openURL) var openURL
 
@@ -48,8 +48,8 @@ struct SettingsView: View {
             })
             .listRowBackground(chosenTheme.backgroundColor)
             
-            Section(header: Text("Choose Measurement Units")) {
-                Picker("Measurement Unit: \(chosenDistance)/\(chosenVolume)", selection: $selectedMeasure) {
+            Section(header: Text(measurementUnityTitle)) {
+                Picker("\(measurementUnity): \(chosenDistance)/\(chosenVolume)", selection: $selectedMeasure) {
                     Text("Metric").tag(MeasureUnits.metric)
                     Text("Imperial").tag(MeasureUnits.imperial)
                 }
@@ -59,7 +59,7 @@ struct SettingsView: View {
                     }
                 }
                 
-                Picker("Currency: \(chosenCurrency)", selection: $chosenCurrency) {
+                Picker("\(currencyLabel): \(chosenCurrency)", selection: $chosenCurrency) {
                     Text("€").tag("€")
                     Text("$").tag("$")
                 }

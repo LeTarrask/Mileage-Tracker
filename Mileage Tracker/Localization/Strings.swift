@@ -19,15 +19,7 @@ let addCostString = NSLocalizedString("Add Cost", comment: "")
 /// RefuelCardView
 let refuelAtString = NSLocalizedString("Refuel: ", comment: "")
 let sinceLast = NSLocalizedString("Since last refuel", comment: "")
-let distanceLabel = NSLocalizedString("km", comment: "")
-let fuelVolumeLabel = NSLocalizedString("L", comment: "")
-let fuelLabel = NSLocalizedString("Fuel", comment: "")
-let currencyLabel = NSLocalizedString("€", comment: "")
-let paymentLabel = NSLocalizedString("Payment", comment: "")
-let thanAverageLabel = NSLocalizedString("than average:", comment: "")
-let perLiter = NSLocalizedString("per liter:", comment: "")
 let totalLabel = NSLocalizedString("Total", comment: "")
-let refuelAtLabel = NSLocalizedString("Refuel at: ", comment: "")
 
 // AddObjectView
 let addNewCost = NSLocalizedString("Add new cost", comment: "")
@@ -39,6 +31,7 @@ let kmAddedLabel = NSLocalizedString("Kilometers added", comment: "")
 let litersAddedLabel = NSLocalizedString("Liters added", comment: "")
 let costLabel = NSLocalizedString("Refuel Cost:", comment: "")
 let saveLabel = NSLocalizedString("Save", comment: "")
+let added = NSLocalizedString("Added ", comment: "")
 
 /// AddCostView
 let addCost = NSLocalizedString("Add Vehicle Cost", comment: "")
@@ -94,6 +87,9 @@ let deleteData = NSLocalizedString("Delete all app data", comment: "")
 let testData = NSLocalizedString("Test data", comment: "")
 let loadTestData = NSLocalizedString("Load test data", comment: "")
 let cannotSendEmail = NSLocalizedString("Cannot send email", comment: "")
+let measurementUnityTitle = NSLocalizedString("Choose Measurement Unit", comment: "")
+let measurementUnity = NSLocalizedString("Measurement Unit", comment: "")
+let currencyLabel = NSLocalizedString("Currency", comment: "")
 
 /// Onboarding
 let nextLabel = NSLocalizedString("Next", comment: "")

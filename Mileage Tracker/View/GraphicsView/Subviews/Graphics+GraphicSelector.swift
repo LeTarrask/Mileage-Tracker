@@ -13,7 +13,7 @@ extension GraphicsView {
         // MARK: - Graphics Selector
         Picker(graphicString, selection: $graphType) {
             Text(refuelString).tag(GraphType.spending)
-            Text("Price/"+settingsMG.chosenVolume).tag(GraphType.dates)
+            Text(settingsMG.chosenCurrency+"/"+settingsMG.chosenVolume).tag(GraphType.dates)
             Text(settingsMG.chosenDistance+"/"+settingsMG.chosenCurrency).tag(GraphType.km)
         }
         .pickerStyle(SegmentedPickerStyle())
